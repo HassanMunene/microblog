@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+    {% block title %}<title>Microblog</title>{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <div class="container">
+            <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
+
+            <div class="justify-content-end" id="navbarToggle">
+                <ul class="navbar-nav">
+                    <li class="nav-item mediaQ"><a href="#" class="nav-link">Our story</a></li>
+                    <li class="nav-item mediaQ"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item mediaQ"><a href="#" class="nav-link">Post</a></li>
+                    <li class="nav-item mediaQ"><a href="{{ url_for('login') }}" class="nav-link">Sign In</a></li>
+                    <li class="nav-item rounded-pill btn-rounded">
+                        <a href="{{ url_for('register') }}">Get started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    {% block content %}{% endblock %}
+
+    <script src="../static/assets/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

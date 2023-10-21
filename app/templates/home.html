@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Home - page</title>
+{% endblock %}
+
+{% block content %}
+
+<section id="home" class="intro-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 intros">
+        <h1 class="display-2">
+          <span class="display-2-intro">Together, We Thrive</span>
+          <span class="display-2-description">Discover stories, Connect, and Share with fellow students</span>
+        </h1>
+        <button type="button" class="nav-item rounded-pill btn-rounded">
+          <a href="{{ url_for('register') }}">Start reading</a>
+        </button>
+      </div>
+
+      <div class="col-md-6 intros"></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

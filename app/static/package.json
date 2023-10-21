@@ -1,0 +1,20 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "This is for kcavibes",
+  "main": "index.js",
+  "scripts": {
+      "compile:sass":"sass --watch scss:assets/css"
+  },
+  "keywords": [
+    "Bootstrap",
+    "bootstrap5"
+  ],
+  "author": "HassanMunene",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "bootstrap": "^5.3.2",
+    "sass": "^1.69.4"
+  }
+}
