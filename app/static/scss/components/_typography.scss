@@ -1,9 +1,20 @@
+@use'../custom' as *;
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
 .display-2 {
     margin-bottom: 1rem;
+    color: $black;
 }
 
 .display-2-intro {
     display: inline-block;
     font-weight: 700;
+}
+.display-2-description {
+    font-size: 1.5rem;
+    display: block;
+    margin-top: 1.2rem;
 }
