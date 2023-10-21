@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block title %}
-<title>Home - page</title>
+<title>KcaVibes - Where home is</title>
 {% endblock %}
 
 {% block content %}
 
 <section id="home" class="intro-section">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center justify-content-between">
       <div class="col-md-6 intros">
         <h1 class="display-2">
           <span class="display-2-intro">Together, We Thrive</span>
@@ -19,9 +19,14 @@
         </button>
       </div>
 
-      <div class="col-md-6 intros">
+      <div class="col-md-4 intros">
         <div class="video-box">
           <img src="../static/assets/images/intro-section.png" alt="video illustration" class="img-fluid">
+          <a href="#" class="glightbox">
+            <span class="tt" data-bs-placement="top" title="Watch our history">
+              <img src="../static/assets/images/play-circle.svg" alt="play button" class="img-fluid"> 
+            </span>
+          </a>
         </div>
       </div>
     </div>

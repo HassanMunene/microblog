@@ -12,3 +12,6 @@
 @use'sections/intro_section';
 @use'sections/latest_section';
 @use'sections/discover_more';
+
+// import the pages for the project
+@use'pages/layout';

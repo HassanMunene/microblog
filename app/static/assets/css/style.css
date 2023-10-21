@@ -11855,6 +11855,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@keyframes pulse-border {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
 .btn-rounded {
   padding: 0.4rem 1.2rem;
   background-color: #000;
@@ -11894,9 +11902,15 @@ body {
 }
 
 .display-2-description {
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: block;
   margin-top: 1.2rem;
+}
+@media (min-width: 992px) {
+  .display-2-description {
+    font-size: 1.5rem;
+    display: inline-block;
+  }
 }
 
 .navbar-brand {
@@ -11919,7 +11933,30 @@ li {
   background-color: #ffc107;
   width: 100%;
   height: 100%;
-  padding: 10rem 0 0 0;
+  padding: 10rem 0 2rem 0;
+}
+
+.video-box {
+  position: relative;
+}
+.video-box a img {
+  width: 15%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-container h1 {
+  margin-bottom: 4rem;
+}
+
+.modal-container div {
+  margin-bottom: 1rem;
+}
+
+.modal-btn {
+  padding-left: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
