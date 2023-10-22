@@ -1,12 +1,36 @@
-
 // This is the modal for registration and login customisation
+@use'../custom' as *;
 
 .modal-container h1 {
+    margin-top: 4rem;
     margin-bottom: 4rem;
+    color: $black;
 }
+
 .modal-container div {
     margin-bottom: 1rem;
 }
+
 .modal-btn {
-    padding-left: 2rem;
+    width: 300px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 2rem;
+}
+.modal-container p {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: $black;
+
+    a {
+        color: $green;
+        font-weight: bold;
+    }
+}
+.modal-footer p {
+    font-size: 0.9rem;
+
+    a {
+        color: $black;
+    }
 }

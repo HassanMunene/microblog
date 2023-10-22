@@ -11948,7 +11948,9 @@ li {
 }
 
 .modal-container h1 {
+  margin-top: 4rem;
   margin-bottom: 4rem;
+  color: #000;
 }
 
 .modal-container div {
@@ -11956,7 +11958,107 @@ li {
 }
 
 .modal-btn {
-  padding-left: 2rem;
+  width: 300px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 2rem;
+}
+
+.modal-container p {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #000;
+}
+.modal-container p a {
+  color: #198754;
+  font-weight: bold;
+}
+
+.modal-footer p {
+  font-size: 0.9rem;
+}
+.modal-footer p a {
+  color: #000;
+}
+
+.btn-home {
+  margin: 2rem 0;
+  width: 200px;
+}
+
+#about-body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #212529;
+}
+
+.about-navbar {
+  background-color: #212529;
+  color: #fff;
+}
+.about-navbar a {
+  color: #ffc107;
+}
+
+.about-navbar li {
+  border: 1px solid #fff;
+  margin-left: 1.5rem;
+}
+
+.about-intro-section {
+  background-color: #212529;
+  width: 100%;
+  height: 100%;
+  padding: 7rem 0 5rem 0;
+}
+
+.about-intro-section h1 {
+  color: #fff;
+}
+
+.display-2-description {
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.display-2-description2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #ffc107;
+}
+
+.links-section {
+  background-color: #212529;
+}
+
+.links-section .row1 h1 {
+  color: #fff;
+}
+.links-section .row1 i {
+  color: #fff;
+}
+
+.links-section .row2 h1 {
+  color: #fff;
+}
+.links-section .row2 i {
+  color: #fff;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+.footer-section a {
+  color: #000;
+}
+.footer-section ul {
+  list-style: none;
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */

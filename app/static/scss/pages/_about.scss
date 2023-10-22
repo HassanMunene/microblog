@@ -1,0 +1,83 @@
+// IMPORT THE MAIN CUSTOME SCSS
+@use'../custom' as *;
+
+#about-body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: $gray-900;
+}
+
+.about-navbar {
+    background-color: $gray-900;
+    color: $white;
+
+    a {
+        color: $primary;
+    }
+}
+
+.about-navbar li {
+    border: 1px solid $white;
+    margin-left: 1.5rem;
+}
+
+// The about intro section
+.about-intro-section {
+    background-color: $gray-900;
+    width: 100%;
+    height: 100%;
+    padding: 7rem 0 5rem 0;
+}
+.about-intro-section h1 {
+    color: $white;
+}
+
+.display-2-description {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.display-2-description2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $primary;
+}
+
+// FROM HERE WE ARE DEALING WITH THE LINKS SECTIONS OF THE ABOUT PAGE
+
+.links-section {
+    background-color: $gray-900;
+}
+.links-section .row1 {
+    h1 {
+        color: $white;
+    }
+    i {
+        color: $white;
+    }
+}
+.links-section .row2 {
+    h1 {
+        color: $white;
+    }
+    i {
+        color: $white;
+    }
+}
+
+// FROM HERE WE DEAL WITH THE FOOTER SECTION
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+
+    a {
+        color: $black;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+    }
+}

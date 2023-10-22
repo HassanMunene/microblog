@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon link --->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../static/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +20,14 @@
 </head>
 
 <body>
+    {% block navbar %}
     <nav class="navbar navbar-expand-md navbar-light bg-primary shadow fixed-top">
         <div class="container">
             <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
 
             <div class="justify-content-end" id="navbarToggle">
                 <ul class="navbar-nav">
-                    <li class="nav-item mediaQ"><a href="#" class="nav-link">Our story</a></li>
+                    <li class="nav-item mediaQ"><a href="{{ url_for('about') }}" class="nav-link">Our story</a></li>
                     <li class="nav-item mediaQ"><a href="/" class="nav-link">Home</a></li>
                     <li class="nav-item mediaQ"><a href="#" class="nav-link">Post</a></li>
                     <li class="nav-item mediaQ"><a href="{{ url_for('login') }}" class="nav-link">Sign In</a></li>
@@ -33,27 +38,26 @@
             </div>
         </div>
     </nav>
+    {% endblock %}
 
     <!---------------------MODAL STRUCTURE----------------------------------------->
     <div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-labelledby="registration-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen-sm-down modal-lg" role="document">
+        <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-scrollable" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="registration-modal-content">
                 <div class="container text-center modal-container">
-                    <h1>Join KcaVibes</h1>
-                    <div><button class="btn btn-outline-dark modal-btn">Sign Up with Google</button></div>
-                    <div><button class="btn btn-outline-dark modal-btn">Sign Up with Facebook</button></div>
-                    <div><button class="btn btn-outline-dark modal-btn">Sign Up with Email</button></div>
-                    <p class="lead">Already have an Account Sign In</p>
+                    <h1>Join KcaVibes.</h1>
+                    <div><button type="button" class="btn btn-primary modal-btn">Sign up with Google</button></div>
+                    <div><button type="button" class="btn btn-primary modal-btn">Sign up with Facebook</button></div>
+                    <div><button type="button" class="btn btn-primary modal-btn">Sign up with Email</button></div>
+                    <p class="lead">Already have an Account? <a href="#">Sign In</a></p>
                 </div>
             </div>
             <div class="modal-footer">
-                <p class="lead text-muted text-center">
-                    Click “Sign Up” to agree to Medium’s Terms of Service and acknowledge that Medium’s Privacy Policy applies to you.
-                </p>
+                <p class="lead text-muted text-center">Click “Sign Up” to agree to KcaVibes' <a href="#">Terms of Service</a> and acknowledge that KcaVibes' <a href="">Privacy Policy</a> applies to you.</p>
             </div>        
           </div>
         </div>

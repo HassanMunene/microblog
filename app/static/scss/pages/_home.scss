@@ -1,0 +1,7 @@
+// IMPORT THE MAIN CUSTOME SCSS
+@use'../custom' as *;
+
+.btn-home {
+    margin: 2rem 0;
+    width: 200px;
+}
