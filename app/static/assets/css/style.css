@@ -11991,12 +11991,22 @@ li {
   background-color: #212529;
 }
 
+a {
+  text-decoration: none;
+}
+
 .about-navbar {
   background-color: #212529;
   color: #fff;
 }
 .about-navbar a {
   color: #ffc107;
+}
+.about-navbar a:hover {
+  color: #ffc107;
+}
+.about-navbar .nav-item {
+  background-color: #212529;
 }
 
 .about-navbar li {
@@ -12031,18 +12041,48 @@ li {
   background-color: #212529;
 }
 
+.links-section .row1 {
+  padding: 2.3rem 0;
+  transition: background-color 500ms ease-in;
+}
+.links-section .row1:hover {
+  background-color: #fff;
+}
+.links-section .row1:hover h1 {
+  color: #000;
+}
+.links-section .row1:hover i {
+  color: #000;
+}
 .links-section .row1 h1 {
+  font-weight: 500;
   color: #fff;
 }
 .links-section .row1 i {
   color: #fff;
+  font-size: 4rem;
 }
 
+.links-section .row2 {
+  padding: 2.3rem 0;
+  transition: background-color 500ms ease-in;
+}
+.links-section .row2:hover {
+  background-color: #fff;
+}
+.links-section .row2:hover h1 {
+  color: #000;
+}
+.links-section .row2:hover i {
+  color: #000;
+}
 .links-section .row2 h1 {
+  font-weight: 500;
   color: #fff;
 }
 .links-section .row2 i {
   color: #fff;
+  font-size: 4rem;
 }
 
 .footer-section {

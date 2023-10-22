@@ -5,13 +5,22 @@
     font-family: 'Montserrat', sans-serif;
     background-color: $gray-900;
 }
-
+a {
+    text-decoration: none;
+}
 .about-navbar {
     background-color: $gray-900;
     color: $white;
 
     a {
         color: $primary;
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .nav-item {
+        background-color: $gray-900;
     }
 }
 
@@ -48,19 +57,54 @@
     background-color: $gray-900;
 }
 .links-section .row1 {
+    padding: 2.3rem 0;
+    transition: background-color 500ms ease-in ;
+
+    &:hover {
+        background-color: $white;
+
+        h1 {
+            color: $black;
+        }
+        i {
+            color: $black;
+        }
+    }
+
     h1 {
+        font-weight: 500;
         color: $white;
     }
+
     i {
         color: $white;
+        font-size: 4rem;
     }
 }
+
 .links-section .row2 {
+    padding: 2.3rem 0;
+    transition: background-color 500ms ease-in ;
+
+    &:hover {
+        background-color: $white;
+
+        h1 {
+            color: $black;
+        }
+        i {
+            color: $black;
+        }
+    }
+
     h1 {
+        font-weight: 500;
         color: $white;
     }
+
     i {
         color: $white;
+        font-size: 4rem;
     }
 }
 

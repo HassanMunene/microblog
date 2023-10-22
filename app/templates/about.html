@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,6 +24,7 @@
         <title>About KcaVibes</title>
     </head>
     <body id="about-body">
+        {% block navbar%}
         <!------------------------------NAVBAR SECTION ------------------------------------------->
         <nav class="navbar navbar-expand-md navbar-light about-navbar border-bottom">
             <div class="container-fluid">
@@ -39,7 +42,9 @@
             </div>
         </nav>
         <!---------------------------END OF NAVBAR SECTION ----------------------------------------->
+        {% endblock %}
 
+        {% block content %}
         <!---------------------------ABOUT US PARAGRAPH SECTION ------------------------------------->
         <section id="home" class="about-intro-section border-bottom">
             <div class="container-fluid">
@@ -76,16 +81,16 @@
         <section id="links-section" class="links-section">
             <div class="container-fluid">
                 <div class="row row1 align-items-center justify-content-between border-bottom">
-                  <div class="col-md-6 intros">
-                    <h1 class="display-2">Start reading</h1>
-                  </div>
-                  <div class="col-md-6 intros text-end">
-                    <div><i class="bi bi-arrow-right"></i></div>
-                  </div>
+                    <div class="col-md-6 intros">
+                        <a href="{{ url_for('home') }}"><h1 class="display-2">Start reading</h1></a>
+                    </div>
+                    <div class="col-md-6 intros text-end">
+                        <div><i class="bi bi-arrow-right"></i></div>
+                    </div>
                 </div>
                 <div class="row row2 align-items-center justify-content-between">
                     <div class="col-md-6 intros">
-                        <h1 class="display-2">Start posting</h1>
+                        <a href="{{ url_for('home') }}"><h1 class="display-2">Start posting</h1></a>
                     </div>
                     <div class="col-md-6 intros text-end">
                         <div><i class="bi bi-arrow-right"></i></div>
@@ -108,5 +113,6 @@
             </div>
         </section>
         <!---------------------------END OF FOOTER SECTION-------------------------------------------->
+        {% endblock %}
     </body>
 </html>
