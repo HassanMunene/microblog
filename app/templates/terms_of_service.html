@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}<title>KcaVibes Terms of service | By KcaVibes</title>{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md navbar-light bg-emphasis">
+    <div class="container">
+        <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
+
+        <div class="justify-content-end" id="navbarToggle">
+            <ul class="navbar-nav navbar-custom">
+                <button class="btn write-button" data-bs-target="#get-started-modal" data-bs-toggle="modal">
+                    <i class="bi bi-pencil-square"></i>
+                    <span class="fw-medium">Write</span>
+                </button>
+                <button class="btn profile-button" data-bs-toggle="offcanvas" data-bs-target="#not-logged-in-profile-offcanvas">
+                    <i class="bi bi-person-circle lead text-muted fs-2"></i>
+                </button> 
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h3 class="mt-5">Terms of service will be here. For now we are still building</h3>
+</div>
+{% endblock %}

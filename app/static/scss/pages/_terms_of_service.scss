@@ -1,0 +1,9 @@
+@use'../custom' as *;
+
+.navbar-custom {
+    @include media-breakpoint-down(md) {
+        .write-button {
+            display: none;
+        }
+    }
+}

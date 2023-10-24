@@ -1,12 +1,29 @@
-from flask import Flask, redirect, flash, url_for, render_template
+from flask import Flask, render_template
+from flask_mail import Mail
+from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+from config import config
 
+mail = Mail()
+moment = Moment()
+db = SQLAlchemy()
+login_manager = LoginManager()
 
-app = Flask(__name__)
-app.config['SECRET_KEY']= 'my boy benzi'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://hassan:munene14347@localhost/microblog'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+def create_app(config_name):
+    app = Flask(__name__)
+    app.config.from_object(config[config_name])
+    config[config_name].init_app(app)
+    mail.init_app(app)
+    moment.init_app(app)
+    db.init_app(app)
+    login_manager.init_app(app)
 
-from . import routes
+    # register blueprints
+    from .main_blueprint import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
+    from .authentication_blueprint import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint, url_prefix='/auth')
+
+    return app

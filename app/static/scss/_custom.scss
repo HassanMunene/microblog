@@ -26,12 +26,26 @@ $pink:    #d63384;
 $red:     #dc3545;
 $orange:  #fd7e14;
 $yellow:  #ffc107;
-$green:   #198754;
+$green:   #0e9725;
 $teal:    #20c997;
 $cyan:    #0dcaf0;
 
 $primary:       $PRIMARY;
 $secondary:     $SECONDARY;
+
+// This part involves customising the modal
+$modal-backdrop-bg:                 $white;
+$modal-backdrop-opacity:            .9;
+$modal-dialog-margin:               0;
+$modal-dialog-margin-y-sm-up:       0;
+$modal-content-border-color:        $white;
+$modal-content-border-width:        0;
+$modal-content-border-radius:       .2rem;
+
+// customising the input form focus
+$input-btn-focus-width:         0;
+$input-btn-focus-color-opacity: 0;
+$input-btn-focus-color:         $black;
 // FIRST WE IMPORT THE MAIN BOOTSTRAP SCSS FILE WHICH HAS EVERYTHING
 @import"../node_modules/bootstrap/scss/bootstrap.scss";
 

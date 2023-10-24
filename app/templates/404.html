@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}<title>Not Found-KcaVibes</title>{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md navbar-light bg-emphasis shadow-sm">
+    <div class="container">
+        <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<section id="404" class="404-section bg-emphasis">
+  <div class="container">
+    <div class="row align-items-center justify-content-center pt-5">
+      <div class="col-md-5">
+        <div class="404-not-found text-center">
+          <p class="lead text-muted">PAGE NOT FOUND</p>
+          <h1 class="display-1">404</h1>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="image-section">
+            <img src="../static/assets/images/404.png" alt="show 404 error" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

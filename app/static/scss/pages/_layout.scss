@@ -1,32 +1,49 @@
 // This is the modal for registration and login customisation
 @use'../custom' as *;
 
-.modal-container h1 {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    color: $black;
+// This is modal 1 customisation
+.modal-container {
+    padding-top: 3.5rem;
 }
 
-.modal-container div {
-    margin-bottom: 1rem;
+.modal-container h1 {
+    padding-bottom: 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $black;
 }
 
 .modal-btn {
-    width: 300px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 2rem;
+    margin-bottom: 1.1rem;
 }
-.modal-container p {
-    margin-top: 2rem;
-    font-size: 0.95rem;
-    color: $black;
+.modal-btn button{
+    width: 50%;
+    border-radius: 2rem;
+    position: relative;
 
+    .icon {
+        position: absolute;
+        left: 1rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 90%;
+    }
+    
+}
+
+.already-p {
+    font-size: .95rem;
+    font-weight: 600;
+    padding-top: 2rem;
     a {
-        color: $green;
-        font-weight: bold;
+        color: #0d7c09;
+    }
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 4rem;
     }
 }
+
 .modal-footer p {
     font-size: 0.9rem;
 
@@ -34,3 +51,75 @@
         color: $black;
     }
 }
+// end of modal 1 customisation
+
+// modal 2 customisation
+.custom-container {
+    width: 40%;
+    margin: 0 auto;
+
+    .continue-btn {
+        margin: 2rem auto;
+
+        button {
+            margin: 0 auto;
+            padding: .5rem 4rem;
+            background-color: $gray-900;
+
+            &:hover {
+                background-color: $black;
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+}
+
+.form-input {
+    padding-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .custom-input {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: .1rem solid $black;
+        border-radius: 0;
+        text-align: center;
+        outline: none;
+
+        &:focus {
+            border-color: $black;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+// end modal 2 customisation
+
+// not logged in offcanvas customisation
+.offcanvas-btn {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1.2rem;
+
+    button {
+        width: 100%;
+        border-radius: 2rem;
+    }
+    .btn-sign-up {
+        background-color: $green;
+        color: $white;
+        border: .1rem solid $green;
+    }
+}
+
+// end of not logged in offcanvas customisation

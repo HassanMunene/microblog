@@ -1,12 +1,25 @@
-/*
- * This is an ajax query by jquery to retrieve informationn from the server
- *
+/**
+ * The following code below will handle sending asynchronous request to the server
+ * from the modal after the user has entered their email for processing
  */
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('enter_email_modal');
+    form.addEventListener('submit', function (event){
+        event.preventDefault();
 
-/*$(document).ready(function () {
-    $('#getStartedLink').click(function () {
-        $.get("/register", function(data) {
-            $("#registration-modal-content").html(data);
-        });
+        const email = document.getElementById('emailInput').value;
+
+        xhr_object = new XMLHTTPRequest();
+        xhr_object.open('POST', '/auth/register', true);
+        xhr_object.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr_object.onreadystatechange = function () {
+            if(xhr_object.readyState === 4 && xhr_object.status === 200) {
+                const response = JSON.parse(xhr_object.responseText);
+                console.log(response);
+                // Here we handle response from server
+            }
+        };
+        const formData = 'email=' + email;
+        xhr_object.send(formData);
     });
-});*/
+});
