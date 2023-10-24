@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const email = document.getElementById('emailInput').value;
 
-        xhr_object = new XMLHTTPRequest();
+        xhr_object = new XMLHttpRequest();
         xhr_object.open('POST', '/auth/register', true);
         xhr_object.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr_object.onreadystatechange = function () {
