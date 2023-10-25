@@ -68,9 +68,7 @@
 
             &:hover {
                 background-color: $black;
-                a {
-                    color: $white;
-                }
+                color: $white;
             }
         }
     }
@@ -105,6 +103,9 @@
 }
 // end modal 2 customisation
 
+// modal 4 cutomisation begins here
+// end of modal 4 customisation
+
 // not logged in offcanvas customisation
 .offcanvas-btn {
     width: 70%;
@@ -121,5 +122,4 @@
         border: .1rem solid $green;
     }
 }
-
 // end of not logged in offcanvas customisation

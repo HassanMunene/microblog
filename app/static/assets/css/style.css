@@ -12012,8 +12012,6 @@ li {
 }
 .custom-container .continue-btn button:hover {
   background-color: #000;
-}
-.custom-container .continue-btn button:hover a {
   color: #fff;
 }
 @media (max-width: 575.98px) {

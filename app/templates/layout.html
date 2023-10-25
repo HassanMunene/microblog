@@ -117,7 +117,7 @@
           </div>
         </div>
     </div>
-    <!---------------------MODAL 2 ENDS -------------------------------------------->
+    <!---------------------MODAL 2 ENDS ---------------------------------------------------------->
 
     <!---------------------MODAL 3 STARTS sign in modal------------------------------------------->
     <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
@@ -157,7 +157,33 @@
           </div>
         </div>
     </div>
-    <!---------------------MODAL 3 ENDS -------------------------------------------->
+    <!---------------------MODAL 3 ENDS ---------------------------------------------------------->
+
+    <!---------------------MODAL 4 STARTS THIS SHOWS USER EMAIL HAS BEEN SENT--------------------->
+    <div class="modal fade modal4" id="email_sent_modal" tabindex="-1" role="dialog" aria-labelledby="email_sent_modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center modal-container">
+                    <div class="custom-container">
+                        <div><h1>Email sent.</h1></div>
+                        <div><p class="fw-medium">Enter your email address to create an account.</p></div>
+                        <div class="continue-btn">
+                            <button type="submit" class="rounded-pill btn-rounded">Continue</button>
+                        </div>   
+                    </div>          
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
+            </div>        
+          </div>
+        </div>
+    </div>   
+    <!---------------------MODAL 4 ENDS ---------------------------------------------------------->
     
     <!---------------------THIS IS THE NOT LOGGED IN OFFCANVAS SECTION---------------------------->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="not-logged-in-profile-offcanvas" aria-labelledby="not-logged-in-profile-offcanvas">
@@ -181,6 +207,7 @@
     {% block content %}{% endblock %}
     
     
+    <script src="../static/assets/js/bootstrap.bundle.js"></script>
     <script src="../static/assets/glightbox/js/glightbox.min.js"></script>
     <script type="text/javascript">
     const lightbox = GLightbox({
@@ -196,9 +223,7 @@
         const tooltipTriggerList = document.querySelectorAll('.tt')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
-
     <script src="../static/assets/js/style.js"></script>
-    <script src="../static/assets/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
