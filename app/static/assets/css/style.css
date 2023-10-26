@@ -12003,6 +12003,7 @@ li {
   margin: 0 auto;
 }
 .custom-container .continue-btn {
+  display: block;
   margin: 2rem auto;
 }
 .custom-container .continue-btn button {
@@ -12013,6 +12014,9 @@ li {
 .custom-container .continue-btn button:hover {
   background-color: #000;
   color: #fff;
+}
+.custom-container .continue-btn.invalid_code {
+  display: none;
 }
 @media (max-width: 575.98px) {
   .custom-container {
@@ -12040,6 +12044,40 @@ li {
   border-color: #000;
   box-shadow: none;
   outline: none;
+}
+.form-input .error-message-email {
+  margin-top: 0.5rem;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: none;
+}
+.form-input .error-message-email.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.custom-input.invalid {
+  border-color: #dc3545;
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.error-message.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.invalid-code-go-back {
+  display: none;
 }
 
 .offcanvas-btn {

@@ -1,60 +1,15 @@
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    <div class="mb-3">
-        {{ form.username.label(class="form-label") }}
-        {% if form.username.errors %}
-        {{ form.username(class="form-control is-invalid") }}
-        <div class="invalid-feedback">
-            {% for error in form.username.errors %}
-            <span>{{ error }}</span>
-            {% endfor %}
-        </div>
-        {% else%}
-        {{ form.username(class="form-control") }}
-        {% endif %}
+{% extends "layout.html" %}
+
+{% block title %}<title>Create Account | KcaVibes</title>{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md navbar-light bg-primary shadow fixed-top">
+    <div class="container text-center">
+        <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
     </div>
-    <div class="mb-3">
-        {{ form.email.label(class="form-label") }}
-        {% if form.email.errors %}
-        {{ form.email(class="form-control is-invalid") }}
-        <div class="invalid-feedback">
-            {% for error in form.email.errors %}
-            <span>{{ error }}</span>
-            {% endfor %}
-        </div>
-        {% else%}
-        {{ form.email(class="form-control") }}
-        {% endif %}
-     </div>
-    <div class="mb-3">
-        {{ form.password.label(class="form-label") }}
-        
-        {% if form.password.errors %}
-        {{ form.password(class="form-control is-invalid") }}
-        <div class="invalid-feedback">
-            {% for error in form.password.errors %}
-            <span>{{ error }}</span>
-            {% endfor %}
-        </div>
-        {% else%}
-        {{ form.password(class="form-control") }}
-        {% endif %}
-     </div>
-    <div class="mb-3">
-        {{ form.password2.label(class="form-label") }}
-        
-        {% if form.password2.errors %}
-        {{ form.password2(class="form-control is-invalid") }}
-        <div class="invalid-feedback">
-            {% for error in form.password2.errors %}
-            <span>{{ error }}</span>
-            {% endfor %}
-        </div>
-        {% else%}
-        {{ form.password2(class="form-control") }}
-        {% endif %}
-     </div>
-    <div class="mb-3">
-        {{ form.submit(class="btn btn-outline-info") }}
-    </div>
-</form>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

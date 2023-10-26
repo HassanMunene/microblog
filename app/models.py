@@ -1,11 +1,20 @@
 from . import db, login_manager
-from datetime import datetime
+from datetime import datetime, timedelta
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @login_manager.user_loader
 def load_user(user_id):
     User.query.get(int(user_id))
+
+class VerificationCode(db.Model):
+    """
+    This table will store the verification codes that will be used to verify the users email
+    """
+    __tablename__ = 'verification_codes'
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(5), nullable=False)
+    expiration_time = db.Column(db.DateTime, default=datetime.utcnow() + timedelta(minutes=15))
 
 
 class User(db.Model, UserMixin):

@@ -59,6 +59,7 @@
     margin: 0 auto;
 
     .continue-btn {
+        display: block;
         margin: 2rem auto;
 
         button {
@@ -71,6 +72,9 @@
                 color: $white;
             }
         }
+    }
+    .continue-btn.invalid_code {
+        display: none;
     }
 
     @include media-breakpoint-down(sm) {
@@ -100,10 +104,41 @@
             outline: none;
         }
     }
+
+    .error-message-email {
+        margin-top: .5rem;
+        color: $red;
+        font-weight: 600;
+        font-size: .9rem;
+        display: none; //initially display none it will modified by js when code is invalid
+    }
+    .error-message-email.active {
+        display: block;
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
 }
 // end modal 2 customisation
 
 // modal 4 cutomisation begins here
+.custom-input.invalid {
+    border-color: $red;
+}
+.error-message {
+    margin-top: .5rem;
+    color: $red;
+    font-weight: 600;
+    font-size: .9rem;
+    display: none; //initially display none it will modified by js when code is invalid
+}
+.error-message.active {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.invalid-code-go-back {
+    display: none;
+}
 // end of modal 4 customisation
 
 // not logged in offcanvas customisation
