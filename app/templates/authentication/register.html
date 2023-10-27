@@ -3,13 +3,32 @@
 {% block title %}<title>Create Account | KcaVibes</title>{% endblock %}
 
 {% block navbar %}
-<nav class="navbar navbar-expand-md navbar-light bg-primary shadow fixed-top">
-    <div class="container text-center">
+<nav class="navbar navbar-expand-md navbar-light bg-emphasis border-bottom">
+    <div class="container d-flex justify-content-center">
         <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
     </div>
 </nav>
 {% endblock %}
 
 {% block content %}
-
+<div class="container">
+    <div class="register-container text-center">
+        <h1 class="display-1 fs-2 fw-semibold">Almost there!</h1>
+        <p class="lead register-text">Finish creating your account for full KcaVibes experience</p>
+        <form method='POST' action="">
+            {{ form.hidden_tag() }}
+            <div class="mb-3 form-input">
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control custom-input") }}
+            </div>
+            <div class="mb-3 form-input">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control custom-input") }}
+            </div>
+            <div class="continue-btn d-flex justify-content-center">
+                {{ form.submit(class="rounded-pill btn-rounded")  }}
+            </div> 
+        </form>
+    </div>
+</div>
 {% endblock %}

@@ -160,7 +160,7 @@
     </div>
     <!---------------------MODAL 3 ENDS ---------------------------------------------------------->
 
-    <!---------------------MODAL 4 STARTS A PLACE TO ENTER THE CONFIRMATION CODE--------------------->
+    <!---------------------MODAL 4 When the email is new and then deals with account setup--------------------->
     <div class="modal fade modal4" id="email_sent_modal" tabindex="-1" role="dialog" aria-labelledby="email_sent_modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
             <div class="modal-content">
@@ -171,21 +171,33 @@
                     <div class="container text-center modal-container">
                         <div class="custom-container">
                             <div><h1>Check your inbox.</h1></div>
-                            <div><p class="fw-medium">Enter the code we sent to __ to complete your set-up</p></div>
-                            <div class="mb-3 form-input">
-                                <label for="codeInput" class="form-label">Enter Code</label>
-                                <input type="text" class="form-control custom-input" id="codeInput" placeholder="">
-                                <span class="error-message" id="error-message"></span>
-                            </div>
-                            <div class="continue-btn" id="ok_button">
-                                <button type="submit" id="verifyButton" class="rounded-pill btn-rounded">OK</button>
-                            </div>
-                            <div class="mt-3 invalid-code-go-back" id="invalid-code-go-back">
-                                <button class="btn" data-bs-target="#get-started-modal" data-bs-toggle="modal">
-                                    <i class="bi bi-arrow-left fw-semibold"></i>
-                                    <span class="ms-3 fw-semibold">Go back</span>
-                                </button>  
-                            </div>   
+                            <div><p class="fw-medium">Click the link we sent to<span class="displayedEmail"></span> to complete your account set-up</p></div>
+                            <div class="continue-btn">
+                                <button type="button" class="rounded-pill btn-rounded" data-bs-dismiss="modal" aria-label="Close">OK</button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!---------------------MODAL 4 ENDS ---------------------------------------------------------->
+
+    <!---------------------MODAL 5 When the email is not new therefore deals with account sign in--------------------->
+    <div class="modal fade modal4" id="email_sent_modal2" tabindex="-1" role="dialog" aria-labelledby="email_sent_modal2" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container text-center modal-container">
+                        <div class="custom-container">
+                            <div><h1>Check your inbox.</h1></div>
+                            <div><p class="fw-medium">Click the link we sent to the email you provided to sign in</p></div>
+                            <div class="continue-btn">
+                                <button type="button" class="rounded-pill btn-rounded" data-bs-dismiss="modal" aria-label="Close">OK</button>
+                            </div>  
                         </div>
                     </div>
                 </div>

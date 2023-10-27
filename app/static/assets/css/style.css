@@ -12221,4 +12221,21 @@ a {
   }
 }
 
+.register-container {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+@media (max-width: 575.98px) {
+  .register-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .register-text {
+    font-size: 1rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

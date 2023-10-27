@@ -1,7 +1,7 @@
-// This is the modal for registration and login customisation
+// This is the modal the layout elements
 @use'../custom' as *;
 
-// This is modal 1 customisation
+// This is modal 1 customisation modal for getting started
 .modal-container {
     padding-top: 3.5rem;
 }
@@ -53,7 +53,7 @@
 }
 // end of modal 1 customisation
 
-// modal 2 customisation
+// modal 2 customisation the modal for entering email
 .custom-container {
     width: 40%;
     margin: 0 auto;
