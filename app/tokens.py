@@ -20,3 +20,16 @@ def generate_setup_token(email):
 
     token = jwt.encode(payload, current_app.config['SECRET_KEY'], algorithm='HS256')
     return token
+
+def generate_sign_in_token(email):
+    """
+    The token we will genrate here will be used to sign user in to application
+    """
+    payload = {
+        'email': email,
+        'expiration': datetime.utcnow() + timedelta(hours=1)
+    }
+    payload['expiration'] = payload['expiration'].isoformat()
+
+    token = jwt.encode(payload, current_app.config['SECRET_KEY'], algorithm='HS256')
+    return token

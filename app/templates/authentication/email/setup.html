@@ -1,1 +1,4 @@
-<h4>The token is {{ setup_token }}</h4>
+<h1>You’re almost there.</h1>
+<p>Click the link below to confirm your email and finish creating your Medium account.</p>
+<a href="{{ url_for('auth.register', setup_token=setup_token, _external=True) }}">click here</a>.</p>
+
