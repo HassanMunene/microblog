@@ -76,4 +76,4 @@ def request_setup_link():
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
-    return '<h1>We are almost there</h1>'
+    return render_template('home2.html')

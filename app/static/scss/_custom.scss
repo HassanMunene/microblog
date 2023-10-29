@@ -46,6 +46,15 @@ $modal-content-border-radius:       .2rem;
 $input-btn-focus-width:         0;
 $input-btn-focus-color-opacity: 0;
 $input-btn-focus-color:         $black;
+
+// customising the dropdown component
+$dropdown-min-width:                17rem;
+$dropdown-padding-y:                1.5rem;
+
+// BOX SHADOW
+$box-shadow:                  0 .5rem 1rem rgba($black, .15);
+
+
 // FIRST WE IMPORT THE MAIN BOOTSTRAP SCSS FILE WHICH HAS EVERYTHING
 @import"../node_modules/bootstrap/scss/bootstrap.scss";
 

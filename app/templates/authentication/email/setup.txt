@@ -1,0 +1,4 @@
+KcaVibes
+Your almost there.
+Click the link below to confirm your email and finish creating your KcaVibes Account.
+{{ url_for('auth.register', setup_token=setup_token, _external=True) }}

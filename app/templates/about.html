@@ -2,117 +2,117 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- favicon link -->
-        <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
-        <link rel="icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
 
-        <!---Link to bootstrap icons-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!---Link to bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        <!---google fonts link-------->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&family=Poppins:wght@100;300;600;800&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
-        
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../static/assets/css/style.css">
-        <link rel="stylesheet" href="../static/assets/glightbox/css/glightbox.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>About KcaVibes</title>
-    </head>
-    <body id="about-body">
-        {% block navbar%}
-        <!------------------------------NAVBAR SECTION ------------------------------------------->
-        <nav class="navbar navbar-expand-md navbar-light about-navbar border-bottom">
-            <div class="container-fluid">
-                <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
-                <div class="justify-content-end" id="navbarToggle">
-                    <ul class="navbar-nav">
-                        <li class="nav-item rounded-pill btn-rounded">
-                            <a href="#" id="getStartedLink" data-bs-toggle="modal" data-bs-target="#registration-modal">Sign In</a>
-                        </li>
-                        <li class="nav-item rounded-pill btn-rounded">
-                            <a href="#" id="getStartedLink" data-bs-toggle="modal" data-bs-target="#registration-modal">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!---------------------------END OF NAVBAR SECTION ----------------------------------------->
-        {% endblock %}
-
-        {% block content %}
-        <!---------------------------ABOUT US PARAGRAPH SECTION ------------------------------------->
-        <section id="home" class="about-intro-section border-bottom">
-            <div class="container-fluid">
-              <div class="row align-items-center justify-content-between">
-                <div class="col-md-6 intros">
-                    <h1 class="display-2">
-                        <span class="display-2-intro">We all have a story to tell.</span>
-                        <p class="display-2-description">
-                            KcaVibes is a dynamic web application created to strengthen the sense of community among students at KCA University. 
-                            This online platform facilitates students in connecting, sharing their academic experiences, and seeking assistance with assignments and coursework. 
-                            KcaVibes provides a virtual space for students to post questions, exchange knowledge, and engage in meaningful discussions, 
-                            fostering a supportive network within the university community. Whether it's sharing insights about campus life, discussing upcoming events, 
-                            or seeking help with assignments, KcaVibes is the central hub for students to enhance their academic journey and establish enduring connections with their peers. 
-                            it's more than a website; it's a digital space where students come together to learn, share, and thrive in their academic endeavors at KCA University.
-                        </p>
-                        <p class="display-2-description2">
-                            Our ultimate goal at KCAvibes is to create a thriving digital community within KCA University, where students can connect, collaborate, 
-                            and support one another in their academic and personal journeys
-                        </p>
-                    </h1>
-                </div>
-          
-                <div class="col-md-4 intros">
-                  <div class="video-box">
-                    <img src="#" alt="video illustration" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        <!---------------------------END OF ABOUT US SECTION ----------------------------------------->
-
-        <!---------------------------LINKS SECTION --------------------------------------------------->
-        <section id="links-section" class="links-section">
-            <div class="container-fluid">
-                <div class="row row1 align-items-center justify-content-between border-bottom">
-                    <div class="col-md-6 intros">
-                        <a href="{{ url_for('main.home') }}"><h1 class="display-2">Start reading</h1></a>
-                    </div>
-                    <div class="col-md-6 intros text-end">
-                        <div><i class="bi bi-arrow-right"></i></div>
-                    </div>
-                </div>
-                <div class="row row2 align-items-center justify-content-between">
-                    <div class="col-md-6 intros">
-                        <a href="{{ url_for('main.home') }}"><h1 class="display-2">Start posting</h1></a>
-                    </div>
-                    <div class="col-md-6 intros text-end">
-                        <div><i class="bi bi-arrow-right"></i></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!---------------------------END OF LINKS SECTION--------------------------------------------->
-
-        <!---------------------------FOOTER SECTION--------------------------------------------------->
-        <section class="footer">
-            <div class="container-fluid footer-section">
-                <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
-                <ul class="footer-nav">
-                    <li class="nav-item mediaQ"><a href="{{ url_for('main.about') }}" class="nav-link">About</a></li>
-                    <li class="nav-item mediaQ"><a href="#" class="nav-link">Terms</a></li>
-                    <li class="nav-item mediaQ"><a href="#" class="nav-link">Teams</a></li>
-                    <li class="nav-item mediaQ"><a href="#" class="nav-link">Help</a></li>
+    <!---google fonts link-------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&family=Poppins:wght@100;300;600;800&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <link rel="stylesheet" href="../static/assets/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About KcaVibes</title>
+</head>
+<body id="about-body">
+    {% block navbar%}
+    <!------------------------------NAVBAR SECTION ------------------------------------------->
+    <nav class="navbar navbar-expand-md navbar-light about-navbar border-bottom">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
+            <div class="justify-content-end" id="navbarToggle">
+                <ul class="navbar-nav">
+                    <li class="nav-item rounded-pill btn-rounded">
+                        <a href="#" id="getStartedLink" data-bs-toggle="modal" data-bs-target="#registration-modal">Sign In</a>
+                    </li>
+                    <li class="nav-item rounded-pill btn-rounded">
+                        <a href="#" id="getStartedLink" data-bs-toggle="modal" data-bs-target="#registration-modal">Sign Up</a>
+                    </li>
                 </ul>
             </div>
+        </div>
+    </nav>
+    <!---------------------------END OF NAVBAR SECTION ----------------------------------------->
+    {% endblock %}
+
+    {% block content %}
+    <!---------------------------ABOUT US PARAGRAPH SECTION ------------------------------------->
+    <section id="home" class="about-intro-section border-bottom">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-between">
+            <div class="col-md-6 intros">
+                <h1 class="display-2">
+                    <span class="display-2-intro">We all have a story to tell.</span>
+                    <p class="display-2-description">
+                        KcaVibes is a dynamic web application created to strengthen the sense of community among students at KCA University. 
+                        This online platform facilitates students in connecting, sharing their academic experiences, and seeking assistance with assignments and coursework. 
+                        KcaVibes provides a virtual space for students to post questions, exchange knowledge, and engage in meaningful discussions, 
+                        fostering a supportive network within the university community. Whether it's sharing insights about campus life, discussing upcoming events, 
+                        or seeking help with assignments, KcaVibes is the central hub for students to enhance their academic journey and establish enduring connections with their peers. 
+                        it's more than a website; it's a digital space where students come together to learn, share, and thrive in their academic endeavors at KCA University.
+                    </p>
+                    <p class="display-2-description2">
+                        Our ultimate goal at KCAvibes is to create a thriving digital community within KCA University, where students can connect, collaborate, 
+                        and support one another in their academic and personal journeys
+                    </p>
+                </h1>
+            </div>
+        
+            <div class="col-md-4 intros">
+                <div class="video-box">
+                <img src="#" alt="video illustration" class="img-fluid">
+                </div>
+            </div>
+            </div>
+        </div>
         </section>
-        <!---------------------------END OF FOOTER SECTION-------------------------------------------->
-        {% endblock %}
-    </body>
+    <!---------------------------END OF ABOUT US SECTION ----------------------------------------->
+
+    <!---------------------------LINKS SECTION --------------------------------------------------->
+    <section id="links-section" class="links-section">
+        <div class="container-fluid">
+            <div class="row row1 align-items-center justify-content-between border-bottom">
+                <div class="col-md-6 intros">
+                    <a href="{{ url_for('main.home') }}"><h1 class="display-2">Start reading</h1></a>
+                </div>
+                <div class="col-md-6 intros text-end">
+                    <div><i class="bi bi-arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="row row2 align-items-center justify-content-between">
+                <div class="col-md-6 intros">
+                    <a href="{{ url_for('main.home') }}"><h1 class="display-2">Start posting</h1></a>
+                </div>
+                <div class="col-md-6 intros text-end">
+                    <div><i class="bi bi-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------END OF LINKS SECTION--------------------------------------------->
+
+    <!---------------------------FOOTER SECTION--------------------------------------------------->
+    <section class="footer">
+        <div class="container-fluid footer-section">
+            <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
+            <ul class="footer-nav">
+                <li class="nav-item mediaQ"><a href="{{ url_for('main.about') }}" class="nav-link">About</a></li>
+                <li class="nav-item mediaQ"><a href="#" class="nav-link">Terms</a></li>
+                <li class="nav-item mediaQ"><a href="#" class="nav-link">Teams</a></li>
+                <li class="nav-item mediaQ"><a href="#" class="nav-link">Help</a></li>
+            </ul>
+        </div>
+    </section>
+    <!---------------------------END OF FOOTER SECTION-------------------------------------------->
+    {% endblock %}
+</body>
 </html>
