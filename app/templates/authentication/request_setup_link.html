@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md navbar-light bg-emphasis">
+    <div class="container d-flex justify-content-center">
+        <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="card-container">
+    <div class="setup_link_card">
+        <div class="card-title">{{ message }}</div>
+        <div class="card-subtitle">Enter the email address associated with your account, we will send a new link to your inbox</div>
+        <form method="post" action="">
+            <div class="mb-3 form-input">
+                <label for="exampleFormControlInput1" class="form-label">Your Email</label>
+                <input name="email" type="email" class="form-control custom-input" id="emailInput" placeholder="">
+                <span class="error-message-email" id="error-message-email"></span>
+            </div>
+            <div class="continue-btn d-flex justify-content-center">
+                <button type="submit" class="rounded-pill btn-rounded btn-primary">Continue</button>
+            </div> 
+        </form>
+        <div class="mt-4">
+            <button class="btn" data-bs-target="#get-started-modal" data-bs-toggle="modal">
+                <i class="bi bi-arrow-left fw-semibold"></i>
+                <span class="ms-3 fw-semibold">All sign up options</span>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

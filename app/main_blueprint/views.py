@@ -1,9 +1,15 @@
 from . import main
 from flask import render_template, redirect, url_for, flash
+from flask_login import current_user, login_required
 
 @main.route('/')
-@main.route('/home')
 def home():
+    """
+    This is the first route that the users see when they open the application
+    """
+    if current_user.is_authenticated:
+        print (current_user.username)
+        return render_template('authenticated_home.html')
     return render_template('home.html')
 
 @main.route('/about')

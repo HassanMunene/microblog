@@ -4,11 +4,15 @@ from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from config import config
+from authlib.integrations.flask_client import OAuth
+
 
 mail = Mail()
 moment = Moment()
 db = SQLAlchemy()
 login_manager = LoginManager()
+#login_manager.login_view = 'auth.login'
+oauth = OAuth()
 
 def create_app(config_name):
     app = Flask(__name__)
@@ -18,6 +22,7 @@ def create_app(config_name):
     moment.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
+    oauth.init_app(app)
 
     # register blueprints
     from .main_blueprint import main as main_blueprint

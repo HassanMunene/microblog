@@ -1,0 +1,30 @@
+// This sass sheet styles the request_setup_link that you get when incase you dont
+// have valid sign in token
+@use '../custom' as *;  
+.card-container {
+    width: 70%;
+    margin: 0 auto;
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+}
+.setup_link_card {
+    padding-top: 3rem;
+    width: 50%;
+    margin: 0 auto;
+    height: 80vh;
+    text-align: center;
+
+    @include media-breakpoint-down(sm) {
+        width: 80%;
+    }
+}
+.card-title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.card-subtitle {
+    padding-top: 2rem;
+    font-size: 1rem;
+}

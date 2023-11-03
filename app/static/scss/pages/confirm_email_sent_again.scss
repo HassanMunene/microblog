@@ -1,0 +1,12 @@
+@use '../custom' as *;
+
+.confirm-email-sent-card {
+    margin-top: 1rem;
+    background-color: $primary;
+    border-radius: 2px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
+
+    @include media-breakpoint-down(sm) {
+        box-shadow: none;
+    }
+}

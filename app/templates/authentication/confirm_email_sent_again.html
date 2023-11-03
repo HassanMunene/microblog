@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md navbar-light bg-emphasis">
+    <div class="container d-flex justify-content-center">
+        <a href="/" class="navbar-brand fw-bold">KcaVibes</a>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="card-container confirm-email-sent-card">
+    <div class="setup_link_card">
+        <div class="card-title">Check your inbox</div>
+        <div class="card-subtitle">We just emailed a confirmation link to <span class="fw-semibold">{{ email }}</span>.</div>
+        <div class="card-subtitle pt-1">Click the link in the email and you will be signed in.</div>
+        <div class="continue-btn d-flex justify-content-center pt-4">
+            <a href="/"><button type="submit" class="rounded-pill btn-rounded btn-primary">ok</button></a>
+        </div> 
+        <div class="mt-4">
+            <img src="../../static/assets/images/send_email.png" alt="play button" class="img-fluid">
+        </div>
+    </div>
+</div>
+{% endblock %}

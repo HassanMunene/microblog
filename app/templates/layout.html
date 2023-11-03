@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Favicon link --->
 <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='assets/favicon/kcalogo-1.png') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='assets/favicon/favicon.ico') }}" type="image/x-icon">
 
 <!---Link to bootstrap icons-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="../static/assets/glightbox/css/glightbox.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-{% block title %}<title>Microblog</title>{% endblock %}
+{% block title %}<title>KcaVibes</title>{% endblock %}
 </head>
 
 <body>
@@ -51,7 +51,7 @@
             <div class="container text-center modal-container justify-content-center">
                 <div><h1>Join KcaVibes.</h1></div>
                 <div class="modal-btn">
-                    <button type="button" class="btn btn-emphasis border border-primary">
+                    <button id="google_signup" type="button" class="btn btn-emphasis border border-primary">
                         <i class="bi bi-google icon"></i>
                         <span>Sign up with Google</span>
                     </button>
@@ -242,6 +242,6 @@ const lightbox = GLightbox({
 const tooltipTriggerList = document.querySelectorAll('.tt')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
-<script src="../static/assets/js/style.js"></script>
+<script src="../static/assets/js/pages/modals.js"></script>
 </body>
 </html>

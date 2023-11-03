@@ -24,17 +24,20 @@ body {
     }
 }
 
-// --------------------DROP DOWN COMPONENT IN relation with the profile--------------------------------
+/*==================================================================
+* DROP DOWN COMPONENT IN relation with the profile
+*===================================================================*/
+
 .btn:focus {
     outline: none;
     border: 0;
 }
-// This is about the chevron for dropdown
+// This is about the chevron for dropdown we are removing it
 .dropstart .dropdown-toggle::before {
     display: none;
 }
 .dropstart .dropdown-toggle:hover {
-    color: $primary;
+    color: $black;
 }
 
 .dropstart .dropdown-menu {
@@ -50,14 +53,19 @@ body {
     
     li {
         margin-bottom: 1rem;
-
-        i {
-            font-size: 1.5rem;
-            color: $gray-600;
-            margin-right: 1rem;
-        }
         a {
+            i {
+                font-size: 1.5rem;
+                color: $gray-600;
+                margin-right: 1rem;
+            }
             color: $gray-800;
         }
     }
+}
+.dropstart .dropdown-menu ul li a:hover {
+    color: $black;
+}
+.dropdown-divider {
+    border-color: $primary;
 }

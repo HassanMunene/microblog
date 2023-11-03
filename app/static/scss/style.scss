@@ -19,4 +19,6 @@
 @use'pages/about';
 @use'pages/terms_of_service';
 @use'pages/register';
-@use'pages/home2.scss';
+@use'pages/authenticated_home';
+@use'pages/request_setup_link.scss';
+@use'pages/confirm_email_sent_again.scss';

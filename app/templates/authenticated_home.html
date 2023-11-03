@@ -1,0 +1,287 @@
+{% extends "layout.html" %}
+
+{% block title %}<title>KcaVibes - Where home is</title>{% endblock %}
+
+ <body>
+  {% block navbar %}
+  <nav class="navbar navbar-expand-md bg-emphasis border-bottom">
+    <div class="container-fluid">
+      <div class="brand-container">
+        <a class="navbar-brand fs-3 fw-bold" href="/">Kca<span>Vibes</span></a>
+        <div class="search-container">
+          <i class="bi bi-search search-icon"></i>
+          <form role="search" class="search-form">
+            <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+      </div>
+      <div class="list-container">
+        <button class="btn"><i class="bi bi-pencil-square fs-4"></i><span>Write</span></button>
+        <button class="btn"><i class="bi bi-bell fs-4"></i></button>
+        <div class="dropstart">
+          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" style="position: relative;"><i class="bi bi-person-fill fs-3"></i></button>
+          <div class="dropdown-menu shadow">
+            <ul>
+              <li><a href="#"><i class="bi bi-person"></i>Profile</a></li>
+              <li><a href=""><i class="bi bi-file-earmark-post"></i>Your stories</a></li>
+              <li><a href=""><i class="bi bi-gear"></i>Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#">School portal</a></li>
+              <li><a href="">Library Account</a></li>
+              <li><a href="">Campus</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="#">Community Membership</a></li>
+              <li><a href="#">Campus Clubs</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
+            </ul>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </nav>
+  {% endblock %}
+
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="container text-center">
+      <div class="row">
+        <div class="col-8 columnA">
+          <div class="scrollable-tabs-container border-bottom border-top">
+            <div class="left-arrow" id="left-arrow"><i class="bi bi-chevron-left" id="left-arrow-chevron"></i></div>
+            <ul id="section-list">
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">For you</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Following</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Lost and Found</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Market place</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Trending Issues</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Exam Bank</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Timetables</a></li>
+            </ul>
+            <div class="right-arrow active" id="right-arrow"><i class="bi bi-chevron-right" id="right-arrow-chevron"></i></div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">The secret Developer.</div>
+              <div>Jan 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">The 7 signs of a programmer</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Development</div>
+                  <p>4 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">Adonijah Kiplimo.</div>
+              <div>April 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">How to crack ALX</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Engineer</div>
+                  <p>10 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">Adonijah Kiplimo.</div>
+              <div>April 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">How to crack ALX</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Engineer</div>
+                  <p>10 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">Adonijah Kiplimo.</div>
+              <div>April 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">How to crack ALX</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Engineer</div>
+                  <p>10 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">Adonijah Kiplimo.</div>
+              <div>April 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">How to crack ALX</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Engineer</div>
+                  <p>10 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">Adonijah Kiplimo.</div>
+              <div>April 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">How to crack ALX</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Engineer</div>
+                  <p>10 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">Adonijah Kiplimo.</div>
+              <div>April 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">How to crack ALX</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Engineer</div>
+                  <p>10 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-start">
+            <div class="card-header">
+              <div><i class="bi bi-person"></i></div>
+              <div class="fw-semibold">Adonijah Kiplimo.</div>
+              <div>April 12</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">How to crack ALX</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
+              <div class="footer">
+                <div class="footer-start">
+                  <div>Software Engineer</div>
+                  <p>10 min read</p>
+                </div>
+                <div class="footer-end">
+                  <i class="bi bi-bookmark"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div>Upcoming events</div>
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card" style="width: 18rem;">
+                  <img src="../static/assets/images/Annual-University-Council-Retreat18.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Annual university council retreat coming up</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 18rem;">
+                  <img src="../static/assets/images/Annual-University-Council-Retreat18.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Annual university council retreat coming up</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card" style="width: 18rem;">
+                  <img src="../static/assets/images/Annual-University-Council-Retreat18.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Annual university council retreat coming up</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="../static/assets/js/pages/home2.js"></script>
+    <script src="../static/assets/js/bootstrap.bundle.js"></script>
+  </body>
+</html>

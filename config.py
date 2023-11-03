@@ -2,7 +2,9 @@ import os
 import datetime
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'my boy benzi'
+    GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_SECRET')
+    OAUTHLIB_INSECURE_TRANSPORT=os.environ.get('OAUTHLIB_INSECURE_TRANSPORT')
+    SECRET_KEY = os.environ.get('SECRET_KEY') # this should match with the secret key from google client.json
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
     MAIL_PORT = int(os.environ.get('MAIL_PORT', '587'))
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', 'on', '1']
