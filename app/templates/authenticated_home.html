@@ -19,7 +19,9 @@
         <button class="btn"><i class="bi bi-pencil-square fs-4"></i><span>Write</span></button>
         <button class="btn"><i class="bi bi-bell fs-4"></i></button>
         <div class="dropstart">
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" style="position: relative;"><i class="bi bi-person-fill fs-3"></i></button>
+          <div class="profile_picture_div dropdown-toggle" data-bs-toggle="dropdown" style="position: relative;">
+            <img  class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+          </div>
           <div class="dropdown-menu shadow">
             <ul>
               <li><a href="#"><i class="bi bi-person"></i>Profile</a></li>

@@ -11916,17 +11916,31 @@ body {
 /*==================================================================
 * DROP DOWN COMPONENT IN relation with the profile
 *===================================================================*/
-.btn:focus {
-  outline: none;
-  border: 0;
+.dropstart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropstart .dropdown-toggle::before {
   display: none;
 }
 
-.dropstart .dropdown-toggle:hover {
-  color: #000;
+.dropstart .profile_picture_div {
+  width: 35%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media (max-width: 575.98px) {
+  .dropstart .profile_picture_div {
+    width: 50%;
+  }
+}
+
+.dropstart .dropdown-toggle .profile_picture_img {
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .dropstart .dropdown-menu {
@@ -12287,24 +12301,44 @@ a {
   }
 }
 
+/*==============================================================================
+* The navbar section styling for the authenticated home page after user logs in
+===============================================================================*/
+@media (max-width: 575.98px) {
+  .container-fluid {
+    flex-wrap: nowrap !important;
+  }
+  .container-fluid .list-container button {
+    margin-left: 0;
+  }
+}
+
 .brand-container {
   display: flex;
   align-items: center;
 }
 
-.navbar-brand {
+.brand-container .navbar-brand {
   padding: 0;
 }
-.navbar-brand span {
+.brand-container .navbar-brand span {
   color: #ffc107;
 }
 
+/*====================================================================
+* Styling the search button
+====================================================================*/
 .search-container {
   width: 50%;
   display: flex;
   align-items: center;
   background-color: #f8f9fa;
   border-radius: 2rem;
+}
+@media (max-width: 575.98px) {
+  .search-container {
+    display: none;
+  }
 }
 
 .search-form {
@@ -12336,6 +12370,9 @@ a {
 .list-container .btn {
   margin-left: 1.5rem;
   color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .columnA {

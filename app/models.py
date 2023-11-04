@@ -16,4 +16,5 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(64), unique=True, index=True, nullable=False)
     username = db.Column(db.String(64), nullable=True)
+    profile_picture_url = db.Column(db.String(500), index=True)
     is_confirmed = db.Column(db.Boolean, default=False)

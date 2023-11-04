@@ -9,6 +9,7 @@ def home():
     """
     if current_user.is_authenticated:
         print (current_user.username)
+        print (current_user.profile_picture_url)
         return render_template('authenticated_home.html')
     return render_template('home.html')
 

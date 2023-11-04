@@ -1,24 +1,42 @@
 @use'../custom' as *;
 
-// The navbar section styling for the home page after user logs in
+/*==============================================================================
+* The navbar section styling for the authenticated home page after user logs in
+===============================================================================*/
+
+.container-fluid {
+    @include media-breakpoint-down(sm) {
+        flex-wrap: nowrap !important;
+        .list-container button {
+            margin-left: 0;
+        }
+    }
+}
 // Styling the navabar containers
 .brand-container {
     display: flex;
     align-items: center;
 }
-.navbar-brand {
+.brand-container .navbar-brand {
     padding: 0;
     span {
         color: $primary;
     }
 }
-// Styling the search button
+/*====================================================================
+* Styling the search button
+====================================================================*/
+
 .search-container {
     width: 50%;
     display: flex;
     align-items: center;
     background-color: $gray-100;
     border-radius: 2rem;
+    
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
 }
 
 .search-form {
@@ -40,12 +58,16 @@
         background-color: $gray-100;
     }
 }
+
 .list-container {
     display: flex;
 }
 .list-container .btn {
     margin-left: 1.5rem;
     color: $gray-600;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
 }
 
 // ----------------------columnA  SECTION STYLING-----------------------------------//

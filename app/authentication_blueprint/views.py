@@ -60,7 +60,7 @@ def callback_from_oauth():
     if user:
         login_user(user, remember=True)
     else:
-        user = User(email=email, username=name, is_confirmed=1)
+        user = User(email=email, username=name, profile_picture_url=picture, is_confirmed=1)
         db.session.add(user)
         db.session.commit()
         login_user(user, remember=True)

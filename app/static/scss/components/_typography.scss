@@ -28,16 +28,27 @@ body {
 * DROP DOWN COMPONENT IN relation with the profile
 *===================================================================*/
 
-.btn:focus {
-    outline: none;
-    border: 0;
+.dropstart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 // This is about the chevron for dropdown we are removing it
 .dropstart .dropdown-toggle::before {
     display: none;
 }
-.dropstart .dropdown-toggle:hover {
-    color: $black;
+.dropstart .profile_picture_div {
+    width: 35%;
+    border-radius: 50%;
+    cursor: pointer;
+    @include media-breakpoint-down(sm) {
+        width: 50%;
+    }
+}
+.dropstart .dropdown-toggle .profile_picture_img {
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .dropstart .dropdown-menu {
