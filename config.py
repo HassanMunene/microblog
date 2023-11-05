@@ -14,6 +14,7 @@ class Config:
     MAIL_SENDER = 'KcaVibes Admin <awanzihassan@gmial.com>'
     KcaVibes_ADMIN = os.environ.get('KcaVibes_ADMIN', 'sultanhamud019@gmail.com')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    START_NGROK = os.environ.get('START_NGROK')
 
     @staticmethod
     def init_app(app):

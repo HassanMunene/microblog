@@ -50,4 +50,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     google_signup.addEventListener('click', function () {window.location.href='/auth/login'});
+
 })
+
+/*==========================================================================================
+* In this next function target a page /auth/signin. This page will be normally requested
+* when the user of the application tries to access a protected(@login_required) route
+* so they will be redirected to this page instead. In this page a sign modal will be shown 
+==========================================================================================*/
+document.addEventListener('DOMContentLoaded', function () {
+    let signInModal = new bootstrap.Modal(document.getElementById('sign-in-modal'));
+
+    // check if the current page is the home page
+    if (window.location.pathname === '/auth/signin') {
+        if (signInModal) {
+            setTimeout(() => { signInModal.show();}, 50);
+        }
+        else {
+            console.log('Sign in modal not available');
+        }
+    }
+});

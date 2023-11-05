@@ -3,6 +3,7 @@ import requests
 import pathlib
 from . import auth
 from flask import render_template, redirect, flash, url_for, request, jsonify, current_app, abort, session
+from flask import make_response
 from .forms import RegistrationForm, LoginForm
 from ..models import User
 from .. import db, oauth
@@ -126,11 +127,15 @@ def setup_account():
             if form.validate_on_submit():
                 user.username = form.username.data
                 user.is_confirmed = True
+                user.to_use_gravatar = True
                 db.session.add(user)
                 db.session.commit()
                 #we the log in the user to the application
                 login_user(user, True)
-                return redirect(url_for('main.home'))
+                next = request.args.get('next')
+                if next is None or not next.startswith('/'):
+                    next = url_for('main.home')
+                return redirect(next)
             return render_template('authentication/register.html', form=form, email=email)
 
         else:
@@ -214,3 +219,20 @@ def logout():
         logout_user()
 
     return redirect(url_for('main.home'))
+
+#===================================================================================================
+# THE SIGIN ROUTE IS HERE.
+#===================================================================================================
+@auth.route('/signin')
+def signin():
+    """
+    This is the route that will handle a situation where the user tries to acess a restricted site
+    """
+    response = make_response(render_template('home.html'))
+    response.headers['Js-Show-Sign-In-Modal'] = 'show'
+    return response
+
+@auth.route('/testing')
+@login_required
+def testing():
+    return 'mean you have already singed in'

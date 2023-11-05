@@ -5,18 +5,20 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from config import config
 from authlib.integrations.flask_client import OAuth
+from datetime import timedelta
 
 
 mail = Mail()
 moment = Moment()
 db = SQLAlchemy()
 login_manager = LoginManager()
-#login_manager.login_view = 'auth.login'
+login_manager.login_view = 'auth.signin'
 oauth = OAuth()
 
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
+    app.config['REMEMBER_COOKIE_DURATION'] = timedelta(days=30)
     config[config_name].init_app(app)
     mail.init_app(app)
     moment.init_app(app)
