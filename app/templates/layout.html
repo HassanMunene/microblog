@@ -40,7 +40,9 @@
 </nav>
 {% endblock %}
 
-<!---------------------MODAL 1 STARTS THE GET STARTED------------------------------------------>
+{% block content %}{% endblock %}
+
+<!---------------------MODAL 1 THE GET STARTED(SIGN UP) MODAL------------------------------------------>
 <div class="modal fade" id="get-started-modal" tabindex="-1" role="dialog" aria-labelledby="get-started-modal" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
     <div class="modal-content">
@@ -77,9 +79,49 @@
     </div>
 </div>
 </div>
-<!---------------------MODAL 1 ENDS ------------------------------------------->
+<!---------------------MODAL 1 ENDS ------------------------------------------------------------------->
 
-<!---------------------MODAL 2 STARTS THE SEND EMAIL MODAL------------------------------------------>
+<!---------------------MODAL 2 THE SIGN IN MODAL------------------------------------------------------->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="registration-modal-content">
+                <div class="container text-center modal-container justify-content-center">
+                    <div><h1>Welcome back.</h1></div>
+                    <div class="modal-btn">
+                        <button type="button" class="btn btn-emphasis border border-primary">
+                            <i class="bi bi-google icon"></i>
+                            <span>Sign in with Google</span>
+                        </button>
+                    </div>
+                    <div class="modal-btn">
+                        <button type="button" class="btn btn-emphasis border border-primary">
+                            <i class="bi bi-facebook icon"></i>
+                            <span>Sign in with Facebook</span>
+                        </button>
+                    </div>
+                    <div class="modal-btn">
+                        <button type="button" class="btn btn-emphasis border border-primary" data-bs-target="#signIn_enter_email_modal" data-bs-toggle="modal">
+                            <i class="bi bi-envelope icon"></i>
+                            <span>Sign in with Email</span>
+                        </button>
+                    </div>
+                    <p class="lead already-p">No account? <a data-bs-toggle="modal" href="#get-started-modal"> Create one</a></p>
+                    <p class="lead text-muted fs-6">Forgot email or trouble signing in?<a href="#"> Get help.</a></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------MODAL 2 ENDS ------------------------------------------------------------------->
+
+<!---------------------MODAL 3 THE SEND EMAIL MODAL WHEN NO ACCOUNT PREVIOUSLY------------------------->
 <div class="modal fade" id="enter_email_modal" tabindex="-1" role="dialog" aria-labelledby="enter_email_modal" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
     <div class="modal-content">
@@ -116,49 +158,48 @@
     </div>
 </div>
 </div>
-<!---------------------MODAL 2 ENDS ---------------------------------------------------------->
+<!---------------------MODAL 3 ENDS ------------------------------------------------------------------->
 
-<!---------------------MODAL 3 STARTS sign in modal------------------------------------------->
-<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
-<div class="modal-content">
-<div class="modal-header">
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-</div>
-<div class="modal-body" id="registration-modal-content">
-    <div class="container text-center modal-container justify-content-center">
-        <div><h1>Welcome back.</h1></div>
-        <div class="modal-btn">
-            <button type="button" class="btn btn-emphasis border border-primary">
-                <i class="bi bi-google icon"></i>
-                <span>Sign in with Google</span>
-            </button>
+<!---------------------MODAL 4 THE SEND EMAIL MODAL WHEN YOU ALREADY HAVE AN ACCOUNT------------------->
+<div class="modal fade" id="signIn_enter_email_modal" tabindex="-1" role="dialog" aria-labelledby="enter_email_modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body" id="registration-modal-content">
+        <div class="container text-center modal-container">
+            <div class="custom-container">
+                <div><h1>Sign in with email.</h1></div>
+                <div><p class="fw-medium">Enter the email address associated with your account, and we will send a link to your inbox.</p></div>
+                <form>
+                    <div class="mb-3 form-input">
+                        <label for="exampleFormControlInput1" class="form-label">Your Email</label>
+                        <input type="email" class="form-control custom-input" id="signInEmailInput" placeholder="">
+                        <span class="error-message-email" id="signin_error-message-email"></span>
+                    </div>
+                    <div class="continue-btn">
+                        <button type="submit" class="rounded-pill btn-rounded">Sign In</button>
+                    </div> 
+                </form>
+                <div class="mt-3">
+                    <button class="btn" data-bs-target="#sign-in-modal" data-bs-toggle="modal">
+                        <i class="bi bi-arrow-left fw-semibold"></i>
+                        <span class="ms-3 fw-semibold">Go back</span>
+                    </button>  
+                </div>   
+            </div>          
         </div>
-        <div class="modal-btn">
-            <button type="button" class="btn btn-emphasis border border-primary">
-                <i class="bi bi-facebook icon"></i>
-                <span>Sign in with Facebook</span>
-            </button>
-        </div>
-        <div class="modal-btn">
-            <button type="button" class="btn btn-emphasis border border-primary" data-bs-target="#enter_email_modal" data-bs-toggle="modal">
-                <i class="bi bi-envelope icon"></i>
-                <span>Sign in with Email</span>
-            </button>
-        </div>
-        <p class="lead already-p">No account? <a data-bs-toggle="modal" href="#get-started-modal"> Create one</a></p>
-        <p class="lead text-muted fs-6">Forgot email or trouble signing in?<a href="#"> Get help.</a></p>
+    </div>
+    <div class="modal-footer">
+        <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
+    </div>        
     </div>
 </div>
-<div class="modal-footer">
-    <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
-</div>        
 </div>
-</div>
-</div>
-<!---------------------MODAL 3 ENDS ---------------------------------------------------------->
+<!---------------------MODAL 4 ENDS ------------------------------------------------------------------->
 
-<!---------------------MODAL 4 When the email is new and then deals with account setup--------------------->
+<!---------------------MODAL 5 INFORM EMAIL ALREADY SENT MODAL FOR NEW ACCOUNTS------------------------>
 <div class="modal fade modal4" id="email_sent_modal" tabindex="-1" role="dialog" aria-labelledby="email_sent_modal" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
 <div class="modal-content">
@@ -179,9 +220,9 @@
 </div>
 </div>
 </div>   
-<!---------------------MODAL 4 ENDS ---------------------------------------------------------->
+<!---------------------MODAL 5 ENDS ------------------------------------------------------------------->
 
-<!---------------------MODAL 5 When the email is not new therefore deals with account sign in--------------------->
+<!---------------------MODAL 6 INFORM EMAIL SENT FOR ALREADY REGISTERED ACCOUNTS---------->
 <div class="modal fade modal4" id="email_sent_modal2" tabindex="-1" role="dialog" aria-labelledby="email_sent_modal2" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
 <div class="modal-content">
@@ -202,7 +243,7 @@
 </div>
 </div>
 </div>   
-<!---------------------MODAL 4 ENDS ---------------------------------------------------------->
+<!---------------------MODAL 6 ENDS ------------------------------------------------------------------->
 
 <!---------------------THIS IS THE NOT LOGGED IN OFFCANVAS SECTION---------------------------->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="not-logged-in-profile-offcanvas" aria-labelledby="not-logged-in-profile-offcanvas">
@@ -222,9 +263,6 @@
 </div>
 </div>
 <!---------------------THE END OF NOT LOGGED IN OFFCANVAS SECTION----------------------------->
-
-{% block content %}{% endblock %}
-
 
 <script src="../static/assets/js/bootstrap.bundle.js"></script>
 <script src="../static/assets/glightbox/js/glightbox.min.js"></script>

@@ -2,6 +2,8 @@
  * The following code below will handle sending asynchronous request to the server
  * from the modal after the user has entered their email for processing
  */
+let emailSentModalC;
+
 document.addEventListener('DOMContentLoaded', function () {
     let email; //declare email in the outer scope
     const enterEmailModal = document.getElementById('enter_email_modal');
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const emailSentModal = document.getElementById('email_sent_modal');
     const emailSentModalB = new bootstrap.Modal(document.getElementById('email_sent_modal')); // for signup
-    const emailSentModalC = new bootstrap.Modal(document.getElementById('email_sent_modal2')); // for signin
+    emailSentModalC = new bootstrap.Modal(document.getElementById('email_sent_modal2')); // for signin
 
     errorMessageEmail = document.getElementById('error-message-email'); //handle error with email input
     // next we get the button for signup with google so that when we clicks it it initiates the 0Auth 2.0 process
@@ -70,4 +72,48 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Sign in modal not available');
         }
     }
+});
+
+
+/*=================================================================================================
+* This section will handle the sign in modal
+==================================================================================================*/
+document.addEventListener('DOMContentLoaded', function () {
+    const signInEnterEmailModal = document.getElementById('signIn_enter_email_modal');
+    const signInEnterEmailModalB = new bootstrap.Modal(document.getElementById('signIn_enter_email_modal'));
+    const errorMessageEmail = document.getElementById('signin_error-message-email'); //handle error with email input
+    const getStarted = new bootstrap.Modal(document.getElementById('get-started-modal'));
+
+    signInEnterEmailModal.addEventListener('submit', async function (event){
+        event.preventDefault();
+        const emailInput = document.getElementById('signInEmailInput');
+        email = emailInput.value;
+        console.log(email);
+        emailInput.value = ''; //clear the field used to enter the email
+
+        if (email) {
+            const response = await fetch('/auth/receive_email_from_modal', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'email='+email
+            });
+            if (response.ok) {
+                const responseData = await response.json();
+                console.log(responseData);
+
+                if (responseData.email_known) {
+                    setTimeout(() => { signInEnterEmailModalB.hide();}, 50);
+                    emailSentModalC.show();
+                } else {
+                    setTimeout(() => {signInEnterEmailModalB.hide();}, 50);
+                    getStarted.show();
+                }
+            }
+        } else {
+            errorMessageEmail.textContent = 'Error. Please enter the Email.';
+            errorMessageEmail.classList.add('active');
+        }
+    })
 });

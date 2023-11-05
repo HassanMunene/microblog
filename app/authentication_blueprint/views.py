@@ -83,6 +83,7 @@ def receive_email_from_modal():
     will know if the user is indeed in the application or not
     """
     email = request.form.get('email')
+    print(request.form)
     user = User.query.filter_by(email=email).first()
     if user:
         # means the user already exists in the database and so send an email for sign in instead
@@ -96,7 +97,7 @@ def receive_email_from_modal():
         db.session.commit()
         setup_token = generate_setup_token(email)
         send_email(email, 'Finishing creating your account on KcaVibes', 'authentication/email/setup_account', setup_token=setup_token)
-        return jsonify({'email_known': False, 'token': setup_token}) # to tell js that user did not exist previously
+        return jsonify({'email_known': False}) # to tell js that user did not exist previously
 
 
 #============================================================================================
