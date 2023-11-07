@@ -28,7 +28,7 @@
           </div>
           <div class="dropdown-menu shadow">
             <ul>
-              <li><a href="#"><i class="bi bi-person-fill"></i>profile</a></li>
+              <li><a href="{{ url_for('main.user', username=current_user.username) }}"><i class="bi bi-person-fill"></i>profile</a></li>
               <li><a href=""><i class="bi bi-file-earmark-post"></i>Your stories</a></li>
               <li><a href=""><i class="bi bi-gear"></i>Settings</a></li>
               <li><hr class="dropdown-divider"></li>

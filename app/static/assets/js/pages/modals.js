@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     emailSentModalC = new bootstrap.Modal(document.getElementById('email_sent_modal2')); // for signin
 
     errorMessageEmail = document.getElementById('error-message-email'); //handle error with email input
-    // next we get the button for signup with google so that when we clicks it it initiates the 0Auth 2.0 process
-    const google_signup = document.getElementById('google_signup');
 
     enterEmailModal.addEventListener('submit', function (event){
         event.preventDefault();
@@ -50,10 +48,23 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessageEmail.classList.add('active');
         }
     });
+})
+
+
+/*=========================================================================================
+* Handle situations where user wants to signup or signin with google.
+* so event listeners are added to the buttons when user clicks they are redirected to login
+* page in the backed that sends the request to google services
+*=========================================================================================*/
+
+document.addEventListener('DOMContentLoaded', function () {
+    const google_signup = document.getElementById('google_signup');
+    const google_signin = document.getElementById('google_signin');
+    //console.log(google_signin);
 
     google_signup.addEventListener('click', function () {window.location.href='/auth/login'});
-
-})
+    google_signin.addEventListener('click', function () {window.location.href='/auth/login'});
+});
 
 /*==========================================================================================
 * In this next function target a page /auth/signin. This page will be normally requested

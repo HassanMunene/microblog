@@ -13,6 +13,9 @@ moment = Moment()
 db = SQLAlchemy()
 login_manager = LoginManager()
 login_manager.login_view = 'auth.signin'
+#telling flask to use the custom anonymous user weve defined in User model
+from .models import AnonymousUser
+login_manager.anonymous_user = AnonymousUser
 oauth = OAuth()
 
 def create_app(config_name):

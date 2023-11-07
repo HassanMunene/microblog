@@ -61,7 +61,7 @@ def callback_from_oauth():
     if user:
         login_user(user, remember=True)
     else:
-        user = User(email=email, username=name, profile_picture_url=picture, is_confirmed=1)
+        user = User(email=email, fullname=name, profile_picture_url=picture, is_confirmed=1)
         db.session.add(user)
         db.session.commit()
         login_user(user, remember=True)
@@ -92,9 +92,9 @@ def receive_email_from_modal():
         send_email(email, 'Sign in to KcaVibes', 'authentication/email/sign_in', sign_in_token=sign_in_token)
         return jsonify({'email_known': True}) # to tell js that user already exist for some response there
     else:
-        user1 = User(email=email)
-        db.session.add(user1)
-        db.session.commit()
+        #user1 = User(email=email)
+        #db.session.add(user1)
+        #db.session.commit()
         setup_token = generate_setup_token(email)
         send_email(email, 'Finishing creating your account on KcaVibes', 'authentication/email/setup_account', setup_token=setup_token)
         return jsonify({'email_known': False}) # to tell js that user did not exist previously
@@ -116,33 +116,22 @@ def setup_account():
     if setup_token:
         # means the setup_token query parameter is available
         payload = jwt.decode(setup_token, current_app.config['SECRET_KEY'], algorithms=['HS256'])
-
         # check if token has expired
         if datetime.utcnow() > datetime.fromisoformat(payload['expiration']):
             return redirect(url_for('auth.request_setup_link', message='token_expired'))
-
         email = payload['email']
-        user = User.query.filter_by(email=email).first()
-        if user:
-            form.email.data = email
-            if form.validate_on_submit():
-                user.username = form.username.data
-                user.is_confirmed = True
-                user.to_use_gravatar = True
-                db.session.add(user)
-                db.session.commit()
-                #we the log in the user to the application
-                login_user(user, True)
-                next = request.args.get('next')
-                if next is None or not next.startswith('/'):
-                    next = url_for('main.home')
+        form.email.data = email
+        if form.validate_on_submit():
+            user = User(email=email, fullname=form.username.data, is_confirmed=True, to_use_gravatar=True)
+            db.session.add(user)
+            db.session.commit()
+            #we the log in the user to the application
+            login_user(user, True)
+            next = request.args.get('next')
+            if next is None or not next.startswith('/'):
+                next = url_for('main.home')
                 return redirect(next)
-            return render_template('authentication/register.html', form=form, email=email)
-
-        else:
-            # user not found
-            return redirect(url_for('auth.request_setup_link', message='user_not_found'))
-
+        return render_template('authentication/register.html', form=form, email=email)
     # no setup_token in query parameter
     return redirect(url_for('auth.request_setup_link', message='no_token'))
 

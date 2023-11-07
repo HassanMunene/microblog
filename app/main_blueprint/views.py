@@ -28,3 +28,12 @@ def page_not_found(e):
 @main.app_errorhandler(500)
 def internal_server_error(e):
     return render_template('500.html'), 500
+
+@main.app_errorhandler(403)
+def forbidden(e):
+    return 'dude we will work on this page to look good but still you are forbidden'
+
+#user profile route
+@main.route('/user/<username>')
+def user(username):
+    return "yoo it me {} here ".format(current_user.username)
