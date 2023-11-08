@@ -1,0 +1,73 @@
+/*=======================================================================
+* THIS SASS FILE WILL STYLE THE USER PROFILE PAGE. GIVE IT A CUSTOM LOOK
+*=======================================================================*/
+@use'../custom' as *;
+
+/*======================================================================
+* custom alert styling is here
+=======================================================================*/
+.customAlert {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin: 0 auto;
+    background-color: $black;
+    color: white;
+    text-align: center;
+    padding: .6rem;
+    border-radius: .4rem;
+    transition: top 0.5s;
+}
+.customAlertContent {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn {
+    padding: 0;
+    color: #fff;
+}
+.customAlertClose i {
+    font-size: 1.4rem;
+}
+
+/*=======================================================================
+* styling the columnA section
+*=============== ========================================================*/
+.columnA {
+    min-height: 100vh;
+}
+.columnA-container {
+    width: 90%;
+}
+.columnA .top_part {
+    display: block;
+    margin-top: 52px;
+    margin-bottom: 48px;
+}
+.columnA .header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.columnA .header .header-name a {
+    font-size: 2.5rem;
+    color: $black;
+    font-weight: 600;
+}
+.columnA .header .three-dots {
+    cursor: pointer;
+    i {
+        font-size: 1.5rem;
+        color: $gray-500;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}

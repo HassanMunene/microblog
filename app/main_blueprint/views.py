@@ -36,4 +36,4 @@ def forbidden(e):
 #user profile route
 @main.route('/user/<username>')
 def user(username):
-    return "yoo it me {} here ".format(current_user.username)
+    return render_template('user.html')
