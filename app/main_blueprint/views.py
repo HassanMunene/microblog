@@ -37,3 +37,7 @@ def forbidden(e):
 @main.route('/user/<username>')
 def user(username):
     return render_template('user.html')
+
+@main.route('/followers')
+def followers():
+    return 'this will be the followers page'
