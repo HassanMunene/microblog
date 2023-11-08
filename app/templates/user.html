@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 
+{% block title %}<title>{{ current_user.fullname }}</title>{% endblock %}
+
 {% block navbar %}
 <nav class="navbar navbar-expand-md bg-emphasis border-bottom">
   <div class="container-fluid">
@@ -66,6 +68,7 @@
                 <li><a class="dropdown-item" href="#">Mute this author</a></li>
                 <li><a class="dropdown-item" href="#">Block this author</a></li>
                 <li><a class="dropdown-item" href="#">Report this author</a></li>
+                <li><a class="dropdown-item" href="#">Design your profile</a></li>
               </ul>
             </div>
           </div>
@@ -93,7 +96,47 @@
         </div>
       </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4 columnB">
+      <div class="columnB-container">
+        <div class="columnB-container-header">
+          <div class="profile-image-container">
+            <a href="{{ url_for('main.user', username=current_user.username) }}">
+              {% if current_user.to_use_gravatar %}
+              <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
+              {% else %}
+              <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+              {% endif %}
+            </a>
+          </div>
+          <div class="profile-name">
+            <a href="{{ url_for('main.user', username=current_user.username) }}">
+              <h2>{{ current_user.fullname }}</h2>
+            </a>
+          </div>
+          <div class="profile-followers">
+            <a href="{{ url_for('main.followers')}}"><h2>1.8K Followers</h2></a>
+          </div>
+          <div class="profile-bio">
+            <p>{{ current_user.about_me }}</p>
+          </div>
+          <div class="follow-message-section">
+            <button class="btn follow-btn">Follow</button>
+            <div class="btn follow-btn"><i class="bi bi-envelope-plus"></i></div>
+          </div>
+          <div class="following-section">
+            <span class="header">Following</span>
+            <ul>
+              <li>yoo</li>
+              <li>yoo</li>
+              <li>yoo</li>
+              <li>yoo</li>
+              <li>yoo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="columnB-container-footer">footer</div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

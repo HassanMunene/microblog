@@ -25,7 +25,7 @@
   customAlert.style.top = '1rem';
 
   // this is to hide the customAlert after a certain period
-  setTimeout(function () { hideCustomAlert(); }, 3000);
+  setTimeout(function () { hideCustomAlert(); }, 2000);
  }
  function hideCustomAlert () {
   const customAlert = document.getElementById('customAlert');

@@ -71,3 +71,118 @@
         }
     }
 }
+
+/*=====================================================================
+* styling columnB section
+=====================================================================*/
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.columnB .columnB-container {
+    max-width: 18rem;
+    min-width: 18rem;
+    margin: 0 auto;
+    height: 100vh;
+}
+.columnB-container-header {
+    margin-top: 3.2rem;
+}
+
+.columnB-container-header .profile-image-container {
+    cursor: pointer;
+    width: 100%;
+    height: 5.5rem;
+}
+.columnB-container-header .profile-image-container a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.columnB-container-header .profile-image-container a img {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+}
+
+.columnB-container-header .profile-name {
+    width: 100%;
+    height: 1.25rem;
+    margin-top: 1rem;
+}
+.columnB-container-header .profile-name a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.columnB-container-header .profile-name a h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $black;
+}
+
+.columnB-container-header .profile-followers {
+    margin-top: .25rem;
+    width: 100%;
+    height: 1.5rem;
+}
+.columnB-container-header .profile-followers a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.columnB-container-header .profile-followers a h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $gray-600;
+    &:hover {
+        color: $black;
+    }
+}
+.columnB-container-header .profile-bio {
+    margin-top: .75rem;
+    width: 100%;
+    height: 5rem;
+}
+.columnB-container-header .profile-bio p {
+    height: 100%;
+    font-size: .875rem;
+    color: $gray-800;
+    line-height: 1.25rem;
+    margin: 0;
+    text-align: start;
+}
+.columnB-container-header .follow-message-section {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: .8rem;
+}
+.columnB-container-header .follow-message-section .follow-btn {
+    border: .1rem $green solid;
+    background-color: $green;
+    color: $white;
+    text-align: center;
+    width: auto;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    &:hover {
+        background-color: rgb(13, 85, 11);
+    }
+}
+// This is the following section
+.columnB-container-header .following-section {
+    width: 100%;
+    max-height: 14.5rem;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+}
+.columnB-container-header .following-section .header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $black;
+    display: inline-block;
+}
