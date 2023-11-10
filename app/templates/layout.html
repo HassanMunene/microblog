@@ -50,31 +50,36 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="registration-modal-content">
-            <div class="container text-center modal-container justify-content-center">
-                <div><h1>Join KcaVibes.</h1></div>
-                <div class="modal-btn">
-                    <button id="google_signup" type="button" class="btn btn-emphasis border border-primary">
+            <h1>Join KcaVibes.</h1>
+            <div class="btn-container">
+                <a id="google_signup" class="modal-btn">
+                    <div>
                         <i class="bi bi-google icon"></i>
                         <span>Sign up with Google</span>
-                    </button>
-                </div>
-                <div class="modal-btn">
-                    <button type="button" class="btn btn-emphasis border border-primary">
+                        <div class="jaza"></div>
+                    </div>
+                </a>
+                <a class="modal-btn">
+                    <div>
                         <i class="bi bi-facebook icon"></i>
                         <span>Sign up with Facebook</span>
-                    </button>
-                </div>
-                <div class="modal-btn">
-                    <button type="button" class="btn btn-emphasis border border-primary" data-bs-target="#enter_email_modal" data-bs-toggle="modal">
+                        <div class="jaza"></div>
+                    </div>
+                </a>
+                <a class="modal-btn">
+                    <div data-bs-target="#enter_email_modal" data-bs-toggle="modal">
                         <i class="bi bi-envelope icon"></i>
                         <span>Sign up with Email</span>
-                    </button>
+                        <div class="jaza"></div>
+                    </div>
+                </a>
+                <div class="already-account">
+                    <p>Already have an Account? <a href="#" data-bs-target="#sign-in-modal" data-bs-toggle="modal">Sign In</a></p>
                 </div>
-                <p class="lead already-p">Already have an Account? <a href="#" data-bs-target="#sign-in-modal" data-bs-toggle="modal">Sign In</a></p>
             </div>
-        </div>
-        <div class="modal-footer">
-            <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
+            <div class="terms">
+                <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
+            </div>
         </div>
     </div>
 </div>
@@ -88,33 +93,38 @@
             <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" id="registration-modal-content">
-                <div class="container text-center modal-container justify-content-center">
-                    <div><h1>Welcome back.</h1></div>
-                    <div class="modal-btn">
-                        <button id="google_signin" type="button" class="btn btn-emphasis border border-primary">
+            <div class="modal-body" id="signin-modal-content">
+                <h1>Welcome back.</h1>
+                <div class="btn-container">
+                    <a id="google_signin" class="modal-btn">
+                        <div>
                             <i class="bi bi-google icon"></i>
                             <span>Sign in with Google</span>
-                        </button>
-                    </div>
-                    <div class="modal-btn">
-                        <button type="button" class="btn btn-emphasis border border-primary">
+                            <div class="jaza"></div>
+                        </div>
+                    </a>
+                    <a class="modal-btn">
+                        <div>
                             <i class="bi bi-facebook icon"></i>
                             <span>Sign in with Facebook</span>
-                        </button>
-                    </div>
-                    <div class="modal-btn">
-                        <button type="button" class="btn btn-emphasis border border-primary" data-bs-target="#signIn_enter_email_modal" data-bs-toggle="modal">
+                            <div class="jaza"></div>
+                        </div>
+                    </a>
+                    <a class="modal-btn">
+                        <div data-bs-target="#signIn_enter_email_modal" data-bs-toggle="modal">
                             <i class="bi bi-envelope icon"></i>
                             <span>Sign in with Email</span>
-                        </button>
+                            <div class="jaza"></div>
+                        </div>
+                    </a>
+                    <div class="already-account">
+                        <p>No account? <a data-bs-toggle="modal" href="#get-started-modal"> Create one</a></p>
+                        <p>Forgot email or trouble signing in?<a href="#"> Get help.</a></p>
                     </div>
-                    <p class="lead already-p">No account? <a data-bs-toggle="modal" href="#get-started-modal"> Create one</a></p>
-                    <p class="lead text-muted fs-6">Forgot email or trouble signing in?<a href="#"> Get help.</a></p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
+                <div class="terms">
+                    <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -281,5 +291,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 </script>
 <script src="../static/assets/js/pages/modals.js"></script>
 <script src="../static/assets/js/pages/user_profile.js"></script>
+<script src="../static/assets/js/pages/authenticated_home.js"></script>
+<script src="../static/assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>

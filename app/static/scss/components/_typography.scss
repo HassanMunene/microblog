@@ -24,68 +24,10 @@ body {
     }
 }
 
-/*===============================================================================
-* DROP DOWN COMPONENT IN relation with the profile
-*================================================================================*/
 
-.dropstart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-// This is about the chevron for dropdown we are removing it
-.dropstart .dropdown-toggle::before {
-    display: none;
-}
-.dropstart .profile_picture_div {
-    width: 35%;
-    border-radius: 50%;
-    cursor: pointer;
-    @include media-breakpoint-down(sm) {
-        width: 50%;
-    }
-}
-.dropstart .dropdown-toggle .profile_picture_img {
-    width: 100%;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dropstart .dropdown-menu {
-    height: 40rem;
-}
-.dropstart .dropdown-menu[data-bs-popper] {
-    position: absolute;
-    top: 3.9rem;
-    right: 0%;
-}
-.dropstart .dropdown-menu ul {
-    list-style: none;
-    
-    li {
-        margin-bottom: 1rem;
-        a {
-            i {
-                font-size: 1.5rem;
-                color: $gray-600;
-                margin-right: 1rem;
-            }
-            color: $gray-800;
-        }
-    }
-}
-.dropstart .dropdown-menu ul li a:hover {
-    color: $black;
-}
-
-.dropdown-divider {
-    border: .123rem solid;
-    border-color: $primary;
-}
-
-/*===================================================================
+/*==================================================================================
 * DROPDOWN COMPONENT IN RELATION TO CLICKING THE THREE DOTS
-*===================================================================*/
+*==================================================================================*/
 .dropdown-center .dropdown-toggle::after{
     display: none;
 }
@@ -110,5 +52,267 @@ body {
             color: $black;
             background-color: transparent;
         }
+    }
+}
+
+/*===================================================================================
+* The navbar section styling for the authenticated home page after user logs in
+* ===================================================================================*/
+
+.container-fluid2 {
+    height: 57px;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+}
+.container-fluid2 .brand-container {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+}
+.brand-container .navbar-brand {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    span {
+        color: $primary;
+    }
+}
+.brand-container .search-container {
+    margin-left: 16px;
+}
+.brand-container .search-container .inner-search-container {
+    display: flex;
+    background-color: $gray-100;
+    width: 240px;
+    border-radius: 20px;
+    align-items: center;
+}
+.brand-container .search-container .inner-search-container .plh {
+    display: inline-block;
+}
+.brand-container .search-container .inner-search-container .search-icon {
+    display: flex;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-weight: 400;
+    align-items: center;
+    i {
+        width: 24px;
+        height: 24px;
+        align-self: center;
+    }
+}
+.brand-container .search-container .inner-search-container .search-input {
+    padding: 10px 20px 10px 0;
+    width: 50%;
+    font-size: 14px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: $gray-100;
+    &:focus {
+        box-shadow: none;
+        outline: none;
+        background-color: $gray-100;
+    }
+}
+.container-fluid2 .write-link {
+    display: flex;
+    margin-right: 32px;
+}
+.container-fluid2 .write-link a div {
+    display: flex;
+    font-size: 14px;
+    color: $gray-700;
+    line-height: 20px;
+    align-items: center;
+    fill: $gray-700;
+    i {
+        height: 24px;
+        width: 24px;
+    }
+    div {
+        margin-left: 8px;
+        font-size: 14px;
+        display: block;
+    }
+}
+.container-fluid2 .search-link {
+    display: none;
+    margin-right: 32px;
+}
+.container-fluid2 .search-link a div {
+    display: flex;
+    font-size: 14px;
+    color: $gray-700;
+    line-height: 20px;
+    align-items: center;
+    fill: $gray-700;
+    i {
+        padding-top: 3.5px;
+    }
+    div {
+        margin-left: 8px;
+        font-size: 14px;
+        display: block;
+    }
+}
+
+.container-fluid2 .bell-link {
+    display: flex;
+    margin-right: 32px;
+    font-weight: 400;
+}
+.container-fluid2 .bell-link a div {
+    display: flex;
+    font-size: 14px;
+    color: $gray-700;
+    line-height: 20px;
+    align-items: center;
+    fill: $gray-600; 
+}
+.container-fluid2 .profile-container {
+    display: block;
+}
+.container-fluid2 .profile-container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.container-fluid2 .profile-container button img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+}
+/*======================================================================================
+* DROP DOWN COMPONENT WHEN USER CLICKS THE PROFILE IN NAVBAR
+=======================================================================================*/
+.drop-down-container {
+    background-color: $gray-100;
+    width: 264px;
+    position: absolute;
+    z-index: 700;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    transform: translate(1013px, 67px);
+    transition: opacity 300ms ease 0s;
+    opacity: 1;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 4px, rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    display: none;
+}
+.drop-down-container .inner-drop-down-container {
+    overflow-y: auto;
+    max-height: 550px;
+    border-radius: 4px;
+}
+.inner-drop-down-container .top-part {
+    padding: 16px 0;
+    border-bottom: 1px solid $gray-500;
+    display: block;
+}
+.inner-drop-down-container .top-part .write-link{
+    margin: 0;
+}
+.inner-drop-down-container .top-part a {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: $gray-700;
+}
+.inner-drop-down-container .top-part a .p {
+    padding: 8px 24px;
+    font-size: .85rem;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    &:hover {
+        color: $black;
+    }
+    div {
+        margin-left: 16px;
+        font-size: 15px;
+    }
+}
+.inner-drop-down-container .middle-part {
+    padding: 16px 0;
+    border-bottom: 1px solid $gray-500;
+    display: block;
+}
+.inner-drop-down-container a {
+    padding: 8px 24px;
+    font-size: .85rem;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: $gray-700;
+    &:hover {
+        color: $black;
+    }
+    div {
+        font-size: 15px;
+    }
+}
+.inner-drop-down-container .lower-middle-part{
+    padding: 16px 0;
+    border-bottom: 1px solid $gray-500;
+    display: block;
+}
+.inner-drop-down-container .logout-part{
+    padding: 16px 0;
+    border-bottom: 1px solid $gray-500;
+    display: block;
+    a {
+        div {
+            font-size: 18px;
+        }
+    }
+}
+
+/*==================================================================================
+* This is the media query section we will have the md and the sm too
+* THE NAVIGATION BAR
+==================================================================================*/
+@media only screen and (max-width: 820px) {
+    /*==================================
+    * THE DROP DOWN SECTION
+    ===================================*/
+    .drop-down-container {
+        transform: translate(521px, 67px);
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    /*==================================
+    * THE NAVBAR SECTION
+    ==================================*/
+    .brand-container .search-container {
+        display: none;
+    }
+    .container-fluid2 .write-link {
+        display: none;
+    }
+    .container-fluid2 .search-link {
+        display: block;
+    }
+    .drop-down-container {
+        transform: translate(140px, 67px);
+    }
+    .drop-down-container .top-part .write-link {
+        display: block;
     }
 }

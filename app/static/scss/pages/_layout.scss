@@ -1,55 +1,91 @@
 // This is the modal the layout elements
 @use'../custom' as *;
 
-// This is modal 1 customisation modal for getting started
-.modal-container {
-    padding-top: 3.5rem;
+/*===============================================================================
+* This is modal 1 customisation modal for getting started
+===============================================================================*/
+.modal-dialog {
+    max-width: 700px !important;
+    height: 100vh !important;
 }
-
-.modal-container h1 {
-    padding-bottom: 3rem;
-    font-size: 1.5rem;
+.modal-body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 2.75rem 3.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-body h1 {
+    line-height: 2rem;
+    font-size: 1.75rem;
+    columns: $black;
+    margin: 0;
+    text-align: center;
     font-weight: 600;
-    color: $black;
 }
-
-.modal-btn {
-    margin-bottom: 1.1rem;
-}
-.modal-btn button{
-    width: 50%;
-    border-radius: 2rem;
-    position: relative;
-
-    .icon {
-        position: absolute;
-        left: 1rem;
-    }
-
+.modal-body .btn-container {
+    margin-top: 3.125rem;
+    width: 300px;
+    text-align: center;
     @include media-breakpoint-down(sm) {
-        width: 90%;
+        width: 235px;
     }
-    
+}
+.modal-btn {
+    width: 100%;
+    padding: .5rem;
+    background-color: $white;
+    border: 1px solid $black;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 99em;
+    display: inline-block;
+    margin-top: .75rem;
+    color: $black;
+    font-weight: 500;
 }
 
-.already-p {
-    font-size: .95rem;
+.modal-btn div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-btn div i {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.modal-btn div .jaza {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.btn-container .already-account {
+    margin-top: 2.5rem;
+    margin-bottom: 5.5rem;
+    text-align: center;
+}
+.btn-container .already-account p {
     font-weight: 600;
-    padding-top: 2rem;
-    a {
-        color: #0d7c09;
-    }
-    @include media-breakpoint-up(lg) {
-        padding-bottom: 4rem;
+    margin: 0;
+    @include media-breakpoint-down(sm) {
+        font-size: .9rem;
     }
 }
-
-.modal-footer p {
-    font-size: 0.9rem;
-
-    a {
-        color: $black;
+.btn-container .already-account p a {
+    color: $green;
+    font-weight: bold;
+}
+.modal-body .terms {
+    width: 450px;
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    @include media-breakpoint-down(sm) {
+        width: 250px;
     }
+}
+.modal-body .terms .lead {
+    font-size: .8125rem;
 }
 // end of modal 1 customisation
 

@@ -11913,73 +11913,9 @@ body {
   }
 }
 
-/*===============================================================================
-* DROP DOWN COMPONENT IN relation with the profile
-*================================================================================*/
-.dropstart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dropstart .dropdown-toggle::before {
-  display: none;
-}
-
-.dropstart .profile_picture_div {
-  width: 35%;
-  border-radius: 50%;
-  cursor: pointer;
-}
-@media (max-width: 575.98px) {
-  .dropstart .profile_picture_div {
-    width: 50%;
-  }
-}
-
-.dropstart .dropdown-toggle .profile_picture_img {
-  width: 100%;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.dropstart .dropdown-menu {
-  height: 40rem;
-}
-
-.dropstart .dropdown-menu[data-bs-popper] {
-  position: absolute;
-  top: 3.9rem;
-  right: 0%;
-}
-
-.dropstart .dropdown-menu ul {
-  list-style: none;
-}
-.dropstart .dropdown-menu ul li {
-  margin-bottom: 1rem;
-}
-.dropstart .dropdown-menu ul li a {
-  color: #343a40;
-}
-.dropstart .dropdown-menu ul li a i {
-  font-size: 1.5rem;
-  color: #6c757d;
-  margin-right: 1rem;
-}
-
-.dropstart .dropdown-menu ul li a:hover {
-  color: #000;
-}
-
-.dropdown-divider {
-  border: 0.123rem solid;
-  border-color: #ffc107;
-}
-
-/*===================================================================
+/*==================================================================================
 * DROPDOWN COMPONENT IN RELATION TO CLICKING THE THREE DOTS
-*===================================================================*/
+*==================================================================================*/
 .dropdown-center .dropdown-toggle::after {
   display: none;
 }
@@ -12006,6 +11942,288 @@ body {
   background-color: transparent;
 }
 
+/*===================================================================================
+* The navbar section styling for the authenticated home page after user logs in
+* ===================================================================================*/
+.container-fluid2 {
+  height: 57px;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.container-fluid2 .brand-container {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+}
+
+.brand-container .navbar-brand {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.brand-container .navbar-brand span {
+  color: #ffc107;
+}
+
+.brand-container .search-container {
+  margin-left: 16px;
+}
+
+.brand-container .search-container .inner-search-container {
+  display: flex;
+  background-color: #f8f9fa;
+  width: 240px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.brand-container .search-container .inner-search-container .plh {
+  display: inline-block;
+}
+
+.brand-container .search-container .inner-search-container .search-icon {
+  display: flex;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-weight: 400;
+  align-items: center;
+}
+.brand-container .search-container .inner-search-container .search-icon i {
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
+
+.brand-container .search-container .inner-search-container .search-input {
+  padding: 10px 20px 10px 0;
+  width: 50%;
+  font-size: 14px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: #f8f9fa;
+}
+.brand-container .search-container .inner-search-container .search-input:focus {
+  box-shadow: none;
+  outline: none;
+  background-color: #f8f9fa;
+}
+
+.container-fluid2 .write-link {
+  display: flex;
+  margin-right: 32px;
+}
+
+.container-fluid2 .write-link a div {
+  display: flex;
+  font-size: 14px;
+  color: #495057;
+  line-height: 20px;
+  align-items: center;
+  fill: #495057;
+}
+.container-fluid2 .write-link a div i {
+  height: 24px;
+  width: 24px;
+}
+.container-fluid2 .write-link a div div {
+  margin-left: 8px;
+  font-size: 14px;
+  display: block;
+}
+
+.container-fluid2 .search-link {
+  display: none;
+  margin-right: 32px;
+}
+
+.container-fluid2 .search-link a div {
+  display: flex;
+  font-size: 14px;
+  color: #495057;
+  line-height: 20px;
+  align-items: center;
+  fill: #495057;
+}
+.container-fluid2 .search-link a div i {
+  padding-top: 3.5px;
+}
+.container-fluid2 .search-link a div div {
+  margin-left: 8px;
+  font-size: 14px;
+  display: block;
+}
+
+.container-fluid2 .bell-link {
+  display: flex;
+  margin-right: 32px;
+  font-weight: 400;
+}
+
+.container-fluid2 .bell-link a div {
+  display: flex;
+  font-size: 14px;
+  color: #495057;
+  line-height: 20px;
+  align-items: center;
+  fill: #6c757d;
+}
+
+.container-fluid2 .profile-container {
+  display: block;
+}
+
+.container-fluid2 .profile-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid2 .profile-container button img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+}
+
+/*======================================================================================
+* DROP DOWN COMPONENT WHEN USER CLICKS THE PROFILE IN NAVBAR
+=======================================================================================*/
+.drop-down-container {
+  background-color: #f8f9fa;
+  width: 264px;
+  position: absolute;
+  z-index: 700;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  transform: translate(1013px, 67px);
+  transition: opacity 300ms ease 0s;
+  opacity: 1;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 4px, rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  display: none;
+}
+
+.drop-down-container .inner-drop-down-container {
+  overflow-y: auto;
+  max-height: 550px;
+  border-radius: 4px;
+}
+
+.inner-drop-down-container .top-part {
+  padding: 16px 0;
+  border-bottom: 1px solid #adb5bd;
+  display: block;
+}
+
+.inner-drop-down-container .top-part .write-link {
+  margin: 0;
+}
+
+.inner-drop-down-container .top-part a {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  color: #495057;
+}
+
+.inner-drop-down-container .top-part a .p {
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.inner-drop-down-container .top-part a .p:hover {
+  color: #000;
+}
+.inner-drop-down-container .top-part a .p div {
+  margin-left: 16px;
+  font-size: 15px;
+}
+
+.inner-drop-down-container .middle-part {
+  padding: 16px 0;
+  border-bottom: 1px solid #adb5bd;
+  display: block;
+}
+
+.inner-drop-down-container a {
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: #495057;
+}
+.inner-drop-down-container a:hover {
+  color: #000;
+}
+.inner-drop-down-container a div {
+  font-size: 15px;
+}
+
+.inner-drop-down-container .lower-middle-part {
+  padding: 16px 0;
+  border-bottom: 1px solid #adb5bd;
+  display: block;
+}
+
+.inner-drop-down-container .logout-part {
+  padding: 16px 0;
+  border-bottom: 1px solid #adb5bd;
+  display: block;
+}
+.inner-drop-down-container .logout-part a div {
+  font-size: 18px;
+}
+
+/*==================================================================================
+* This is the media query section we will have the md and the sm too
+* THE NAVIGATION BAR
+==================================================================================*/
+@media only screen and (max-width: 820px) {
+  /*==================================
+  * THE DROP DOWN SECTION
+  ===================================*/
+  .drop-down-container {
+    transform: translate(521px, 67px);
+  }
+}
+@media only screen and (max-width: 576px) {
+  /*==================================
+  * THE NAVBAR SECTION
+  ==================================*/
+  .brand-container .search-container {
+    display: none;
+  }
+  .container-fluid2 .write-link {
+    display: none;
+  }
+  .container-fluid2 .search-link {
+    display: block;
+  }
+  .drop-down-container {
+    transform: translate(140px, 67px);
+  }
+  .drop-down-container .top-part .write-link {
+    display: block;
+  }
+}
 .navbar-brand {
   font-size: xx-large;
 }
@@ -12040,55 +12258,108 @@ li {
   transform: translate(-50%, -50%);
 }
 
-.modal-container {
-  padding-top: 3.5rem;
+/*===============================================================================
+* This is modal 1 customisation modal for getting started
+===============================================================================*/
+.modal-dialog {
+  max-width: 700px !important;
+  height: 100vh !important;
 }
 
-.modal-container h1 {
-  padding-bottom: 3rem;
-  font-size: 1.5rem;
+.modal-body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 2.75rem 3.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body h1 {
+  line-height: 2rem;
+  font-size: 1.75rem;
+  columns: #000;
+  margin: 0;
+  text-align: center;
   font-weight: 600;
-  color: #000;
+}
+
+.modal-body .btn-container {
+  margin-top: 3.125rem;
+  width: 300px;
+  text-align: center;
+}
+@media (max-width: 575.98px) {
+  .modal-body .btn-container {
+    width: 235px;
+  }
 }
 
 .modal-btn {
-  margin-bottom: 1.1rem;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 99em;
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #000;
+  font-weight: 500;
 }
 
-.modal-btn button {
-  width: 50%;
-  border-radius: 2rem;
-  position: relative;
+.modal-btn div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.modal-btn button .icon {
-  position: absolute;
-  left: 1rem;
+
+.modal-btn div i {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.modal-btn div .jaza {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.btn-container .already-account {
+  margin-top: 2.5rem;
+  margin-bottom: 5.5rem;
+  text-align: center;
+}
+
+.btn-container .already-account p {
+  font-weight: 600;
+  margin: 0;
 }
 @media (max-width: 575.98px) {
-  .modal-btn button {
-    width: 90%;
+  .btn-container .already-account p {
+    font-size: 0.9rem;
   }
 }
 
-.already-p {
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding-top: 2rem;
+.btn-container .already-account p a {
+  color: rgb(26, 137, 23);
+  font-weight: bold;
 }
-.already-p a {
-  color: #0d7c09;
+
+.modal-body .terms {
+  width: 450px;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
 }
-@media (min-width: 992px) {
-  .already-p {
-    padding-bottom: 4rem;
+@media (max-width: 575.98px) {
+  .modal-body .terms {
+    width: 250px;
   }
 }
 
-.modal-footer p {
-  font-size: 0.9rem;
-}
-.modal-footer p a {
-  color: #000;
+.modal-body .terms .lead {
+  font-size: 0.8125rem;
 }
 
 .custom-container {
@@ -12331,87 +12602,9 @@ a {
   }
 }
 
-/*==============================================================================
-* The navbar section styling for the authenticated home page after user logs in
-===============================================================================*/
-@media (max-width: 575.98px) {
-  .container-fluid {
-    flex-wrap: nowrap !important;
-  }
-  .container-fluid .list-container button {
-    margin-left: 0;
-  }
-}
-
-.brand-container {
-  display: flex;
-  align-items: center;
-}
-
-.brand-container .navbar-brand {
-  padding: 0;
-}
-.brand-container .navbar-brand span {
-  color: #ffc107;
-}
-
-.container-fluid .list-container button:hover {
-  color: #000;
-}
-
-/*====================================================================
-* Styling the search button
-====================================================================*/
-.search-container {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  background-color: #f8f9fa;
-  border-radius: 2rem;
-}
-@media (max-width: 575.98px) {
-  .search-container {
-    display: none;
-  }
-}
-
-.search-form {
-  margin-left: 0.35rem;
-  width: 75%;
-}
-
-.search-icon {
-  margin-top: 0.2rem;
-  margin-left: 0.8rem;
-  font-size: 1.2rem;
-}
-
-.search-input {
-  border: 0;
-  border-radius: 0;
-  background-color: #f8f9fa;
-}
-.search-input:focus {
-  box-shadow: none;
-  outline: none;
-  background-color: #f8f9fa;
-}
-
-.list-container {
-  display: flex;
-}
-
-.list-container .btn {
-  margin-left: 1.5rem;
-  color: #6c757d;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-/*==========================================================================
+/*=======================================================================================
 * columnA  SECTION STYLING
-===========================================================================*/
+========================================================================================*/
 .columnA {
   border-top: 0;
   border-right: 1px solid #dee2e6;
@@ -12629,7 +12822,7 @@ a {
 }
 
 /*=======================================================================
-* styling the columnA section
+* styling the columnA section start below
 *=============== ========================================================*/
 .columnA {
   min-height: 100vh;
@@ -12670,9 +12863,15 @@ a {
   color: #000;
 }
 
-/*=====================================================================
-* styling columnB section
-=====================================================================*/
+.columnA .top_part .about-home-container {
+  height: 39px;
+  background-color: gray;
+  overflow: hidden;
+}
+
+/*===================================================================================================
+* styling columnB section start below
+===================================================================================================*/
 a {
   text-decoration: none;
   cursor: pointer;
@@ -12687,6 +12886,10 @@ a {
 
 .columnB-container-header {
   margin-top: 3.2rem;
+}
+
+.columnB-container-header .three-dots {
+  display: none;
 }
 
 .columnB-container-header .profile-image-container {
@@ -12785,9 +12988,7 @@ a {
 .columnB-container-header .following-section {
   width: 100%;
   max-height: 14.5rem;
-  background-color: gray;
-  display: flex;
-  flex-direction: column;
+  text-align: start !important;
 }
 
 .columnB-container-header .following-section .header {
@@ -12795,6 +12996,143 @@ a {
   font-weight: 600;
   color: #000;
   display: inline-block;
+}
+
+.columnB-container-header .following-section ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  padding: 0;
+  list-style: none;
+}
+
+.columnB-container-header .following-section ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.columnB-container-header .following-section ul li a {
+  text-decoration: none;
+  padding: 0;
+}
+
+.columnB-container-header .following-section ul li a div {
+  display: flex;
+  padding-right: 10px;
+}
+
+.columnB-container-header .following-section ul li a div .image-container {
+  padding-right: 12px;
+}
+
+.columnB-container-header .following-section ul li a div .image-container img {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+}
+
+.columnB-container-header .following-section ul li a div p {
+  font-size: 0.8125rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+.columnB-container-header .following-section ul li a div p:hover {
+  color: #000 !important;
+  text-decoration: underline;
+}
+
+.columnB-container-header .following-section ul li .three-dots {
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.columnB-container-header .following-section ul li .three-dots:hover {
+  background-color: #e9ecef;
+}
+
+.columnB-container-header .following-section .see-all a {
+  font-size: 13px;
+  color: #343a40;
+  font-weight: bold;
+}
+.columnB-container-header .following-section .see-all a:hover {
+  color: #000;
+}
+
+/*===============================================================================================
+*=============================MEDIA QUERIES ARE HERE ============================================
+===============================================================================================*/
+@media only screen and (max-width: 576px) {
+  /*==================================================
+  *==============NAVIGATION BAR SECTION=============*/
+  .navbar .list-container .write-button {
+    display: none;
+  }
+  .navbar .list-container .search-button {
+    display: block;
+    margin-right: 2rem;
+  }
+  .columnA .header {
+    display: none;
+  }
+  .columnB .columnB-container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .columnB .columnB-container-header {
+    margin: 24px 0;
+  }
+  .columnB .columnB-container-header .sm-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .columnB .columnB-container-header .sm-div .sm-profile-followers-name {
+    margin-right: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .columnB .columnB-container-header .sm-div .sm-profile-followers-name .profile-image-container {
+    margin-right: 20px;
+    height: auto;
+    width: 3rem;
+  }
+  .columnB .columnB-container-header .sm-div .sm-profile-followers-name .profile-image-container a {
+    height: auto;
+  }
+  .columnB .columnB-container-header .sm-div .sm-profile-followers-name .profile-image-container a img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .columnB .columnB-container-header .sm-div .sm-name-followers-div .profile-name {
+    margin-top: 0;
+  }
+  .columnB .columnB-container-header .sm-div .sm-name-followers-div .profile-name a h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  .columnB .columnB-container-header .sm-div .sm-name-followers-div .profile-followers {
+    margin-top: 0.5rem;
+  }
+  .columnB .columnB-container-header .three-dots {
+    display: block;
+  }
+  .columnB-container-header .profile-bio {
+    display: none;
+  }
+  .columnB-container-header .following-section {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

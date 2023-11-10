@@ -3,45 +3,119 @@
 {% block title %}<title>{{ current_user.fullname }}</title>{% endblock %}
 
 {% block navbar %}
-<nav class="navbar navbar-expand-md bg-emphasis border-bottom">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-md bg-emphasis">
+  <div class="container-fluid2 border-bottom">
     <div class="brand-container">
       <a class="navbar-brand fs-3 fw-bold" href="/">Kca<span>Vibes</span></a>
       <div class="search-container">
-        <i class="bi bi-search search-icon"></i>
-        <form role="search" class="search-form">
+        <div class="inner-search-container">
+          <div class="plh"></div>
+          <div class="search-icon"><i class="bi bi-search search-icon"></i></div>
           <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
-        </form>
+        </div>
       </div>
     </div>
-    <div class="list-container">
-      <button class="btn"><i class="bi bi-pencil-square fs-4"></i><span>Write</span></button>
-      <button class="btn"><i class="bi bi-bell fs-4"></i></button>
-      <div class="dropstart">
-        <div class="profile_picture_div dropdown-toggle" data-bs-toggle="dropdown" style="position: relative;">
+    <div class="write-link">
+      <a href="{{ url_for('main.write') }}">
+        <div>
+          <i class="bi bi-pencil-square fs-4"></i>
+          <div class="write">Write</div>
+        </div>
+      </a>
+    </div>
+    <div class="search-link">
+      <a href="{{ url_for('main.write') }}">
+        <div>
+          <i class="bi bi-search fs-4"></i>
+        </div>
+      </a>
+    </div>
+    <div class="bell-link">
+      <a href="">
+        <div><i class="bi bi-bell fs-4"></i></div>
+      </a>
+    </div>
+    <div class="profile-container">
+      <button id="profile-button" class="profile-container-btn">
+        <div class="profile_picture_div">
           {% if current_user.to_use_gravatar %}
           <img  class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile picture">
           {% else %}
           <img  class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
           {% endif %}
+        </div> 
+      </button>
+    </div>
+    <div id="dropdown-element" class="drop-down-container">
+      <div class="inner-drop-down-container">
+        <div>
+          <div class="top-part">
+            <div class="write-link">
+              <a href="{{ url_for('main.write') }}">
+                <div class="p">
+                  <i class="bi bi-pencil-square fs-4"></i>
+                  <div class="write">Write</div>
+                </div>
+              </a>
+            </div>
+            <a href="{{ url_for('main.user', username=current_user.username) }}">
+              <div class="p">
+                <i class="bi bi-person fs-4"></i>
+                <div>Profile</div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="p">
+                <i class="bi bi-bookmarks fs-4"></i>
+                <div>Library</div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="p">
+                <i class="bi bi-file-earmark-text fs-4"></i>
+                <div>stories</div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="p">
+                <i class="bi bi-bar-chart-fill fs-4"></i>
+                <div>stats</div>
+              </div>
+            </a>
+          </div>
+          <div class="middle-part">
+            <a href="#">
+              <div>Settings</div>
+            </a>
+            <a href="#">
+              <div>Refined recommendations</div>
+            </a>
+            <a href="#">
+              <div>Manage publications</div>
+            </a>
+            <a href="#">
+              <div>Help</div>
+            </a>
+          </div>
+          <div class="lower-middle-part">
+            <a href="#">
+              <div>Become a KcaVibes member</div>
+            </a>
+            <a href="#">
+              <div>Gift membership</div>
+            </a>
+            <a href="#">
+              <div>Join developers community</div>
+            </a>
+          </div>
+          <div class="logout-part">
+            <a href="{{ url_for('auth.logout') }}">
+              <div>Sign out</div>
+            </a>
+          </div>
+          <div class="footer-part"></div>
         </div>
-        <div class="dropdown-menu shadow">
-          <ul>
-            <li><a href="{{ url_for('main.user', username=current_user.username) }}"><i class="bi bi-person-fill"></i>profile</a></li>
-            <li><a href=""><i class="bi bi-file-earmark-post"></i>Your stories</a></li>
-            <li><a href=""><i class="bi bi-gear"></i>Settings</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="#">School portal</a></li>
-            <li><a href="">Library Account</a></li>
-            <li><a href="">Campus</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="#">Community Membership</a></li>
-            <li><a href="#">Campus Clubs</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
-          </ul>
-        </div>
-      </div> 
+      </div>
     </div>
   </div>
 </nav>
@@ -56,7 +130,7 @@
 </div>
 <div class="container text-center">
   <div class="row">
-    <div class="col-8 columnA">
+    <div class="col-sm-8 columnA order-md-1 order-2">
       <div class="columnA-container">
         <div class="top_part">
           <div class="header">
@@ -72,6 +146,7 @@
               </ul>
             </div>
           </div>
+          <nav class="about-home-container"></nav>
         </div>
         <div class="card text-start">
           <div class="card-header">
@@ -96,45 +171,124 @@
         </div>
       </div>
     </div>
-    <div class="col-4 columnB">
+    <div class="col-sm-4 columnB order-md-2 order-1">
       <div class="columnB-container">
         <div class="columnB-container-header">
-          <div class="profile-image-container">
-            <a href="{{ url_for('main.user', username=current_user.username) }}">
-              {% if current_user.to_use_gravatar %}
-              <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
-              {% else %}
-              <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
-              {% endif %}
-            </a>
-          </div>
-          <div class="profile-name">
-            <a href="{{ url_for('main.user', username=current_user.username) }}">
-              <h2>{{ current_user.fullname }}</h2>
-            </a>
-          </div>
-          <div class="profile-followers">
-            <a href="{{ url_for('main.followers')}}"><h2>1.8K Followers</h2></a>
+          <div class="sm-div">
+            <div class="sm-profile-followers-name">
+              <div class="profile-image-container">
+                <a href="{{ url_for('main.user', username=current_user.username) }}">
+                  {% if current_user.to_use_gravatar %}
+                  <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
+                  {% else %}
+                  <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+                  {% endif %}
+                </a>
+              </div>
+              <div class="sm-name-followers-div">
+                <div class="profile-name">
+                  <a href="{{ url_for('main.user', username=current_user.username) }}">
+                    <h2>{{ current_user.fullname }}</h2>
+                  </a>
+                </div>
+                <div class="profile-followers">
+                  <a href="{{ url_for('main.followers')}}"><h2>1.8K Followers</h2></a>
+                </div>
+              </div>
+            </div>
+            <div class="three-dots dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots"></i></div>
+            <div class="follow-message-section">
+              <button class="btn follow-btn">Follow</button>
+              <div class="btn follow-btn"><i class="bi bi-envelope-plus"></i></div>
+            </div>
           </div>
           <div class="profile-bio">
             <p>{{ current_user.about_me }}</p>
           </div>
-          <div class="follow-message-section">
-            <button class="btn follow-btn">Follow</button>
-            <div class="btn follow-btn"><i class="bi bi-envelope-plus"></i></div>
-          </div>
           <div class="following-section">
             <span class="header">Following</span>
             <ul>
-              <li>yoo</li>
-              <li>yoo</li>
-              <li>yoo</li>
-              <li>yoo</li>
-              <li>yoo</li>
+              <li>
+                <a href="{{ url_for('main.user', username=current_user.username) }}">
+                  <div>
+                    <div class="image-container">
+                      {% if current_user.to_use_gravatar %}
+                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
+                      {% else %}
+                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+                      {% endif %}
+                    </div>
+                    <p class="text-muted">{{ current_user.fullname }}</p>
+                  </div>
+                </a>
+                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
+              </li>
+              <li>
+                <a href="{{ url_for('main.user', username=current_user.username) }}">
+                  <div>
+                    <div class="image-container">
+                      {% if current_user.to_use_gravatar %}
+                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
+                      {% else %}
+                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+                      {% endif %}
+                    </div>
+                    <p class="text-muted">{{ current_user.fullname }}</p>
+                  </div>
+                </a>
+                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
+              </li>
+              <li>
+                <a href="{{ url_for('main.user', username=current_user.username) }}">
+                  <div>
+                    <div class="image-container">
+                      {% if current_user.to_use_gravatar %}
+                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
+                      {% else %}
+                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+                      {% endif %}
+                    </div>
+                    <p class="text-muted">{{ current_user.fullname }}</p>
+                  </div>
+                </a>
+                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
+              </li>
+              <li>
+                <a href="{{ url_for('main.user', username=current_user.username) }}">
+                  <div>
+                    <div class="image-container">
+                      {% if current_user.to_use_gravatar %}
+                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
+                      {% else %}
+                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+                      {% endif %}
+                    </div>
+                    <p class="text-muted">{{ current_user.fullname }}</p>
+                  </div>
+                </a>
+                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
+              </li>
+              <li>
+                <a href="{{ url_for('main.user', username=current_user.username) }}">
+                  <div>
+                    <div class="image-container">
+                      {% if current_user.to_use_gravatar %}
+                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
+                      {% else %}
+                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+                      {% endif %}
+                    </div>
+                    <p class="text-muted">{{ current_user.fullname }}</p>
+                  </div>
+                </a>
+                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
+              </li>
             </ul>
+            <p class="see-all">
+              <a href="#">See all(234)</a>
+            </p>
           </div>
         </div>
-        <div class="columnB-container-footer">footer</div>
       </div>
     </div>
   </div>

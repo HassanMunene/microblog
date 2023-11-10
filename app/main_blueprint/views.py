@@ -41,3 +41,7 @@ def user(username):
 @main.route('/followers')
 def followers():
     return 'this will be the followers page'
+
+@main.route('/write')
+def write():
+    return 'the link to write'

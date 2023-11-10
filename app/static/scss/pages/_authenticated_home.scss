@@ -1,81 +1,10 @@
 @use'../custom' as *;
 
-/*==============================================================================
-* The navbar section styling for the authenticated home page after user logs in
-===============================================================================*/
+// IF YOU WANT THE NAVIGATION STYLING THEN IT IS IN THE TOPOGRAPHY SECTION
 
-.container-fluid {
-    @include media-breakpoint-down(sm) {
-        flex-wrap: nowrap !important;
-        .list-container button {
-            margin-left: 0;
-        }
-    }
-}
-// Styling the navabar containers
-.brand-container {
-    display: flex;
-    align-items: center;
-}
-.brand-container .navbar-brand {
-    padding: 0;
-    span {
-        color: $primary;
-    }
-}
-.container-fluid .list-container button:hover {
-    color: $black;
-}
-/*====================================================================
-* Styling the search button
-====================================================================*/
-
-.search-container {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    background-color: $gray-100;
-    border-radius: 2rem;
-    
-    @include media-breakpoint-down(sm) {
-        display: none;
-    }
-}
-
-.search-form {
-    margin-left: .35rem;
-    width: 75%;
-}
-.search-icon {
-    margin-top: .2rem;
-    margin-left: .8rem;
-    font-size: 1.2rem;
-}
-.search-input {
-    border: 0;
-    border-radius: 0;
-    background-color: $gray-100;
-    &:focus {
-        box-shadow: none;
-        outline: none;
-        background-color: $gray-100;
-    }
-}
-
-.list-container {
-    display: flex;
-}
-.list-container .btn {
-    margin-left: 1.5rem;
-    color: $gray-600;
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-}
-
-/*==========================================================================
+/*=======================================================================================
 * columnA  SECTION STYLING
-===========================================================================*/
+========================================================================================*/
 .columnA {
     border-top: 0;
     border-right: 1px solid $gray-300;
