@@ -12153,10 +12153,16 @@ a {
   .columnA .header {
     display: none;
   }
+  .columnB {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
   .columnB .columnB-container {
     width: 100%;
     height: auto;
     margin: 0;
+    padding: 0;
   }
   .columnB .columnB-container-header {
     margin: 24px 0;
