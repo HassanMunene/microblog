@@ -12787,6 +12787,11 @@ a {
 /*=======================================================================
 * THIS SASS FILE WILL STYLE THE USER PROFILE PAGE. GIVE IT A CUSTOM LOOK
 *=======================================================================*/
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*======================================================================
 * custom alert styling is here
 =======================================================================*/
@@ -12821,75 +12826,323 @@ a {
   font-size: 1.4rem;
 }
 
-/*=======================================================================
-* styling the columnA section start below
-*=============== ========================================================*/
-.columnA {
+/*===========================================================================================
+*==================STYLING THE MAIN BODY SECTION ============================================
+===========================================================================================*/
+.body-container {
+  max-width: 1336px;
+  margin: auto;
+  display: block;
+}
+
+.body-container .inner-body-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.body-container .inner-body-container .main-section {
+  max-width: 728px;
+  min-width: 728px;
+  flex: 1 1 auto;
+  display: block;
+}
+
+.body-container .inner-body-container .main-section .main-container {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-.columnA-container {
-  width: 90%;
+.inner-body-container .main-section .main-container .user-details-section {
+  display: flex;
+  justify-content: center;
 }
 
-.columnA .top_part {
-  display: block;
-  margin-top: 52px;
-  margin-bottom: 48px;
+.main-container .user-details-section .details-container {
+  max-width: 680px;
+  min-width: 0px;
+  margin: 0 24px;
+  width: 100%;
 }
 
-.columnA .header {
+.main-container .user-details-section .details-container .inner-details-container {
+  margin: 52px 0px 48px;
+}
+
+.details-container .inner-details-container .header {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 40px;
 }
 
-.columnA .header .header-name a {
-  font-size: 2.5rem;
-  color: #000;
-  font-weight: 600;
+.details-container .inner-details-container .header .header-name {
+  display: flex;
+  align-items: center;
+  margin-right: 0px;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+}
+.details-container .inner-details-container .header .header-name a {
+  color: #343a40;
+  font-size: 2.65rem;
 }
 
-.columnA .header .three-dots {
-  cursor: pointer;
-}
-.columnA .header .three-dots i {
-  font-size: 1.5rem;
-  color: #adb5bd;
-}
-.columnA .header .three-dots i:hover {
-  color: #000;
-}
-
-.columnA .top_part .about-home-container {
-  height: 39px;
-  background-color: gray;
-  overflow: hidden;
-}
-
-/*===================================================================================================
-* styling columnB section start below
-===================================================================================================*/
-a {
-  text-decoration: none;
+.details-container .inner-details-container .header .three-dots {
+  margin-left: 12px;
+  display: flex;
+  color: #495057;
   cursor: pointer;
 }
 
-.columnB .columnB-container {
-  max-width: 18rem;
-  min-width: 18rem;
-  margin: 0 auto;
-  height: 100vh;
-}
-
-.columnB-container-header {
-  margin-top: 3.2rem;
-}
-
-.columnB-container-header .three-dots {
+.inner-details-container .header .follow-message-container {
   display: none;
+  width: 100%;
+}
+
+.inner-body-container .header .follow-message-container .follow-btn {
+  border-color: rgb(26, 137, 23);
+  background-color: rgb(26, 137, 23);
+  fill: #fff;
+  color: #fff;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgb(26, 137, 23);
+  border-radius: 99em;
+  display: inline-block;
+  width: 100%;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0px;
+}
+
+.inner-body-container .header .follow-message-container .msg-container {
+  margin-left: 8px;
+  display: block;
+}
+
+.header .follow-message-container .msg-container .msg-button {
+  border: 1px solid rgb(26, 137, 23);
+  background-color: rgb(26, 137, 23);
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+}
+
+.details-container .inner-details-container .header .three-dots2 {
+  margin-left: 12px;
+  display: none;
+  color: #495057;
+  cursor: pointer;
+}
+
+.details-container .inner-details-container .nav-section {
+  height: 39px;
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.details-container .inner-details-container .nav-section .inner-nav-section {
+  display: flex;
+  scrollbar-width: none;
+  align-items: center;
+  padding: 2px 0px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.inner-details-container .nav-section .inner-nav-section span {
+  padding-bottom: 6px;
+  display: block;
+}
+
+.nav-section .inner-nav-section span .item {
+  border-bottom: 1px solid #343a40;
+  padding-bottom: 13px;
+  margin-right: 32px;
+  display: block;
+}
+.nav-section .inner-nav-section span .item a {
+  color: #343a40;
+  font-size: 15px;
+}
+
+/*================================================================================================
+*=======================THE ARTICLES SECTION======================================================
+================================================================================================*/
+.main-section .main-container .posts-section {
+  display: block;
+  flex: 1 1 auto;
+}
+
+.main-section .main-container .posts-section .inner-posts-section {
+  padding: 8px 0;
+  display: block;
+}
+
+.main-container .posts-section .inner-posts-section article .article-container {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.posts-section .inner-posts-section article .article-container .inner-article-container {
+  display: flex;
+  justify-content: center;
+}
+
+.article-container .inner-article-container div {
+  max-width: 680px;
+  min-width: 0px;
+  margin: 0px 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.article-container .inner-article-container div .date-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.article-container .inner-article-container div .date-section div a {
+  color: #343a40;
+  font-size: 15px;
+}
+
+.article-container .inner-article-container div .text-section {
+  margin-top: 12px;
+  display: block;
+}
+
+.article-container .inner-article-container div .text-section .inner-text-section {
+  display: flex;
+}
+
+.inner-article-container div .text-section .inner-text-section .article-side {
+  flex: 1 1 auto;
+  word-break: break-all;
+  display: block;
+}
+
+.text-section .inner-text-section .article-side .top-section a {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.article-side .top-section a .heading {
+  padding-bottom: 8px;
+}
+.article-side .top-section a .heading h2 {
+  letter-spacing: 0px;
+  -webkit-line-clamp: 3;
+  max-height: 72px;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #000;
+}
+
+.article-side .top-section a .paragraph {
+  display: block;
+  cursor: pointer;
+}
+.article-side .top-section a .paragraph p {
+  -webkit-line-clamp: 3;
+  max-height: 72px;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 24px;
+  letter-spacing: 0px;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
+
+.text-section .inner-text-section .article-side .bottom-section {
+  padding: 32px 0px;
+  display: block;
+}
+
+.inner-text-section .article-side .bottom-section .inner-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inner-text-section .article-side .bottom-section .inner-container .time-section {
+  flex: 1 1 auto;
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+
+.bottom-section .inner-container .time-section .button-section {
+  overflow: visible;
+  margin-right: 8px;
+}
+
+.bottom-section .inner-container .time-section .button-section a {
+  display: inline-block;
+  white-space: nowrap;
+  border: 1px solid #e9ecef;
+  border-radius: 100px;
+  padding: 2px 8px;
+  background-color: #e9ecef;
+  font-size: 13px;
+  color: #000;
+  line-height: 20px;
+}
+
+.bottom-section .inner-container .time-section .read-time-section {
+  display: flex;
+}
+
+.bottom-section .inner-container .time-section .read-time-section a {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #343a40;
+  font-weight: 400;
+}
+
+/*================================================================================================
+*========================THE PROFILE SECTION======================================================
+================================================================================================*/
+.body-container .inner-body-container .profile-part {
+  max-width: 368px;
+  min-width: 368px;
+  min-height: 100vh;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-left: 1px solid #dee2e6;
+}
+
+.body-container .inner-body-container .profile-part .profile-container {
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+}
+
+.inner-body-container .profile-part .profile-container .columnB-container-header {
+  margin-top: 40px;
+  border-bottom: 1px solid #f8f9fa;
+  display: block;
+  padding-bottom: 0px;
 }
 
 .columnB-container-header .profile-image-container {
