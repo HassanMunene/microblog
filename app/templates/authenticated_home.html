@@ -135,7 +135,7 @@
         <div class="posts-section">
           <div class="inner-posts-section">
             {% for post in posts %}
-            <article>
+            <article class="border-bottom">
               <div class="article-container">
                 <div class="inner-article-container">
                   <div class="inner-article-container2">
@@ -144,9 +144,13 @@
                         <button id="profile-button" class="profile-container-btn">
                           <div class="profile_picture_div">
                             {% if post.author.to_use_gravatar %}
-                            <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                              <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                            </a>
                             {% else %}
-                            <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                              <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                            </a>
                             {% endif %}
                           </div> 
                         </button>

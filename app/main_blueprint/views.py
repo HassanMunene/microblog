@@ -42,7 +42,9 @@ def internal_server_error(e):
 def forbidden(e):
     return 'dude we will work on this page to look good but still you are forbidden'
 
-#user profile route
+#===========================================================================================================================================
+#=================This is the route that will handle the user profile=======================================================================
+#===========================================================================================================================================
 @main.route('/user/<username>')
 def user(username):
     return render_template('user.html')

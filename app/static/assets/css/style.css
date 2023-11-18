@@ -12898,6 +12898,7 @@ a {
   margin: 0px 0px;
   width: 100%;
   height: 100%;
+  padding: 15px 0px;
 }
 
 .article-container .inner-article-container div .date-section {
@@ -12978,7 +12979,7 @@ a {
 }
 
 .text-section .inner-text-section .article-side .bottom-section {
-  padding: 32px 0px;
+  padding: 0px 0px;
   display: block;
 }
 
