@@ -128,7 +128,6 @@
     <button id="customAlertClose" class="btn customAlertClose"><i class="bi bi-x"></i></button>
   </div>
 </div>
-
 <div class="body-container">
   <div class="inner-body-container">
     <main class="main-section">
@@ -202,17 +201,138 @@
                             <div class="inner-container">
                               <div class="time-section">
                                 <div class="button-section">
-                                  <a href="#">Engineering</a>
+                                  <a href="#"><div>Engineering</div></a>
                                 </div>
                                 <div class="read-time-section">
-                                  <a href="#">4 min read</a>
+                                  <a href="#">
+                                    <p>
+                                      <span>4 min read</span>
+                                    </p>
+                                  </a>
                                 </div>
                               </div>
-                              <div></div>
+                              <div class="bmk-section">
+                                  <i class="bi bi-bookmark-plus fs-5 me-2"></i>
+                                  <i class="bi bi-three-dots fs-5"></i>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="image-side"></div>
+                        <div class="image-side">
+                          <a href="#">
+                            <div class="img-container">
+                              <img class="img-fluid" src="../static/assets/images/intro-section.png" alt="img">
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article>
+              <div class="article-container">
+                <div class="inner-article-container">
+                  <div>
+                    <div class="date-section">
+                      <div><a href="#">1 day ago</a></div>
+                    </div>
+                    <div class="text-section">
+                      <div class="inner-text-section">
+                        <div class="article-side">
+                          <div class="top-section">
+                            <a href="#">
+                              <div class="heading"><h2>In practice of unoptimized life</h2></div>
+                              <div class="paragraph">
+                                <p>During this time of stress and fear, I decided to take a weird approach. 
+                                  Rather than rushing and trying out all the solutions, I decided to sit with 
+                                  my problems a bit longer through living a slow and unoptimized </p>
+                              </div>
+                            </a>
+                          </div>
+                          <div class="bottom-section">
+                            <div class="inner-container">
+                              <div class="time-section">
+                                <div class="button-section">
+                                  <a href="#"><div>Engineering</div></a>
+                                </div>
+                                <div class="read-time-section">
+                                  <a href="#">
+                                    <p>
+                                      <span>4 min read</span>
+                                    </p>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="bmk-section">
+                                  <i class="bi bi-bookmark-plus fs-5 me-2"></i>
+                                  <i class="bi bi-three-dots fs-5"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="image-side">
+                          <a href="#">
+                            <div class="img-container">
+                              <img class="img-fluid" src="../static/assets/images/intro-section.png" alt="img">
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article>
+              <div class="article-container">
+                <div class="inner-article-container">
+                  <div>
+                    <div class="date-section">
+                      <div><a href="#">1 day ago</a></div>
+                    </div>
+                    <div class="text-section">
+                      <div class="inner-text-section">
+                        <div class="article-side">
+                          <div class="top-section">
+                            <a href="#">
+                              <div class="heading"><h2>In practice of unoptimized life</h2></div>
+                              <div class="paragraph">
+                                <p>During this time of stress and fear, I decided to take a weird approach. 
+                                  Rather than rushing and trying out all the solutions, I decided to sit with 
+                                  my problems a bit longer through living a slow and unoptimized </p>
+                              </div>
+                            </a>
+                          </div>
+                          <div class="bottom-section">
+                            <div class="inner-container">
+                              <div class="time-section">
+                                <div class="button-section">
+                                  <a href="#"><div>Engineering</div></a>
+                                </div>
+                                <div class="read-time-section">
+                                  <a href="#">
+                                    <p>
+                                      <span>4 min read</span>
+                                    </p>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="bmk-section">
+                                  <i class="bi bi-bookmark-plus fs-5 me-2"></i>
+                                  <i class="bi bi-three-dots fs-5"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="image-side">
+                          <a href="#">
+                            <div class="img-container">
+                              <img class="img-fluid" src="../static/assets/images/intro-section.png" alt="img">
+                            </div>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -345,169 +465,3 @@
   </div>
 </div>
 {% endblock %}
-
-<!--<div class="container text-center">
-  <div class="row">
-    <div class="col-sm-8 columnA order-md-1 order-2">
-      <div class="columnA-container">
-        <div class="top_part">
-          <div class="header">
-            <div class="header-name"><a href="{{ url_for('main.user', username=current_user.username) }}">{{ current_user.fullname }}</a></div>
-            <div class="dropdown-center">
-              <div class="three-dots dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots"></i></div>
-              <ul class="dropdown-menu shadow-sm">
-                <li><a id="copyLinkToProfile" class="dropdown-item">Copy link to profile</a></li>
-                <li><a class="dropdown-item" href="#">Mute this author</a></li>
-                <li><a class="dropdown-item" href="#">Block this author</a></li>
-                <li><a class="dropdown-item" href="#">Report this author</a></li>
-                <li><a class="dropdown-item" href="#">Design your profile</a></li>
-              </ul>
-            </div>
-          </div>
-          <nav class="about-home-container"></nav>
-        </div>
-        <div class="card text-start">
-          <div class="card-header">
-            <div><i class="bi bi-person"></i></div>
-            <div class="fw-semibold">The secret Developer.</div>
-            <div>Jan 12</div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title fw-bold">The 7 signs of a programmer</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
-            <div class="footer">
-              <div class="footer-start">
-                <div>Software Development</div>
-                <p>4 min read</p>
-              </div>
-              <div class="footer-end">
-                <i class="bi bi-bookmark"></i>
-                <i class="bi bi-three-dots"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 columnB order-md-2 order-1">
-      <div class="columnB-container">
-        <div class="columnB-container-header">
-          <div class="sm-div">
-            <div class="sm-profile-followers-name">
-              <div class="profile-image-container">
-                <a href="{{ url_for('main.user', username=current_user.username) }}">
-                  {% if current_user.to_use_gravatar %}
-                  <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
-                  {% else %}
-                  <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
-                  {% endif %}
-                </a>
-              </div>
-              <div class="sm-name-followers-div">
-                <div class="profile-name">
-                  <a href="{{ url_for('main.user', username=current_user.username) }}">
-                    <h2>{{ current_user.fullname }}</h2>
-                  </a>
-                </div>
-                <div class="profile-followers">
-                  <a href="{{ url_for('main.followers')}}"><h2>1.8K Followers</h2></a>
-                </div>
-              </div>
-            </div>
-            <div class="three-dots dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots"></i></div>
-            <div class="follow-message-section">
-              <button class="btn follow-btn">Follow</button>
-              <div class="btn follow-btn"><i class="bi bi-envelope-plus"></i></div>
-            </div>
-          </div>
-          <div class="profile-bio">
-            <p>{{ current_user.about_me }}</p>
-          </div>
-          <div class="following-section">
-            <span class="header">Following</span>
-            <ul>
-              <li>
-                <a href="{{ url_for('main.user', username=current_user.username) }}">
-                  <div>
-                    <div class="image-container">
-                      {% if current_user.to_use_gravatar %}
-                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
-                      {% else %}
-                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
-                      {% endif %}
-                    </div>
-                    <p class="text-muted">{{ current_user.fullname }}</p>
-                  </div>
-                </a>
-                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
-              </li>
-              <li>
-                <a href="{{ url_for('main.user', username=current_user.username) }}">
-                  <div>
-                    <div class="image-container">
-                      {% if current_user.to_use_gravatar %}
-                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
-                      {% else %}
-                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
-                      {% endif %}
-                    </div>
-                    <p class="text-muted">{{ current_user.fullname }}</p>
-                  </div>
-                </a>
-                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
-              </li>
-              <li>
-                <a href="{{ url_for('main.user', username=current_user.username) }}">
-                  <div>
-                    <div class="image-container">
-                      {% if current_user.to_use_gravatar %}
-                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
-                      {% else %}
-                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
-                      {% endif %}
-                    </div>
-                    <p class="text-muted">{{ current_user.fullname }}</p>
-                  </div>
-                </a>
-                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
-              </li>
-              <li>
-                <a href="{{ url_for('main.user', username=current_user.username) }}">
-                  <div>
-                    <div class="image-container">
-                      {% if current_user.to_use_gravatar %}
-                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
-                      {% else %}
-                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
-                      {% endif %}
-                    </div>
-                    <p class="text-muted">{{ current_user.fullname }}</p>
-                  </div>
-                </a>
-                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
-              </li>
-              <li>
-                <a href="{{ url_for('main.user', username=current_user.username) }}">
-                  <div>
-                    <div class="image-container">
-                      {% if current_user.to_use_gravatar %}
-                      <img class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile-picture">
-                      {% else %}
-                      <img class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
-                      {% endif %}
-                    </div>
-                    <p class="text-muted">{{ current_user.fullname }}</p>
-                  </div>
-                </a>
-                <div class="three-dots"><i class="bi bi-three-dots fs-4"></i></div>
-              </li>
-            </ul>
-            <p class="see-all">
-              <a href="#">See all(234)</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->

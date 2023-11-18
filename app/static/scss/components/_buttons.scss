@@ -5,22 +5,19 @@
         display: block;
     }
     padding: 0.4rem 1.2rem;
-    background-color: $black;
+    background-color: $gray-900;
     color: $white;
     border: none;
+    cursor: pointer;
 
     a {
         text-decoration: none;
         color: $white;
-        
-        &:hover {
-            color: $black;
-        }
     }
 
     &:hover {
-        background-color: $primary;
-        color: $black;
+        background-color: $black;
+        color: $white;
         border: 0.1rem solid $black;
     }
 }

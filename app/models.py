@@ -31,6 +31,7 @@ class User(UserMixin, db.Model):
     to_use_gravatar = db.Column(db.Boolean, default=False)
     is_confirmed = db.Column(db.Boolean, default=False)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
+    posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     #This constructor is executed the moment a user a created to assing the user roles
     def __init__(self, **kwargs):
@@ -143,3 +144,13 @@ class Role(db.Model):
 
     def __repr__(self):
         return 'role:{}, id:{}, permissions:{}'.format(self.name, self.id, self.permissions)
+
+#================================================================================================================
+# THE POSTS TABLE. HANDLE STORING POSTS MADE BY USERS
+#================================================================================================================
+class Post(db.Model):
+    __tablename__ = 'posts'
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))

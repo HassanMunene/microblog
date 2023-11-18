@@ -2,125 +2,31 @@
 
 // IF YOU WANT THE NAVIGATION STYLING THEN IT IS IN THE TOPOGRAPHY SECTION
 
-/*=======================================================================================
-* columnA  SECTION STYLING
-========================================================================================*/
-.columnA {
-    border-top: 0;
-    border-right: 1px solid $gray-300;
-    border-bottom: 0;
-    border-left: 0;
-}
-// This is the scrollable tab
-// Where we will scroll for more features
-.columnA .scrollable-tabs-container {
-    background-color: $white;
-    max-width: 100%;
-    margin-top: 2rem;
-    padding: 1.2rem 0;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-}
-.columnA .scrollable-tabs-container ul{
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-}
-.columnA .scrollable-tabs-container ul li {
-    padding: 0;
-}
-.columnA .scrollable-tabs-container ul li a {
-    background-color: $gray-100;
-    color: $gray-800;
-    padding: .2rem .6rem;
-    border-radius: .4rem;
-    user-select: none;
-    white-space: nowrap;
-}
-.columnA .scrollable-tabs-container ul li a.active {
-    background-color: $primary;
-}
-.columnA .scrollable-tabs-container .left-arrow,
-.columnA .scrollable-tabs-container .right-arrow {
-    position: absolute;
-    height: 100%;
-    width: 4rem;
-    top: 0;
-    display: none;
-    align-items: center;
-}
-.columnA .scrollable-tabs-container .right-arrow {
-    right: 0;
-    background: linear-gradient(to left, $gray-100 20%, transparent);
-    justify-content: flex-end;
-    cursor: pointer;
-}
-.columnA .scrollable-tabs-container .left-arrow {
-    left: 0;
-    background: linear-gradient(to right, $gray-100 20%, transparent);
-    cursor: pointer;
-}
-.columnA .scrollable-tabs-container .left-arrow.active,
-.columnA .scrollable-tabs-container .right-arrow.active {
-    display: flex;
-}
 
-/*==================================================================================
-* THE CARDS THAT THE WILL CONTAIN THE POSTS BY THE USERS
-===================================================================================*/
-.card {
-    border: 0;
-    border-radius: 0;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid $gray-300;
-}
-.card-header {
-    background-color: $white;
-    border-bottom: 0;
-    display: flex;
-    align-items: center;
-    padding-bottom: 0;
-}
-.card-header div {
-    margin-right: .5rem;
-}
-.card-body {
-    padding-top: .7rem;
-}
-.card .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.card .footer .footer-start {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: .9rem;
-}
-.card .footer .footer-start div {
-    background-color: $gray-300;
-    border: 1px solid $gray-300;
-    border-radius: 2rem;
-    margin-right: .8rem;
-    padding: .4rem .3rem .4rem .3rem;
-}
-.card .footer .footer-start p {
-    margin: 0;
-}
-.card .footer .footer-end i {
-    font-size: 1rem;
-    margin-left: 1rem;
-}
+/*=====================================================================================
+* THE BODY SECTION OF THE AUTHENTICATED HOME PAGE
+* ===================================================================================*/
 
-/*===================================================================================
-* COLUMN B SECTION STYLING
-====================================================================================*/
+/*=====================================================================================
+* THE MEDIA QUERY SECTION
+* ====================================================================================*/
+@media only screen and (max-width: 576px) {
+    .body-container .inner-body-container .secondary-section {
+        display: none;
+    }
+    .inner-body-container .main-section .main-container .posts-section .inner-posts-section {
+        padding-top: 50px;
+        display: block;
+    }
+    .inner-posts-section article .article-container .inner-article-container .inner-article-container2 {
+        margin: 0px 24px;
+    }
+    .inner-article-container2 .profile-container button img {
+        width: 24px;
+        height: 24px;
+    }
+    .inner-article-container2 .text-section .inner-text-section .article-side .bottom-section {
+        padding: 0;
+        display: block;
+    }
+}

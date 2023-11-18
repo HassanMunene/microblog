@@ -19,7 +19,7 @@
 
  /*=====================================================================
  * This function will handle showing and hiding custom alert
- =====================================================================*/
+ =====================================================================
  function showCustomAlert() {
   const customAlert = document.getElementById('customAlert');
   customAlert.style.top = '1rem';
@@ -32,17 +32,17 @@
   customAlert.style.top = '-100px';
  }
  // enable the close button to also hide the customAlert
- document.getElementById('customAlertClose').addEventListener('click', function () {
-  hideCustomAlert();
- });
+ //document.getElementById('customAlertClose').addEventListener('click', function () {hideCustomAlert();});
+ 
 
 
  /*=====================================================================
  * The following below is a function that generates the popup alert
- ======================================================================*/
+ ======================================================================
  //add an event listener to handle this function
  document.addEventListener('DOMContentLoaded', function () {
     const copyLinkToProfile = document.getElementById('copyLinkToProfile');
     //console.log(copyLinkToProfile);
     copyLinkToProfile.addEventListener('click', copyProfileLink);
  });
+ */

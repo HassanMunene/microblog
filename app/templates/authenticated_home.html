@@ -122,45 +122,82 @@
 {% endblock %}
 
 {% block content %}
-<div class="container text-center">
-  <div class="row">
-    <div class="col-8 columnA">
-      <div class="scrollable-tabs-container border-bottom border-top">
-        <div class="left-arrow" id="left-arrow"><i class="bi bi-chevron-left" id="left-arrow-chevron"></i></div>
-        <ul id="section-list">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">For you</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Following</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Lost and Found</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Market place</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Trending Issues</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Exam Bank</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Timetables</a></li>
-        </ul>
-        <div class="right-arrow active" id="right-arrow"><i class="bi bi-chevron-right" id="right-arrow-chevron"></i></div>
-        </div>
-        <div class="card text-start">
-          <div class="card-header">
-            <div><i class="bi bi-person"></i></div>
-            <div class="fw-semibold">The secret Developer.</div>
-            <div>Jan 12</div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title fw-bold">The 7 signs of a programmer</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima non amet dolore adipisci temporibus eveniet deleniti minus error, dolor similique!...</p>
-            <div class="footer">
-              <div class="footer-start">
-                <div>Software Development</div>
-                <p>4 min read</p>
+<div id="customAlert" class="customAlert">
+  <div class="customAlertContent">
+    <span class="customAlertMessage">Link copied</span>
+    <button id="customAlertClose" class="btn customAlertClose"><i class="bi bi-x"></i></button>
+  </div>
+</div>
+<div class="body-container">
+  <div class="inner-body-container">
+    <main class="main-section">
+      <div class="main-container">
+        <div class="posts-section">
+          <div class="inner-posts-section">
+            {% for post in posts %}
+            <article>
+              <div class="article-container">
+                <div class="inner-article-container">
+                  <div class="inner-article-container2">
+                    <div class="date-section">
+                      <div class="profile-container">
+                        <button id="profile-button" class="profile-container-btn">
+                          <div class="profile_picture_div">
+                            {% if post.author.to_use_gravatar %}
+                            <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                            {% else %}
+                            <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                            {% endif %}
+                          </div> 
+                        </button>
+                      </div>
+                      <div class="username">{{ post.author.fullname }}</div>
+                      <div class="date"><a href="#">{{ post.timestamp }}</a></div>
+                    </div>
+                    <div class="text-section">
+                      <div class="inner-text-section">
+                        <div class="article-side">
+                          <div class="top-section">
+                            <a href="#">
+                              <div class="heading"><h2>In practice of unoptimized life</h2></div>
+                              <div class="paragraph">
+                                <p>{{ post.body }}</p>
+                              </div>
+                            </a>
+                          </div>
+                          <div class="bottom-section">
+                            <div class="inner-container">
+                              <div class="time-section">
+                                <div class="button-section">
+                                  <a href="#"><div>Engineering</div></a>
+                                </div>
+                                <div class="read-time-section">
+                                  <a href="#">
+                                    <p>
+                                      <span>4 min read</span>
+                                    </p>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="bmk-section">
+                                  <i class="bi bi-bookmark-plus fs-5 me-2"></i>
+                                  <i class="bi bi-three-dots fs-5"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="footer-end">
-                <i class="bi bi-bookmark"></i>
-                <i class="bi bi-three-dots"></i>
-              </div>
-            </div>
+            </article>
+            {% endfor %}
           </div>
         </div>
       </div>
-    <div class="col-4"></div>
+    </main>
+    <div class="secondary-section"></div>
   </div>
 </div>
 {% endblock %}

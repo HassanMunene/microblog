@@ -11908,7 +11908,7 @@ a {
 
 .body-container .inner-body-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .body-container .inner-body-container .main-section {
@@ -12070,7 +12070,7 @@ a {
   justify-content: center;
 }
 
-.article-container .inner-article-container div {
+.article-container .inner-article-container .inner-article-container2 {
   max-width: 680px;
   min-width: 0px;
   margin: 0px 0px;
@@ -12085,7 +12085,18 @@ a {
   flex-wrap: nowrap;
 }
 
-.article-container .inner-article-container div .date-section div a {
+.article-container .inner-article-container div .date-section .username {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+
+.article-container .inner-article-container div .date-section .date {
+  margin-left: 8px;
+}
+
+.article-container .inner-article-container div .date-section .date a {
   color: #343a40;
   font-size: 15px;
 }
@@ -12157,17 +12168,18 @@ a {
 .inner-text-section .article-side .bottom-section .inner-container .time-section {
   flex: 1 1 auto;
   display: flex;
+  gap: 1.5rem;
   padding: 0;
   align-items: center;
 }
 
 .bottom-section .inner-container .time-section .button-section {
   overflow: visible;
-  margin-right: 8px;
+  padding-right: 8px;
+  display: flex;
 }
 
-.bottom-section .inner-container .time-section .button-section a {
-  display: inline-block;
+.bottom-section .inner-container .time-section .button-section a div {
   white-space: nowrap;
   border: 1px solid #e9ecef;
   border-radius: 100px;
@@ -12181,6 +12193,19 @@ a {
 .bottom-section .inner-container .time-section .read-time-section {
   display: flex;
 }
+.bottom-section .inner-container .time-section .read-time-section a {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0px;
+}
+.bottom-section .inner-container .time-section .read-time-section a p {
+  font-size: 13px;
+  color: #343a40;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+}
 
 .bottom-section .inner-container .time-section .read-time-section a {
   margin: 0;
@@ -12188,6 +12213,36 @@ a {
   font-size: 13px;
   color: #343a40;
   font-weight: 400;
+}
+
+.bottom-section .inner-container .bmk-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.bottom-section .inner-container .bmk-section i {
+  color: #343a40;
+}
+
+.inner-article-container div .text-section .inner-text-section .image-side {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inner-article-container div .text-section .inner-text-section .image-side a {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.text-section .inner-text-section .image-side a .img-container {
+  display: block;
+  cursor: pointer;
+}
+.text-section .inner-text-section .image-side a .img-container img {
+  vertical-align: middle;
+  width: 112px;
+  height: 112px;
 }
 
 /*================================================================================================
@@ -12403,65 +12458,11 @@ a {
     display: block;
     margin-right: 2rem;
   }
-  .columnA .header {
+  .body-container .inner-body-container .profile-part {
     display: none;
   }
-  .columnB {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-  .columnB .columnB-container {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-  }
-  .columnB .columnB-container-header {
-    margin: 24px 0;
-  }
-  .columnB .columnB-container-header .sm-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .columnB .columnB-container-header .sm-div .sm-profile-followers-name {
-    margin-right: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .columnB .columnB-container-header .sm-div .sm-profile-followers-name .profile-image-container {
-    margin-right: 20px;
-    height: auto;
-    width: 3rem;
-  }
-  .columnB .columnB-container-header .sm-div .sm-profile-followers-name .profile-image-container a {
-    height: auto;
-  }
-  .columnB .columnB-container-header .sm-div .sm-profile-followers-name .profile-image-container a img {
-    width: 3rem;
-    height: 3rem;
-  }
-  .columnB .columnB-container-header .sm-div .sm-name-followers-div .profile-name {
-    margin-top: 0;
-  }
-  .columnB .columnB-container-header .sm-div .sm-name-followers-div .profile-name a h2 {
-    font-size: 1.5rem;
-    font-weight: 900;
-  }
-  .columnB .columnB-container-header .sm-div .sm-name-followers-div .profile-followers {
-    margin-top: 0.5rem;
-  }
-  .columnB .columnB-container-header .three-dots {
-    display: block;
-  }
-  .columnB-container-header .profile-bio {
-    display: none;
-  }
-  .columnB-container-header .following-section {
-    display: none;
+  .body-container .inner-body-container .main-section {
+    min-width: auto;
   }
 }
 

@@ -173,10 +173,10 @@ body {
     align-items: center;
     fill: $gray-600; 
 }
-.container-fluid2 .profile-container {
+.profile-container {
     display: block;
 }
-.container-fluid2 .profile-container button {
+.profile-container button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -185,7 +185,7 @@ body {
     margin: 0;
     padding: 0;
 }
-.container-fluid2 .profile-container button img {
+.profile-container button img {
     width: 32px;
     height: 32px;
     border-radius: 50%;

@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}<title>Post something | KcaVibes</title>{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md bg-emphasis">
+    <div class="container-fluid2 border-bottom">
+      <div class="brand-container">
+        <a class="navbar-brand fs-3 fw-bold" href="/">Kca<span>Vibes</span></a>
+      </div>
+      <div id="publishButton" class="rounded-pill btn-rounded me-4">Publish</div>
+      <div class="profile-container">
+        <button id="profile-button" class="profile-container-btn">
+          <div class="profile_picture_div">
+            {% if current_user.to_use_gravatar %}
+            <img  class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile picture">
+            {% else %}
+            <img  class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+            {% endif %}
+          </div> 
+        </button>
+      </div>
+      <div id="dropdown-element" class="drop-down-container">
+        <div class="inner-drop-down-container">
+          <div>
+            <div class="top-part">
+              <div class="write-link">
+                <a href="{{ url_for('main.write') }}">
+                  <div class="p">
+                    <i class="bi bi-pencil-square fs-4"></i>
+                    <div class="write">Write</div>
+                  </div>
+                </a>
+              </div>
+              <a href="{{ url_for('main.user', username=current_user.username) }}">
+                <div class="p">
+                  <i class="bi bi-person fs-4"></i>
+                  <div>Profile</div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="p">
+                  <i class="bi bi-bookmarks fs-4"></i>
+                  <div>Library</div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="p">
+                  <i class="bi bi-file-earmark-text fs-4"></i>
+                  <div>stories</div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="p">
+                  <i class="bi bi-bar-chart-fill fs-4"></i>
+                  <div>stats</div>
+                </div>
+              </a>
+            </div>
+            <div class="middle-part">
+              <a href="#">
+                <div>Settings</div>
+              </a>
+              <a href="#">
+                <div>Refined recommendations</div>
+              </a>
+              <a href="#">
+                <div>Manage publications</div>
+              </a>
+              <a href="#">
+                <div>Help</div>
+              </a>
+            </div>
+            <div class="lower-middle-part">
+              <a href="#">
+                <div>Become a KcaVibes member</div>
+              </a>
+              <a href="#">
+                <div>Gift membership</div>
+              </a>
+              <a href="#">
+                <div>Join developers community</div>
+              </a>
+            </div>
+            <div class="logout-part">
+              <a href="{{ url_for('auth.logout') }}">
+                <div>Sign out</div>
+              </a>
+            </div>
+            <div class="footer-part"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form method='POST' action="">
+      <textarea class="custom-textarea" id="postingTextArea" rows="24" placeholder="Tell your story..."></textarea>
+  </form> 
+</div>
+{% endblock %}
