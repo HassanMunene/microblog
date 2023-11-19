@@ -128,3 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 });
+
+/*==================================================================================
+* if your looking for the post preview modal then it is on posting_page.js file
+* ================================================================================*/

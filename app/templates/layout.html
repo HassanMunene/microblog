@@ -257,22 +257,45 @@
 
 
 <!---------------------MODAL 7 SHOW THE POST PREVIEW AND ADD A FEW MORE THINGS------------------------->
-<div class="modal fade modal4" id="preview_post_modal" tabindex="-1" role="dialog" aria-labelledby="preview_post_modal" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="custom_modal" id="customModal" aria-labelledby="custom_modal" aria-hidden="true">
+    <div class="modal-content">
+        <div class="custom-modal-body">
+          <div class="customRow">
+            <div class="modal-close" id="close_btn">
+                <span class="close_btn" onclick="closeModal()"><i class="bi bi-x"></i></span>
             </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">The priview page</div>
-                        <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
-                    </div>
+            <div class="customRowContainer">
+              <div class="columnA">
+                <P><b>Post preview</b></P>
+                <div class="title-section">
+                  <div class="title-heading">Please enter the title here</div>
+                  <input type="email" class="custom-input" id="postTitle" placeholder="write preview title">
                 </div>
+                <div class="note-section">
+                    <p>
+                        <b>Note:</b>
+                        Changes here will affect how you post appers in public places like kcavibe's homepage
+                        and not the content of the post itself
+                    </p>
+                </div>
+              </div>
+              <div class="columnB">
+                <p class="publisher-name">Publishing to: <span>{{ current_user.fullname }}</span></p>
+                <div class="topic-section">
+                  <p> <span>Add topic so that the readers can know what your story is about</span></p>
+                  <input type="email" class="custom-input" id="postTopic" placeholder="Add topic...">
+                  <div class="publish-section" id="publishNowButton">
+                    <div class="rounded-pill btn-rounded">
+                        <a href="#">Publish now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+  </div>
 </div>
 <!---------------------END OF MODAL 7----------------------------------------------------------------->
 

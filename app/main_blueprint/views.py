@@ -51,7 +51,7 @@ def user(username):
 
 @main.route('/followers')
 def followers():
-    return 'this will be the followers page'
+    return render_template('followers.html')
 
 
 #============================================================================================================================================
@@ -64,7 +64,9 @@ def write():
         print(header)
         data = request.get_json()
         text_data = data.get('textData', '')
-        post = Post(body=text_data, author=current_user._get_current_object())
+        title = data.get('title', '')
+        topic = data.get('topic', '')
+        post = Post(body=text_data, title=title, topic=topic, author=current_user._get_current_object())
         db.session.add(post)
         db.session.commit()
         return jsonify({'status': True})

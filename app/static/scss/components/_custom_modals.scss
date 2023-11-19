@@ -1,0 +1,142 @@
+@use'../custom' as *;
+
+/*==================================================================================
+* ==========THIS IS THE CUSTOM POST PREVIEW MODAL===================================
+* ================================================================================*/
+.custom_modal {
+    background-color: rgba(255, 255, 255, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.custom_modal.show {
+    opacity: 1;
+}
+.custom_modal .modal-content {
+    width: 100%;
+}
+
+.custom_modal .custom-modal-body {
+    width: 100%;
+    height: 100%;
+}
+.custom_modal .custom-modal-body .customRow {
+    padding: 100px 5px;
+    width: 80%;
+    margin: auto;
+    max-width: 1040px;
+    position: relative;
+}
+.custom_modal .modal-content .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    color: $gray-600;
+    &:hover {
+        color: $black;
+    }
+    span {
+        font-size: 30px;
+    }
+}
+.custom_modal .custom-modal-body .customRow .customRowContainer {
+    color: $black;
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+}
+.custom_modal .custom-modal-body .customRow .customRowContainer .columnA {
+    flex: 1;
+    line-height: 20px;
+    text-align: left;
+    font-size: 1rem;
+    padding: 40px;
+}
+.customRow .customRowContainer .columnA .title-section {
+    margin-top: 40px;
+}
+.customRow .customRowContainer .columnA .title-section .title-heading {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.customRow .customRowContainer .columnA .title-section .custom-input {
+    padding-top: 1rem;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-300;
+    border-radius: 0px;
+    outline: none;
+    display: block;
+}
+.customRow .customRowContainer .columnA .note-section {
+    margin-top: 16px;
+    p {
+        font-size: 14px;
+        color: $gray-600;
+    }
+}
+
+/*=================COLUMN B SECTION===============================================*/
+.custom_modal .custom-modal-body .customRow .customRowContainer .columnB {
+    flex: 1;
+    line-height: 20px;
+    text-align: left;
+    font-size: 1rem;
+    padding: 40px;
+}
+.customRow .customRowContainer .columnB .publisher-name {
+    font-weight: bolder;
+    color: $gray-700;
+    span {
+        color: $black;
+        text-transform: capitalize;
+    }
+}
+.customRow .customRowContainer .columnB .topic-section {
+    margin-top: 40px;
+}
+.customRow .customRowContainer .columnB .topic-section .custom-input {
+    width: 100%;
+    outline: none;
+    border-radius: none;
+    background-color: $gray-100;
+    border: 1px solid $gray-400;
+    padding: 1rem;
+    font-size: 15px;
+}
+.customRow .customRowContainer .columnB .topic-section .publish-section {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 140px;
+}
+.customRowContainer .columnB .topic-section .publish-section .btn-rounded {
+    background-color: $green;
+    border: none;
+    &:hover {
+        background-color: $green-dark;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .custom_modal .custom-modal-body .customRow {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .custom_modal .custom-modal-body .customRow .customRowContainer {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .custom_modal .custom-modal-body .customRow .customRowContainer .columnA {
+        padding-bottom: 0px;
+    }
+}
