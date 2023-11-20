@@ -14,13 +14,13 @@ def home():
     """
     This is the first route that the users see when they open the application
     """
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
     if current_user.is_authenticated:
         print (current_user.username)
         print (current_user.profile_picture_url)
-        posts = Post.query.order_by(Post.timestamp.desc()).all()
         #print(posts)
         return render_template('authenticated_home.html', posts=posts)
-    return render_template('home.html')
+    return render_template('home.html', posts=posts)
 
 @main.route('/about')
 def about():

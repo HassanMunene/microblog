@@ -1,5 +1,31 @@
-// IMPORT THE MAIN CUSTOME SCSS
 @use'../custom' as *;
+
+/*==================================================================================
+* ========This is the home page for users that have not yet logged in
+* ================================================================================*/
+.navbar {
+    background-color: $primary;
+    transition: background-color 0.3s ease-in;
+}
+// this property will come alive when the user scrolls past the intro-section
+.navbar.show {
+    box-shadow: none;
+    border-bottom: 1px solid $gray-800;
+}
+.navbar-brand {
+    font-size: xx-large;
+}
+
+li {
+    padding: 0 0.9rem;
+    color: #000;
+    text-transform: capitalize;
+}
+.mediaQ {
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
 
 .btn-home {
     margin: 2rem 0;

@@ -12222,22 +12222,6 @@ body {
     display: block;
   }
 }
-.navbar-brand {
-  font-size: xx-large;
-}
-
-li {
-  padding: 0 0.9rem;
-  color: #000;
-  text-transform: capitalize;
-}
-
-@media (max-width: 575.98px) {
-  .mediaQ {
-    display: none;
-  }
-}
-
 .intro-section {
   background-color: #ffc107;
   width: 100%;
@@ -12461,6 +12445,35 @@ li {
   background-color: rgb(26, 137, 23);
   color: #fff;
   border: 0.1rem solid rgb(26, 137, 23);
+}
+
+/*==================================================================================
+* ========This is the home page for users that have not yet logged in
+* ================================================================================*/
+.navbar {
+  background-color: #ffc107;
+  transition: background-color 0.3s ease-in;
+}
+
+.navbar.show {
+  box-shadow: none;
+  border-bottom: 1px solid #343a40;
+}
+
+.navbar-brand {
+  font-size: xx-large;
+}
+
+li {
+  padding: 0 0.9rem;
+  color: #000;
+  text-transform: capitalize;
+}
+
+@media (max-width: 575.98px) {
+  .mediaQ {
+    display: none;
+  }
 }
 
 .btn-home {
