@@ -21,6 +21,13 @@ li {
     color: #000;
     text-transform: capitalize;
 }
+// this class for button will be activated when user scrolls past intro-section
+.navbar .navbar-nav .btn-rounded.scroll-btn {
+    background-color: $green;
+    &:hover {
+        background-color: $green-dark;
+    }
+}
 .mediaQ {
     @include media-breakpoint-down(sm) {
         display: none;
@@ -30,4 +37,20 @@ li {
 .btn-home {
     margin: 2rem 0;
     width: 200px;
+}
+
+/*============posts-section===============================================*/
+.home_posts-section {
+    padding-top: 40px;
+    border-top: 1px solid $gray-100;
+} 
+.home_posts-section .container .inner-body-container {
+    display: flex;
+}
+
+/*====================Media query for home page==========================*/
+@media only screen and (max-width: 650px) {
+    .home_posts-section .inner-posts-section article .article-container .inner-article-container .inner-article-container2 {
+        margin: 0px;
+    }
 }

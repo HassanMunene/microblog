@@ -324,8 +324,12 @@ a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    cursor: pointer;
     i {
-        color: $gray-800;
+        color: $gray-700;
+        &:hover {
+            color: $black;
+        }
     }
 }
 .inner-article-container div .text-section .inner-text-section .image-side {

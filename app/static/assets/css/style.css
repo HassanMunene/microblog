@@ -11882,7 +11882,6 @@ textarea.form-control-lg {
 .btn-rounded:hover {
   background-color: #000;
   color: #fff;
-  border: 0.1rem solid #000;
 }
 
 body {
@@ -12470,6 +12469,13 @@ li {
   text-transform: capitalize;
 }
 
+.navbar .navbar-nav .btn-rounded.scroll-btn {
+  background-color: rgb(26, 137, 23);
+}
+.navbar .navbar-nav .btn-rounded.scroll-btn:hover {
+  background-color: rgb(7, 106, 5);
+}
+
 @media (max-width: 575.98px) {
   .mediaQ {
     display: none;
@@ -12481,6 +12487,22 @@ li {
   width: 200px;
 }
 
+/*============posts-section===============================================*/
+.home_posts-section {
+  padding-top: 40px;
+  border-top: 1px solid #f8f9fa;
+}
+
+.home_posts-section .container .inner-body-container {
+  display: flex;
+}
+
+/*====================Media query for home page==========================*/
+@media only screen and (max-width: 650px) {
+  .home_posts-section .inner-posts-section article .article-container .inner-article-container .inner-article-container2 {
+    margin: 0px;
+  }
+}
 #about-body {
   font-family: "Montserrat", sans-serif;
   background-color: #212529;
@@ -13055,9 +13077,13 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  cursor: pointer;
 }
 .bottom-section .inner-container .bmk-section i {
-  color: #343a40;
+  color: #495057;
+}
+.bottom-section .inner-container .bmk-section i:hover {
+  color: #000;
 }
 
 .inner-article-container div .text-section .inner-text-section .image-side {

@@ -12220,9 +12220,13 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  cursor: pointer;
 }
 .bottom-section .inner-container .bmk-section i {
-  color: #343a40;
+  color: #495057;
+}
+.bottom-section .inner-container .bmk-section i:hover {
+  color: #000;
 }
 
 .inner-article-container div .text-section .inner-text-section .image-side {

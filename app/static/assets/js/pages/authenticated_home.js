@@ -1,6 +1,6 @@
 /*========================================================================================
 *=============== CONTROL THE BEHAVIOUR OF DROPDOWN ELEMENT===========================
-====================================================================================*/
+====================================================================================
 
 document.addEventListener('DOMContentLoaded', function () {
     const profileButton = document.getElementById('profile-button');
@@ -25,4 +25,5 @@ document.addEventListener('DOMContentLoaded', function () {
         event.stopPropagation();
     })
 })
+===============================================================================*/
 
