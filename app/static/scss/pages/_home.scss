@@ -3,26 +3,26 @@
 /*==================================================================================
 * ========This is the home page for users that have not yet logged in
 * ================================================================================*/
-.navbar {
+.home-navbar .navbar {
     background-color: $primary;
     transition: background-color 0.3s ease-in;
 }
 // this property will come alive when the user scrolls past the intro-section
-.navbar.show {
+.home-navbar .navbar.show {
     box-shadow: none;
     border-bottom: 1px solid $gray-800;
 }
-.navbar-brand {
+.home-navbar .navbar-brand {
     font-size: xx-large;
 }
 
-li {
+.home-navbar .navbar-nav li {
     padding: 0 0.9rem;
     color: #000;
     text-transform: capitalize;
 }
 // this class for button will be activated when user scrolls past intro-section
-.navbar .navbar-nav .btn-rounded.scroll-btn {
+.home-navbar .navbar .navbar-nav .btn-rounded.scroll-btn {
     background-color: $green;
     &:hover {
         background-color: $green-dark;

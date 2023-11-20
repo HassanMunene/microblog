@@ -12465,30 +12465,30 @@ body {
 /*==================================================================================
 * ========This is the home page for users that have not yet logged in
 * ================================================================================*/
-.navbar {
+.home-navbar .navbar {
   background-color: #ffc107;
   transition: background-color 0.3s ease-in;
 }
 
-.navbar.show {
+.home-navbar .navbar.show {
   box-shadow: none;
   border-bottom: 1px solid #343a40;
 }
 
-.navbar-brand {
+.home-navbar .navbar-brand {
   font-size: xx-large;
 }
 
-li {
+.home-navbar .navbar-nav li {
   padding: 0 0.9rem;
   color: #000;
   text-transform: capitalize;
 }
 
-.navbar .navbar-nav .btn-rounded.scroll-btn {
+.home-navbar .navbar .navbar-nav .btn-rounded.scroll-btn {
   background-color: rgb(26, 137, 23);
 }
-.navbar .navbar-nav .btn-rounded.scroll-btn:hover {
+.home-navbar .navbar .navbar-nav .btn-rounded.scroll-btn:hover {
   background-color: rgb(7, 106, 5);
 }
 
@@ -12828,7 +12828,25 @@ a {
   justify-content: flex-start;
   flex: 1 1 auto;
 }
-.details-container .inner-details-container .header .header-name a {
+
+.details-container .inner-details-container .header .header-name .profile-container {
+  margin-right: 20px;
+}
+.details-container .inner-details-container .header .header-name .profile-container img {
+  width: 48px;
+  height: 48px;
+}
+
+.details-container .inner-details-container .header .header-name .name-followers {
+  display: block;
+}
+
+.inner-details-container .header .header-name .name-followers .name {
+  display: flex;
+  align-items: center;
+  display: block;
+}
+.inner-details-container .header .header-name .name-followers .name a {
   color: #343a40;
   font-size: 2.65rem;
 }
@@ -12890,7 +12908,7 @@ a {
 .details-container .inner-details-container .nav-section {
   height: 39px;
   position: relative;
-  display: block;
+  display: none;
   border-bottom: 1px solid #dee2e6;
 }
 
@@ -13341,6 +13359,38 @@ a {
   }
   .body-container .inner-body-container .main-section {
     min-width: auto;
+  }
+  .main-container .user-details-section .details-container .inner-details-container .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .inner-details-container .header .header-name .name-followers .name a {
+    letter-spacing: -0.016em;
+    font-size: 24px;
+    max-height: 30px;
+    line-height: 30px;
+    color: #000;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 900;
+  }
+  .inner-details-container .header .header-name .name-followers .followers p {
+    line-height: 24px;
+    font-size: 16px;
+    color: #495057;
+    margin: 0px;
+  }
+  .inner-details-container .header .follow-message-container {
+    display: flex;
+    flex: 0 0 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .user-page-container .main-section .main-container .posts-section .inner-posts-section {
+    padding-top: 0px;
   }
 }
 /*=======================================================================================
