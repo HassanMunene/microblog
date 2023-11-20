@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // This function will send the post data to the server using fetch api
+    // the data sent will be text, title and topic
     function submitForm(postingText, title, topic) {
         //prepare data to be sent
         let data = {
@@ -64,12 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Yoo bro something is wrong with your fetch api');
         })
     }
+    // when I click the publish btn in the post writing page I will capture the post
+    // and then call the openModal() function while passing the post as an argument 
     publishButton.addEventListener('click', function () {
         postingTextArea = postingTextArea.value;
         openModal(postingTextArea);
     });
     close_btn.addEventListener('click', closeModal);
-
-    // when I click the publish now button I want to save the details of the title
-    // and topic then pass the details to the submitForm() function. 
 })

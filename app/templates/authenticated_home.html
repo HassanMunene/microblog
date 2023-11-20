@@ -163,7 +163,11 @@
                         <div class="article-side">
                           <div class="top-section">
                             <a href="#">
-                              <div class="heading"><h2>In practice of unoptimized life</h2></div>
+                              {% if post.title %}
+                              <div class="heading"><h2>{{ post.title }}</h2></div>
+                              {% else %}
+                              <div class="heading" style="display: none;"></div>
+                              {% endif %}
                               <div class="paragraph">
                                 <p>{{ post.body }}</p>
                               </div>
@@ -172,9 +176,13 @@
                           <div class="bottom-section">
                             <div class="inner-container">
                               <div class="time-section">
+                                {% if post.topic %}
                                 <div class="button-section">
-                                  <a href="#"><div>Engineering</div></a>
+                                  <a href="#"><div>{{ post.topic }}</div></a>
                                 </div>
+                                {% else %}
+                                <div class="button-section" style="display: none;"></div>
+                                {% endif %}
                                 <div class="read-time-section">
                                   <a href="#">
                                     <p>
