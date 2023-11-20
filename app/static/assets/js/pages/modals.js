@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(response);
                     //we hide modal for entering email and show a modal showing email has been sent
                     if (response.email_known) {
-                        setTimeout(() => { enterEmailModalB.hide();}, 50)
+                        setTimeout(() => { enterEmailModalB.hide();}, 10)
                         emailSentModalC.show();
                     }
                     else {

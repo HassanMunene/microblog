@@ -10,13 +10,13 @@ migrate = Migrate(app, db)
 def make_shell_context():
     return dict(db=db, User=User, Role=Role, Permission=Permission)
 
-#def start_ngrok():
-#from pyngrok import ngrok
-#url = ngrok.connect(5000)
-#print(f'Ngrok Tunnel url: {url}')
+def start_ngrok():
+    from pyngrok import ngrok
+    url = ngrok.connect(5000)
+    print(f'Ngrok Tunnel url: {url}')
 
 # This line below ensures that ngrok runs on parent process in debug mode
 # so that it can be automatically restarted too
 
-#if os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
-#start_ngrok()
+if os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
+    start_ngrok()

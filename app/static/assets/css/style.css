@@ -11884,6 +11884,10 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.modal-backdrop.show {
+  opacity: 0.6;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -12404,6 +12408,18 @@ body {
   display: block;
   opacity: 1;
   transition: opacity 0.3s;
+}
+
+/*=======================================================================================
+* ========modal 3 customisation that is enter email modal================================
+* =====================================================================================*/
+.enter-email-modal .modal-body {
+  padding-bottom: 0px;
+}
+
+.go-back-btn {
+  border: none;
+  background-color: #fff;
 }
 
 /*=======================================================================================
