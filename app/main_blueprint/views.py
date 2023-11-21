@@ -54,6 +54,15 @@ def user(username):
 def followers():
     return render_template('followers.html')
 
+#===========================================================================================================================================
+#===============This route will handle uploading the image to the uploads folder incase the user writes a post with an image================
+#===========================================================================================================================================
+@main.route('/upload_image', methods=['POST'])
+def upload_image():
+    print(request.files)
+    image_data = request.files.get('image', None)
+    print(image_data)
+    return jsonify({'success': True})
 
 #============================================================================================================================================
 #==============This 'WRITE' route will handle when users write a post and send it to backend using js fetch api==============================

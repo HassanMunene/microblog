@@ -15,6 +15,44 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             customModal.classList.add('show');
         }, 100)
+        const label = document.getElementById('custom-file-input');
+        const inputImageField = document.getElementById('post-image');
+        const successButton = document.getElementById('success');
+        const includeImgStm = document.getElementById('include-image');
+        const successfullyIncludedStm = document.getElementById('Successfully-included');
+
+        // this eventlistener will handle the moment the image is uploaded
+        inputImageField.addEventListener('change', function(event) {
+            const image = event.target.files[0];
+            console.log(image);
+            // the create a form object from FormData() and append the image as key/value pair
+            // we will send the image to the server using fetch api once the user uploads it
+            const formData = new FormData();
+            formData.append('image', image);
+            fetch('/upload_image', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(function(response) {
+                if(!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+                label.style.display = 'none';
+                includeImgStm.style.display = 'none';
+                setTimeout(function () {
+                    successButton.style.display = 'block';
+                    successfullyIncludedStm.style.display = 'block';
+                }, 100)
+            })
+            .catch(function(error) {
+                console.error('Error', error);
+            });
+        })
+
         console.log(postingText);
         document.body.style.overflow = 'hidden';
 

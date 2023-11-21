@@ -24,7 +24,8 @@
 
 .custom_modal .custom-modal-body {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
 }
 .custom_modal .custom-modal-body .customRow {
     padding: 100px 5px;
@@ -76,6 +77,41 @@
     border-radius: 0px;
     outline: none;
     display: block;
+}
+.customRow .customRowContainer .columnA .image-section {
+    height: 200px;
+    width: 100%;
+    background-color: $gray-100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.customRow .customRowContainer .columnA .image-section .label {
+    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: $gray-700;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.customRow .customRowContainer .columnA .image-section .success {
+    margin-top: 20px;
+    color: $green;
+    display: none;
+}
+.customRow .customRowContainer .columnA .image-section .custom-file-input  {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: $green;
+    border-radius: 99em;
+    padding: 0.4rem 1rem;
+    color: $white;
+    font-weight: 900;
+    &:hover {
+        background-color: $green-dark;
+    }
 }
 .customRow .customRowContainer .columnA .note-section {
     margin-top: 16px;
@@ -138,5 +174,9 @@
     }
     .custom_modal .custom-modal-body .customRow .customRowContainer .columnA {
         padding-bottom: 0px;
+    }
+    .customRow .customRowContainer .columnA .image-section .label {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }
