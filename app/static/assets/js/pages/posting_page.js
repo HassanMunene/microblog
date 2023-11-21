@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(function(data) {
-                console.log(data);
                 label.style.display = 'none';
                 includeImgStm.style.display = 'none';
                 setTimeout(function () {
@@ -74,12 +73,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // This function will send the post data to the server using fetch api
     // the data sent will be text, title and topic
-    function submitForm(postingText, title, topic) {
+    function submitForm(postingText, title, topic, imageUrl) {
         //prepare data to be sent
         let data = {
             textData: postingText,
             title: title,
-            topic: topic
+            topic: topic,
+            image_url: imageUrl
         };
         // them make fetch api request
         fetch('/write', {

@@ -1,10 +1,12 @@
 from . import main
-from flask import render_template, redirect, url_for, flash, request, jsonify
+from flask import render_template, redirect, url_for, flash, request, jsonify, current_app, session
 from flask_login import current_user, login_required
 from .forms import PostForm
 from ..models import User, Post, Permission
 from .. import db
-
+import os
+from PIL import Image
+#PIL is Python Image Library for image processing
 
 #==========================================================================================================================================
 #=================================This is the home page that will handle both authenticated and not authenticated users===================
@@ -59,9 +61,28 @@ def followers():
 #===========================================================================================================================================
 @main.route('/upload_image', methods=['POST'])
 def upload_image():
-    print(request.files)
-    image_data = request.files.get('image', None)
-    print(image_data)
+    image_data = request.files.get('image')
+    #print(image_data.filename)
+    if not image_data.filename.endswith(('.jpg', '.jpeg', '.png')):
+        return jsonify({'state': 'Invalid image format'}), 400
+
+    image = Image.open(image_data)
+    width = 200
+    height = 200
+    resized_image = image.resize((width, height))
+    #then generate a unique file name for the image
+    new_filename = f'processed_{image_data.filename}'
+
+    # Construct the full path to save the file
+    upload_folder = os.path.join(current_app.static_folder, 'uploads')
+    os.makedirs(upload_folder, exist_ok=True)  # Ensure the directory exists if not then create
+    full_path = os.path.join(upload_folder, new_filename)
+    #save the processed image to uploads directory and generate its url to store in db
+    resized_image.save(full_path)
+    image_url = full_path
+
+    # store the image url in a session so that it can persist across request to make it accessible in another route '/write'
+    session['image_url'] = image_url
     return jsonify({'success': True})
 
 #============================================================================================================================================
@@ -76,7 +97,8 @@ def write():
         text_data = data.get('textData', '')
         title = data.get('title', '')
         topic = data.get('topic', '')
-        post = Post(body=text_data, title=title, topic=topic, author=current_user._get_current_object())
+        image_url = session.get('image_url', None)
+        post = Post(body=text_data, title=title, topic=topic, postImageUrl=image_url, author=current_user._get_current_object())
         db.session.add(post)
         db.session.commit()
         return jsonify({'status': True})
