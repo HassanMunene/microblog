@@ -7,6 +7,10 @@ from .. import db
 import os
 from PIL import Image
 #PIL is Python Image Library for image processing
+import base64
+from io import BytesIO
+import time
+import uuid
 
 #==========================================================================================================================================
 #=================================This is the home page that will handle both authenticated and not authenticated users===================
@@ -61,27 +65,35 @@ def followers():
 #===========================================================================================================================================
 @main.route('/upload_image', methods=['POST'])
 def upload_image():
-    image_data = request.files.get('image')
-    #print(image_data.filename)
-    if not image_data.filename.endswith(('.jpg', '.jpeg', '.png')):
-        return jsonify({'state': 'Invalid image format'}), 400
+    #the image url we receive is binary encoded hence we have to decode it using base64.b64decode to binary data
+    imageUrl = request.form.get('image_url')
+    actual_image_data = imageUrl.split(',')[1] #omit 'data:image/png;base64' part
 
-    image = Image.open(image_data)
+    image_binary_data = base64.b64decode(actual_image_data)
+
+    #after getting the binary data then we store it in-memory using BytesI0 so that we can process it.
+    image = BytesIO(image_binary_data)
+
+    image = Image.open(image)
     width = 200
     height = 200
     resized_image = image.resize((width, height))
-    #then generate a unique file name for the image
-    new_filename = f'processed_{image_data.filename}'
 
-    # Construct the full path to save the file
+    #then generate a unique file name for the image using timestamp and uuid
+    timestamp = int(time.time())
+    random_str = str(uuid.uuid4())[:4]
+    filename = f'processed_{timestamp}_{random_str}.png'
+
+    #Construct the full path to save the file
     upload_folder = os.path.join(current_app.static_folder, 'uploads')
     os.makedirs(upload_folder, exist_ok=True)  # Ensure the directory exists if not then create
-    full_path = os.path.join(upload_folder, new_filename)
+    full_path = os.path.join(upload_folder, filename)
+
     #save the processed image to uploads directory and generate its url to store in db
     resized_image.save(full_path)
     image_url = full_path
 
-    # store the image url in a session so that it can persist across request to make it accessible in another route '/write'
+    #store the image url in a session so that it can persist across request to make it accessible in another route '/write'
     session['image_url'] = image_url
     return jsonify({'success': True})
 

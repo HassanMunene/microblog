@@ -1,8 +1,67 @@
 @use'../custom' as *;
 
 /*=======================================================================================
-*============CUSTOM TEXTAREA===================
+*============CUSTOM TEXTAREA SECTION TO WRITE POSTS======================================
 *======================================================================================*/
+
+.image-preview-container {
+    max-width: 700px;
+    max-height: 394px;
+    display: block;
+    margin: 0px auto;
+}
+.image-preview-container .image-preview {
+    width: 100%;
+    height: 100%;
+}
+.add-media-container {
+    margin-top: 38px;
+}
+
+.custom-form {
+    padding: 20px 40px;
+    position: relative;
+}
+
+.custom-form .add-media {
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    font-size: 30px;
+    color: $green-dark;
+    cursor: pointer;
+}
+.custom-form .close-media {
+    display: none;
+}
+
+.custom-form .media-container {
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: 50px;
+    width: 60%;
+    background-color: $white;
+    opacity: 0;
+    transition: opacity .4s ease-out;
+    z-index: 2;
+}
+.custom-form .media-container.show {
+    opacity: 1;
+}
+
+.custom-form .media-container .upload-image-label {
+    background: $gray-100;
+    border: 2px solid green;
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+    i {
+        font-size: 16px;
+        padding: 4px;
+        color: $green-dark;
+    }
+}
 .custom-textarea {
     border-top: none;
     border-bottom: none;
