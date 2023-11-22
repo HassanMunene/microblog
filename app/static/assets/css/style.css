@@ -13408,10 +13408,6 @@ a {
   height: 100%;
 }
 
-.add-media-container {
-  margin-top: 38px;
-}
-
 .custom-form {
   padding: 20px 40px;
   position: relative;
@@ -13431,7 +13427,7 @@ a {
 }
 
 .custom-form .media-container {
-  display: block;
+  display: none;
   position: absolute;
   top: 24px;
   left: 50px;
@@ -13443,6 +13439,7 @@ a {
 }
 
 .custom-form .media-container.show {
+  display: block !important;
   opacity: 1;
 }
 

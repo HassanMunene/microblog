@@ -24,60 +24,28 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             customModal.classList.add('show');
         }, 100)
-        
+
         const imagePreview2 = document.getElementById('image-preview2');
-        console.log(imageDataUrl);
-        console.log(imagePreview);
+        //console.log(imageDataUrl);
+        //console.log(imagePreview);
         imagePreview2.src = imageDataUrl;
-
-        if(imageDataUrl) {
-            fetch('/upload_image', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `image_url=${encodeURIComponent(imageDataUrl)}`, 
-            })
-            .then(response => response.json())
-            .catch(error => {
-                console.error('Error', error);
-            });
-        }
-        // this eventlistener will handle the moment the image is uploaded
-        /*inputImageField.addEventListener('change', function(event) {
-            const image = event.target.files[0];
-            console.log(image);
-            // the create a form object from FormData() and append the image as key/value pair
-            // we will send the image to the server using fetch api once the user uploads it
-            const formData = new FormData();
-            formData.append('image', image);
-            fetch('/upload_image', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(function(response) {
-                if(!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(function(data) {
-                label.style.display = 'none';
-                includeImgStm.style.display = 'none';
-                setTimeout(function () {
-                    successButton.style.display = 'block';
-                    successfullyIncludedStm.style.display = 'block';
-                }, 100)
-            })
-            .catch(function(error) {
-                console.error('Error', error);
-            });
-        })*/
-
-        console.log(postingText);
+        //console.log(postingText);
         document.body.style.overflow = 'hidden';
 
         publishNowButton.addEventListener('click', function () {
+            if(imageDataUrl) {
+                fetch('/upload_image', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `image_url=${encodeURIComponent(imageDataUrl)}`, 
+                })
+                .then(response => response.json())
+                .catch(error => {
+                    console.error('Error', error);
+                });
+            }
             titleContent = titleContent.value;
             topicContent = topicContent.value;
             console.log(titleContent, topicContent);
@@ -157,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // read the selected file as a data url so the result will be dataUrl
             reader.readAsDataURL(selectFile);
             closeMediaContainer ();
-
         }
     });
 
