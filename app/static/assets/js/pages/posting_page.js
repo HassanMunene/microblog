@@ -24,11 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             customModal.classList.add('show');
         }, 100)
-        const label = document.getElementById('custom-file-input');
-        const inputImageField = document.getElementById('post-image');
-        const successButton = document.getElementById('success');
-        const includeImgStm = document.getElementById('include-image');
-        const successfullyIncludedStm = document.getElementById('Successfully-included');
+        
         const imagePreview2 = document.getElementById('image-preview2');
         console.log(imageDataUrl);
         console.log(imagePreview);

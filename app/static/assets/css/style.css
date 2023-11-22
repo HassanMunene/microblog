@@ -13477,7 +13477,7 @@ a {
 }
 
 /*==================================================================================
-* ==========THIS IS THE CUSTOM POST PREVIEW MODAL===================================
+* ==========THIS IS THE CUSTOM POST REVIEW MODAL===================================
 * ================================================================================*/
 .custom_modal {
   background-color: rgb(255, 255, 255);
@@ -13562,45 +13562,6 @@ a {
   border-radius: 0px;
   outline: none;
   display: block;
-}
-
-.customRow .customRowContainer .columnA .image-section {
-  height: 200px;
-  width: 100%;
-  background-color: #f8f9fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.customRow .customRowContainer .columnA .image-section .label {
-  letter-spacing: 0;
-  font-size: 15px;
-  line-height: 20px;
-  color: #495057;
-  text-align: center;
-  margin-left: 80px;
-  margin-right: 80px;
-}
-
-.customRow .customRowContainer .columnA .image-section .success {
-  margin-top: 20px;
-  color: rgb(26, 137, 23);
-  display: none;
-}
-
-.customRow .customRowContainer .columnA .image-section .custom-file-input {
-  margin-top: 20px;
-  cursor: pointer;
-  background-color: rgb(26, 137, 23);
-  border-radius: 99em;
-  padding: 0.4rem 1rem;
-  color: #fff;
-  font-weight: 900;
-}
-.customRow .customRowContainer .columnA .image-section .custom-file-input:hover {
-  background-color: rgb(7, 106, 5);
 }
 
 .customRow .customRowContainer .columnA .note-section {
