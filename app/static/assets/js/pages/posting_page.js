@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             reader.onload = function (e) {
                 // set src of image
                 imagePreview.src = e.target.result;
+                imagePreview.style.border = '1px solid rgb(26, 137, 23)'
                 imageDataUrl = e.target.result;
             };
             // read the selected file as a data url so the result will be dataUrl

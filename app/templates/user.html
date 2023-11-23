@@ -190,32 +190,32 @@
           <div class="inner-posts-section">
             {% for post in posts %}
             {% if post.author == current_user %}
-            <article class="border-bottom">
+            <article>
               <div class="article-container">
                 <div class="inner-article-container">
                   <div class="inner-article-container2">
-                    <div class="date-section">
-                      <div class="profile-container">
-                        <button id="profile-button" class="profile-container-btn">
-                          <div class="profile_picture_div">
-                            {% if post.author.to_use_gravatar %}
-                            <a href="{{ url_for('main.user', username=post.author.username) }}">
-                              <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
-                            </a>
-                            {% else %}
-                            <a href="{{ url_for('main.user', username=post.author.username) }}">
-                              <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
-                            </a>
-                            {% endif %}
-                          </div> 
-                        </button>
+                    <div class="text-container-side">
+                      <div class="date-section">
+                        <div class="profile-container">
+                          <button id="profile-button" class="profile-container-btn">
+                            <div class="profile_picture_div">
+                              {% if post.author.to_use_gravatar %}
+                              <a href="{{ url_for('main.user', username=post.author.username) }}">
+                                <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                              </a>
+                              {% else %}
+                              <a href="{{ url_for('main.user', username=post.author.username) }}">
+                                <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                              </a>
+                              {% endif %}
+                            </div> 
+                          </button>
+                        </div>
+                        <div class="username">{{ post.author.fullname }}</div>
+                        <div class="date"><a href="#">{{ post.timestamp }}</a></div>
                       </div>
-                      <div class="username">{{ post.author.fullname }}</div>
-                      <div class="date"><a href="#">{{ post.timestamp }}</a></div>
-                    </div>
-                    <div class="text-section">
-                      <div class="inner-text-section">
-                        <div class="article-side">
+                      <div class="text-section">
+                        <div class="inner-text-section">
                           <div class="top-section">
                             <a href="#">
                               {% if post.title %}
@@ -246,14 +246,20 @@
                                   </a>
                                 </div>
                               </div>
-                              <div class="bmk-section">
-                                  <i class="bi bi-bookmark-plus fs-5 me-2"></i>
+                              <div class="bmk-section home-bmk-section">
+                                  <i class="bi bi-bookmark-plus fs-6 me-2"></i>
                                   <i class="bi bi-three-dots fs-5"></i>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div class="image-container-side">
+                      <a href="#">
+                        <img src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                        <div class="image-overlay"></div>
+                      </a>
                     </div>
                   </div>
                 </div>

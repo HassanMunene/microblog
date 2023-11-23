@@ -10,7 +10,7 @@
 /*=====================================================================================
 * THE MEDIA QUERY SECTION
 * ====================================================================================*/
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 650px) {
     .body-container .inner-body-container .secondary-section {
         display: none;
     }
@@ -28,5 +28,8 @@
     .inner-article-container2 .text-section .inner-text-section .article-side .bottom-section {
         padding: 0;
         display: block;
+    }
+    .bottom-section .inner-container .time-section .read-time-section {
+        display: none !important;
     }
 }

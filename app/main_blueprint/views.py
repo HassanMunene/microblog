@@ -1,5 +1,6 @@
 from . import main
 from flask import render_template, redirect, url_for, flash, request, jsonify, current_app, session
+from flask import send_from_directory
 from flask_login import current_user, login_required
 from .forms import PostForm
 from ..models import User, Post, Permission
@@ -11,6 +12,7 @@ import base64
 from io import BytesIO
 import time
 import uuid
+import imghdr #to determine image type extension
 
 #==========================================================================================================================================
 #=================================This is the home page that will handle both authenticated and not authenticated users===================
@@ -82,19 +84,22 @@ def upload_image():
     #then generate a unique file name for the image using timestamp and uuid
     timestamp = int(time.time())
     random_str = str(uuid.uuid4())[:4]
-    filename = f'processed_{timestamp}_{random_str}.png'
+
+    # determine image extension type
+    image_extension = imghdr.what(None, h=image_binary_data)
+    filename = f'processed_{timestamp}_{random_str}.{image_extension}'
 
     #Construct the full path to save the file
     upload_folder = os.path.join(current_app.static_folder, 'uploads')
     os.makedirs(upload_folder, exist_ok=True)  # Ensure the directory exists if not then create
     full_path = os.path.join(upload_folder, filename)
 
-    #save the processed image to uploads directory and generate its url to store in db
+    #save the processed image to uploads directory and store its filename in db
     resized_image.save(full_path)
-    image_url = full_path
 
-    #store the image url in a session so that it can persist across request to make it accessible in another route '/write'
-    session['image_url'] = image_url
+    #store the image filename in a session so that it can persist across request to make it accessible in another route '/write'
+    session['image_filename'] = filename
+    print(filename)
     return jsonify({'success': True})
 
 #============================================================================================================================================
@@ -109,9 +114,20 @@ def write():
         text_data = data.get('textData', '')
         title = data.get('title', '')
         topic = data.get('topic', '')
-        image_url = session.get('image_url', None)
-        post = Post(body=text_data, title=title, topic=topic, postImageUrl=image_url, author=current_user._get_current_object())
+        image_filename = session.get('image_filename', None)
+        print(image_filename)
+        post = Post(body=text_data, title=title, topic=topic, imageName=image_filename, author=current_user._get_current_object())
         db.session.add(post)
         db.session.commit()
         return jsonify({'status': True})
     return render_template('posting_page.html')
+
+#==========================================================================================================================================
+#=This route will be used to serve static files to the client to provide a relative url to the frontend eg images stored in backend=
+#==========================================================================================================================================
+@main.route('/serve_image')
+def serve_image():
+    #will receive the request from img src with filename as the query parameter
+    filename = request.args.get('filename', '')
+    return send_from_directory('static/uploads', filename)
+

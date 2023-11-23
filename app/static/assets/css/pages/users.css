@@ -12077,9 +12077,15 @@ a {
   display: block;
 }
 
+.main-section .main-container .posts-section .inner-posts-section article {
+  border-bottom: 1px solid #e9ecef;
+}
+
 .main-container .posts-section .inner-posts-section article .article-container {
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 15px;
+  margin-top: 10px;
   display: block;
 }
 
@@ -12094,14 +12100,25 @@ a {
   margin: 0px 0px;
   width: 100%;
   height: 100%;
-  padding: 15px 0px;
+  padding: 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.article-container .inner-article-container div .date-section {
+.inner-article-container .inner-article-container2 .text-container-side {
+  margin-right: 20px;
+  min-width: 0px;
+  width: 100%;
+}
+
+.inner-article-container div .text-container-side .date-section {
   display: flex;
   align-items: center;
   width: 100%;
   flex-wrap: nowrap;
+  padding-bottom: 8px;
 }
 
 .article-container .inner-article-container div .date-section .username {
@@ -12121,30 +12138,21 @@ a {
 }
 
 .article-container .inner-article-container div .text-section {
-  margin-top: 12px;
   display: block;
 }
 
 .article-container .inner-article-container div .text-section .inner-text-section {
   display: flex;
+  flex-direction: column;
 }
 
-.inner-article-container div .text-section .inner-text-section .article-side {
-  flex: 1 1 auto;
-  word-break: break-all;
-  display: block;
-}
-
-.text-section .inner-text-section .article-side .top-section a {
+.text-section .inner-text-section .top-section a {
   cursor: pointer;
   margin: 0;
   padding: 0;
 }
 
-.article-side .top-section a .heading {
-  padding-bottom: 8px;
-}
-.article-side .top-section a .heading h2 {
+.top-section a .heading h2 {
   letter-spacing: 0px;
   -webkit-line-clamp: 3;
   max-height: 72px;
@@ -12156,11 +12164,11 @@ a {
   color: #000;
 }
 
-.article-side .top-section a .paragraph {
+.top-section a .paragraph {
   display: block;
   cursor: pointer;
 }
-.article-side .top-section a .paragraph p {
+.top-section a .paragraph p {
   -webkit-line-clamp: 3;
   max-height: 72px;
   -moz-box-orient: vertical;
@@ -12172,19 +12180,22 @@ a {
   font-size: 16px;
   color: #000;
   font-weight: 400;
+  padding: 0px;
+  margin: 0px;
 }
 
-.text-section .inner-text-section .article-side .bottom-section {
+.text-section .inner-text-section .bottom-section {
   padding: 0px 0px;
   display: block;
+  margin-top: 5px;
 }
 
-.inner-text-section .article-side .bottom-section .inner-container {
+.inner-text-section .bottom-section .inner-container {
   display: flex;
   justify-content: space-between;
 }
 
-.inner-text-section .article-side .bottom-section .inner-container .time-section {
+.inner-text-section .bottom-section .inner-container .time-section {
   flex: 1 1 auto;
   display: flex;
   gap: 1.5rem;
@@ -12201,7 +12212,7 @@ a {
 .bottom-section .inner-container .time-section .button-section a div {
   white-space: nowrap;
   border: 1px solid #e9ecef;
-  border-radius: 100px;
+  border-radius: 5px;
   padding: 2px 8px;
   background-color: #e9ecef;
   font-size: 13px;
@@ -12258,14 +12269,22 @@ a {
   padding: 0;
 }
 
-.text-section .inner-text-section .image-side a .img-container {
-  display: block;
-  cursor: pointer;
+.inner-article-container2 .image-container-side a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
-.text-section .inner-text-section .image-side a .img-container img {
-  vertical-align: middle;
-  width: 112px;
-  height: 112px;
+
+.inner-article-container2 .image-container-side a .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /*================================================================================================
@@ -12487,6 +12506,9 @@ a {
   .body-container .inner-body-container .main-section {
     min-width: auto;
   }
+  /*===============================================================================
+  *=======The user details section in the profile page=============================
+  *==============================================================================*/
   .main-container .user-details-section .details-container .inner-details-container .header {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -12518,6 +12540,12 @@ a {
   }
   .user-page-container .main-section .main-container .posts-section .inner-posts-section {
     padding-top: 0px;
+  }
+  /*================================================================================
+  *=====ARTICLES SECTION for many other pages too that have this layout=============
+  *===============================================================================*/
+  .article-container .text-section .top-section a .paragraph p {
+    -webkit-line-clamp: 2;
   }
 }
 

@@ -53,4 +53,24 @@
     .home_posts-section .inner-posts-section article .article-container .inner-article-container .inner-article-container2 {
         margin: 0px;
     }
+
+    .inner-article-container2 .text-container-side .date-section .date {
+        display: none;
+    }
+    .inner-article-container2 .image-container-side {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .inner-article-container2 .image-container-side a img {
+        max-width: 100px;
+        max-height: 100px;
+        display: flex;
+        align-items: center;
+    }
+    .home_posts-section .bottom-section .inner-container .time-section .button-section a div {
+        border-radius: 5px;
+    }
+    .home_posts-section .bottom-section .inner-container .time-section .read-time-section {
+        display: none;
+    }
 }

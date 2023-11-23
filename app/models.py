@@ -155,5 +155,5 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     title = db.Column(db.String(256))
     topic = db.Column(db.String(128))
-    postImageUrl = db.Column(db.String(256))
+    imageName = db.Column(db.String(128))
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
