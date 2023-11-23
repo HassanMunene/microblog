@@ -12161,9 +12161,9 @@ a {
 }
 
 .inner-article-container .inner-article-container2 .text-container-side {
-  margin-right: 20px;
-  min-width: 0px;
-  width: 100%;
+  display: block;
+  margin-top: 12px;
+  position: relative;
 }
 
 .article-container .inner-article-container div .text-section {
