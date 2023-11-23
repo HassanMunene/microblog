@@ -12996,40 +12996,69 @@ a {
   width: 100%;
   height: 100%;
   padding: 0px 0px;
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+}
+
+.inner-article-container .inner-article-container2 .date-section {
+  display: flex;
+  align-items: center;
+}
+
+.inner-article-container2 .date-section .username-postDate {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-left: 8px;
+}
+
+.date-section .username-postDate .username {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.date-section .username-postDate .username p {
+  margin: 0;
+  max-height: 20px;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.date-section .username-postDate .date {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+.date-section .username-postDate .date .postDate a {
+  color: #343a40;
+  font-size: 15px;
+  text-decoration: none;
+}
+.date-section .username-postDate .date .postDate a p {
+  margin: 0;
+}
+
+.date-section .username-postDate .date .authenticated-user {
+  padding: 0px 0px 0px 4px;
+  color: #ffc107;
 }
 
 .inner-article-container .inner-article-container2 .text-container-side {
   margin-right: 20px;
   min-width: 0px;
   width: 100%;
-}
-
-.inner-article-container div .text-container-side .date-section {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex-wrap: nowrap;
-  padding-bottom: 8px;
-}
-
-.article-container .inner-article-container div .date-section .username {
-  margin-left: 8px;
-  font-size: 14px;
-  color: #000;
-  font-weight: bold;
-}
-
-.article-container .inner-article-container div .date-section .date {
-  margin-left: 8px;
-}
-
-.article-container .inner-article-container div .date-section .date a {
-  color: #343a40;
-  font-size: 15px;
 }
 
 .article-container .inner-article-container div .text-section {
