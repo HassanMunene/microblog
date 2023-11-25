@@ -109,14 +109,26 @@ def upload_image():
 def write():
     header = request.headers.get('Content-Type')
     if header:
-        print(header)
+        #print(header)
         data = request.get_json()
         text_data = data.get('textData', '')
         title = data.get('title', '')
         topic = data.get('topic', '')
+        #generate a unique post id that will be passed as query string to get the specific post
+        random_str = str(uuid.uuid4())[:8]
+        unique_post_id = f'{title}-{random_str}'
+        #print(unique_post_id)
         image_filename = session.get('image_filename', None)
         print(image_filename)
-        post = Post(body=text_data, title=title, topic=topic, imageName=image_filename, author=current_user._get_current_object())
+        post = Post(
+            body=text_data,
+            title=title,
+            topic=topic,
+            imageName=image_filename,
+            uniquePostId = unique_post_id,
+            author=current_user._get_current_object()
+        )
+
         db.session.add(post)
         db.session.commit()
         return jsonify({'status': True})
@@ -131,3 +143,13 @@ def serve_image():
     filename = request.args.get('filename', '')
     return send_from_directory('static/uploads', filename)
 
+#==========================================================================================================================================
+#== This is the full post view when user clicks the post to read it. This page is what they get===
+#==========================================================================================================================================
+@main.route('/post')
+def post():
+    unique_post_id = request.args.get('post_id', None)
+    if unique_post_id:
+        post = Post.query.filter_by(uniquePostId=unique_post_id).first()
+        return render_template('post_page.html', post=post)
+    return render_template('404.html')

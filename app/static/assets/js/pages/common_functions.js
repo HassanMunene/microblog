@@ -1,3 +1,23 @@
+/*===================================================================================
+ * This function will handle showing and hiding custom alert
+ ==================================================================================*/
+ function showCustomAlert() {
+  const customAlert = document.getElementById('customAlert');
+  customAlert.style.top = '1rem';
+
+  // this is to hide the customAlert after a certain period
+  setTimeout(function () { hideCustomAlert(); }, 7000);
+ }
+ 
+ function hideCustomAlert () {
+  const customAlert = document.getElementById('customAlert');
+  customAlert.style.top = '-100px';
+ }
+ // enable the close button to also hide the customAlert
+ document.getElementById('customAlertClose').addEventListener('click', function () {hideCustomAlert();});
+ 
+
+
 /*================================================================================
 * =This page will containe some common js functionalities that will be used across
 * = the application
@@ -34,4 +54,30 @@ document.addEventListener('DOMContentLoaded', function () {
             postDate.innerHTML =  `${years} years ago`;
         }   
     })
+})
+
+/*===================================================================================
+* === This section will make it possible to share data using webshare API ===========
+* ===========WEB SHARE API=========================================================*/
+document.addEventListener('DOMContentLoaded', function () {
+    // get the url of the post
+    const postUrl = window.location.href;
+    const shareData = {
+        title: "KcaVibes",
+        text: "KcaVibes Together, We Thrive!",
+        url: postUrl,
+    };
+    const btn = document.querySelector(".shareData");
+
+    // share must be triggered by 'user' activation
+    btn.addEventListener("click", function () {
+        navigator.share(shareData)
+        .then(function () {
+            console.log('Successfully shared data');
+            showCustomAlert();
+        })
+        .catch(function (error) {
+            console.log('Error sharing:', error);
+        });
+    });
 })

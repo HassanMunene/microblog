@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+
+{% block title %}<title>{{ post.title }}</title>{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md bg-emphasis">
+  <div class="container-fluid2 border-bottom">
+    <div class="brand-container">
+      <a class="navbar-brand fs-3 fw-bold" href="/">Kca<span>Vibes</span></a>
+      <div class="search-container">
+        <div class="inner-search-container">
+          <div class="plh"></div>
+          <div class="search-icon"><i class="bi bi-search search-icon"></i></div>
+          <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
+        </div>
+      </div>
+    </div>
+    <div class="write-link">
+      <a href="{{ url_for('main.write') }}">
+        <div>
+          <i class="bi bi-pencil-square fs-4"></i>
+          <div class="write">Write</div>
+        </div>
+      </a>
+    </div>
+    <div class="search-link">
+      <a href="{{ url_for('main.write') }}">
+        <div>
+          <i class="bi bi-search fs-4"></i>
+        </div>
+      </a>
+    </div>
+    <div class="bell-link">
+      <a href="">
+        <div><i class="bi bi-bell fs-4"></i></div>
+      </a>
+    </div>
+    <div class="profile-container">
+      <button id="profile-button" class="profile-container-btn">
+        <div class="profile_picture_div">
+          {% if current_user.to_use_gravatar %}
+          <img  class="profile_picture_img" src="{{ current_user.generate_gravatar_url() }}" alt="profile picture">
+          {% else %}
+          <img  class="profile_picture_img" src="{{ current_user.profile_picture_url }}" alt="profile picture">
+          {% endif %}
+        </div> 
+      </button>
+    </div>
+    <div id="dropdown-element" class="drop-down-container">
+      <div class="inner-drop-down-container">
+        <div>
+          <div class="top-part">
+            <div class="write-link">
+              <a href="{{ url_for('main.write') }}">
+                <div class="p">
+                  <i class="bi bi-pencil-square fs-4"></i>
+                  <div class="write">Write</div>
+                </div>
+              </a>
+            </div>
+            <a href="{{ url_for('main.user', username=current_user.username) }}">
+              <div class="p">
+                <i class="bi bi-person fs-4"></i>
+                <div>Profile</div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="p">
+                <i class="bi bi-bookmarks fs-4"></i>
+                <div>Library</div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="p">
+                <i class="bi bi-file-earmark-text fs-4"></i>
+                <div>stories</div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="p">
+                <i class="bi bi-bar-chart-fill fs-4"></i>
+                <div>stats</div>
+              </div>
+            </a>
+          </div>
+          <div class="middle-part">
+            <a href="#">
+              <div>Settings</div>
+            </a>
+            <a href="#">
+              <div>Refined recommendations</div>
+            </a>
+            <a href="#">
+              <div>Manage publications</div>
+            </a>
+            <a href="#">
+              <div>Help</div>
+            </a>
+          </div>
+          <div class="lower-middle-part">
+            <a href="#">
+              <div>Become a KcaVibes member</div>
+            </a>
+            <a href="#">
+              <div>Gift membership</div>
+            </a>
+            <a href="#">
+              <div>Join developers community</div>
+            </a>
+          </div>
+          <div class="logout-part">
+            <a href="{{ url_for('auth.logout') }}">
+              <div>Sign out</div>
+            </a>
+          </div>
+          <div class="footer-part"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+{% block content %}
+<div class="post-body-section">
+    <article class="content-section">
+        <div class="container-fluid2">
+            <div>
+                <div class="post-title-section">
+                    <h1>{{ post.title }}</h1>
+                </div>
+                <div>
+                    <div class="author-profile-section">
+                        <div class="profile-container">
+                            <button id="profile-button" class="profile-container-btn">
+                              <div class="profile_picture_div">
+                                {% if post.author.to_use_gravatar %}
+                                <a href="{{ url_for('main.user', username=post.author.username) }}">
+                                  <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                                </a>
+                                {% else %}
+                                <a href="{{ url_for('main.user', username=post.author.username) }}">
+                                  <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                                </a>
+                                {% endif %}
+                              </div> 
+                            </button>
+                        </div>
+                        <div class="nameDate-container">
+                            <div class="name-section">
+                                <div class="fullname">
+                                    <a href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.fullname }}</a>
+                                </div>
+                                <div class="follow-button">Follow</div>
+                            </div>
+                            <div class="date">
+                                <div class="postDate">
+                                  <a href="#"><p class="datePosted">{{ post.timestamp }}</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="share-post-section">
+                        <div class="shareData icon-container">
+                            <div class="icon"><i class="bi bi-share"></i></div>
+                            <p>Share</p>
+                        </div>
+                        <div class="icon-container">
+                            <div class="icon"><i class="bi bi-three-dots fs-5"></i></div>
+                            <p>More</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <div class="inner-container">
+                                <div class="time-section">
+                                  {% if post.topic %}
+                                  <div class="button-section">
+                                    <a href="#"><div>{{ post.topic }}</div></a>
+                                  </div>
+                                  {% else %}
+                                  <div class="button-section" style="display: none;"></div>
+                                  {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image-container-side">
+                        <a href="{{ url_for('main.post', post_id=post.uniquePostId) }}">
+                          <img src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                        </a>
+                    </div>
+                    <div><h2> image caption</h2></div>
+                </div>
+                <div>{{ post.body }}</div>
+            </div>
+        </div>
+    </article>
+    <div class="following-section"></div>
+</div>
+<footer class="comment-section"></footer>
+<div class="more-from-author"></div>
+{% endblock %}

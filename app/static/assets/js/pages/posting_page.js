@@ -41,15 +41,33 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                     body: `image_url=${encodeURIComponent(imageDataUrl)}`, 
                 })
-                .then(response => response.json())
+                .then(function(response) {
+                    if(!response.ok) {
+                        console.log('There was an issue sending the image')
+                    }
+                    console.log('successfully sent the image')
+                    return response.json();
+                })
+                .then(function(data) {
+                    console.log(data);
+                    console.log(data.success);
+                    if (data.success == true) {
+                        console.log(data);
+                        titleContent = titleContent.value;
+                        topicContent = topicContent.value;
+                        console.log(titleContent, topicContent);
+                        submitForm(postingText, titleContent, topicContent);                                              
+                    }
+                })
                 .catch(error => {
                     console.error('Error', error);
                 });
+            } else {
+                titleContent = titleContent.value;
+                topicContent = topicContent.value;
+                console.log(titleContent, topicContent);
+                submitForm(postingText, titleContent, topicContent);
             }
-            titleContent = titleContent.value;
-            topicContent = topicContent.value;
-            console.log(titleContent, topicContent);
-            submitForm(postingText, titleContent, topicContent);
         })
     }
     // This function will send the post data to the server using fetch api

@@ -2,6 +2,16 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+a {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
 
 .display-2 {
@@ -24,6 +34,36 @@ body {
     }
 }
 
+/*==================================================================================
+* custom alert styling is here.
+* ================================================================================*/
+.customAlert {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin: 0 auto;
+    background-color: $black;
+    color: white;
+    text-align: center;
+    padding: .6rem;
+    border-radius: .4rem;
+    transition: top 0.5s;
+}
+.customAlertContent {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn {
+    padding: 0;
+    color: #fff;
+}
+.customAlertClose i {
+    font-size: 1.4rem;
+}
 
 /*==================================================================================
 * DROPDOWN COMPONENT IN RELATION TO CLICKING THE THREE DOTS
@@ -60,9 +100,11 @@ body {
 * ===================================================================================*/
 
 .container-fluid2 {
-    height: 57px;
     width: 100%;
-    padding: 0 24px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
     display: flex;
     align-items: center;
 }
@@ -175,6 +217,7 @@ body {
 }
 .profile-container {
     display: block;
+    cursor: pointer;
 }
 .profile-container button {
     background-color: transparent;

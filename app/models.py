@@ -1,6 +1,7 @@
 from flask import current_app
 from . import db, login_manager
 from datetime import datetime, timedelta
+from pytz import timezone
 from flask_login import UserMixin, AnonymousUserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import login_manager
@@ -152,8 +153,9 @@ class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.now(timezone('Africa/Nairobi')))
     title = db.Column(db.String(256))
     topic = db.Column(db.String(128))
     imageName = db.Column(db.String(128))
+    uniquePostId = db.Column(db.String(255))
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))

@@ -11863,62 +11863,21 @@ a {
   cursor: pointer;
 }
 
-/*======================================================================
-* custom alert styling is here
-=======================================================================*/
-.customAlert {
-  position: fixed;
-  top: -100px;
-  left: 0;
-  right: 0;
-  width: 50%;
-  margin: 0 auto;
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 0.6rem;
-  border-radius: 0.4rem;
-  transition: top 0.5s;
-}
-
-.customAlertContent {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.btn {
-  padding: 0;
-  color: #fff;
-}
-
-.customAlertClose i {
-  font-size: 1.4rem;
-}
-
 /*===========================================================================================
 *==================STYLING THE MAIN BODY SECTION ============================================
 ===========================================================================================*/
-.body-container {
-  max-width: 1336px;
-  margin: auto;
-  display: block;
-}
-
-.body-container .inner-body-container {
+.inner-body-container {
   display: flex;
   justify-content: space-between;
 }
 
-.body-container .inner-body-container .main-section {
-  max-width: 728px;
-  min-width: 728px;
+.inner-body-container .main-section {
+  max-width: 100%;
   flex: 1 1 auto;
   display: block;
 }
 
-.body-container .inner-body-container .main-section .main-container {
+.inner-body-container .main-section .main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -12114,6 +12073,7 @@ a {
 
 .inner-article-container2 .date-section .username-postDate {
   display: flex;
+  justify-content: space-between;
   flex-wrap: nowrap;
   width: 100%;
   margin-left: 8px;
@@ -12172,7 +12132,6 @@ a {
 
 .article-container .inner-article-container div .text-section .inner-text-section {
   display: flex;
-  flex-direction: column;
 }
 
 .text-section .inner-text-section .top-section a {
@@ -12182,15 +12141,17 @@ a {
 }
 
 .top-section a .heading h2 {
+  display: -webkit-box;
   letter-spacing: 0px;
-  -webkit-line-clamp: 3;
-  max-height: 72px;
-  line-height: 24px;
-  font-size: 20px;
-  font-weight: 700;
-  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
   overflow: hidden;
+  max-height: 40px;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-overflow: ellipsis;
   color: #000;
+  -moz-box-orient: vertical;
 }
 
 .top-section a .paragraph {
@@ -12198,7 +12159,7 @@ a {
   cursor: pointer;
 }
 .top-section a .paragraph p {
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 6;
   max-height: 72px;
   -moz-box-orient: vertical;
   display: -webkit-box;
@@ -12213,34 +12174,55 @@ a {
   margin: 0px;
 }
 
-.text-section .inner-text-section .bottom-section {
-  padding: 0px 0px;
+.text-section .inner-text-section .image-container-side {
+  margin-left: 16px;
   display: block;
-  margin-top: 5px;
 }
 
-.inner-text-section .bottom-section .inner-container {
+.text-section .inner-text-section .image-container-side a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.text-section .text-container-side .bottom-section {
+  display: block;
+  padding: 0;
+}
+
+.text-container-side .bottom-section .inner-container {
   display: flex;
   justify-content: space-between;
 }
 
-.inner-text-section .bottom-section .inner-container .time-section {
-  flex: 1 1 auto;
+.text-container-side .bottom-section .inner-container .time-section {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0px;
   display: flex;
   gap: 1.5rem;
-  padding: 0;
+  padding: 16px 0px;
   align-items: center;
 }
 
 .bottom-section .inner-container .time-section .button-section {
-  overflow: visible;
+  overflow: hidden;
   padding-right: 8px;
   display: flex;
 }
 
+.bottom-section .inner-container .time-section .button-section a {
+  width: 100%;
+}
+
 .bottom-section .inner-container .time-section .button-section a div {
   white-space: nowrap;
-  border: 1px solid #e9ecef;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #f8f9fa;
   border-radius: 5px;
   padding: 2px 8px;
   background-color: #e9ecef;
@@ -12275,16 +12257,22 @@ a {
 }
 
 .bottom-section .inner-container .bmk-section {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 0px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   cursor: pointer;
 }
-.bottom-section .inner-container .bmk-section i {
-  color: #495057;
+
+.bottom-section .inner-container .bmk-section div {
+  display: inline-block;
+  margin-left: 8px;
 }
-.bottom-section .inner-container .bmk-section i:hover {
-  color: #000;
+.bottom-section .inner-container .bmk-section div i {
+  color: rgb(26, 137, 23);
+  font-size: 18px;
 }
 
 .inner-article-container div .text-section .inner-text-section .image-side {
@@ -12298,28 +12286,10 @@ a {
   padding: 0;
 }
 
-.inner-article-container2 .image-container-side a {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-
-.inner-article-container2 .image-container-side a .image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 /*================================================================================================
 *========================THE PROFILE SECTION======================================================
 ================================================================================================*/
-.body-container .inner-body-container .profile-part {
+.inner-body-container .profile-part {
   max-width: 368px;
   min-width: 368px;
   min-height: 100vh;
@@ -12328,7 +12298,7 @@ a {
   border-left: 1px solid #dee2e6;
 }
 
-.body-container .inner-body-container .profile-part .profile-container {
+.inner-body-container .profile-part .profile-container {
   position: relative;
   height: 100%;
   display: inline-block;
@@ -12529,10 +12499,10 @@ a {
     display: block;
     margin-right: 2rem;
   }
-  .body-container .inner-body-container .profile-part {
+  .inner-body-container .profile-part {
     display: none;
   }
-  .body-container .inner-body-container .main-section {
+  .inner-body-container .main-section {
     min-width: auto;
   }
   /*===============================================================================
@@ -12575,6 +12545,19 @@ a {
   *===============================================================================*/
   .article-container .text-section .top-section a .paragraph p {
     -webkit-line-clamp: 2;
+  }
+  .text-section .inner-text-section .image-container-side {
+    max-width: 80px;
+    max-height: 80px;
+  }
+  .text-section .inner-text-section .image-container-side a {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .text-section .inner-text-section .image-container-side a img {
+    max-width: 100%;
+    height: auto;
   }
 }
 

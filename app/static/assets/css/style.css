@@ -11890,6 +11890,18 @@ textarea.form-control-lg {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .display-2 {
@@ -11912,6 +11924,40 @@ body {
     font-size: 1.5rem;
     display: inline-block;
   }
+}
+
+/*==================================================================================
+* custom alert styling is here.
+* ================================================================================*/
+.customAlert {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  transition: top 0.5s;
+}
+
+.customAlertContent {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  padding: 0;
+  color: #fff;
+}
+
+.customAlertClose i {
+  font-size: 1.4rem;
 }
 
 /*==================================================================================
@@ -11947,9 +11993,11 @@ body {
 * The navbar section styling for the authenticated home page after user logs in
 * ===================================================================================*/
 .container-fluid2 {
-  height: 57px;
   width: 100%;
-  padding: 0 24px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
   display: flex;
   align-items: center;
 }
@@ -12075,6 +12123,7 @@ body {
 
 .profile-container {
   display: block;
+  cursor: pointer;
 }
 
 .profile-container button {
@@ -12518,22 +12567,6 @@ body {
   .home_posts-section .inner-posts-section article .article-container .inner-article-container .inner-article-container2 {
     margin: 0px;
   }
-  .inner-article-container2 .text-container-side .date-section .date {
-    display: none;
-  }
-  .inner-article-container2 .image-container-side {
-    max-width: 100px;
-    max-height: 100px;
-  }
-  .inner-article-container2 .image-container-side a img {
-    max-width: 100px;
-    max-height: 100px;
-    display: flex;
-    align-items: center;
-  }
-  .home_posts-section .bottom-section .inner-container .time-section .button-section a div {
-    border-radius: 5px;
-  }
   .home_posts-section .bottom-section .inner-container .time-section .read-time-section {
     display: none;
   }
@@ -12758,62 +12791,21 @@ a {
   cursor: pointer;
 }
 
-/*======================================================================
-* custom alert styling is here
-=======================================================================*/
-.customAlert {
-  position: fixed;
-  top: -100px;
-  left: 0;
-  right: 0;
-  width: 50%;
-  margin: 0 auto;
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 0.6rem;
-  border-radius: 0.4rem;
-  transition: top 0.5s;
-}
-
-.customAlertContent {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.btn {
-  padding: 0;
-  color: #fff;
-}
-
-.customAlertClose i {
-  font-size: 1.4rem;
-}
-
 /*===========================================================================================
 *==================STYLING THE MAIN BODY SECTION ============================================
 ===========================================================================================*/
-.body-container {
-  max-width: 1336px;
-  margin: auto;
-  display: block;
-}
-
-.body-container .inner-body-container {
+.inner-body-container {
   display: flex;
   justify-content: space-between;
 }
 
-.body-container .inner-body-container .main-section {
-  max-width: 728px;
-  min-width: 728px;
+.inner-body-container .main-section {
+  max-width: 100%;
   flex: 1 1 auto;
   display: block;
 }
 
-.body-container .inner-body-container .main-section .main-container {
+.inner-body-container .main-section .main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -13009,6 +13001,7 @@ a {
 
 .inner-article-container2 .date-section .username-postDate {
   display: flex;
+  justify-content: space-between;
   flex-wrap: nowrap;
   width: 100%;
   margin-left: 8px;
@@ -13067,7 +13060,6 @@ a {
 
 .article-container .inner-article-container div .text-section .inner-text-section {
   display: flex;
-  flex-direction: column;
 }
 
 .text-section .inner-text-section .top-section a {
@@ -13077,15 +13069,17 @@ a {
 }
 
 .top-section a .heading h2 {
+  display: -webkit-box;
   letter-spacing: 0px;
-  -webkit-line-clamp: 3;
-  max-height: 72px;
-  line-height: 24px;
-  font-size: 20px;
-  font-weight: 700;
-  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
   overflow: hidden;
+  max-height: 40px;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-overflow: ellipsis;
   color: #000;
+  -moz-box-orient: vertical;
 }
 
 .top-section a .paragraph {
@@ -13093,7 +13087,7 @@ a {
   cursor: pointer;
 }
 .top-section a .paragraph p {
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 6;
   max-height: 72px;
   -moz-box-orient: vertical;
   display: -webkit-box;
@@ -13108,34 +13102,55 @@ a {
   margin: 0px;
 }
 
-.text-section .inner-text-section .bottom-section {
-  padding: 0px 0px;
+.text-section .inner-text-section .image-container-side {
+  margin-left: 16px;
   display: block;
-  margin-top: 5px;
 }
 
-.inner-text-section .bottom-section .inner-container {
+.text-section .inner-text-section .image-container-side a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.text-section .text-container-side .bottom-section {
+  display: block;
+  padding: 0;
+}
+
+.text-container-side .bottom-section .inner-container {
   display: flex;
   justify-content: space-between;
 }
 
-.inner-text-section .bottom-section .inner-container .time-section {
-  flex: 1 1 auto;
+.text-container-side .bottom-section .inner-container .time-section {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0px;
   display: flex;
   gap: 1.5rem;
-  padding: 0;
+  padding: 16px 0px;
   align-items: center;
 }
 
 .bottom-section .inner-container .time-section .button-section {
-  overflow: visible;
+  overflow: hidden;
   padding-right: 8px;
   display: flex;
 }
 
+.bottom-section .inner-container .time-section .button-section a {
+  width: 100%;
+}
+
 .bottom-section .inner-container .time-section .button-section a div {
   white-space: nowrap;
-  border: 1px solid #e9ecef;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #f8f9fa;
   border-radius: 5px;
   padding: 2px 8px;
   background-color: #e9ecef;
@@ -13170,16 +13185,22 @@ a {
 }
 
 .bottom-section .inner-container .bmk-section {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 0px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   cursor: pointer;
 }
-.bottom-section .inner-container .bmk-section i {
-  color: #495057;
+
+.bottom-section .inner-container .bmk-section div {
+  display: inline-block;
+  margin-left: 8px;
 }
-.bottom-section .inner-container .bmk-section i:hover {
-  color: #000;
+.bottom-section .inner-container .bmk-section div i {
+  color: rgb(26, 137, 23);
+  font-size: 18px;
 }
 
 .inner-article-container div .text-section .inner-text-section .image-side {
@@ -13193,28 +13214,10 @@ a {
   padding: 0;
 }
 
-.inner-article-container2 .image-container-side a {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-
-.inner-article-container2 .image-container-side a .image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 /*================================================================================================
 *========================THE PROFILE SECTION======================================================
 ================================================================================================*/
-.body-container .inner-body-container .profile-part {
+.inner-body-container .profile-part {
   max-width: 368px;
   min-width: 368px;
   min-height: 100vh;
@@ -13223,7 +13226,7 @@ a {
   border-left: 1px solid #dee2e6;
 }
 
-.body-container .inner-body-container .profile-part .profile-container {
+.inner-body-container .profile-part .profile-container {
   position: relative;
   height: 100%;
   display: inline-block;
@@ -13424,10 +13427,10 @@ a {
     display: block;
     margin-right: 2rem;
   }
-  .body-container .inner-body-container .profile-part {
+  .inner-body-container .profile-part {
     display: none;
   }
-  .body-container .inner-body-container .main-section {
+  .inner-body-container .main-section {
     min-width: auto;
   }
   /*===============================================================================
@@ -13470,6 +13473,19 @@ a {
   *===============================================================================*/
   .article-container .text-section .top-section a .paragraph p {
     -webkit-line-clamp: 2;
+  }
+  .text-section .inner-text-section .image-container-side {
+    max-width: 80px;
+    max-height: 80px;
+  }
+  .text-section .inner-text-section .image-container-side a {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .text-section .inner-text-section .image-container-side a img {
+    max-width: 100%;
+    height: auto;
   }
 }
 /*=======================================================================================
@@ -13713,5 +13729,316 @@ a {
     margin-right: 0px;
   }
 }
+/*================================================================================
+* = This page will style the page shown when use clicks to read the post
+* ==============================================================================*/
+.post-body-section .content-section .post-title-section {
+  display: block;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.post-body-section .content-section .post-title-section h1 {
+  letter-spacing: -0.015em;
+  font-size: 2rem;
+  font-weight: 1000;
+  line-height: 38px;
+  margin-bottom: -0.27em;
+  margin-top: 12px;
+  text-transform: capitalize;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.post-body-section .content-section .author-profile-section {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.author-profile-section .profile-container img {
+  width: 44px;
+  height: 44px;
+}
+
+.author-profile-section .nameDate-container {
+  margin-left: 12px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.author-profile-section .nameDate-container .name-section {
+  display: flex;
+  margin-bottom: 3px;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.author-profile-section .nameDate-container .name-section .fullname a {
+  display: inline-block;
+  color: #000;
+  font-size: 18px;
+  letter-spacing: -0.012em;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.author-profile-section .nameDate-container .follow-button {
+  background-color: rgb(26, 137, 23);
+  color: #fff;
+  text-align: center;
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.author-profile-section .nameDate-container .postDate p {
+  font-size: 15px;
+  color: #495057;
+}
+
+.container-fluid2 div .share-post-section {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-fluid2 div .share-post-section .icon-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e9ecef;
+  border-radius: 99em;
+  padding: 0px 16px 0px 12px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.container-fluid2 div .share-post-section .icon-container .icon {
+  margin-right: 9px;
+  color: rgb(7, 106, 5);
+}
+
+/* Margin */
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+/* ... add more margin classes as needed ... */
+/* Padding */
+.pt-0 {
+  padding-top: 0;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+/* ... add more padding classes as needed ... */
+/* Font Weight */
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+/* ... add more font weight classes as needed ... */
+/* Font Size */
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+/* ... add more font size classes as needed ... */
+/* Text Align */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Display */
+.blk {
+  display: block;
+}
+
+.iln {
+  display: inline;
+}
+
+.iln-blk {
+  display: inline-block;
+}
+
+.ab {
+  display: flex;
+}
+
+/* justify content */
+.ca {
+  justify-content: center;
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+/* ... add more flexbox classes as needed ... */
+/* Width */
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+/* ... add more width classes as needed ... */
+/* Height */
+.h-100 {
+  height: 100%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+/* ... add more height classes as needed ... */
+/* Background Color */
+.bg-red {
+  background-color: red;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+/* ... add more background color classes as needed ... */
+/* Text Color */
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+/* ... add more text color classes as needed ... */
+/* Border */
+.border {
+  border: 1px solid #000;
+}
+
+.border-rounded {
+  border-radius: 5px;
+}
+
+/* ... add more border classes as needed ... */
+/* Position */
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+/* ... add more position classes as needed ... */
+/* Z-Index */
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+/* ... add more z-index classes as needed ... */
+/* Opacity */
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+/* ... add more opacity classes as needed ... */
+/* Cursor */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+/* ... add more cursor classes as needed ... */
 
 /*# sourceMappingURL=style.css.map */

@@ -169,7 +169,7 @@
                       <div class="text-section">
                         <div class="inner-text-section">
                           <div class="top-section">
-                            <a href="#">
+                            <a href="{{ url_for('main.post', post_id=post.uniquePostId) }}">
                               {% if post.title %}
                               <div class="heading"><h2>{{ post.title }}</h2></div>
                               {% else %}
@@ -182,9 +182,8 @@
                           </div>
                           {% if post.imageName %}
                           <div class="image-container-side">
-                            <a href="#">
+                            <a href="{{ url_for('main.post', post_id=post.uniquePostId) }}">
                               <img src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
-                              <div class="image-overlay"></div>
                             </a>
                           </div>
                           {% else %}
@@ -202,17 +201,11 @@
                             {% else %}
                             <div class="button-section" style="display: none;"></div>
                             {% endif %}
-                            <div class="read-time-section">
-                              <a href="#">
-                                <p>
-                                  <span>4 min read</span>
-                                </p>
-                              </a>
-                            </div>
                           </div>
                           <div class="bmk-section home-bmk-section">
-                              <i class="bi bi-bookmark-plus fs-6 me-2"></i>
-                              <i class="bi bi-three-dots fs-5"></i>
+                            <div><i class="bi bi-bookmark-plus"></i></div>
+                            <div><i class="bi bi-dash-circle"></i></div>
+                            <div><i class="bi bi-three-dots"></i></div>
                           </div>
                         </div>
                       </div>
