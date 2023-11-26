@@ -77,9 +77,13 @@ def upload_image():
     image = BytesIO(image_binary_data)
 
     image = Image.open(image)
-    width = 200
-    height = 200
-    resized_image = image.resize((width, height))
+    original_width, original_height = image.size
+
+    new_width = 640
+    # maintaining aspect ration in image resizing is extremely important to keep image quality
+    aspect_ratio = original_width / original_height
+    new_height = int(new_width / aspect_ratio)
+    resized_image = image.resize((new_width, new_height))
 
     #then generate a unique file name for the image using timestamp and uuid
     timestamp = int(time.time())

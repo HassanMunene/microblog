@@ -17,23 +17,6 @@
   })
  }
 
- /*=====================================================================
- * This function will handle showing and hiding custom alert
- =====================================================================
- function showCustomAlert() {
-  const customAlert = document.getElementById('customAlert');
-  customAlert.style.top = '1rem';
-
-  // this is to hide the customAlert after a certain period
-  setTimeout(function () { hideCustomAlert(); }, 2000);
- }
- function hideCustomAlert () {
-  const customAlert = document.getElementById('customAlert');
-  customAlert.style.top = '-100px';
- }
- // enable the close button to also hide the customAlert
- //document.getElementById('customAlertClose').addEventListener('click', function () {hideCustomAlert();});
- 
 
 
  /*=====================================================================

@@ -87,3 +87,37 @@
     margin-right: 9px;
     color: $green-dark;
 }
+
+.container-fluid2 div .image-container {
+    margin-top: 40px;
+    max-width: 100%;
+    clear: both;
+}
+
+.container-fluid2 div .image-container .image-container-side {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: zoom-in;
+    transition: transform 300ms ease-in;
+}
+.container-fluid2 div .image-container .image-container-side.show {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $white;
+    opacity: .97;
+}
+.container-fluid2 div .image-container .image-container-side img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 300ms ease-in;
+}
+.container-fluid2 div .image-container .image-container-side .show {
+    transform: scale(1.0);
+}

@@ -7,29 +7,34 @@
 * ===depending on the height of the scrolly and section
 * =======================================================*/
 document.addEventListener("DOMContentLoaded", function () {
-    let navbar = document.getElementById('navbar');
-    let getStartedBtn = document.getElementById('get-started-btn');
-    let introSection = document.getElementById('intro-section');
-    let postSectiion = document.getElementById('posts-section');
-    //get the height of the introSection
-    let introSectionHeight = introSection.clientHeight;
-
-    //add a scroll event listener
-    window.addEventListener('scroll', function () {
-        //get the current scroll postion while scrolling
-        let scrollPosition = window.scrollY;
-
-        if (scrollPosition >= introSectionHeight) {
-            navbar.style.backgroundColor = 'white';
-            navbar.classList.add('show');
-            getStartedBtn.classList.add('scroll-btn');
-
-        } else {
-            navbar.style.backgroundColor = '#ffc107';
-            navbar.classList.remove('show');
-            getStartedBtn.classList.remove('scroll-btn');
-        }
-    })
+    const IntroSectionContainer = document.getElementById('intro-section-container');
+    if (IntroSectionContainer) {
+        let pageType = IntroSectionContainer.getAttribute('data-page');
+        let navbar = document.getElementById('navbar');
+        let getStartedBtn = document.getElementById('get-started-btn');
+        let introSection = document.getElementById('intro-section');
+        let postSectiion = document.getElementById('posts-section');
+        //get the height of the introSection
+        let introSectionHeight = introSection.clientHeight;
+        console.log(introSectionHeight);
+    
+        //add a scroll event listener
+        window.addEventListener('scroll', function () {
+            //get the current scroll postion while scrolling
+            let scrollPosition = window.scrollY;
+    
+            if (scrollPosition >= introSectionHeight) {
+                navbar.style.backgroundColor = 'white';
+                navbar.classList.add('show');
+                getStartedBtn.classList.add('scroll-btn');
+    
+            } else {
+                navbar.style.backgroundColor = '#ffc107';
+                navbar.classList.remove('show');
+                getStartedBtn.classList.remove('scroll-btn');
+            }
+        })     
+    }
 })
 
 /*==================================================================================

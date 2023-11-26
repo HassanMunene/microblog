@@ -49,7 +49,7 @@ a {
     text-align: center;
     padding: .6rem;
     border-radius: .4rem;
-    transition: top 0.5s;
+    transition: top 0.5s ease-out;
 }
 .customAlertContent {
     position: relative;
@@ -339,7 +339,7 @@ a {
     }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 600px) {
     /*==================================
     * THE NAVBAR SECTION
     ==================================*/
@@ -357,5 +357,9 @@ a {
     }
     .drop-down-container .top-part .write-link {
         display: block;
+    }
+    /* ===========================CUSTOME ALERT================================*/
+    .customAlert {
+        width: 65%;
     }
 }

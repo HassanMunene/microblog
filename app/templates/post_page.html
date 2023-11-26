@@ -170,30 +170,11 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <div>
-                            <div class="inner-container">
-                                <div class="time-section">
-                                  {% if post.topic %}
-                                  <div class="button-section">
-                                    <a href="#"><div>{{ post.topic }}</div></a>
-                                  </div>
-                                  {% else %}
-                                  <div class="button-section" style="display: none;"></div>
-                                  {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="image-container-side">
-                        <a href="{{ url_for('main.post', post_id=post.uniquePostId) }}">
-                          <img src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
-                        </a>
-                    </div>
-                    <div><h2> image caption</h2></div>
+                <div class="image-container">
+                  <div id="postImageContainer" class="image-container-side">
+                    <img id="postImage" class="" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                  </div>
+                  <div><h2> image caption</h2></div>
                 </div>
                 <div>{{ post.body }}</div>
             </div>

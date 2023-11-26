@@ -3,10 +3,10 @@
  ==================================================================================*/
  function showCustomAlert() {
   const customAlert = document.getElementById('customAlert');
-  customAlert.style.top = '1rem';
+  customAlert.style.top = '16px';
 
   // this is to hide the customAlert after a certain period
-  setTimeout(function () { hideCustomAlert(); }, 7000);
+  setTimeout(function () { hideCustomAlert(); }, 1000);
  }
  
  function hideCustomAlert () {
@@ -71,13 +71,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // share must be triggered by 'user' activation
     btn.addEventListener("click", function () {
-        navigator.share(shareData)
-        .then(function () {
-            console.log('Successfully shared data');
+        if (navigator.share) {
+            navigator.share(shareData)
+            .then(function () {
+                console.log('Successfully shared data');
+            })
+            .catch(function (error) {
+                console.log('Error sharing:', error);
+            });
+        } else {
+            navigator.clipboard.writeText(postUrl);
             showCustomAlert();
-        })
-        .catch(function (error) {
-            console.log('Error sharing:', error);
-        });
+        }
     });
 })
