@@ -95,13 +95,17 @@
 }
 
 .container-fluid2 div .image-container .image-container-side {
+    position: relative;
+    top: 0;
     display: flex;
     align-items: center;
     width: 100%;
     cursor: zoom-in;
-    transition: transform 300ms ease-in;
+    transition:  300ms ease-in-out;
 }
 .container-fluid2 div .image-container .image-container-side.show {
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 0;
     right: 0;
@@ -109,15 +113,34 @@
     bottom: 0;
     background-color: $white;
     opacity: .97;
+    img {
+        width: 90%;
+    }
 }
 .container-fluid2 div .image-container .image-container-side img {
     max-width: 100%;
     width: 100%;
     height: auto;
     cursor: pointer;
-    transform: scale(1);
-    transition: transform 300ms ease-in;
 }
-.container-fluid2 div .image-container .image-container-side .show {
-    transform: scale(1.0);
+.container-fluid2 div .actual-post {
+    margin-top: 20px;
+    font-size: 18px;
+    word-break: break-word;
+}
+.container-fluid2 div .actual-post p {
+    letter-spacing: -0.013em;
+    word-break: break-word;
+    line-height: 28px;
+    color: $black;
+}
+.container-fluid2 div .actual-post p .firstWord {
+    margin-right: 12px;
+    padding-top: 0px;
+    display: block;
+    font-size: 50px;
+    position: relative;
+    float: left;
+    letter-spacing: -0.03em;
+    line-height: .83;
 }

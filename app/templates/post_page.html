@@ -172,11 +172,13 @@
                 </div>
                 <div class="image-container">
                   <div id="postImageContainer" class="image-container-side">
-                    <img id="postImage" class="" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                    <img id="postImage" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
                   </div>
-                  <div><h2> image caption</h2></div>
+                  <div class="image-caption"></div>
                 </div>
-                <div>{{ post.body }}</div>
+                <div id="actual-post" class="actual-post">
+                  <p id="postBody">{{ post.body }}</p>
+                </div>
             </div>
         </div>
     </article>
