@@ -82,7 +82,7 @@ $webkit-line-5: 5;
         display: -webkit-box;
         -webkit-line-clamp: $webkit-line-value;
         overflow: hidden;
-        line-height: 20px;
+        overflow-wrap: break-word;
         text-overflow: ellipsis;
         -moz-box-orient: vertical;
         max-height: 40px;
@@ -120,3 +120,128 @@ $fw-900 : 900;
 @include dynamic-font-weight(fw-700, $fw-700);
 @include dynamic-font-weight(fw-800, $fw-800);
 @include dynamic-font-weight(fw-900, $fw-900);
+
+/*=================================================================================
+* ==========MAX WIDTH MIXINS IN PIXES=======================================
+* ===============================================================================*/
+$max-width-300: 300px;
+$max-width-400: 400px;
+$max-width-500: 500px;
+$max-width-600: 600px;
+$max-width-700: 700px;
+$max-width-800: 800px;
+$max-width-900: 900px;
+$max-width-1000: 1000px;
+$max-width-1100: 1100px;
+$max-width-1200: 1200px;
+$max-width-1300: 1300px;
+
+@mixin dynamic-max-width($max-width-name, $max-width-value) {
+    .#{$max-width-name} {
+        max-width: $max-width-value;
+    }
+}
+@include dynamic-max-width(max-width-300, $max-width-300);
+@include dynamic-max-width(max-width-400, $max-width-400);
+@include dynamic-max-width(max-width-500, $max-width-500);
+@include dynamic-max-width(max-width-600, $max-width-600);
+@include dynamic-max-width(max-width-700, $max-width-700);
+@include dynamic-max-width(max-width-800, $max-width-800);
+@include dynamic-max-width(max-width-900, $max-width-900);
+@include dynamic-max-width(max-width-1000, $max-width-1000);
+@include dynamic-max-width(max-width-1100, $max-width-1100);
+@include dynamic-max-width(max-width-1200, $max-width-1200);
+@include dynamic-max-width(max-width-1300, $max-width-1300);
+
+/*=================================================================================
+* ==========MAX HEIGHT MIXINS IN PIXES=======================================
+* ===============================================================================*/
+$max-height-30: 30px;
+$max-height-40: 40px;
+$max-height-50: 50px;
+$max-height-60: 60px;
+$max-height-70: 70px;
+$max-height-80: 80px;
+$max-height-90: 90px;
+$max-height-100: 100px;
+$max-height-110: 110px;
+$max-height-120: 120px;
+$max-height-130: 130px;
+$max-height-140: 140px;
+$max-height-150: 150px;
+$max-height-160: 160px;
+$max-height-170: 170px;
+$max-height-180: 180px;
+$max-height-190: 190px;
+$max-height-200: 200px;
+
+@mixin dynamic-max-height($max-height-name, $max-height-value) {
+    .#{$max-height-name} {
+        max-height: $max-height-value;
+    }
+}
+@include dynamic-max-height(max-height-30, $max-height-30);
+@include dynamic-max-height(max-height-40, $max-height-40);
+@include dynamic-max-height(max-height-50, $max-height-50);
+@include dynamic-max-height(max-height-60, $max-height-60);
+@include dynamic-max-height(max-height-70, $max-height-80);
+@include dynamic-max-height(max-height-90, $max-height-90);
+@include dynamic-max-height(max-height-100, $max-height-100);
+@include dynamic-max-height(max-height-110, $max-height-110);
+@include dynamic-max-height(max-height-120, $max-height-120);
+@include dynamic-max-height(max-height-130, $max-height-130);
+@include dynamic-max-height(max-height-140, $max-height-140);
+@include dynamic-max-height(max-height-150, $max-height-150);
+@include dynamic-max-height(max-height-160, $max-height-160);
+@include dynamic-max-height(max-height-170, $max-height-170);
+@include dynamic-max-height(max-height-180, $max-height-180);
+@include dynamic-max-height(max-height-190, $max-height-190);
+@include dynamic-max-height(max-height-200, $max-height-200);
+
+
+
+/*=================================================================================
+* ==========WIDTH IN PERCENTAGE=======================================
+* ===============================================================================*/
+$width-30: 30%;
+$width-40: 40%;
+$width-50: 50%;
+$width-60: 60%;
+$width-70: 70%;
+$width-80: 80%;
+$width-90: 90%;
+$width-100: 100%;
+
+@mixin dynamic-width($width-name, $width-value) {
+    .#{$width-name} {
+        width: $width-value;
+    }
+}
+@include dynamic-width(width-30, $width-30);
+@include dynamic-width(width-40, $width-40);
+@include dynamic-width(width-50, $width-50);
+@include dynamic-width(width-60, $width-60);
+@include dynamic-width(width-70, $width-70);
+@include dynamic-width(width-80, $width-80);
+@include dynamic-width(width-90, $width-90);
+@include dynamic-width(width-100, $width-100);
+
+/*=================================================================================
+* ==========LINE HEIGHT IN PIXES =======================================
+* ===============================================================================*/
+$lh-10: 10px;
+$lh-20: 20px;
+$lh-30: 30px;
+$lh-40: 40px;
+$lh-50: 50px;
+
+@mixin dynamic-line-height($line-height-name, $line-height-value) {
+    .#{$line-height-name} {
+        line-height: $line-height-value;
+    }
+}
+@include dynamic-line-height(lh-10, $lh-10);
+@include dynamic-line-height(lh-20, $lh-20);
+@include dynamic-line-height(lh-30, $lh-30);
+@include dynamic-line-height(lh-40, $lh-40);
+@include dynamic-line-height(lh-50, $lh-50);
