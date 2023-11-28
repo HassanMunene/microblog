@@ -122,7 +122,12 @@ def write():
         random_str = str(uuid.uuid4())[:8]
         unique_post_id = f'{title}-{random_str}'
         #print(unique_post_id)
-        image_filename = session.get('image_filename', None)
+        session_image_file = session.pop('image_filename', None)
+        if session_image_file:
+            image_filename = session_image_file
+        else:
+            image_filename = ''
+
         print(image_filename)
         post = Post(
             body=text_data,

@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             publishNowButton.addEventListener('click', function () {
                 if(typeof(imageDataUrl) === 'string') {
+                    console.log('There is image');
                     fetch('/upload_image', {
                         method: 'POST',
                         headers: {

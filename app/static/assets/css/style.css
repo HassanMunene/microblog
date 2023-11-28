@@ -13484,6 +13484,7 @@ a {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0px;
+  max-width: 56%;
   display: flex;
   gap: 1.5rem;
   padding: 16px 0px;
