@@ -1,6 +1,6 @@
-/*==================================================================================
+/*================================================================================
 * This section handles the modal for post preview and posting content too
-* ================================================================================*/
+* ==============================================================================*/
 
 document.addEventListener('DOMContentLoaded', function () {
     const postingPage = document.getElementById('postingPage');
@@ -26,16 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
                 customModal.classList.add('show');
             }, 100)
-    
+
             const imagePreview2 = document.getElementById('image-preview2');
-            //console.log(imageDataUrl);
+            //console.log(typeof(imageDataUrl));
             //console.log(imagePreview);
-            imagePreview2.src = imageDataUrl;
+            if (typeof(imageDataUrl) === 'string') {
+                imagePreview2.src = imageDataUrl;
+                //console.log(imagePreview2);
+            }
             //console.log(postingText);
             document.body.style.overflow = 'hidden';
     
             publishNowButton.addEventListener('click', function () {
-                if(imageDataUrl) {
+                if(typeof(imageDataUrl) === 'string') {
                     fetch('/upload_image', {
                         method: 'POST',
                         headers: {
@@ -126,7 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
             mediaContainer.style.display = 'none';     
         }
         closeMediaButton.addEventListener('click', closeMediaContainer);
-        //When user uploads the image
+        
+        //When user uploads the image is captured here
         fileInput.addEventListener('change', function () {
             //check an image has been selected
             if (fileInput.files.length > 0) {
@@ -139,12 +143,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 reader.onload = function (e) {
                     // set src of image
                     imagePreview.src = e.target.result;
-                    imagePreview.style.border = '1px solid rgb(26, 137, 23)'
                     imageDataUrl = e.target.result;
                 };
                 // read the selected file as a data url so the result will be dataUrl
                 reader.readAsDataURL(selectFile);
                 closeMediaContainer ();
+            } else {
+                imageDataUrl = null;
             }
         });
 
@@ -152,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // and then call the openModal() function while passing the post as an argument 
         publishButton.addEventListener('click', function () {
             postingTextArea = postingTextArea.value;
+            console.log(postingTextArea);
             openModal(postingTextArea, imageDataUrl);
         });
         close_btn.addEventListener('click', closeModal);

@@ -149,11 +149,14 @@ class Role(db.Model):
 #================================================================================================================
 # THE POSTS TABLE. HANDLE STORING POSTS MADE BY USERS
 #================================================================================================================
+def get_unique_timestamp():
+    return datetime.now(timezone('Africa/Nairobi'))
+
 class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.now(timezone('Africa/Nairobi')))
+    timestamp = db.Column(db.DateTime, index=True, default=get_unique_timestamp)
     title = db.Column(db.String(256))
     topic = db.Column(db.String(128))
     imageName = db.Column(db.String(128))
