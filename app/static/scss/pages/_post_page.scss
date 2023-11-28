@@ -68,13 +68,13 @@
         color: $gray-700;
     }
 }
-.container-fluid2 div .share-post-section {
+.container-fluid2 .share-post-section {
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.container-fluid2 div .share-post-section .icon-container {
+.container-fluid2 .share-post-section .icon-container {
     display: flex;
     align-items: center;
     border: 1px solid $gray-200;
@@ -83,18 +83,18 @@
     height: 38px;
     cursor: pointer;
 }
-.container-fluid2 div .share-post-section .icon-container .icon {
+.container-fluid2 .share-post-section .icon-container .icon {
     margin-right: 9px;
     color: $green-dark;
 }
 
-.container-fluid2 div .image-container {
+.container-fluid2 .image-container {
     margin-top: 40px;
     max-width: 100%;
     clear: both;
 }
 
-.container-fluid2 div .image-container .image-container-side {
+.container-fluid2 .image-container .image-container-side {
     position: relative;
     top: 0;
     display: flex;
@@ -103,7 +103,7 @@
     cursor: zoom-in;
     transition:  300ms ease-in-out;
 }
-.container-fluid2 div .image-container .image-container-side.show {
+.container-fluid2 .image-container .image-container-side.show {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -117,24 +117,24 @@
         width: 90%;
     }
 }
-.container-fluid2 div .image-container .image-container-side img {
+.container-fluid2 .image-container .image-container-side img {
     max-width: 100%;
     width: 100%;
     height: auto;
     cursor: pointer;
 }
-.container-fluid2 div .actual-post {
+.container-fluid2 .actual-post {
     margin-top: 20px;
     font-size: 18px;
     word-break: break-word;
 }
-.container-fluid2 div .actual-post p {
+.container-fluid2 .actual-post p {
     letter-spacing: -0.013em;
     word-break: break-word;
     line-height: 28px;
     color: $black;
 }
-.container-fluid2 div .actual-post p .firstWord {
+.container-fluid2 .actual-post p .firstWord {
     margin-right: 12px;
     padding-top: 0px;
     display: block;

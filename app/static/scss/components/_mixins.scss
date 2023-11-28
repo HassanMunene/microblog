@@ -1,4 +1,5 @@
 // THIS IS WAY TO CENTER AN ABSOLUTE ELEMENT IN ITS PARENT
+@use'../custom' as *;
 
 @mixin absoluteCenter {
     position: absolute;
@@ -7,6 +8,115 @@
     transform: translate(-50%, -50%);
 }
 
-.modal-backdrop.show {
-    opacity: .6;
-  }
+/* ===============================================================================
+*  ===========This mixin will dynamically generate different shades of gray=======
+*  =============================================================================*/
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+$cl-green: rgb(26, 137, 23);
+$cl-green-dark: rgb(7, 106, 5);
+@mixin dynamic-color-class($color-name, $color-value) {
+    .color-#{$color-name} {
+        color: $color-value;
+    }
+}
+@include dynamic-color-class(gray-100, $gray-100);
+@include dynamic-color-class(gray-200, $gray-200);
+@include dynamic-color-class(gray-300, $gray-300);
+@include dynamic-color-class(gray-400, $gray-400);
+@include dynamic-color-class(gray-500, $gray-500);
+@include dynamic-color-class(gray-600, $gray-600);
+@include dynamic-color-class(gray-700, $gray-700);
+@include dynamic-color-class(gray-800, $gray-800);
+@include dynamic-color-class(gray-900, $gray-900);
+@include dynamic-color-class(black-1, $black);
+@include dynamic-color-class(cl-green, $cl-green);
+@include dynamic-color-class(cl-green-dark, $cl-green-dark);
+
+
+
+/* ===============================================================================
+*  ======This mixin will generate sizes of font-size in pixes==================
+*  =============================================================================*/
+$fs-8 : 8px;
+$fs-14 : 14px;
+$fs-16 : 16px;
+$fs-18 : 18px;
+$fs-20 : 20px;
+$fs-24 : 24px;
+$fs-32 : 30px;
+$fs-40 : 40px;
+@mixin dynamic-font-size ($fontsize-name, $fontsize-value) {
+    .#{$fontsize-name} {
+        font-size: $fontsize-value;
+    }
+}
+@include dynamic-font-size(fs-8, $fs-8);
+@include dynamic-font-size(fs-14, $fs-14);
+@include dynamic-font-size(fs-16, $fs-16);
+@include dynamic-font-size(fs-18, $fs-18);
+@include dynamic-font-size(fs-20, $fs-20);
+@include dynamic-font-size(fs-24, $fs-24);
+@include dynamic-font-size(fs-32, $fs-32);
+@include dynamic-font-size(fs-40, $fs-40);
+
+/*=================================================================================
+* ==========MIXIN TO STYLE WEBKIT LINE CLAMP TO MAKE WEBKIT BOX=======================================
+* ===============================================================================*/
+$webkit-line-1: 1;
+$webkit-line-2: 2;
+$webkit-line-3: 3;
+$webkit-line-4: 4;
+$webkit-line-5: 5;
+@mixin dynamic-webkit-line-clamp($webkit-line-name, $webkit-line-value) {
+    .#{$webkit-line-name} {
+        display: -webkit-box;
+        -webkit-line-clamp: $webkit-line-value;
+        overflow: hidden;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        -moz-box-orient: vertical;
+        max-height: 40px;
+    }
+}
+@include dynamic-webkit-line-clamp(webkit-line-1, $webkit-line-1);
+@include dynamic-webkit-line-clamp(webkit-line-2, $webkit-line-2);
+@include dynamic-webkit-line-clamp(webkit-line-3, $webkit-line-3);
+@include dynamic-webkit-line-clamp(webkit-line-4, $webkit-line-4);
+@include dynamic-webkit-line-clamp(webkit-line-5, $webkit-line-5);
+
+/*=================================================================================
+* ==========MIXIN TO STYLE THE FONT WEIGHT=======================================
+* ===============================================================================*/
+$fw-100 : 100;
+$fw-200 : 200;
+$fw-300 : 300;
+$fw-400 : 400;
+$fw-500 : 500;
+$fw-600 : 600;
+$fw-700 : 700;
+$fw-800 : 800;
+$fw-900 : 900;
+@mixin dynamic-font-weight($font-weight-name, $font-weight-value) {
+    .#{$font-weight-name} {
+        font-weight: $font-weight-value;
+    }
+}
+@include dynamic-font-weight(fw-100, $fw-100);
+@include dynamic-font-weight(fw-200, $fw-200);
+@include dynamic-font-weight(fw-300, $fw-300);
+@include dynamic-font-weight(fw-400, $fw-400);
+@include dynamic-font-weight(fw-500, $fw-500);
+@include dynamic-font-weight(fw-600, $fw-600);
+@include dynamic-font-weight(fw-700, $fw-700);
+@include dynamic-font-weight(fw-800, $fw-800);
+@include dynamic-font-weight(fw-900, $fw-900);

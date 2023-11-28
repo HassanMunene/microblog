@@ -1,20 +1,20 @@
 /*===================================================================================
  * This function will handle showing and hiding custom alert
  ==================================================================================*/
- function showCustomAlert() {
-  const customAlert = document.getElementById('customAlert');
-  customAlert.style.top = '16px';
-
-  // this is to hide the customAlert after a certain period
-  setTimeout(function () { hideCustomAlert(); }, 1000);
- }
+function showCustomAlert() {
+    const customAlert = document.getElementById('customAlert');
+    customAlert.style.top = '16px';
+    
+    // this is to hide the customAlert after a certain period
+    setTimeout(function () { hideCustomAlert(); }, 1000);
+}
  
- function hideCustomAlert () {
-  const customAlert = document.getElementById('customAlert');
-  customAlert.style.top = '-100px';
- }
- // enable the close button to also hide the customAlert
- document.getElementById('customAlertClose').addEventListener('click', function () {hideCustomAlert();});
+function hideCustomAlert () {
+    const customAlert = document.getElementById('customAlert');
+    customAlert.style.top = '-100px';
+}
+// enable the close button to also hide the customAlert
+document.getElementById('customAlertClose').addEventListener('click', function () {hideCustomAlert();});
  
 
 
@@ -67,21 +67,24 @@ document.addEventListener('DOMContentLoaded', function () {
         text: "KcaVibes Together, We Thrive!",
         url: postUrl,
     };
-    const btn = document.querySelector(".shareData");
+    let shareBtns = document.getElementsByClassName("shareData");
+    shareBtns = [...shareBtns];
 
     // share must be triggered by 'user' activation
-    btn.addEventListener("click", function () {
-        if (navigator.share) {
-            navigator.share(shareData)
-            .then(function () {
-                console.log('Successfully shared data');
-            })
-            .catch(function (error) {
-                console.log('Error sharing:', error);
-            });
-        } else {
-            navigator.clipboard.writeText(postUrl);
-            showCustomAlert();
-        }
-    });
+    shareBtns.forEach(function (shareBtn) {
+        shareBtn.addEventListener("click", function () {
+            if (navigator.share) {
+                navigator.share(shareData)
+                .then(function () {
+                    console.log('Successfully shared data');
+                })
+                .catch(function (error) {
+                    console.log('Error sharing:', error);
+                });
+            } else {
+                navigator.clipboard.writeText(postUrl);
+                showCustomAlert();
+            }
+        });
+    })
 })

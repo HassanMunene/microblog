@@ -11884,8 +11884,182 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.modal-backdrop.show {
-  opacity: 0.6;
+/* ===============================================================================
+*  ===========This mixin will dynamically generate different shades of gray=======
+*  =============================================================================*/
+.color-gray-100 {
+  color: #f8f9fa;
+}
+
+.color-gray-200 {
+  color: #e9ecef;
+}
+
+.color-gray-300 {
+  color: #dee2e6;
+}
+
+.color-gray-400 {
+  color: #ced4da;
+}
+
+.color-gray-500 {
+  color: #adb5bd;
+}
+
+.color-gray-600 {
+  color: #6c757d;
+}
+
+.color-gray-700 {
+  color: #495057;
+}
+
+.color-gray-800 {
+  color: #343a40;
+}
+
+.color-gray-900 {
+  color: #212529;
+}
+
+.color-black-1 {
+  color: #000;
+}
+
+.color-cl-green {
+  color: rgb(26, 137, 23);
+}
+
+.color-cl-green-dark {
+  color: rgb(7, 106, 5);
+}
+
+/* ===============================================================================
+*  ======This mixin will generate sizes of font-size in pixes==================
+*  =============================================================================*/
+.fs-8 {
+  font-size: 8px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-32 {
+  font-size: 30px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+/*=================================================================================
+* ==========MIXIN TO STYLE WEBKIT LINE CLAMP TO MAKE WEBKIT BOX=======================================
+* ===============================================================================*/
+.webkit-line-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  max-height: 40px;
+}
+
+.webkit-line-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  max-height: 40px;
+}
+
+.webkit-line-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  max-height: 40px;
+}
+
+.webkit-line-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  max-height: 40px;
+}
+
+.webkit-line-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  max-height: 40px;
+}
+
+/*=================================================================================
+* ==========MIXIN TO STYLE THE FONT WEIGHT=======================================
+* ===============================================================================*/
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
 }
 
 body {
@@ -13807,14 +13981,14 @@ a {
   color: #495057;
 }
 
-.container-fluid2 div .share-post-section {
+.container-fluid2 .share-post-section {
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.container-fluid2 div .share-post-section .icon-container {
+.container-fluid2 .share-post-section .icon-container {
   display: flex;
   align-items: center;
   border: 1px solid #e9ecef;
@@ -13824,18 +13998,18 @@ a {
   cursor: pointer;
 }
 
-.container-fluid2 div .share-post-section .icon-container .icon {
+.container-fluid2 .share-post-section .icon-container .icon {
   margin-right: 9px;
   color: rgb(7, 106, 5);
 }
 
-.container-fluid2 div .image-container {
+.container-fluid2 .image-container {
   margin-top: 40px;
   max-width: 100%;
   clear: both;
 }
 
-.container-fluid2 div .image-container .image-container-side {
+.container-fluid2 .image-container .image-container-side {
   position: relative;
   top: 0;
   display: flex;
@@ -13845,7 +14019,7 @@ a {
   transition: 300ms ease-in-out;
 }
 
-.container-fluid2 div .image-container .image-container-side.show {
+.container-fluid2 .image-container .image-container-side.show {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -13856,31 +14030,31 @@ a {
   background-color: #fff;
   opacity: 0.97;
 }
-.container-fluid2 div .image-container .image-container-side.show img {
+.container-fluid2 .image-container .image-container-side.show img {
   width: 90%;
 }
 
-.container-fluid2 div .image-container .image-container-side img {
+.container-fluid2 .image-container .image-container-side img {
   max-width: 100%;
   width: 100%;
   height: auto;
   cursor: pointer;
 }
 
-.container-fluid2 div .actual-post {
+.container-fluid2 .actual-post {
   margin-top: 20px;
   font-size: 18px;
   word-break: break-word;
 }
 
-.container-fluid2 div .actual-post p {
+.container-fluid2 .actual-post p {
   letter-spacing: -0.013em;
   word-break: break-word;
   line-height: 28px;
   color: #000;
 }
 
-.container-fluid2 div .actual-post p .firstWord {
+.container-fluid2 .actual-post p .firstWord {
   margin-right: 12px;
   padding-top: 0px;
   display: block;
@@ -13891,220 +14065,60 @@ a {
   line-height: 0.83;
 }
 
-/* Margin */
-.mt-0 {
-  margin-top: 0;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-/* ... add more margin classes as needed ... */
-/* Padding */
-.pt-0 {
-  padding-top: 0;
-}
-
-.pt-1 {
-  padding-top: 0.25rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
-}
-
-/* ... add more padding classes as needed ... */
-/* Font Weight */
-.fw-100 {
-  font-weight: 100;
-}
-
-.fw-200 {
-  font-weight: 200;
-}
-
-.fw-300 {
-  font-weight: 300;
-}
-
-.fw-400 {
-  font-weight: 400;
-}
-
-.fw-900 {
-  font-weight: 900;
-}
-
-/* ... add more font weight classes as needed ... */
-/* Font Size */
-.fs-12 {
-  font-size: 12px;
-}
-
-.fs-16 {
-  font-size: 16px;
-}
-
-.fs-20 {
-  font-size: 20px;
-}
-
-.fs-24 {
-  font-size: 24px;
-}
-
-/* ... add more font size classes as needed ... */
-/* Text Align */
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-/* Display */
-.blk {
+.a {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-.iln {
-  display: inline;
+.db {
+  display: block;
 }
 
-.iln-blk {
-  display: inline-block;
-}
-
-.ab {
+.dfc {
   display: flex;
-}
-
-/* justify content */
-.ca {
+  align-items: center;
   justify-content: center;
 }
 
-/* Flexbox */
-.flex {
+.dfb {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.flex-row {
-  flex-direction: row;
+.dfe {
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
-.flex-col {
-  flex-direction: column;
+.dfa {
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
-/* ... add more flexbox classes as needed ... */
-/* Width */
-.w-100 {
-  width: 100%;
+.df {
+  display: flex;
+  align-items: center;
 }
 
-.w-50 {
-  width: 50%;
+.flex-item-1 {
+  flex: 1 0 0px;
 }
 
-/* ... add more width classes as needed ... */
-/* Height */
-.h-100 {
-  height: 100%;
+.flex-item-0 {
+  flex: 0 0 0px;
 }
 
-.h-50 {
-  height: 50%;
+.ls-0 {
+  letter-spacing: 0px;
 }
 
-/* ... add more height classes as needed ... */
-/* Background Color */
-.bg-red {
-  background-color: red;
-}
-
-.bg-blue {
-  background-color: blue;
-}
-
-/* ... add more background color classes as needed ... */
-/* Text Color */
-.text-white {
-  color: white;
-}
-
-.text-black {
-  color: black;
-}
-
-/* ... add more text color classes as needed ... */
-/* Border */
-.border {
-  border: 1px solid #000;
-}
-
-.border-rounded {
-  border-radius: 5px;
-}
-
-/* ... add more border classes as needed ... */
-/* Position */
-.position-relative {
-  position: relative;
-}
-
-.position-absolute {
-  position: absolute;
-}
-
-/* ... add more position classes as needed ... */
-/* Z-Index */
-.z-1 {
-  z-index: 1;
-}
-
-.z-2 {
-  z-index: 2;
-}
-
-/* ... add more z-index classes as needed ... */
-/* Opacity */
-.opacity-50 {
-  opacity: 0.5;
-}
-
-.opacity-75 {
-  opacity: 0.75;
-}
-
-/* ... add more opacity classes as needed ... */
-/* Cursor */
-.cursor-pointer {
+.cp {
   cursor: pointer;
 }
-
-.cursor-default {
-  cursor: default;
-}
-
-/* ... add more cursor classes as needed ... */
 
 /*# sourceMappingURL=style.css.map */

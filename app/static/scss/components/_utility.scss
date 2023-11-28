@@ -1,96 +1,47 @@
 @use'../custom' as *;
 
-/* Margin */
-.mt-0 { margin-top: 0; }
-.mt-1 { margin-top: 0.25rem; }
-.mt-2 { margin-top: 0.5rem; }
-.mt-3 { margin-top: 0.75rem; }
-/* ... add more margin classes as needed ... */
-
-/* Padding */
-.pt-0 { padding-top: 0; }
-.pt-1 { padding-top: 0.25rem; }
-.pt-2 { padding-top: 0.5rem; }
-.pt-3 { padding-top: 0.75rem; }
-/* ... add more padding classes as needed ... */
-
-/* Font Weight */
-.fw-100 { font-weight: 100; }
-.fw-200 { font-weight: 200; }
-.fw-300 { font-weight: 300; }
-.fw-400 { font-weight: 400; }
-.fw-900 {font-weight: 900;}
-/* ... add more font weight classes as needed ... */
-
-/* Font Size */
-.fs-12 { font-size: 12px; }
-.fs-16 { font-size: 16px; }
-.fs-20 { font-size: 20px; }
-.fs-24 { font-size: 24px; }
-/* ... add more font size classes as needed ... */
-
-/* Text Align */
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-
-/* Display */
-.blk { display: block; }
-.iln { display: inline; }
-.iln-blk { display: inline-block; }
-.ab { display: flex;}
-
-/* justify content */
-.ca {justify-content: center;}
-
-/* Flexbox */
-.flex { display: flex; }
-.flex-row { flex-direction: row; }
-.flex-col { flex-direction: column; }
-/* ... add more flexbox classes as needed ... */
-
-/* Width */
-.w-100 { width: 100%; }
-.w-50 { width: 50%; }
-/* ... add more width classes as needed ... */
-
-/* Height */
-.h-100 { height: 100%; }
-.h-50 { height: 50%; }
-/* ... add more height classes as needed ... */
-
-/* Background Color */
-.bg-red { background-color: red; }
-.bg-blue { background-color: blue; }
-/* ... add more background color classes as needed ... */
-
-/* Text Color */
-.text-white { color: white; }
-.text-black { color: black; }
-/* ... add more text color classes as needed ... */
-
-/* Border */
-.border { border: 1px solid #000; }
-.border-rounded { border-radius: 5px; }
-/* ... add more border classes as needed ... */
-
-/* Position */
-.position-relative { position: relative; }
-.position-absolute { position: absolute; }
-/* ... add more position classes as needed ... */
-
-/* Z-Index */
-.z-1 { z-index: 1; }
-.z-2 { z-index: 2; }
-/* ... add more z-index classes as needed ... */
-
-/* Opacity */
-.opacity-50 { opacity: 0.5; }
-.opacity-75 { opacity: 0.75; }
-/* ... add more opacity classes as needed ... */
-
-/* Cursor */
-.cursor-pointer { cursor: pointer; }
-.cursor-default { cursor: default; }
-/* ... add more cursor classes as needed ... */
-
+.a {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.db {
+    display: block;
+}
+.dfc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dfb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dfe {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.dfa {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.df {
+    display: flex;
+    align-items: center;
+}
+.flex-item-1 {
+    flex: 1 0 0px;
+}
+.flex-item-0 {
+    flex: 0 0 0px;
+}
+.ls-0 {
+    letter-spacing: 0px;
+}
+.cp {
+    cursor: pointer;
+}

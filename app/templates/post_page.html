@@ -124,62 +124,149 @@
 <div class="post-body-section">
     <article class="content-section">
         <div class="container-fluid2">
-            <div>
-                <div class="post-title-section">
-                    <h1>{{ post.title }}</h1>
+          <div class="a">
+            <div class="a pb-4 border-bottom">
+              <div class="post-title-section">
+                <h1>{{ post.title }}</h1>
+              </div>
+              <div class="author-profile-section">
+                <div class="profile-container">
+                  <button id="profile-button" class="profile-container-btn">
+                    <div class="profile_picture_div">
+                      {% if post.author.to_use_gravatar %}
+                      <a href="{{ url_for('main.user', username=post.author.username) }}">
+                        <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                      </a>
+                      {% else %}
+                      <a href="{{ url_for('main.user', username=post.author.username) }}">
+                        <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                      </a>
+                      {% endif %}
+                    </div> 
+                  </button>
                 </div>
-                <div>
-                    <div class="author-profile-section">
-                        <div class="profile-container">
-                            <button id="profile-button" class="profile-container-btn">
-                              <div class="profile_picture_div">
-                                {% if post.author.to_use_gravatar %}
-                                <a href="{{ url_for('main.user', username=post.author.username) }}">
-                                  <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
-                                </a>
-                                {% else %}
-                                <a href="{{ url_for('main.user', username=post.author.username) }}">
-                                  <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
-                                </a>
-                                {% endif %}
-                              </div> 
-                            </button>
-                        </div>
-                        <div class="nameDate-container">
-                            <div class="name-section">
-                                <div class="fullname">
-                                    <a href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.fullname }}</a>
-                                </div>
-                                <div class="follow-button">Follow</div>
-                            </div>
-                            <div class="date">
-                                <div class="postDate">
-                                  <a href="#"><p class="datePosted">{{ post.timestamp }}</p></a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="nameDate-container">
+                  <div class="name-section">
+                    <div class="fullname">
+                        <a href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.fullname }}</a>
                     </div>
-                    <div class="share-post-section">
-                        <div class="shareData icon-container">
-                            <div class="icon"><i class="bi bi-share"></i></div>
-                            <p>Share</p>
-                        </div>
-                        <div class="icon-container">
-                            <div class="icon"><i class="bi bi-three-dots fs-5"></i></div>
-                            <p>More</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="image-container">
-                  <div id="postImageContainer" class="image-container-side">
-                    <img id="postImage" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                    <div class="follow-button">Follow</div>
                   </div>
-                  <div class="image-caption"></div>
+                  <div class="date">
+                      <div class="postDate">
+                        <a href="#"><p class="datePosted">{{ post.timestamp }}</p></a>
+                      </div>
+                  </div>
                 </div>
-                <div id="actual-post" class="actual-post">
-                  <p id="postBody">{{ post.body }}</p>
+              </div>
+              <div class="share-post-section">
+                <div class="shareData icon-container">
+                  <div class="icon"><i class="bi bi-share"></i></div>
+                  <p>Share</p>
                 </div>
+                <div class="icon-container">
+                  <div class="icon"><i class="bi bi-three-dots fs-5"></i></div>
+                  <p>More</p>
+                </div>
+              </div>
+              <div class="image-container">
+                <div id="postImageContainer" class="image-container-side">
+                  <img id="postImage" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                </div>
+                <div class="image-caption"></div>
+              </div>
+              <div id="actual-post" class="actual-post">
+                <p id="postBody">{{ post.body }}</p>
+              </div>
+              <footer class="a mt-3">
+                <div class="a dfb">
+                  <div class="flex-item-1 df">
+                    <div class="df cp">
+                      <i class="bi bi-hand-thumbs-up fs-18 color-cl-green-dark"></i>
+                      <div class="fs-14 color-gray-600 ms-1">1.1K</div>
+                    </div>
+                    <div class="df ms-4 cp">
+                      <i class="bi bi-chat fs-18 color-cl-green-dark"></i>
+                      <div class="fs-14 color-gray-600 ms-1">12</div>
+                    </div>
+                  </div>
+                  <div class="flex-item-0 df">
+                    <div class="shareData cp">
+                      <i class="bi bi-share fs-18 color-cl-green-dark"></i>
+                    </div>
+                    <div class="ms-4 cp">
+                      <i class="bi bi-three-dots fs-20 color-cl-green-dark"></i>
+                    </div>
+                  </div>
+                </div>
+              </footer>
             </div>
+            <div class="a mt-5">
+              <div class="a dfc fs-20 fw-900"><p>More from {{ post.author.fullname }}</p></div>
+              <article class="a mt-4">
+                <div class="a pb-4 border-bottom">
+                  <div class="a">
+                    <div id="postImageContainer" class="a">
+                      <img  class="img-fluid" id="postImage" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                    </div>
+                    <div class="image-caption"></div>
+                  </div>
+                  <div class="a dfb mt-3">
+                    <div class="profile-container">
+                      <button id="profile-button" class="profile-container-btn">
+                        <div class="profile_picture_div">
+                          {% if post.author.to_use_gravatar %}
+                          <a href="{{ url_for('main.user', username=post.author.username) }}">
+                            <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                          </a>
+                          {% else %}
+                          <a href="{{ url_for('main.user', username=post.author.username) }}">
+                            <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                          </a>
+                          {% endif %}
+                        </div> 
+                      </button>
+                    </div>
+                    <div class="db">
+                      <a  class="color-gray-600 fs-16" href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.fullname }}</a>
+                    </div>
+                    <div class="db">
+                      <div class="a">
+                        <a href="#"><p class="datePosted a color-gray-600 fs-14">{{ post.timestamp }}</p></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 a">
+                    <div class="a fw-900">
+                      <p class="webkit-line-1 fs-20">{{post.title}}</p>
+                    </div>
+                    <div class="a mt-2 fw-600">
+                      <p class="webkit-line-2 fs-14 color-gray-600">{{ post.body }}</p>
+                    </div>
+                  </div>
+                  <div class="a mt-3 dfb">
+                    <div class="flex-item-1 df cp">
+                      <div class="df">
+                        <i class="bi bi-hand-thumbs-up fs-16 color-cl-green-dark"></i>
+                        <p class="ms-1 fs-14 ls-0">1.1K</p>
+                      </div>
+                      <div class="df ms-4">
+                        <i class="bi bi-chat fs-16 color-cl-green-dark"></i>
+                        <p class="ms-1 fs-14">12</p>
+                      </div>
+                    </div>
+                    <div class="flex-item-0 dfe cp">
+                      <i class="shareData bi bi-share fs-16 color-cl-green-dark"></i>
+                      <div class="ps-4">
+                        <i class="bi bi-three-dots fs-20 color-cl-green-dark"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
         </div>
     </article>
     <div class="following-section"></div>

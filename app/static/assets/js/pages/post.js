@@ -1,6 +1,6 @@
 /*=============================================================================
 * ======This file will be used to style post_page.html=========================
-* ==========================================================================*/
+* =========================================================================
 document.addEventListener('DOMContentLoaded', function () {
     const postImageContainer = document.getElementById('postImageContainer');
     if (postImageContainer) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 500)
         })
     }
-})
+})*/
 
 /*===============================================================================
 * ============Manipulate the post content in the post page ======================
