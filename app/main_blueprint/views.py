@@ -128,7 +128,7 @@ def write():
         else:
             image_filename = ''
 
-        print(image_filename)
+        #print(image_filename)
         post = Post(
             body=text_data,
             title=title,
@@ -160,5 +160,8 @@ def post():
     unique_post_id = request.args.get('post_id', None)
     if unique_post_id:
         post = Post.query.filter_by(uniquePostId=unique_post_id).first()
-        return render_template('post_page.html', post=post)
+        post_author_id = post.author_id
+        # get the all the posts made by the author of current post we are viewing
+        posts = Post.query.filter_by(author_id=post_author_id).all()
+        return render_template('post_page.html', post=post, posts=posts)
     return render_template('404.html')

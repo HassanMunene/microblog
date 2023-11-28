@@ -203,67 +203,71 @@
             </div>
             <div class="a mt-5">
               <div class="a dfc fs-20 fw-900"><p>More from {{ post.author.fullname }}</p></div>
-              <article class="a mt-4">
-                <div class="a pb-4 border-bottom">
+              <div class="a">
+                {% for post in posts %}
+                <article class="a pt-4 pb-4 border-bottom">
                   <div class="a">
-                    <div id="postImageContainer" class="a">
-                      <img  class="img-fluid" id="postImage" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                    <div class="a">
+                      <div id="postImageContainer" class="a">
+                        <img  class="img-fluid" id="postImage" src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
+                      </div>
+                      <div class="image-caption"></div>
                     </div>
-                    <div class="image-caption"></div>
-                  </div>
-                  <div class="a dfb mt-3">
-                    <div class="profile-container">
-                      <button id="profile-button" class="profile-container-btn">
-                        <div class="profile_picture_div">
-                          {% if post.author.to_use_gravatar %}
-                          <a href="{{ url_for('main.user', username=post.author.username) }}">
-                            <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
-                          </a>
-                          {% else %}
-                          <a href="{{ url_for('main.user', username=post.author.username) }}">
-                            <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
-                          </a>
-                          {% endif %}
-                        </div> 
-                      </button>
+                    <div class="a dfb mt-3">
+                      <div class="profile-container df">
+                        <button id="profile-button" class="profile-container-btn">
+                          <div class="profile_picture_div">
+                            {% if post.author.to_use_gravatar %}
+                            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                              <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
+                            </a>
+                            {% else %}
+                            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                              <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
+                            </a>
+                            {% endif %}
+                          </div> 
+                        </button>
+                        <div class="db ms-2">
+                          <a  class="color-gray-600 fs-16" href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.fullname }}</a>
+                        </div>
+                      </div>
+                      <div class="db">
+                        <div class="a">
+                          <a href="#"><p class="datePosted a color-gray-600 fs-14">{{ post.timestamp }}</p></a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="db">
-                      <a  class="color-gray-600 fs-16" href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.fullname }}</a>
+                    <div class="mt-3 a">
+                      <div class="a fw-900">
+                        <p class="webkit-line-1 fs-20">{{post.title}}</p>
+                      </div>
+                      <div class="a mt-2 fw-600">
+                        <p class="webkit-line-2 fs-14 color-gray-600">{{ post.body }}</p>
+                      </div>
                     </div>
-                    <div class="db">
-                      <div class="a">
-                        <a href="#"><p class="datePosted a color-gray-600 fs-14">{{ post.timestamp }}</p></a>
+                    <div class="a mt-3 dfb">
+                      <div class="flex-item-1 df cp">
+                        <div class="df">
+                          <i class="bi bi-hand-thumbs-up fs-16 color-cl-green-dark"></i>
+                          <p class="ms-1 fs-14 ls-0">1.1K</p>
+                        </div>
+                        <div class="df ms-4">
+                          <i class="bi bi-chat fs-16 color-cl-green-dark"></i>
+                          <p class="ms-1 fs-14">12</p>
+                        </div>
+                      </div>
+                      <div class="flex-item-0 dfe cp">
+                        <i class="shareData bi bi-share fs-16 color-cl-green-dark"></i>
+                        <div class="ps-4">
+                          <i class="bi bi-three-dots fs-20 color-cl-green-dark"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="mt-3 a">
-                    <div class="a fw-900">
-                      <p class="webkit-line-1 fs-20">{{post.title}}</p>
-                    </div>
-                    <div class="a mt-2 fw-600">
-                      <p class="webkit-line-2 fs-14 color-gray-600">{{ post.body }}</p>
-                    </div>
-                  </div>
-                  <div class="a mt-3 dfb">
-                    <div class="flex-item-1 df cp">
-                      <div class="df">
-                        <i class="bi bi-hand-thumbs-up fs-16 color-cl-green-dark"></i>
-                        <p class="ms-1 fs-14 ls-0">1.1K</p>
-                      </div>
-                      <div class="df ms-4">
-                        <i class="bi bi-chat fs-16 color-cl-green-dark"></i>
-                        <p class="ms-1 fs-14">12</p>
-                      </div>
-                    </div>
-                    <div class="flex-item-0 dfe cp">
-                      <i class="shareData bi bi-share fs-16 color-cl-green-dark"></i>
-                      <div class="ps-4">
-                        <i class="bi bi-three-dots fs-20 color-cl-green-dark"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
+                </article>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
