@@ -643,9 +643,11 @@ a {
         display: inline-block;
         width: 80px;
         height: 80px;
+        overflow: hidden;
     }
     .text-section .inner-text-section .image-container-side a img {
         max-width: 100%;
-        height: auto;
+        width: 100%;
+        max-height: 100%;
     }
 }

@@ -238,14 +238,13 @@
                         </div>
                       </div>
                     </div>
-                    <div class="mt-3 a">
-                      <div class="a fw-900">
-                        <p class="webkit-line-1 fs-20">{{post.title}}</p>
+                    <a href="{{ url_for('main.post', post_id=post.uniquePostId) }}">
+                      <div class="mt-3 width-100">
+                        <div class="width-100 db fw-900 cp mb-2">
+                          <p class="webkit-line-2 fs-20">{{post.title}}</p>
+                        </div>
                       </div>
-                      <div class="a mt-2 fw-600">
-                        <p class="webkit-line-2 fs-14 color-gray-600">{{ post.body }}</p>
-                      </div>
-                    </div>
+                    </a>
                     <div class="a mt-3 dfb">
                       <div class="flex-item-1 df cp">
                         <div class="df">

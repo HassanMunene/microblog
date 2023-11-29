@@ -85,7 +85,6 @@ $webkit-line-5: 5;
         overflow-wrap: break-word;
         text-overflow: ellipsis;
         -moz-box-orient: vertical;
-        max-height: 40px;
     }
 }
 @include dynamic-webkit-line-clamp(webkit-line-1, $webkit-line-1);
