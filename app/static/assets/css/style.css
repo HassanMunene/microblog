@@ -11855,14 +11855,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-@keyframes pulse-border {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.5);
-  }
-}
 .btn-rounded {
   padding: 0.4rem 1.2rem;
   background-color: #212529;
@@ -11885,7 +11877,7 @@ textarea.form-control-lg {
 }
 
 /* ===============================================================================
-*  ===========This mixin will dynamically generate different shades of gray=======
+*  =====will dynamically generate different shades of gray and other colors=======
 *  =============================================================================*/
 .color-gray-100 {
   color: #f8f9fa;
@@ -11936,6 +11928,9 @@ textarea.form-control-lg {
 }
 
 /* ===============================================================================
+*  =====will dynamically generate different background-colors=======
+*  =============================================================================*/
+/* ===============================================================================
 *  ======This mixin will generate sizes of font-size in pixes==================
 *  =============================================================================*/
 .fs-8 {
@@ -11962,8 +11957,16 @@ textarea.form-control-lg {
   font-size: 24px;
 }
 
+.fs-28 {
+  font-size: 28px;
+}
+
 .fs-32 {
-  font-size: 30px;
+  font-size: 32px;
+}
+
+.fs-36 {
+  font-size: 36px;
 }
 
 .fs-40 {
@@ -12231,6 +12234,407 @@ textarea.form-control-lg {
 
 .lh-50 {
   line-height: 50px;
+}
+
+/*=================================================================================
+* =================== Margin top in pixes=======================================
+* ===============================================================================*/
+.m-top-4 {
+  margin-top: 4px;
+}
+
+.m-top-8 {
+  margin-top: 8px;
+}
+
+.m-top-12 {
+  margin-top: 12px;
+}
+
+.m-top-16 {
+  margin-top: 16px;
+}
+
+.m-top-20 {
+  margin-top: 20px;
+}
+
+.m-top-24 {
+  margin-top: 24px;
+}
+
+.m-top-28 {
+  margin-top: 28px;
+}
+
+.m-top-32 {
+  margin-top: 32px;
+}
+
+.m-top-36 {
+  margin-top: 36px;
+}
+
+/*=================================================================================
+* =================== Margin left in pixes=======================================
+* ===============================================================================*/
+.m-s-4 {
+  margin-left: 4px;
+}
+
+.m-s-8 {
+  margin-left: 8px;
+}
+
+.m-s-12 {
+  margin-left: 12px;
+}
+
+.m-s-16 {
+  margin-left: 16px;
+}
+
+.m-s-20 {
+  margin-left: 20px;
+}
+
+.m-s-24 {
+  margin-left: 24px;
+}
+
+.m-s-28 {
+  margin-left: 28px;
+}
+
+.m-s-32 {
+  margin-left: 32px;
+}
+
+/*=================================================================================
+* =================== Margin right in pixes=======================================
+* ===============================================================================*/
+.m-e-4 {
+  margin-right: 4px;
+}
+
+.m-e-8 {
+  margin-right: 8px;
+}
+
+.m-e-12 {
+  margin-right: 12px;
+}
+
+.m-e-16 {
+  margin-right: 16px;
+}
+
+.m-e-20 {
+  margin-right: 20px;
+}
+
+.m-e-24 {
+  margin-right: 24px;
+}
+
+.m-e-28 {
+  margin-right: 28px;
+}
+
+.m-e-32 {
+  margin-right: 32px;
+}
+
+.m-e-36 {
+  margin-right: 36px;
+}
+
+/* ===============================================================================
+* =======MARGIN 0=============================================================
+* ==============================================================================*/
+.margin-0 {
+  margin: 0;
+}
+
+/*=================================================================================
+* =================== padding top in pixes=======================================
+* ===============================================================================*/
+.p-t-4 {
+  padding-top: 4px;
+}
+
+.p-t-8 {
+  padding-top: 8px;
+}
+
+.p-t-12 {
+  padding-top: 12px;
+}
+
+.p-t-16 {
+  padding-top: 16px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-t-24 {
+  padding-top: 24px;
+}
+
+.p-t-28 {
+  padding-top: 28px;
+}
+
+.p-t-32 {
+  padding-top: 32px;
+}
+
+.p-t-36 {
+  padding-top: 36px;
+}
+
+/*=================================================================================
+* =================== padding right in pixes=======================================
+* ===============================================================================*/
+.p-e-4 {
+  padding-right: 4px;
+}
+
+.p-e-8 {
+  padding-right: 8px;
+}
+
+.p-e-12 {
+  padding-right: 12px;
+}
+
+.p-e-16 {
+  padding-right: 16px;
+}
+
+.p-e-20 {
+  padding-right: 20px;
+}
+
+.p-e-24 {
+  padding-right: 24px;
+}
+
+.p-e-28 {
+  padding-right: 28px;
+}
+
+.p-e-32 {
+  padding-right: 32px;
+}
+
+.p-e-36 {
+  padding-right: 36px;
+}
+
+/*=================================================================================
+* =================== padding bottom in pixes=======================================
+* ===============================================================================*/
+.p-b-4 {
+  padding-bottom: 4px;
+}
+
+.p-b-8 {
+  padding-bottom: 8px;
+}
+
+.p-b-12 {
+  padding-bottom: 12px;
+}
+
+.p-b-16 {
+  padding-bottom: 16px;
+}
+
+.p-b-20 {
+  padding-bottom: 20px;
+}
+
+.p-b-24 {
+  padding-bottom: 24px;
+}
+
+.p-b-28 {
+  padding-bottom: 28px;
+}
+
+.p-b-32 {
+  padding-bottom: 32px;
+}
+
+.p-b-36 {
+  padding-bottom: 36px;
+}
+
+/*=================================================================================
+* =================== padding left in pixes=======================================
+* ===============================================================================*/
+.p-s-4 {
+  padding-left: 4px;
+}
+
+.p-s-8 {
+  padding-left: 8px;
+}
+
+.p-s-12 {
+  padding-left: 12px;
+}
+
+.p-s-16 {
+  padding-left: 16px;
+}
+
+.p-s-20 {
+  padding-left: 20px;
+}
+
+.p-s-24 {
+  padding-left: 24px;
+}
+
+.p-s-28 {
+  padding-left: 28px;
+}
+
+.p-s-32 {
+  padding-left: 32px;
+}
+
+.p-s-36 {
+  padding-left: 36px;
+}
+
+/*================================================================================
+* =======PADDING 0=============================================
+* ==============================================================================*/
+.padding-0 {
+  padding: 0;
+}
+
+/*================================================================================
+* =======THE TYPE OF POSITION TO USE =============================================
+* ==============================================================================*/
+.pos-fixed {
+  position: fixed;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.pos-sticky {
+  position: sticky;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+/*================================================================================
+* ======= FLEX CONTAINER CLASS=============================================
+* ==============================================================================*/
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  justify-content: flex-start;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-align-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-justify-center {
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  justify-content: center;
+}
+
+/* =================================================================================
+*  ===============================TEXT ALIGN MIXIN==================================
+*  ===============================================================================*/
+.ta-center {
+  text-align: center;
+}
+
+/* =================================================================================
+ * =====================BORDER MIXIN ===========================================
+ * ===============================================================================*/
+.border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+}
+
+.border-none {
+  border-style: none;
+  border-width: 0px;
+  border-color: #000;
+}
+
+/*==================================================================================
+* =================BACKGROUND COLOR MIXIN===========================================
+* ================================================================================*/
+.bg-color-black {
+  background-color: #000;
+}
+
+/*==================================================================================
+* =================Border radius dynamic=======================================
+* ================================================================================*/
+.border-rd-4 {
+  border-radius: 4px;
+}
+
+.border-rd-8 {
+  border-radius: 8px;
+}
+
+.border-rd-12 {
+  border-radius: 12px;
+}
+
+.border-rd-16 {
+  border-radius: 16px;
+}
+
+.border-rd-20 {
+  border-radius: 20px;
+}
+
+.border-rd-24 {
+  border-radius: 24px;
+}
+
+.border-rd-28 {
+  border-radius: 28px;
+}
+
+.border-rd-32 {
+  border-radius: 32px;
+}
+
+.border-rd-36 {
+  border-radius: 36px;
 }
 
 body {
@@ -12864,6 +13268,12 @@ a {
 /*==================================================================================
 * ========This is the home page for users that have not yet logged in
 * ================================================================================*/
+.navbar-section {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
 .home-navbar .navbar {
   background-color: #ffc107;
   transition: background-color 0.3s ease-in;

@@ -3,6 +3,12 @@
 /*==================================================================================
 * ========This is the home page for users that have not yet logged in
 * ================================================================================*/
+.navbar-section {
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
 .home-navbar .navbar {
     background-color: $primary;
     transition: background-color 0.3s ease-in;

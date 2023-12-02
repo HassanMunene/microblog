@@ -2,7 +2,6 @@
 @use'custom';
 
 // The import the components of the projects here to main scss
-@use'components/animations';
 @use'components/buttons';
 @use'components/mixins';
 @use'components/typography';
@@ -10,7 +9,6 @@
 // imports the sections of the project
 @use'sections/intro_section';
 @use'sections/latest_section';
-@use'sections/discover_more';
 
 // import the pages for the project
 @use'pages/layout';

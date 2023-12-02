@@ -23,6 +23,22 @@
 
 <body>
 {% block navbar %}
+<div class="navbar-section pos-fixed border-bottom border-black width-100 bg-primary z-3">
+    <div class="dfc">
+        <div class="mt-0 mb-0 m-s-24 m-e-24 width-100 max-width-1200">
+            <div class="flex p-t-24 p-b-24 p-s-0 p-e-0">
+                <div class="db">
+                    <a href="{{ url_for('main.home') }}" class="margin-0 padding-0 fs-32 fw-900">KcaVibes</a>
+                </div>
+                <div class="db">
+                    <a href="" class="margin-0 padding-0">
+                        <button class="ta-center border-none bg-color-black p-t-8 p-b-8 p-s-16 p-e-16 border-rd-36">Get Started</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block content %}{% endblock %}
