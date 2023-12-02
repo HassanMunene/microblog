@@ -26,13 +26,16 @@
 <div class="navbar-section pos-fixed border-bottom border-black width-100 bg-primary z-3">
     <div class="dfc">
         <div class="mt-0 mb-0 m-s-24 m-e-24 width-100 max-width-1200">
-            <div class="flex p-t-24 p-b-24 p-s-0 p-e-0">
+            <div class="flex p-t-24 p-b-20 p-s-0 p-e-0">
                 <div class="db">
                     <a href="{{ url_for('main.home') }}" class="margin-0 padding-0 fs-32 fw-900">KcaVibes</a>
                 </div>
-                <div class="db">
+                <div class="db flex-grow"></div>
+                <div class="flex-align-center">
                     <a href="" class="margin-0 padding-0">
-                        <button class="ta-center border-none bg-color-black p-t-8 p-b-8 p-s-16 p-e-16 border-rd-36">Get Started</button>
+                        <button class="ta-center border-none bg-color-black fs-14 p-t-8 p-b-8 p-s-16 p-e-16 border-rd-36 color-white margin-0">
+                            Get Started
+                        </button>
                     </a>
                 </div>
             </div>
@@ -43,8 +46,31 @@
 
 {% block content %}{% endblock %}
 
+<!---------------------MODAL 1 GET STARTED(SIGN UP) MODAL---------------------------------------------->
+<div class="modal1 overflow-y-auto overflow-x-hidden bg-color-white flex-center">
+    <div class="padding-0">
+        <div class="db pos-rel bg-color-white width-vw-100 height-vh-100">
+            <div class="height-vh-100 bg-color-white min-height-700 width-100 flex-justify-center">
+                <div class="p-t-120 p-e-56 p-b-44 p-s-56 width-100 flex-grow flex-dir-column ta-center">
+                    <h2 class="l-s lh-32 fs-28 color-black font-times margin-0 ta-center">Join KcaVibes.</h2>
+                    <div class="db max-width-300 m-t-30"></div>
+                    <div class="db m-t-50 width-100">
+                        <a id="google_signup" class="width-100 dib padding-8 bg-color-white fs-16 lh-24 ta-center border">
+                            <div class="flex-justify-btn">
+                                <i class="bi bi-google icon"></i>
+                                <span>Sign up with Google</span>
+                                <div class="db width-px-24 height-px-24"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!---------------------MODAL 1 THE GET STARTED(SIGN UP) MODAL------------------------------------------>
-<div class="modal fade" id="get-started-modal" tabindex="-1" role="dialog" aria-labelledby="get-started-modal" aria-hidden="true">
+<!--<div class="modal fade" id="get-started-modal" tabindex="-1" role="dialog" aria-labelledby="get-started-modal" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -84,7 +110,7 @@
         </div>
     </div>
 </div>
-</div>
+</div>-->
 <!---------------------MODAL 1 ENDS ------------------------------------------------------------------->
 
 <!---------------------MODAL 2 THE SIGN IN MODAL------------------------------------------------------->

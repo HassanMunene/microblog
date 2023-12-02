@@ -9,6 +9,9 @@
 .db {
     display: block;
 }
+.dib {
+    display: inline-block;
+}
 .dfc {
     display: flex;
     align-items: center;
@@ -44,4 +47,7 @@
 }
 .cp {
     cursor: pointer;
+}
+.font-times {
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
 }

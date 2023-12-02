@@ -165,3 +165,7 @@ def post():
         posts = Post.query.filter_by(author_id=post_author_id).all()
         return render_template('post_page.html', post=post, posts=posts)
     return render_template('404.html')
+
+@main.route('/testing')
+def testing():
+    return render_template('testing.html')

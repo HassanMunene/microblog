@@ -11,36 +11,37 @@
 /* ===============================================================================
 *  =====will dynamically generate different shades of gray and other colors=======
 *  =============================================================================*/
-$white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black:    #000;
-$cl-green: rgb(26, 137, 23);
-$cl-green-dark: rgb(7, 106, 5);
+$color-white:    #fff;
+$color-gray-100: #f8f9fa;
+$color-gray-200: #e9ecef;
+$color-gray-300: #dee2e6;
+$color-gray-400: #ced4da;
+$color-gray-500: #adb5bd;
+$color-gray-600: #6c757d;
+$color-gray-700: #495057;
+$color-gray-800: #343a40;
+$color-gray-900: #212529;
+$color-black   : #000;
+$color-green   : rgb(26, 137, 23);
+$color-green-dark: rgb(7, 106, 5);
 @mixin dynamic-color-class($color-name, $color-value) {
-    .color-#{$color-name} {
+    .#{$color-name} {
         color: $color-value;
     }
 }
-@include dynamic-color-class(gray-100, $gray-100);
-@include dynamic-color-class(gray-200, $gray-200);
-@include dynamic-color-class(gray-300, $gray-300);
-@include dynamic-color-class(gray-400, $gray-400);
-@include dynamic-color-class(gray-500, $gray-500);
-@include dynamic-color-class(gray-600, $gray-600);
-@include dynamic-color-class(gray-700, $gray-700);
-@include dynamic-color-class(gray-800, $gray-800);
-@include dynamic-color-class(gray-900, $gray-900);
-@include dynamic-color-class(black-1, $black);
-@include dynamic-color-class(cl-green, $cl-green);
-@include dynamic-color-class(cl-green-dark, $cl-green-dark);
+@include dynamic-color-class(color-white, $color-white);
+@include dynamic-color-class(color-gray-100, $color-gray-100);
+@include dynamic-color-class(color-gray-200, $color-gray-200);
+@include dynamic-color-class(color-gray-300, $color-gray-300);
+@include dynamic-color-class(color-gray-400, $color-gray-400);
+@include dynamic-color-class(color-gray-500, $color-gray-500);
+@include dynamic-color-class(color-gray-600, $color-gray-600);
+@include dynamic-color-class(color-gray-700, $color-gray-700);
+@include dynamic-color-class(color-gray-800, $color-gray-800);
+@include dynamic-color-class(color-gray-900, $color-gray-900);
+@include dynamic-color-class(color-black, $color-black);
+@include dynamic-color-class(color-green, $color-green);
+@include dynamic-color-class(color-green-dark, $color-green-dark);
 
 
 /* ===============================================================================
@@ -160,7 +161,69 @@ $max-width-1300: 1300px;
 @include dynamic-max-width(max-width-1300, $max-width-1300);
 
 /*=================================================================================
-* ==========MAX HEIGHT MIXINS IN PIXES=======================================
+* ==========WIDTH IN PERCENTAGE=======================================
+* ===============================================================================*/
+$width-30: 30%;
+$width-40: 40%;
+$width-50: 50%;
+$width-60: 60%;
+$width-70: 70%;
+$width-80: 80%;
+$width-90: 90%;
+$width-100: 100%;
+
+@mixin dynamic-width($width-name, $width-value) {
+    .#{$width-name} {
+        width: $width-value;
+    }
+}
+@include dynamic-width(width-30, $width-30);
+@include dynamic-width(width-40, $width-40);
+@include dynamic-width(width-50, $width-50);
+@include dynamic-width(width-60, $width-60);
+@include dynamic-width(width-70, $width-70);
+@include dynamic-width(width-80, $width-80);
+@include dynamic-width(width-90, $width-90);
+@include dynamic-width(width-100, $width-100);
+
+/*=================================================================================
+* ==========WIDTH IN Pixels=======================================
+* ===============================================================================*/
+$width-px-4: 4px;
+$width-px-8: 8px;
+$width-px-24: 24px;
+
+@mixin dynamic-width-in-pixels($width-name, $width-value) {
+    .#{$width-name} {
+        width: $width-value;
+    }
+}
+@include dynamic-width-in-pixels(width-px-4, $width-px-4);
+@include dynamic-width-in-pixels(width-px-8, $width-px-8);
+@include dynamic-width-in-pixels(width-px-24, $width-px-24);
+
+
+/*=================================================================================
+* ==========WIDTH IN VIEW PORT WIDTH=======================================
+* ===============================================================================*/
+$width-vw-30: 30vw;
+$width-vw-40: 40vw;
+$width-vw-50: 50vw;
+$width-vw-60: 60vw;
+$width-vw-70: 70vw;
+$width-vw-80: 80vw;
+$width-vw-90: 90vw;
+$width-vw-100: 100vw;
+
+@mixin dynamic-viewport-width($width-name, $width-value) {
+    .#{$width-name} {
+        width: $width-value;
+    }
+}
+@include dynamic-viewport-width(width-vw-100, $width-vw-100);
+
+/*=================================================================================
+* ==========MAX HEIGHT MIXINS IN PIXELS=======================================
 * ===============================================================================*/
 $max-height-30: 30px;
 $max-height-40: 40px;
@@ -204,40 +267,62 @@ $max-height-200: 200px;
 @include dynamic-max-height(max-height-190, $max-height-190);
 @include dynamic-max-height(max-height-200, $max-height-200);
 
-
-
 /*=================================================================================
-* ==========WIDTH IN PERCENTAGE=======================================
+* ==========MIN HEIGHT MIXINS IN PIXES=======================================
 * ===============================================================================*/
-$width-30: 30%;
-$width-40: 40%;
-$width-50: 50%;
-$width-60: 60%;
-$width-70: 70%;
-$width-80: 80%;
-$width-90: 90%;
-$width-100: 100%;
+$min-height-100: 100px;
+$min-height-700: 700px;
 
-@mixin dynamic-width($width-name, $width-value) {
-    .#{$width-name} {
-        width: $width-value;
+@mixin dynamic-min-height($min-height-name, $min-height-value) {
+    .#{$min-height-name} {
+        min-height: $min-height-value;
     }
 }
-@include dynamic-width(width-30, $width-30);
-@include dynamic-width(width-40, $width-40);
-@include dynamic-width(width-50, $width-50);
-@include dynamic-width(width-60, $width-60);
-@include dynamic-width(width-70, $width-70);
-@include dynamic-width(width-80, $width-80);
-@include dynamic-width(width-90, $width-90);
-@include dynamic-width(width-100, $width-100);
+@include dynamic-min-height(min-height-100, $min-height-100);
+@include dynamic-min-height(min-height-700, $min-height-700);
+
+/*=================================================================================
+* ==========height in Pixels=======================================
+* ===============================================================================*/
+$height-px-4: 4px;
+$height-px-8: 8px;
+$height-px-24: 24px;
+
+@mixin dynamic-height-in-pixels($height-name, $height-value) {
+    .#{$height-name} {
+        height: $height-value;
+    }
+}
+@include dynamic-height-in-pixels(height-px-4, $height-px-4);
+@include dynamic-height-in-pixels(height-px-8, $height-px-8);
+@include dynamic-height-in-pixels(height-px-24, $height-px-24);
+
+/*=================================================================================
+* ==========HEIGHT IN VIEWPORT HEIGHT=======================================
+* ===============================================================================*/
+$height-vh-30: 30vh;
+$height-vh-40: 40vh;
+$height-vh-50: 50vh;
+$height-vh-60: 60vh;
+$height-vh-70: 70vh;
+$height-vh-100: 100vh;
+
+
+@mixin dynamic-viewport-height($height-name, $height-value) {
+    .#{$height-name} {
+        height: $height-value;
+    }
+}
+@include dynamic-viewport-height(height-vh-100, $height-vh-100);
 
 /*=================================================================================
 * ==========LINE HEIGHT IN PIXES =======================================
 * ===============================================================================*/
 $lh-10: 10px;
 $lh-20: 20px;
+$lh-24: 24px;
 $lh-30: 30px;
+$lh-32: 32px;
 $lh-40: 40px;
 $lh-50: 50px;
 
@@ -248,39 +333,53 @@ $lh-50: 50px;
 }
 @include dynamic-line-height(lh-10, $lh-10);
 @include dynamic-line-height(lh-20, $lh-20);
+@include dynamic-line-height(lh-24, $lh-24);
 @include dynamic-line-height(lh-30, $lh-30);
+@include dynamic-line-height(lh-32, $lh-32);
 @include dynamic-line-height(lh-40, $lh-40);
 @include dynamic-line-height(lh-50, $lh-50);
 
+/*==================================================================================
+* =================LETTER SPACING=======================================
+* ================================================================================*/
+@mixin letter-spacing($letter-spacing: -0.03em) {
+    letter-spacing: $letter-spacing;
+}
+.l-s {
+    @include letter-spacing($letter-spacing:-0.03em);
+}
 
 /*=================================================================================
 * =================== Margin top in pixes=======================================
 * ===============================================================================*/
-$m-top-4: 4px;
-$m-top-8: 8px;
-$m-top-12: 12px;
-$m-top-16: 16px;
-$m-top-20: 20px;
-$m-top-24: 24px;
-$m-top-28: 28px;
-$m-top-32: 32px;
-$m-top-36: 36px;
+$m-t-4: 4px;
+$m-t-8: 8px;
+$m-t-12: 12px;
+$m-t-16: 16px;
+$m-t-20: 20px;
+$m-t-24: 24px;
+$m-t-28: 28px;
+$m-t-30: 30px;
+$m-t-32: 32px;
+$m-t-36: 36px;
+$m-t-50: 50px;
 
 @mixin dynamic-margin-top($margin-top-name, $margin-top-value) {
     .#{$margin-top-name} {
         margin-top: $margin-top-value;
     }
 }
-@include dynamic-margin-top(m-top-4, $m-top-4);
-@include dynamic-margin-top(m-top-8, $m-top-8);
-@include dynamic-margin-top(m-top-12, $m-top-12);
-@include dynamic-margin-top(m-top-16, $m-top-16);
-@include dynamic-margin-top(m-top-20, $m-top-20);
-@include dynamic-margin-top(m-top-24, $m-top-24);
-@include dynamic-margin-top(m-top-28, $m-top-28);
-@include dynamic-margin-top(m-top-32, $m-top-32);
-@include dynamic-margin-top(m-top-36, $m-top-36);
-
+@include dynamic-margin-top(m-t-4, $m-t-4);
+@include dynamic-margin-top(m-t-8, $m-t-8);
+@include dynamic-margin-top(m-t-12, $m-t-12);
+@include dynamic-margin-top(m-t-16, $m-t-16);
+@include dynamic-margin-top(m-t-20, $m-t-20);
+@include dynamic-margin-top(m-t-24, $m-t-24);
+@include dynamic-margin-top(m-t-28, $m-t-28);
+@include dynamic-margin-top(m-t-30, $m-t-30);
+@include dynamic-margin-top(m-t-32, $m-t-32);
+@include dynamic-margin-top(m-t-36, $m-t-36);
+@include dynamic-margin-top(m-t-50, $m-t-50);
 
 /*=================================================================================
 * =================== Margin left in pixes=======================================
@@ -360,6 +459,7 @@ $p-t-24: 24px;
 $p-t-28: 28px;
 $p-t-32: 32px;
 $p-t-36: 36px;
+$p-t-120: 120px;
 
 @mixin dynamic-padding-top($padding-t-name, $padding-t-value) {
     .#{$padding-t-name} {
@@ -375,6 +475,7 @@ $p-t-36: 36px;
 @include dynamic-padding-top(p-t-28, $p-t-28);
 @include dynamic-padding-top(p-t-32, $p-t-32);
 @include dynamic-padding-top(p-t-36, $p-t-36);
+@include dynamic-padding-top(p-t-120, $p-t-120);
 
 
 /*=================================================================================
@@ -389,6 +490,7 @@ $p-e-24: 24px;
 $p-e-28: 28px;
 $p-e-32: 32px;
 $p-e-36: 36px;
+$p-e-56: 56px;
 
 @mixin dynamic-padding-end($padding-e-name, $padding-e-value) {
     .#{$padding-e-name} {
@@ -404,6 +506,7 @@ $p-e-36: 36px;
 @include dynamic-padding-end(p-e-28, $p-e-28);
 @include dynamic-padding-end(p-e-32, $p-e-32);
 @include dynamic-padding-end(p-e-36, $p-e-36);
+@include dynamic-padding-end(p-e-56, $p-e-56);
 
 
 /*=================================================================================
@@ -418,6 +521,7 @@ $p-b-24: 24px;
 $p-b-28: 28px;
 $p-b-32: 32px;
 $p-b-36: 36px;
+$p-b-44: 44px;
 
 @mixin dynamic-padding-bottom($padding-b-name, $padding-b-value) {
     .#{$padding-b-name} {
@@ -433,6 +537,7 @@ $p-b-36: 36px;
 @include dynamic-padding-bottom(p-b-28, $p-b-28);
 @include dynamic-padding-bottom(p-b-32, $p-b-32);
 @include dynamic-padding-bottom(p-b-36, $p-b-36);
+@include dynamic-padding-bottom(p-b-44, $p-b-44);
 
 
 /*=================================================================================
@@ -447,6 +552,7 @@ $p-s-24: 24px;
 $p-s-28: 28px;
 $p-s-32: 32px;
 $p-s-36: 36px;
+$p-s-56: 56px;
 
 @mixin dynamic-padding-start($padding-s-name, $padding-s-value) {
     .#{$padding-s-name} {
@@ -462,17 +568,24 @@ $p-s-36: 36px;
 @include dynamic-padding-start(p-s-28, $p-s-28);
 @include dynamic-padding-start(p-s-32, $p-s-32);
 @include dynamic-padding-start(p-s-36, $p-s-36);
+@include dynamic-padding-start(p-s-56, $p-s-56);
+
 
 /*================================================================================
 * =======PADDING 0=============================================
 * ==============================================================================*/
 @mixin padding($padding) {
-    padding: $padding;
+    padding-top: $padding;
+    padding-left: $padding;
+    padding-bottom: $padding;
+    padding-right: $padding;
 }
 .padding-0 {
     @include padding($padding: 0);
 }
-
+.padding-8 {
+    @include padding($padding: 8px);
+}
 /*================================================================================
 * =======THE TYPE OF POSITION TO USE =============================================
 * ==============================================================================*/
@@ -513,6 +626,25 @@ $pos-rel: relative;
 .flex-justify-center {
     @include flex-container($justify-content: center)
 }
+.flex-justify-btn {
+    @include flex-container($justify-content: space-between);
+}
+.flex-dir-column {
+    @include flex-container($direction: column, $align-items: center, $justify-content:center)
+}
+
+/*================================================================================
+* ======= FLEX ITEMS OF FLEX CONTAINER=============================================
+* ==============================================================================*/
+@mixin flex-item($flex-grow:0, $flex-shrink:1, $flex-basis:auto) {
+    flex-grow: $flex-grow;
+    flex-shrink: $flex-shrink;
+    flex-basis: $flex-basis;
+}
+.flex-grow {
+    @include flex-item($flex-grow:1, $flex-shrink: 0, $flex-basis:auto);
+}
+
 
 /* =================================================================================
 *  ===============================TEXT ALIGN MIXIN==================================
@@ -539,7 +671,7 @@ $pos-rel: relative;
     border-color: $border-color;
 }
 .border {
-    @include border(solid, 1px, $black);
+    @include border($border-style:solid, $border-width:1px, $border-color:$black);
 }
 .border-none {
     @include border(none, 0px, $black)
@@ -583,3 +715,20 @@ $border-rd-36: 36px;
 @include dynamic-border-radius(border-rd-28, $border-rd-28);
 @include dynamic-border-radius(border-rd-32, $border-rd-32);
 @include dynamic-border-radius(border-rd-36, $border-rd-36);
+
+/*==================================================================================
+* =================OVERFLOW MIXIN=======================================
+* ================================================================================*/
+@mixin overflow($overflow-y: visible, $overflow-x: visible) {
+    overflow-y: $overflow-y;
+    overflow-x: $overflow-x;
+}
+.overflow-hidden {
+    @include overflow($overflow-y: hidden, $overflow-x: hidden);
+}
+.overflow-y-auto {
+    overflow-y: auto;
+}
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
