@@ -6,7 +6,7 @@
 * ===This section we are changing the bg color of navbar
 * ===depending on the height of the scrolly and section
 * =======================================================*/
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     const IntroSectionContainer = document.getElementById('intro-section-container');
     if (IntroSectionContainer) {
         let pageType = IntroSectionContainer.getAttribute('data-page');
@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })     
     }
-})
+})*/
 
 /*==================================================================================
 * Here when user clicks the bookmark section the getStartedModal is shown because
 * The user is not yet logged in
 * ================================================================================*/
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     const getStartedModal = new bootstrap.Modal(document.getElementById('get-started-modal'));
     
     // select all elements with class name home-bmk-section. This will return an
@@ -59,4 +59,31 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 100)
         })
     });
+})*/
+
+/*==================================================================================
+* ==When the getStartedButton is clicked show the sign up modal=====================
+* ==============================================================================*/
+
+document.addEventListener('DOMContentLoaded', function () {
+    const getStartedButton = document.getElementById('getStartedButton');
+    const body = document.body;
+
+    if (getStartedButton) {
+        const closeModalButton = document.getElementById('closeButton');
+        const getStartedModal = document.getElementById('getStartedModal');
+
+        function showGetStartedModal() {
+            body.classList.add('modal-open');
+            setTimeout(function () {
+                getStartedModal.classList.add('show');
+            }, 500);
+        }
+        function closeGetStartedModal() {
+            body.classList.remove('modal-open');
+            getStartedModal.classList.remove('show');
+        }
+        getStartedButton.addEventListener('click', showGetStartedModal);
+        closeModalButton.addEventListener('click', closeGetStartedModal);
+    }
 })

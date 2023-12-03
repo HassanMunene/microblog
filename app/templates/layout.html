@@ -32,8 +32,8 @@
                 </div>
                 <div class="db flex-grow"></div>
                 <div class="flex-align-center">
-                    <a href="" class="margin-0 padding-0">
-                        <button class="ta-center border-none bg-color-black fs-14 p-t-8 p-b-8 p-s-16 p-e-16 border-rd-36 color-white margin-0">
+                    <a class="margin-0 padding-0">
+                        <button id="getStartedButton" class="ta-center border-none bg-color-black fs-14 p-t-8 p-b-8 p-s-16 p-e-16 border-rd-36 color-white margin-0">
                             Get Started
                         </button>
                     </a>
@@ -47,22 +47,46 @@
 {% block content %}{% endblock %}
 
 <!---------------------MODAL 1 GET STARTED(SIGN UP) MODAL---------------------------------------------->
-<div class="modal1 overflow-y-auto overflow-x-hidden bg-color-white flex-center">
-    <div class="padding-0">
-        <div class="db pos-rel bg-color-white width-vw-100 height-vh-100">
+<div id="getStartedModal" class="modal1 pos-fixed top-0 right-0 bottom-0 left-0 overflow-y-auto overflow-x-hidden bg-color-white flex-center z-i-5">
+    <div class="padding-0 max-width-600">
+        <div class="db pos-rel bg-color-white width-100 height-vh-100">
             <div class="height-vh-100 bg-color-white min-height-700 width-100 flex-justify-center">
-                <div class="p-t-120 p-e-56 p-b-44 p-s-56 width-100 flex-grow flex-dir-column ta-center">
+                <div class="p-t-100 p-e-56 p-b-44 p-s-56 width-100 flex-grow flex-dir-column ta-center">
                     <h2 class="l-s lh-32 fs-28 color-black font-times margin-0 ta-center">Join KcaVibes.</h2>
                     <div class="db max-width-300 m-t-30"></div>
                     <div class="db m-t-50 width-100">
-                        <a id="google_signup" class="width-100 dib padding-8 bg-color-white fs-16 lh-24 ta-center border">
+                        <a id="google_signup" class="width-100 dib padding-8 bg-color-white fs-16 fw-400 lh-24 ta-center border-all border-rd-36">
                             <div class="flex-justify-btn">
                                 <i class="bi bi-google icon"></i>
                                 <span>Sign up with Google</span>
                                 <div class="db width-px-24 height-px-24"></div>
                             </div>
                         </a>
+                        <div class="db m-t-12">
+                            <a id="email_signup" class="width-100 dib padding-8 bg-color-white fs-16 fw-400 lh-24 ta-center border-all border-rd-36">
+                                <div class="flex-justify-btn">
+                                    <i class="bi bi-envelope icon"></i>
+                                    <span>Sign up with Email</span>
+                                    <div class="db width-px-24 height-px-24"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="db m-t-40 m-b-100">
+                            <p class="fs-16 lh-24 color-black margin-0">
+                                Already have an account? <span class="color-green-dark cp fw-900">Sign in</span>
+                            </p>
+                        </div>
                     </div>
+                    <div class="db width-80">
+                        <p class="fs-13 colo-gray-900 lh-20 margin-0">
+                            Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="closeButton" class="pos-abs right-12 top-12 db">
+                <div class="cp db color-black">
+                    <i class="bi bi-x-lg"></i>
                 </div>
             </div>
         </div>

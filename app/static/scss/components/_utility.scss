@@ -9,6 +9,9 @@
 .db {
     display: block;
 }
+.dn {
+    display: none;
+}
 .dib {
     display: inline-block;
 }
@@ -50,4 +53,9 @@
 }
 .font-times {
     font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/*when the modal is open i want the body within to not scroll*/
+body.modal-open {
+    overflow: hidden;
 }

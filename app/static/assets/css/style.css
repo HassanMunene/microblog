@@ -11941,6 +11941,10 @@ textarea.form-control-lg {
   font-size: 8px;
 }
 
+.fs-13 {
+  font-size: 13px;
+}
+
 .fs-14 {
   font-size: 14px;
 }
@@ -12353,8 +12357,16 @@ textarea.form-control-lg {
   margin-top: 36px;
 }
 
+.m-t-40 {
+  margin-top: 40px;
+}
+
 .m-t-50 {
   margin-top: 50px;
+}
+
+.m-t-100 {
+  margin-top: 100px;
 }
 
 /*=================================================================================
@@ -12431,6 +12443,45 @@ textarea.form-control-lg {
   margin-right: 36px;
 }
 
+/*=================================================================================
+* =================== Margin right in pixes=======================================
+* ===============================================================================*/
+.m-b-4 {
+  margin-bottom: 4px;
+}
+
+.m-b-8 {
+  margin-bottom: 8px;
+}
+
+.m-b-12 {
+  margin-bottom: 12px;
+}
+
+.m-b-16 {
+  margin-bottom: 16px;
+}
+
+.m-b-20 {
+  margin-bottom: 20px;
+}
+
+.m-b-24 {
+  margin-bottom: 24px;
+}
+
+.m-b-28 {
+  margin-bottom: 28px;
+}
+
+.m-b-32 {
+  margin-bottom: 32px;
+}
+
+.m-b-100 {
+  margin-bottom: 100px;
+}
+
 /* ===============================================================================
 * =======MARGIN 0=============================================================
 * ==============================================================================*/
@@ -12475,6 +12526,10 @@ textarea.form-control-lg {
 
 .p-t-36 {
   padding-top: 36px;
+}
+
+.p-t-100 {
+  padding-top: 100px;
 }
 
 .p-t-120 {
@@ -12647,6 +12702,53 @@ textarea.form-control-lg {
 }
 
 /*================================================================================
+* =======TOP, LEFT BOTTOM, RIGHT IN REGARDS TO POSITION===========================
+* ==============================================================================*/
+.top-0 {
+  top: 0px;
+}
+
+.top-10 {
+  top: 10px;
+}
+
+.top-12 {
+  top: 12px;
+}
+
+.top-20 {
+  top: 20px;
+}
+
+.top-30 {
+  top: 30px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.right-10 {
+  right: 10px;
+}
+
+.right-12 {
+  right: 12px;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.bottom-10 {
+  bottom: 10px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+/*================================================================================
 * ======= FLEX CONTAINER CLASS=============================================
 * ==============================================================================*/
 .flex {
@@ -12710,7 +12812,7 @@ textarea.form-control-lg {
 /* =================================================================================
  * =====================BORDER MIXIN ===========================================
  * ===============================================================================*/
-.border {
+.border-all {
   border-style: solid;
   border-width: 1px;
   border-color: #000;
@@ -12727,6 +12829,10 @@ textarea.form-control-lg {
 * ================================================================================*/
 .bg-color-black {
   background-color: #000;
+}
+
+.bg-color-white {
+  background-color: #fff;
 }
 
 /*==================================================================================
@@ -12782,6 +12888,25 @@ textarea.form-control-lg {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+/*===================================================================================
+* ========================THE Z-INDEX PART==========================================
+* =================================================================================*/
+.z-i-5 {
+  z-index: 5;
+}
+
+.z-i-10 {
+  z-index: 10;
+}
+
+.z-i-15 {
+  z-index: 15;
+}
+
+.z-i-20 {
+  z-index: 20;
 }
 
 body {
@@ -13415,43 +13540,18 @@ a {
 /*==================================================================================
 * ========This is the home page for users that have not yet logged in
 * ================================================================================*/
-.navbar-section {
-  top: 0;
-  right: 0;
-  left: 0;
+/* ===============================================================================
+* ===========MODAL 1 CUSTOMISATION==============================================
+* ==============================================================================*/
+.modal1 {
+  display: none;
+  pointer-events: none;
+  transition: display 500s ease-in;
 }
 
-.home-navbar .navbar {
-  background-color: #ffc107;
-  transition: background-color 0.3s ease-in;
-}
-
-.home-navbar .navbar.show {
-  box-shadow: none;
-  border-bottom: 1px solid #343a40;
-}
-
-.home-navbar .navbar-brand {
-  font-size: xx-large;
-}
-
-.home-navbar .navbar-nav li {
-  padding: 0.4rem 1.2rem;
-  color: #000;
-  text-transform: capitalize;
-}
-
-.home-navbar .navbar .navbar-nav .btn-rounded.scroll-btn {
-  background-color: rgb(26, 137, 23);
-}
-.home-navbar .navbar .navbar-nav .btn-rounded.scroll-btn:hover {
-  background-color: rgb(7, 106, 5);
-}
-
-@media (max-width: 575.98px) {
-  .mediaQ {
-    display: none;
-  }
+.modal1.show {
+  display: block;
+  pointer-events: auto;
 }
 
 .btn-home {
@@ -14808,6 +14908,10 @@ a {
   display: block;
 }
 
+.dn {
+  display: none;
+}
+
 .dib {
   display: inline-block;
 }
@@ -14859,6 +14963,11 @@ a {
 
 .font-times {
   font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/*when the modal is open i want the body within to not scroll*/
+body.modal-open {
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

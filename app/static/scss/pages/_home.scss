@@ -3,42 +3,25 @@
 /*==================================================================================
 * ========This is the home page for users that have not yet logged in
 * ================================================================================*/
-.navbar-section {
-    top: 0;
-    right: 0;
-    left: 0;
+
+
+/* ===============================================================================
+* ===========MODAL 1 CUSTOMISATION==============================================
+* ==============================================================================*/
+.modal1 {
+    display: none;
+    pointer-events: none;
+    transition: display 500s ease-in;
+}
+.modal1.show {
+    display: block;
+    pointer-events: auto;
 }
 
-.home-navbar .navbar {
-    background-color: $primary;
-    transition: background-color 0.3s ease-in;
-}
-// this property will come alive when the user scrolls past the intro-section
-.home-navbar .navbar.show {
-    box-shadow: none;
-    border-bottom: 1px solid $gray-800;
-}
-.home-navbar .navbar-brand {
-    font-size: xx-large;
-}
 
-.home-navbar .navbar-nav li {
-    padding: 0.4rem 1.2rem;
-    color: #000;
-    text-transform: capitalize;
-}
-// this class for button will be activated when user scrolls past intro-section
-.home-navbar .navbar .navbar-nav .btn-rounded.scroll-btn {
-    background-color: $green;
-    &:hover {
-        background-color: $green-dark;
-    }
-}
-.mediaQ {
-    @include media-breakpoint-down(sm) {
-        display: none;
-    }
-}
+
+
+
 
 .btn-home {
     margin: 2rem 0;

@@ -52,6 +52,7 @@ $color-green-dark: rgb(7, 106, 5);
 *  ======This mixin will generate sizes of font-size in pixes==================
 *  =============================================================================*/
 $fs-8 : 8px;
+$fs-13: 13px;
 $fs-14 : 14px;
 $fs-16 : 16px;
 $fs-18 : 18px;
@@ -67,6 +68,7 @@ $fs-40 : 40px;
     }
 }
 @include dynamic-font-size(fs-8, $fs-8);
+@include dynamic-font-size(fs-13, $fs-13);
 @include dynamic-font-size(fs-14, $fs-14);
 @include dynamic-font-size(fs-16, $fs-16);
 @include dynamic-font-size(fs-18, $fs-18);
@@ -362,7 +364,9 @@ $m-t-28: 28px;
 $m-t-30: 30px;
 $m-t-32: 32px;
 $m-t-36: 36px;
+$m-t-40: 40px;
 $m-t-50: 50px;
+$m-t-100: 100px;
 
 @mixin dynamic-margin-top($margin-top-name, $margin-top-value) {
     .#{$margin-top-name} {
@@ -379,7 +383,9 @@ $m-t-50: 50px;
 @include dynamic-margin-top(m-t-30, $m-t-30);
 @include dynamic-margin-top(m-t-32, $m-t-32);
 @include dynamic-margin-top(m-t-36, $m-t-36);
+@include dynamic-margin-top(m-t-40, $m-t-40);
 @include dynamic-margin-top(m-t-50, $m-t-50);
+@include dynamic-margin-top(m-t-100, $m-t-100);
 
 /*=================================================================================
 * =================== Margin left in pixes=======================================
@@ -437,6 +443,35 @@ $m-e-36: 36px;
 @include dynamic-margin-end(m-e-32, $m-e-32);
 @include dynamic-margin-end(m-e-36, $m-e-36);
 
+/*=================================================================================
+* =================== Margin right in pixes=======================================
+* ===============================================================================*/
+$m-b-4: 4px;
+$m-b-8: 8px;
+$m-b-12: 12px;
+$m-b-16: 16px;
+$m-b-20: 20px;
+$m-b-24: 24px;
+$m-b-28: 28px;
+$m-b-32: 32px;
+$m-b-36: 36px;
+$m-b-100: 100px;
+
+@mixin dynamic-margin-bottom($margin-b-name, $margin-b-value) {
+    .#{$margin-b-name} {
+        margin-bottom: $margin-b-value;
+    }
+}
+@include dynamic-margin-bottom(m-b-4, $m-b-4);
+@include dynamic-margin-bottom(m-b-8, $m-b-8);
+@include dynamic-margin-bottom(m-b-12, $m-b-12);
+@include dynamic-margin-bottom(m-b-16, $m-b-16);
+@include dynamic-margin-bottom(m-b-20, $m-b-20);
+@include dynamic-margin-bottom(m-b-24, $m-b-24);
+@include dynamic-margin-bottom(m-b-28, $m-b-28);
+@include dynamic-margin-bottom(m-b-32, $m-b-32);
+@include dynamic-margin-bottom(m-b-100, $m-b-100);
+
 /* ===============================================================================
 * =======MARGIN 0=============================================================
 * ==============================================================================*/
@@ -459,6 +494,7 @@ $p-t-24: 24px;
 $p-t-28: 28px;
 $p-t-32: 32px;
 $p-t-36: 36px;
+$p-t-100: 100px;
 $p-t-120: 120px;
 
 @mixin dynamic-padding-top($padding-t-name, $padding-t-value) {
@@ -475,6 +511,7 @@ $p-t-120: 120px;
 @include dynamic-padding-top(p-t-28, $p-t-28);
 @include dynamic-padding-top(p-t-32, $p-t-32);
 @include dynamic-padding-top(p-t-36, $p-t-36);
+@include dynamic-padding-top(p-t-100, $p-t-100);
 @include dynamic-padding-top(p-t-120, $p-t-120);
 
 
@@ -605,6 +642,60 @@ $pos-rel: relative;
 @include dynamic-position(pos-rel, $pos-rel);
 
 /*================================================================================
+* =======TOP, LEFT BOTTOM, RIGHT IN REGARDS TO POSITION===========================
+* ==============================================================================*/
+$top-0: 0px;
+$top-10: 10px;
+$top-12: 12px;
+$top-20: 20px;
+$top-30: 30px;
+@mixin dynamic-top-position($top-name, $top-value) {
+    .#{$top-name} {
+        top: $top-value;
+    }
+}
+@include dynamic-top-position(top-0, $top-0);
+@include dynamic-top-position(top-10, $top-10);
+@include dynamic-top-position(top-12, $top-12);
+@include dynamic-top-position(top-20, $top-20);
+@include dynamic-top-position(top-30, $top-30);
+
+$right-0: 0px;
+$right-10: 10px;
+$right-12: 12px;
+@mixin dynamic-right-position($right-name, $right-value) {
+    .#{$right-name} {
+        right: $right-value;
+    }
+}
+@include dynamic-right-position(right-0, $right-0);
+@include dynamic-right-position(right-10, $right-10);
+@include dynamic-right-position(right-12, $right-12);
+
+$bottom-0: 0px;
+$bottom-10: 10px;
+@mixin dynamic-bottom-position($bottom-name, $bottom-value) {
+    .#{$bottom-name} {
+        bottom: $bottom-value;
+    }
+}
+@include dynamic-bottom-position(bottom-0, $bottom-0);
+@include dynamic-bottom-position(bottom-10, $bottom-10);
+
+$left-0: 0px;
+$left-10: 10px;
+$left-20: 20px;
+$left-30: 30px;
+@mixin dynamic-left-position($left-name, $left-value) {
+    .#{$left-name} {
+        left: $left-value;
+    }
+}
+@include dynamic-left-position(left-0, $left-0);
+
+
+
+/*================================================================================
 * ======= FLEX CONTAINER CLASS=============================================
 * ==============================================================================*/
 @mixin flex-container($direction: row, $align-items: normal, $justify-content: flex-start) {
@@ -670,7 +761,7 @@ $pos-rel: relative;
     border-width: $border-width;
     border-color: $border-color;
 }
-.border {
+.border-all {
     @include border($border-style:solid, $border-width:1px, $border-color:$black);
 }
 .border-none {
@@ -686,6 +777,9 @@ $pos-rel: relative;
 }
 .bg-color-black {
     @include bg-color($background-color: $black);
+}
+.bg-color-white {
+    @include bg-color($background-color: $white);
 }
 
 /*==================================================================================
@@ -732,3 +826,20 @@ $border-rd-36: 36px;
 .overflow-x-hidden {
     overflow-x: hidden;
 }
+
+/*===================================================================================
+* ========================THE Z-INDEX PART==========================================
+* =================================================================================*/
+$z-i-5: 5;
+$z-i-10: 10;
+$z-i-15: 15;
+$z-i-20: 20;
+@mixin dynamic-z-index($z-name, $z-value) {
+    .#{$z-name} {
+        z-index: $z-value;
+    }
+}
+@include dynamic-z-index(z-i-5, $z-i-5);
+@include dynamic-z-index(z-i-10, $z-i-10);
+@include dynamic-z-index(z-i-15, $z-i-15);
+@include dynamic-z-index(z-i-20, $z-i-20);
