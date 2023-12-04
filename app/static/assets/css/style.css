@@ -12165,8 +12165,16 @@ textarea.form-control-lg {
   width: 8px;
 }
 
+.width-px-20 {
+  width: 20px;
+}
+
 .width-px-24 {
   width: 24px;
+}
+
+.width-px-100 {
+  width: 100px;
 }
 
 .width-px-200 {
@@ -12271,6 +12279,10 @@ textarea.form-control-lg {
 
 .height-px-8 {
   height: 8px;
+}
+
+.height-px-20 {
+  height: 20px;
 }
 
 .height-px-24 {
@@ -12857,6 +12869,21 @@ textarea.form-control-lg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.flex-align-center-just-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: nowrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
 }
 
 /*================================================================================

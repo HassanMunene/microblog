@@ -195,7 +195,9 @@ $width-100: 100%;
 * ===============================================================================*/
 $width-px-4: 4px;
 $width-px-8: 8px;
+$width-px-20: 20px;
 $width-px-24: 24px;
+$width-px-100: 100px;
 $width-px-200: 200px;
 
 @mixin dynamic-width-in-pixels($width-name, $width-value) {
@@ -205,7 +207,9 @@ $width-px-200: 200px;
 }
 @include dynamic-width-in-pixels(width-px-4, $width-px-4);
 @include dynamic-width-in-pixels(width-px-8, $width-px-8);
+@include dynamic-width-in-pixels(width-px-20, $width-px-20);
 @include dynamic-width-in-pixels(width-px-24, $width-px-24);
+@include dynamic-width-in-pixels(width-px-100, $width-px-100);
 @include dynamic-width-in-pixels(width-px-200, $width-px-200);
 
 
@@ -292,6 +296,7 @@ $min-height-700: 700px;
 * ===============================================================================*/
 $height-px-4: 4px;
 $height-px-8: 8px;
+$height-px-20: 20px;
 $height-px-24: 24px;
 $height-px-85: 85px;
 
@@ -302,6 +307,7 @@ $height-px-85: 85px;
 }
 @include dynamic-height-in-pixels(height-px-4, $height-px-4);
 @include dynamic-height-in-pixels(height-px-8, $height-px-8);
+@include dynamic-height-in-pixels(height-px-20, $height-px-20);
 @include dynamic-height-in-pixels(height-px-24, $height-px-24);
 @include dynamic-height-in-pixels(height-px-85, $height-px-85);
 
@@ -765,7 +771,16 @@ $left-30: 30px;
     @include flex-container($direction: column, $align-items: normal, $justify-content: flex-start);
 }
 .flex-dir-column {
-    @include flex-container($direction: column, $align-items: center, $justify-content:center)
+    @include flex-container($direction: column, $align-items: center, $justify-content:center);
+}
+.flex-align-center-just-btn {
+    @include flex-container($direction: row, $align-items: flex-start, $justify-content:space-between);   
+}
+.flex-wrap {
+    flex-wrap: nowrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
 }
 
 /*================================================================================
