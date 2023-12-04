@@ -11981,6 +11981,10 @@ textarea.form-control-lg {
   font-size: 40px;
 }
 
+.fs-72 {
+  font-size: 72px;
+}
+
 /*=================================================================================
 * ==========MIXIN TO STYLE WEBKIT LINE CLAMP TO MAKE WEBKIT BOX=======================================
 * ===============================================================================*/
@@ -12165,6 +12169,10 @@ textarea.form-control-lg {
   width: 24px;
 }
 
+.width-px-200 {
+  width: 200px;
+}
+
 /*=================================================================================
 * ==========WIDTH IN VIEW PORT WIDTH=======================================
 * ===============================================================================*/
@@ -12269,6 +12277,25 @@ textarea.form-control-lg {
   height: 24px;
 }
 
+.height-px-85 {
+  height: 85px;
+}
+
+/*=================================================================================
+* ==========height in Percentage=======================================
+* ===============================================================================*/
+.height-40 {
+  height: 40%;
+}
+
+.height-50 {
+  height: 50%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
 /*=================================================================================
 * ==========HEIGHT IN VIEWPORT HEIGHT=======================================
 * ===============================================================================*/
@@ -12305,6 +12332,10 @@ textarea.form-control-lg {
 
 .lh-50 {
   line-height: 50px;
+}
+
+.lh-72 {
+  line-height: 72px;
 }
 
 /*==================================================================================
@@ -12478,6 +12509,14 @@ textarea.form-control-lg {
   margin-bottom: 32px;
 }
 
+.m-b-36 {
+  margin-bottom: 36px;
+}
+
+.m-b-48 {
+  margin-bottom: 48px;
+}
+
 .m-b-100 {
   margin-bottom: 100px;
 }
@@ -12526,6 +12565,10 @@ textarea.form-control-lg {
 
 .p-t-36 {
   padding-top: 36px;
+}
+
+.p-t-90 {
+  padding-top: 90px;
 }
 
 .p-t-100 {
@@ -12620,6 +12663,10 @@ textarea.form-control-lg {
 
 .p-b-44 {
   padding-bottom: 44px;
+}
+
+.p-b-90 {
+  padding-bottom: 90px;
 }
 
 /*=================================================================================
@@ -12724,6 +12771,10 @@ textarea.form-control-lg {
   top: 30px;
 }
 
+.top-40 {
+  top: 40px;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -12734,6 +12785,14 @@ textarea.form-control-lg {
 
 .right-12 {
   right: 12px;
+}
+
+.right-16 {
+  right: 16px;
+}
+
+.right-24 {
+  right: 24px;
 }
 
 .bottom-0 {
@@ -12786,6 +12845,13 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: flex-start;
+}
+
 .flex-dir-column {
   display: flex;
   flex-direction: column;
@@ -12822,6 +12888,12 @@ textarea.form-control-lg {
   border-style: none;
   border-width: 0px;
   border-color: #000;
+}
+
+.border-b {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #000;
 }
 
 /*==================================================================================
@@ -13544,13 +13616,13 @@ a {
 * ===========MODAL 1 CUSTOMISATION==============================================
 * ==============================================================================*/
 .modal1 {
-  display: none;
+  opacity: 0;
   pointer-events: none;
-  transition: display 500s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 
 .modal1.show {
-  display: block;
+  opacity: 1;
   pointer-events: auto;
 }
 
@@ -13570,12 +13642,17 @@ a {
 }
 
 /*====================Media query for home page==========================*/
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 600px) {
   .home_posts-section .inner-posts-section article .article-container .inner-article-container .inner-article-container2 {
     margin: 0px;
   }
   .home_posts-section .bottom-section .inner-container .time-section .read-time-section {
     display: none;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .mid-screen-above {
+    display: block !important;
   }
 }
 #about-body {

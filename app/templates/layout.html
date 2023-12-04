@@ -26,14 +26,28 @@
 <div class="navbar-section pos-fixed border-bottom border-black width-100 bg-primary z-3">
     <div class="dfc">
         <div class="mt-0 mb-0 m-s-24 m-e-24 width-100 max-width-1200">
-            <div class="flex p-t-24 p-b-20 p-s-0 p-e-0">
+            <div class="flex p-t-20 p-b-16 p-s-0 p-e-0">
                 <div class="db">
                     <a href="{{ url_for('main.home') }}" class="margin-0 padding-0 fs-32 fw-900">KcaVibes</a>
                 </div>
                 <div class="db flex-grow"></div>
                 <div class="flex-align-center">
+                    <span class="mid-screen-above dn">
+                        <div class="m-e-24 db">
+                            <p class="fs-14 color-black lh-20 margin-0 fw-800">
+                                <a href="{{ url_for('main.about') }}">Our story</a>
+                            </p>
+                        </div>
+                    </span>
+                    <span class="mid-screen-above dn">
+                        <div class="m-e-24 db">
+                            <p class="fs-14 color-black lh-20 margin-0 fw-800">
+                                <a href="{{ url_for('main.about') }}">Sign in</a>
+                            </p>
+                        </div>
+                    </span>
                     <a class="margin-0 padding-0">
-                        <button id="getStartedButton" class="ta-center border-none bg-color-black fs-14 p-t-8 p-b-8 p-s-16 p-e-16 border-rd-36 color-white margin-0">
+                        <button id="getStartedButton" class="getStartedButton ta-center border-none bg-color-black fs-14 p-t-8 p-b-8 p-s-16 p-e-16 border-rd-36 color-white margin-0">
                             Get Started
                         </button>
                     </a>
@@ -84,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div id="closeButton" class="pos-abs right-12 top-12 db">
+            <div id="closeButton" class="pos-abs right-24 top-40 db">
                 <div class="cp db color-black">
                     <i class="bi bi-x-lg"></i>
                 </div>
@@ -92,49 +106,6 @@
         </div>
     </div>
 </div>
-
-<!---------------------MODAL 1 THE GET STARTED(SIGN UP) MODAL------------------------------------------>
-<!--<div class="modal fade" id="get-started-modal" tabindex="-1" role="dialog" aria-labelledby="get-started-modal" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-fullscreen-sm-down shadow" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="registration-modal-content">
-            <h1>Join KcaVibes.</h1>
-            <div class="btn-container">
-                <a id="google_signup" class="modal-btn">
-                    <div>
-                        <i class="bi bi-google icon"></i>
-                        <span>Sign up with Google</span>
-                        <div class="jaza"></div>
-                    </div>
-                </a>
-                <a class="modal-btn">
-                    <div>
-                        <i class="bi bi-facebook icon"></i>
-                        <span>Sign up with Facebook</span>
-                        <div class="jaza"></div>
-                    </div>
-                </a>
-                <a class="modal-btn">
-                    <div data-bs-target="#enter_email_modal" data-bs-toggle="modal">
-                        <i class="bi bi-envelope icon"></i>
-                        <span>Sign up with Email</span>
-                        <div class="jaza"></div>
-                    </div>
-                </a>
-                <div class="already-account">
-                    <p>Already have an Account? <a href="#" data-bs-target="#sign-in-modal" data-bs-toggle="modal">Sign In</a></p>
-                </div>
-            </div>
-            <div class="terms">
-                <p class="lead text-muted text-center">Click “Sign In” to agree to KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" class="fw-semibold">Terms of Service</a> and acknowledge that KcaVibes' <a href="{{ url_for('main.terms_of_service') }}" target="_blank">Privacy Policy</a> applies to you.</p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>-->
 <!---------------------MODAL 1 ENDS ------------------------------------------------------------------->
 
 <!---------------------MODAL 2 THE SIGN IN MODAL------------------------------------------------------->

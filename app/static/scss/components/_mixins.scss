@@ -62,6 +62,7 @@ $fs-28 : 28px;
 $fs-32 : 32px;
 $fs-36 : 36px;
 $fs-40 : 40px;
+$fs-72 : 72px;
 @mixin dynamic-font-size ($fontsize-name, $fontsize-value) {
     .#{$fontsize-name} {
         font-size: $fontsize-value;
@@ -78,6 +79,7 @@ $fs-40 : 40px;
 @include dynamic-font-size(fs-32, $fs-32);
 @include dynamic-font-size(fs-36, $fs-36);
 @include dynamic-font-size(fs-40, $fs-40);
+@include dynamic-font-size(fs-72, $fs-72);
 
 /*=================================================================================
 * ==========MIXIN TO STYLE WEBKIT LINE CLAMP TO MAKE WEBKIT BOX=======================================
@@ -194,6 +196,7 @@ $width-100: 100%;
 $width-px-4: 4px;
 $width-px-8: 8px;
 $width-px-24: 24px;
+$width-px-200: 200px;
 
 @mixin dynamic-width-in-pixels($width-name, $width-value) {
     .#{$width-name} {
@@ -203,6 +206,7 @@ $width-px-24: 24px;
 @include dynamic-width-in-pixels(width-px-4, $width-px-4);
 @include dynamic-width-in-pixels(width-px-8, $width-px-8);
 @include dynamic-width-in-pixels(width-px-24, $width-px-24);
+@include dynamic-width-in-pixels(width-px-200, $width-px-200);
 
 
 /*=================================================================================
@@ -289,6 +293,7 @@ $min-height-700: 700px;
 $height-px-4: 4px;
 $height-px-8: 8px;
 $height-px-24: 24px;
+$height-px-85: 85px;
 
 @mixin dynamic-height-in-pixels($height-name, $height-value) {
     .#{$height-name} {
@@ -298,6 +303,25 @@ $height-px-24: 24px;
 @include dynamic-height-in-pixels(height-px-4, $height-px-4);
 @include dynamic-height-in-pixels(height-px-8, $height-px-8);
 @include dynamic-height-in-pixels(height-px-24, $height-px-24);
+@include dynamic-height-in-pixels(height-px-85, $height-px-85);
+
+/*=================================================================================
+* ==========height in Percentage=======================================
+* ===============================================================================*/
+$height-40: 40%;
+$height-50: 50%;
+$height-100: 100%;
+
+@mixin dynamic-height-in-percentage($height-name, $height-value) {
+    .#{$height-name} {
+        height: $height-value;
+    }
+}
+@include dynamic-height-in-percentage(height-40, $height-40);
+@include dynamic-height-in-percentage(height-50, $height-50);
+@include dynamic-height-in-percentage(height-100, $height-100);
+
+
 
 /*=================================================================================
 * ==========HEIGHT IN VIEWPORT HEIGHT=======================================
@@ -327,6 +351,7 @@ $lh-30: 30px;
 $lh-32: 32px;
 $lh-40: 40px;
 $lh-50: 50px;
+$lh-72: 72px;
 
 @mixin dynamic-line-height($line-height-name, $line-height-value) {
     .#{$line-height-name} {
@@ -340,6 +365,7 @@ $lh-50: 50px;
 @include dynamic-line-height(lh-32, $lh-32);
 @include dynamic-line-height(lh-40, $lh-40);
 @include dynamic-line-height(lh-50, $lh-50);
+@include dynamic-line-height(lh-72, $lh-72);
 
 /*==================================================================================
 * =================LETTER SPACING=======================================
@@ -455,6 +481,7 @@ $m-b-24: 24px;
 $m-b-28: 28px;
 $m-b-32: 32px;
 $m-b-36: 36px;
+$m-b-48: 48px;
 $m-b-100: 100px;
 
 @mixin dynamic-margin-bottom($margin-b-name, $margin-b-value) {
@@ -470,6 +497,8 @@ $m-b-100: 100px;
 @include dynamic-margin-bottom(m-b-24, $m-b-24);
 @include dynamic-margin-bottom(m-b-28, $m-b-28);
 @include dynamic-margin-bottom(m-b-32, $m-b-32);
+@include dynamic-margin-bottom(m-b-36, $m-b-36);
+@include dynamic-margin-bottom(m-b-48, $m-b-48);
 @include dynamic-margin-bottom(m-b-100, $m-b-100);
 
 /* ===============================================================================
@@ -494,6 +523,7 @@ $p-t-24: 24px;
 $p-t-28: 28px;
 $p-t-32: 32px;
 $p-t-36: 36px;
+$p-t-90: 90px;
 $p-t-100: 100px;
 $p-t-120: 120px;
 
@@ -511,6 +541,7 @@ $p-t-120: 120px;
 @include dynamic-padding-top(p-t-28, $p-t-28);
 @include dynamic-padding-top(p-t-32, $p-t-32);
 @include dynamic-padding-top(p-t-36, $p-t-36);
+@include dynamic-padding-top(p-t-90, $p-t-90);
 @include dynamic-padding-top(p-t-100, $p-t-100);
 @include dynamic-padding-top(p-t-120, $p-t-120);
 
@@ -559,6 +590,7 @@ $p-b-28: 28px;
 $p-b-32: 32px;
 $p-b-36: 36px;
 $p-b-44: 44px;
+$p-b-90: 90px;
 
 @mixin dynamic-padding-bottom($padding-b-name, $padding-b-value) {
     .#{$padding-b-name} {
@@ -575,6 +607,7 @@ $p-b-44: 44px;
 @include dynamic-padding-bottom(p-b-32, $p-b-32);
 @include dynamic-padding-bottom(p-b-36, $p-b-36);
 @include dynamic-padding-bottom(p-b-44, $p-b-44);
+@include dynamic-padding-bottom(p-b-90, $p-b-90);
 
 
 /*=================================================================================
@@ -649,6 +682,8 @@ $top-10: 10px;
 $top-12: 12px;
 $top-20: 20px;
 $top-30: 30px;
+$top-40: 40px;
+
 @mixin dynamic-top-position($top-name, $top-value) {
     .#{$top-name} {
         top: $top-value;
@@ -659,10 +694,14 @@ $top-30: 30px;
 @include dynamic-top-position(top-12, $top-12);
 @include dynamic-top-position(top-20, $top-20);
 @include dynamic-top-position(top-30, $top-30);
+@include dynamic-top-position(top-40, $top-40);
 
 $right-0: 0px;
 $right-10: 10px;
 $right-12: 12px;
+$right-16: 16px;
+$right-24: 24px;
+
 @mixin dynamic-right-position($right-name, $right-value) {
     .#{$right-name} {
         right: $right-value;
@@ -671,6 +710,8 @@ $right-12: 12px;
 @include dynamic-right-position(right-0, $right-0);
 @include dynamic-right-position(right-10, $right-10);
 @include dynamic-right-position(right-12, $right-12);
+@include dynamic-right-position(right-16, $right-16);
+@include dynamic-right-position(right-24, $right-24);
 
 $bottom-0: 0px;
 $bottom-10: 10px;
@@ -720,6 +761,9 @@ $left-30: 30px;
 .flex-justify-btn {
     @include flex-container($justify-content: space-between);
 }
+.flex-column {
+    @include flex-container($direction: column, $align-items: normal, $justify-content: flex-start);
+}
 .flex-dir-column {
     @include flex-container($direction: column, $align-items: center, $justify-content:center)
 }
@@ -767,7 +811,11 @@ $left-30: 30px;
 .border-none {
     @include border(none, 0px, $black)
 }
-
+.border-b {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $black;
+}
 
 /*==================================================================================
 * =================BACKGROUND COLOR MIXIN===========================================

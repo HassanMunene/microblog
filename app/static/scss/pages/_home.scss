@@ -9,12 +9,12 @@
 * ===========MODAL 1 CUSTOMISATION==============================================
 * ==============================================================================*/
 .modal1 {
-    display: none;
+    opacity: 0;
     pointer-events: none;
-    transition: display 500s ease-in;
+    transition: opacity .3s ease-in;
 }
 .modal1.show {
-    display: block;
+    opacity: 1;
     pointer-events: auto;
 }
 
@@ -38,12 +38,18 @@
 }
 
 /*====================Media query for home page==========================*/
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 600px) {
     .home_posts-section .inner-posts-section article .article-container .inner-article-container .inner-article-container2 {
         margin: 0px;
     }
 
     .home_posts-section .bottom-section .inner-container .time-section .read-time-section {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .mid-screen-above {
+        display: block !important;
     }
 }

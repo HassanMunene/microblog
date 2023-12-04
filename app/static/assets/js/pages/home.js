@@ -66,24 +66,25 @@
 * ==============================================================================*/
 
 document.addEventListener('DOMContentLoaded', function () {
-    const getStartedButton = document.getElementById('getStartedButton');
+    let getStartedButtons = document.getElementsByClassName('getStartedButton');
     const body = document.body;
 
-    if (getStartedButton) {
+    if (getStartedButtons) {
+        getStartedButtons = [...getStartedButtons];
         const closeModalButton = document.getElementById('closeButton');
         const getStartedModal = document.getElementById('getStartedModal');
 
         function showGetStartedModal() {
             body.classList.add('modal-open');
-            setTimeout(function () {
-                getStartedModal.classList.add('show');
-            }, 500);
+            getStartedModal.classList.add('show');
         }
         function closeGetStartedModal() {
             body.classList.remove('modal-open');
             getStartedModal.classList.remove('show');
         }
-        getStartedButton.addEventListener('click', showGetStartedModal);
+        getStartedButtons.forEach(function(getStartedButton) {
+            getStartedButton.addEventListener('click', showGetStartedModal);
+        })
         closeModalButton.addEventListener('click', closeGetStartedModal);
     }
 })
