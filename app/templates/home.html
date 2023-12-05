@@ -63,7 +63,18 @@
                           <div>
                             <a href="#"><p class="datePosted fs-13 color-gray-600">{{ post.timestamp }}</p></a>
                           </div>
-                          <div><i class="bi bi-three-dots fs-20 color-gray-600"></i></div>
+                          <div class="pos-rel">
+                            <i class="three-dots bi bi-three-dots fs-20 color-gray-600 cp"></i>
+                            <div class="popup-dialog-box pos-abs width-px-150 right-neg-30 shadow">
+                              <div class="db bg-color-white border-rd-4">
+                                <ul class="p-t-8 p-b-8 p-e-0 p-s-0 margin-0 flex-dir-column-align-stretch">
+                                  <li class="m-b-4"><a href="">share link</a></li>
+                                  <li class="m-b-4"><a href="">view author</a></li>
+                                  <li><a href="">open post</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       {% if post.imageName %}
@@ -87,100 +98,3 @@
   <div>Footer</div>
 </div>
 {% endblock %}
-
-<section class="home_posts-section" id="posts-section">
-  <div class="container">
-    <div class="inner-body-container">
-      <main class="main-section">
-        <div class="main-container">
-          <div class="posts-section">
-            <div class="inner-posts-section">
-              {% for post in posts %}
-              <article>
-                <div class="article-container">
-                  <div class="inner-article-container">
-                    <div class="inner-article-container2">
-                      <div class="date-section">
-                        <div class="profile-container">
-                          <button id="profile-button" class="profile-container-btn">
-                            <div class="profile_picture_div">
-                              {% if post.author.to_use_gravatar %}
-                              <a href="{{ url_for('main.user', username=post.author.username) }}">
-                                <img  class="profile_picture_img" src="{{ post.author.generate_gravatar_url() }}" alt="profile picture">
-                              </a>
-                              {% else %}
-                              <a href="{{ url_for('main.user', username=post.author.username) }}">
-                                <img  class="profile_picture_img" src="{{ post.author.profile_picture_url }}" alt="profile picture">
-                              </a>
-                              {% endif %}
-                            </div> 
-                          </button>
-                        </div>
-                        <div class="username-postDate">
-                          <div class="username"><p>{{ post.author.fullname }}</p></div>
-                          <div class="date">
-                            <div class="postDate">
-                              <a href="#"><p class="datePosted">{{ post.timestamp }}</p></a>
-                            </div>
-                            <div class="authenticated-user"><i class="bi bi-stars"></i></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-container-side">
-                        <div class="text-section">
-                          <div class="inner-text-section">
-                            <div class="top-section">
-                              <a href="#">
-                                {% if post.title %}
-                                <div class="heading"><h2>{{ post.title }}</h2></div>
-                                {% else %}
-                                <div class="heading" style="display: none;"></div>
-                                {% endif %}
-                                <div class="paragraph">
-                                  <p>{{ post.body }}</p>
-                                </div>
-                              </a>
-                            </div>
-                            {% if post.imageName %}
-                            <div class="image-container-side">
-                              <a href="#">
-                                <img src="{{ url_for('main.serve_image', filename=post.imageName) }}" alt="{{ post.imageName }}">
-                              </a>
-                            </div>
-                            {% else %}
-                            <div class="image-container-side" style="display: none;"></div>
-                            {% endif %}
-                          </div>
-                        </div>
-                        <div class="bottom-section">
-                          <div class="inner-container">
-                            <div class="time-section">
-                              {% if post.topic %}
-                              <div class="button-section">
-                                <a href="#"><div>{{ post.topic }}</div></a>
-                              </div>
-                              {% else %}
-                              <div class="button-section" style="display: none;"></div>
-                              {% endif %}
-                            </div>
-                            <div class="bmk-section home-bmk-section">
-                              <div><i class="bi bi-bookmark-plus"></i></div>
-                              <div><i class="bi bi-dash-circle"></i></div>
-                              <div><i class="bi bi-three-dots"></i></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </main>
-      <div class="secondary-section"></div>
-    </div>
-  </div>
-</section>

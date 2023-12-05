@@ -88,3 +88,32 @@ document.addEventListener("DOMContentLoaded", function () {
         })     
     }
 })
+
+/*==================================================================================
+* ===When user clicks on the three dots on the posts section a popup shows========
+* ================================================================================*/
+document.addEventListener("DOMContentLoaded", function () {
+    let threeDots = document.getElementsByClassName('three-dots');
+    //console.log(threeDots);
+
+    if (threeDots) {
+        let dialogBoxes = document.getElementsByClassName('popup-dialog-box');
+        console.log(dialogBoxes);
+        //const dialogBox = document.getElementById('popup-dialog-box');
+        // convert the html collection to an array to use the forEach iterative method
+        dialogBoxes = [...dialogBoxes];
+        threeDots = [...threeDots];
+        // iterate through each element in the threeDots array
+        threeDots.forEach(function (threeDot) {
+            threeDot.addEventListener('click', function () {
+                let threeDotIndex = threeDots.indexOf(threeDot);
+                dialogBoxes.forEach(function (dialogBox) {
+                    let dialogBoxIndex = dialogBoxes.indexOf(dialogBox);
+                    if (threeDotIndex === dialogBoxIndex) {
+                        dialogBox.classList.toggle('show');
+                    }
+                })
+            })
+        })
+    }
+})

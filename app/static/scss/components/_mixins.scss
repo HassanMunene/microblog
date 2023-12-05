@@ -1,6 +1,10 @@
 // THIS IS WAY TO CENTER AN ABSOLUTE ELEMENT IN ITS PARENT
 @use'../custom' as *;
 
+ul {
+    list-style: none;
+}
+
 @mixin absoluteCenter {
     position: absolute;
     top: 50%;
@@ -198,6 +202,7 @@ $width-px-8: 8px;
 $width-px-20: 20px;
 $width-px-24: 24px;
 $width-px-100: 100px;
+$width-px-150: 150px;
 $width-px-200: 200px;
 
 @mixin dynamic-width-in-pixels($width-name, $width-value) {
@@ -210,6 +215,7 @@ $width-px-200: 200px;
 @include dynamic-width-in-pixels(width-px-20, $width-px-20);
 @include dynamic-width-in-pixels(width-px-24, $width-px-24);
 @include dynamic-width-in-pixels(width-px-100, $width-px-100);
+@include dynamic-width-in-pixels(width-px-150, $width-px-150);
 @include dynamic-width-in-pixels(width-px-200, $width-px-200);
 
 
@@ -715,6 +721,8 @@ $top-40: 40px;
 @include dynamic-top-position(top-30, $top-30);
 @include dynamic-top-position(top-40, $top-40);
 
+$right-neg-60: -60px;
+$right-neg-30: -30px;
 $right-0: 0px;
 $right-10: 10px;
 $right-12: 12px;
@@ -726,6 +734,8 @@ $right-24: 24px;
         right: $right-value;
     }
 }
+@include dynamic-right-position(right-neg-60, $right-neg-60);
+@include dynamic-right-position(right-neg-30, $right-neg-30);
 @include dynamic-right-position(right-0, $right-0);
 @include dynamic-right-position(right-10, $right-10);
 @include dynamic-right-position(right-12, $right-12);
@@ -794,6 +804,9 @@ $left-30: 30px;
 }
 .flex-nowrap {
     flex-wrap: nowrap;
+}
+.flex-dir-column-align-stretch {
+    @include flex-container($direction: column, $align-items: stretch, $justify-content:flex-start);   
 }
 
 /*================================================================================

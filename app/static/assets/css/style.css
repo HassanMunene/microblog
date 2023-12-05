@@ -11876,6 +11876,10 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+ul {
+  list-style: none;
+}
+
 /* ===============================================================================
 *  =====will dynamically generate different shades of gray and other colors=======
 *  =============================================================================*/
@@ -12175,6 +12179,10 @@ textarea.form-control-lg {
 
 .width-px-100 {
   width: 100px;
+}
+
+.width-px-150 {
+  width: 150px;
 }
 
 .width-px-200 {
@@ -12794,6 +12802,14 @@ textarea.form-control-lg {
   top: 40px;
 }
 
+.right-neg-60 {
+  right: -60px;
+}
+
+.right-neg-30 {
+  right: -30px;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -12891,6 +12907,13 @@ textarea.form-control-lg {
 
 .flex-nowrap {
   flex-wrap: nowrap;
+}
+
+.flex-dir-column-align-stretch {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 /*================================================================================
@@ -13680,6 +13703,17 @@ a {
   background-color: rgb(26, 137, 23);
   color: #fff;
   font-weight: 800;
+}
+
+/*================================================================================
+* ============post section customization =========================================
+* ==============================================================================*/
+.popup-dialog-box {
+  display: none;
+}
+
+.popup-dialog-box.show {
+  display: block;
 }
 
 .btn-home {
