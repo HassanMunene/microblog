@@ -57,17 +57,17 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 /*==================================================================================
-* ===This section we are changing background color of getStartedButton============== 
+* ===This section we are changing background color of getStartedButton  and the navbar============== 
 * ===depending on the height of the scrolly and section=============================
 * ================================================================================*/
 document.addEventListener("DOMContentLoaded", function () {
-    const IntroSectionContainer = document.getElementById('intro-section-container');
+    const IntroSectionContainer = document.getElementById('introSectionContainer');
     if (IntroSectionContainer) {
-        let pageType = IntroSectionContainer.getAttribute('data-page');
-        let navbar = document.getElementById('navbar');
-        let getStartedBtn = document.getElementById('get-started-btn');
-        let introSection = document.getElementById('intro-section');
-        let postSectiion = document.getElementById('posts-section');
+        let navbar = document.getElementById('homeNavbar');
+        let getStartedButton = document.getElementById('getStartedButton');
+        let introSection = document.getElementById('introSection');
+        let postSection = document.getElementById('postSection');
+
         //get the height of the introSection
         let introSectionHeight = introSection.clientHeight;
         console.log(introSectionHeight);
@@ -78,14 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let scrollPosition = window.scrollY;
     
             if (scrollPosition >= introSectionHeight) {
-                navbar.style.backgroundColor = 'white';
-                navbar.classList.add('show');
-                getStartedBtn.classList.add('scroll-btn');
+                navbar.classList.add('changeColor');
+                getStartedButton.classList.add('changeColor');
     
             } else {
-                navbar.style.backgroundColor = '#ffc107';
-                navbar.classList.remove('show');
-                getStartedBtn.classList.remove('scroll-btn');
+                navbar.classList.remove('changeColor');
+                getStartedButton.classList.remove('changeColor');
             }
         })     
     }

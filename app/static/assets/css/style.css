@@ -12182,6 +12182,13 @@ textarea.form-control-lg {
 }
 
 /*=================================================================================
+* ==========MINIMUM WIDTH IN Pixels=======================================
+* ===============================================================================*/
+.min-width-0 {
+  min-width: 0px;
+}
+
+/*=================================================================================
 * ==========WIDTH IN VIEW PORT WIDTH=======================================
 * ===============================================================================*/
 .width-vw-100 {
@@ -13651,6 +13658,28 @@ a {
 .modal1.show {
   opacity: 1;
   pointer-events: auto;
+}
+
+/*=============================================================================
+* ==========================navbar customisation ==============================
+* ===========================================================================*/
+.home-navbar-section {
+  background-color: #ffc107;
+  transition: background-color 0.3s ease;
+}
+
+.home-navbar-section.changeColor {
+  background-color: #fff;
+}
+
+.getStartedButton {
+  transition: background-color 0.3s ease;
+}
+
+.getStartedButton.changeColor {
+  background-color: rgb(26, 137, 23);
+  color: #fff;
+  font-weight: 800;
 }
 
 .btn-home {

@@ -18,7 +18,25 @@
     pointer-events: auto;
 }
 
+/*=============================================================================
+* ==========================navbar customisation ==============================
+* ===========================================================================*/
+.home-navbar-section {
+    background-color: $primary;
+    transition: background-color 0.3s ease;
+}
+.home-navbar-section.changeColor {
+    background-color: $white;
+}
 
+.getStartedButton {
+    transition: background-color 0.3s ease;
+}
+.getStartedButton.changeColor {
+    background-color: $green;
+    color: $white;
+    font-weight: 800;
+}
 
 
 

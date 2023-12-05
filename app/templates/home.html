@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="height-px-85 db"></div>
-<div class="pos-rel db border-b bg-primary">
-  <div class="flex-justify-center">
+<div class="pos-rel db border-b bg-primary" id="introSectionContainer">
+  <div class="flex-justify-center" id="introSection">
     <div class="m-t-0 m-b-0 m-s-24 m-e-24 max-width-1200 width-100">
       <div class="width-100 flex">
         <div class="width-100 height-100 p-t-90 p-b-90 flex-column">
@@ -25,9 +25,9 @@
     </div>
   </div>
 </div>
-<div class="db">
+<div class="db bg-color-white" id="postSection">
   <div class="flex-justify-center">
-    <div class="m-t-0 m-b-0 m-s-24 m-e-24 max-width-1200">
+    <div class="m-t-0 m-b-0 m-s-24 m-e-24 max-width-1200 min-width-0">
       <div>
         <section class="db">
           <div class="db">
@@ -68,7 +68,7 @@
                       </div>
                       {% if post.imageName %}
                       <a href="{{ url_for('main.post', post_id=post.uniquePostId) }}" class="webkit-line-1">
-                        <img src="{{ url_for('main.serve_image', filename=post.imageName) }}" class="width-px-100 height-px-100" alt="{{ post.imageName }}">
+                        <img src="{{ url_for('main.serve_image', filename=post.imageName) }}" class="" alt="love kcavibes" width="100" height="100" loading="lazy">
                       </a>
                       {% else %}
                       <img src="" alt="" style="display: none;">
