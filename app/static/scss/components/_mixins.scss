@@ -256,6 +256,18 @@ $width-vw-100: 100vw;
 @include dynamic-viewport-width(width-vw-100, $width-vw-100);
 
 /*=================================================================================
+* ==========MIN WIDTH IN VIEW PORT WIDTH=======================================
+* ===============================================================================*/
+$min-width-vw-100: 100vw;
+
+@mixin dynamic-viewport-min-width($width-name, $width-value) {
+    .#{$width-name} {
+        min-width: $width-value;
+    }
+}
+@include dynamic-viewport-min-width(min-width-vw-100, $min-width-vw-100);
+
+/*=================================================================================
 * ==========MAX HEIGHT MIXINS IN PIXELS=======================================
 * ===============================================================================*/
 $max-height-30: 30px;
@@ -868,6 +880,11 @@ $left-30: 30px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: $black;
+}
+.border-b-white {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: $white;
 }
 
 .border-style {

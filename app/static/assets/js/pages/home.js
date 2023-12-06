@@ -158,9 +158,12 @@ document.addEventListener('DOMContentLoaded', function () {
                const submitDataButton = document.getElementById('submitDataButton');
                const passwordContianer = document.getElementById('passwordContainer');
                let email = document.getElementById('email');
-               let passwordInput = document.getElementById('password');
-               let showPassword = document.getElementById('showPassword');
-               let hidePassword = document.getElementById('hidePassword');
+               const passwordInput = document.getElementById('password');
+               const showPassword = document.getElementById('showPassword');
+               const hidePassword = document.getElementById('hidePassword');
+               const confirmPasswordInput = document.getElementById('confirmPassword');
+               const showConfirmPassword = document.getElementById('showConfirmPassword')
+               const hideConfirmPassword = document.getElementById('hideConfirmPassword');
         
                continueToPasswordButton.addEventListener('click', function () {
                 //get the input details of the email input
@@ -172,15 +175,28 @@ document.addEventListener('DOMContentLoaded', function () {
                
                // when user clicks show password button show the password in text format
                showPassword.addEventListener('click', function () {
-                passwordInput.type = 'text';
-                showPassword.style.display = 'none';
-                hidePassword.style.display = 'block';
+                    passwordInput.type = 'text';
+                    showPassword.style.display = 'none';
+                    hidePassword.style.display = 'block';
                })
                // when user clicks hide password button show password in password format
                hidePassword.addEventListener('click', function () {
-                passwordInput.type = 'password';
-                hidePassword.style.display = 'none';
-                showPassword.style.display = 'block';
+                    passwordInput.type = 'password';
+                    hidePassword.style.display = 'none';
+                    showPassword.style.display = 'block';
+               })
+               
+               // when user clicks show confirm password button show the password in text format
+               showConfirmPassword.addEventListener('click', function () {
+                    confirmPasswordInput.type = 'text';
+                    showConfirmPassword.style.display = 'none';
+                    hideConfirmPassword.style.display = 'block';
+               })
+               // when user clicks hide password button show password in password format
+               hideConfirmPassword.addEventListener('click', function () {
+                    confirmPasswordInput.type = 'password';
+                    hideConfirmPassword.style.display = 'none';
+                    showConfirmPassword.style.display = 'block';
                })
                //when submit data button is clicked, send data to the backend using fetch api
                submitDataButton.addEventListener('click', function () {
