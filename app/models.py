@@ -24,6 +24,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(64), unique=True, index=True, nullable=False)
     fullname = db.Column(db.String(64), nullable=False)
+    password_hash = db.Column(db.String(128))
     #username will be automatically generated in the app to make it unique
     username = db.Column(db.String(64), unique=True)
     profile_picture_url = db.Column(db.String(500), index=True)
@@ -43,6 +44,19 @@ class User(UserMixin, db.Model):
                 self.role = Role.query.filter_by(name='Admin').first()
             if self.role is None:
                 self.role = Role.query.filter_by(default=True).first()
+
+    @property
+    def password(self):
+        return AttributeError('password is not a readable attribute')
+
+    @password.setter
+    def password(self, password):
+        #the setter method to assign password attribute a value
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        # verify that indeep a password matches a hashed on and return True or False
+        return check_password_hash(self.password_hash, password)
 
     def generate_username(self, fullname):
         #generate a random username for each user
