@@ -76,7 +76,7 @@
                                 <div class="db width-px-24 height-px-24"></div>
                             </div>
                         </a>
-                        <div class="db m-t-12">
+                        <div id="email_signup" class="db m-t-12">
                             <a id="email_signup" class="width-100 dib padding-8 bg-color-white fs-16 fw-400 lh-24 ta-center border-all border-rd-36">
                                 <div class="flex-justify-btn">
                                     <i class="bi bi-envelope icon"></i>
@@ -108,14 +108,17 @@
 </div>
 <!---------------------MODAL 1 ENDS ------------------------------------------------------------------->
 
-<!---------------------MODAL WELCOME TO KCAVIBES------------------------------------------------------->
-<div id="signupModal" class="db">
+<!---------------------MODAL 2 WELCOME TO KCAVIBES------------------------------------------------------->
+<div id="signupModal" class="signupModal pos-fixed top-0 right-0 bottom-0 left-0 overflow-y-auto overflow-x-hidden bg-color-white z-i-5">
     <header class="db p-t-16 p-b-16">
         <div class="p-e-24 p-s-24">
             <div class="width-100">
-                <a href="{{ url_for('main.home') }}" class="fs-24">
-                    Kca<span class="color-primary">Vibes</span>
-                </a>
+                <div class="width-100 flex-align-center-justify-btn">
+                    <a href="{{ url_for('main.home') }}" class="fs-24">
+                        Kca<span class="color-primary">Vibes</span>
+                    </a>
+                    <div id="closeSignUpButton" class="cp"><i class="bi bi-x-lg color-black"></i></div>
+                </div>
                 <div class="m-t-16">
                     <span class="m-e-8 fs-16">Already have an account?</span>
                     <div class="signIn dib pos-rel">
@@ -142,22 +145,25 @@
                             <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
                             <input id="email" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
                         </div>
-                        <div id="continueToPassword" class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800">
+                        <div id="continueToPassword" class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800 p-t-4 p-b-4">
                             continue
                         </div>
                     </div>
                     <div id="passwordContainer" class="m-t-24 dn">
-                        <div class="m-b-4">
-                            <label class="fw-800 fs-16 color-black">
-                                Create a password
-                                <span>*</span>
-                            </label>
+                        <div class="m-b-4 create-password">
+                            <label class="fw-800 fs-16 color-black">Create a password<span>*</span></label>
                         </div>
                         <div class="width-100 flex-align-center">
                             <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
-                            <input id="password" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                            <div class="passwordInputContainer">
+                                <input id="password" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="password">
+                            </div>
+                            <div class="m-s-8 pos-rel height-px-34 width-px-20">
+                                <i id="showPassword" class="bi bi-eye pos-abs top-4 cp fs-20"></i>
+                                <i id="hidePassword" class="bi bi-eye-slash pos-abs top-4 cp fs-20 dn"></i>
+                            </div>
                         </div>
-                        <div class="m-b-4">
+                        <div class="m-b-4 confirm-password">
                             <label class="fw-800 fs-16 color-black">
                                 Confirm password
                                 <span>*</span>
@@ -165,9 +171,9 @@
                         </div>
                         <div class="width-100 flex-align-center">
                             <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
-                            <input id="password" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                            <input  type="password" id="password" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4">
                         </div>
-                        <div class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800">
+                        <div id="submitDataButton" class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800 p-t-4 p-b-4">
                             continue
                         </div>
                     </div>
@@ -175,7 +181,17 @@
             </div>
         </div>
     </div>
+    <div class="footer-section flex-justify-center">
+        <div class="max-width-650 m-b-40">
+            <p class="fs-13 m-t-24 m-b-24 m-e-24 m-s-24">
+                By creating an account, you agree to the Terms of Service. 
+                For more information about KcaVibes' privacy practices, see the KcaVibes' Privacy Statement. 
+                We'll occasionally send you account-related emails. 
+            </p>
+        </div>
+    </div>
 </div>
+<!---------------------MODAL 2 ENDS ------------------------------------------------------------------->
 
 <!---------------------MODAL 2 THE SIGN IN MODAL------------------------------------------------------->
 <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">

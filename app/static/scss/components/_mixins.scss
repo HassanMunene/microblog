@@ -321,6 +321,7 @@ $height-px-4: 4px;
 $height-px-8: 8px;
 $height-px-20: 20px;
 $height-px-24: 24px;
+$height-px-34: 34px;
 $height-px-85: 85px;
 
 @mixin dynamic-height-in-pixels($height-name, $height-value) {
@@ -332,6 +333,7 @@ $height-px-85: 85px;
 @include dynamic-height-in-pixels(height-px-8, $height-px-8);
 @include dynamic-height-in-pixels(height-px-20, $height-px-20);
 @include dynamic-height-in-pixels(height-px-24, $height-px-24);
+@include dynamic-height-in-pixels(height-px-34, $height-px-34);
 @include dynamic-height-in-pixels(height-px-85, $height-px-85);
 
 /*=================================================================================
@@ -410,6 +412,7 @@ $lh-72: 72px;
 * =================== Margin top in pixes=======================================
 * ===============================================================================*/
 $m-t-4: 4px;
+
 $m-t-8: 8px;
 $m-t-12: 12px;
 $m-t-16: 16px;
@@ -510,6 +513,7 @@ $m-b-24: 24px;
 $m-b-28: 28px;
 $m-b-32: 32px;
 $m-b-36: 36px;
+$m-b-40: 40px;
 $m-b-48: 48px;
 $m-b-100: 100px;
 
@@ -527,6 +531,7 @@ $m-b-100: 100px;
 @include dynamic-margin-bottom(m-b-28, $m-b-28);
 @include dynamic-margin-bottom(m-b-32, $m-b-32);
 @include dynamic-margin-bottom(m-b-36, $m-b-36);
+@include dynamic-margin-bottom(m-b-40, $m-b-40);
 @include dynamic-margin-bottom(m-b-48, $m-b-48);
 @include dynamic-margin-bottom(m-b-100, $m-b-100);
 
@@ -793,6 +798,9 @@ $left-30: 30px;
 }
 .flex-justify-btn {
     @include flex-container($justify-content: space-between);
+}
+.flex-align-center-justify-btn {
+    @include flex-container($direction: row, $align-items: center, $justify-content: space-between);
 }
 .flex-column {
     @include flex-container($direction: column, $align-items: normal, $justify-content: flex-start);

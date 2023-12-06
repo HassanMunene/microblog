@@ -21,6 +21,16 @@
 /*=============================================================================
 * ======Modal for sign up customisation========================================
 * ===========================================================================*/
+.signupModal {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-in;
+}
+
+.signupModal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
 .border-line {
     display: none;
 }
@@ -32,13 +42,7 @@
     }
 }
 
-.hiddenWelcomeMessage {
-    opacity: 0;
-}
-#welcomeMessage {
-    //opacity: 1;
-    transition: opacity 1s ease;
-}
+
 /*=============================================================================
 * ==========================navbar customisation ==============================
 * ===========================================================================*/

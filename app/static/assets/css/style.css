@@ -12312,6 +12312,10 @@ ul {
   height: 24px;
 }
 
+.height-px-34 {
+  height: 34px;
+}
+
 .height-px-85 {
   height: 85px;
 }
@@ -12546,6 +12550,10 @@ ul {
 
 .m-b-36 {
   margin-bottom: 36px;
+}
+
+.m-b-40 {
+  margin-bottom: 40px;
 }
 
 .m-b-48 {
@@ -12885,6 +12893,13 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: normal;
+  justify-content: space-between;
+}
+
+.flex-align-center-justify-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -13734,20 +13749,23 @@ a {
 /*=============================================================================
 * ======Modal for sign up customisation========================================
 * ===========================================================================*/
+.signupModal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in;
+}
+
+.signupModal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .border-line {
   display: none;
 }
 
 .signIn:hover .border-line {
   display: block;
-}
-
-.hiddenWelcomeMessage {
-  opacity: 0;
-}
-
-#welcomeMessage {
-  transition: opacity 1s ease;
 }
 
 /*=============================================================================
