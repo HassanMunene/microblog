@@ -59,3 +59,9 @@
 body.modal-open {
     overflow: hidden;
 }
+.custom-input {
+    width: 100%;
+    outline: none;
+    background-color: $gray-100;
+    border: 1px solid $gray-400;
+}

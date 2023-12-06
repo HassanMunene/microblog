@@ -11935,6 +11935,10 @@ ul {
   color: rgb(7, 106, 5);
 }
 
+.color-primary {
+  color: #ffc107;
+}
+
 /* ===============================================================================
 *  =====will dynamically generate different background-colors=======
 *  =============================================================================*/
@@ -12093,6 +12097,10 @@ ul {
 
 .max-width-600 {
   max-width: 600px;
+}
+
+.max-width-650 {
+  max-width: 650px;
 }
 
 .max-width-700 {
@@ -12953,6 +12961,26 @@ ul {
   border-bottom-color: #000;
 }
 
+.border-style {
+  border-style: solid;
+}
+
+.b-color-black {
+  border-color: #000;
+}
+
+.b-color-gray-100 {
+  border-color: #f8f9fa;
+}
+
+.b-color-green {
+  border-color: rgb(26, 137, 23);
+}
+
+.b-width-1 {
+  border-width: 1px;
+}
+
 /*==================================================================================
 * =================BACKGROUND COLOR MIXIN===========================================
 * ================================================================================*/
@@ -12962,6 +12990,26 @@ ul {
 
 .bg-color-white {
   background-color: #fff;
+}
+
+.bg-color-gray-200 {
+  background-color: #e9ecef;
+}
+
+.bg-color-gray-400 {
+  background-color: #ced4da;
+}
+
+.bg-color-gray-600 {
+  background-color: #6c757d;
+}
+
+.bg-color-gray-800 {
+  background-color: #343a40;
+}
+
+.bg-color-green {
+  background-color: rgb(26, 137, 23);
 }
 
 /*==================================================================================
@@ -13681,6 +13729,25 @@ a {
 .modal1.show {
   opacity: 1;
   pointer-events: auto;
+}
+
+/*=============================================================================
+* ======Modal for sign up customisation========================================
+* ===========================================================================*/
+.border-line {
+  display: none;
+}
+
+.signIn:hover .border-line {
+  display: block;
+}
+
+.hiddenWelcomeMessage {
+  opacity: 0;
+}
+
+#welcomeMessage {
+  transition: opacity 1s ease;
 }
 
 /*=============================================================================
@@ -15135,6 +15202,13 @@ a {
 /*when the modal is open i want the body within to not scroll*/
 body.modal-open {
   overflow: hidden;
+}
+
+.custom-input {
+  width: 100%;
+  outline: none;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
 }
 
 /*# sourceMappingURL=style.css.map */

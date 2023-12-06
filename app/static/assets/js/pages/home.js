@@ -98,12 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (threeDots) {
         let dialogBoxes = document.getElementsByClassName('popup-dialog-box');
-        console.log(dialogBoxes);
-        //const dialogBox = document.getElementById('popup-dialog-box');
-        // convert the html collection to an array to use the forEach iterative method
         dialogBoxes = [...dialogBoxes];
         threeDots = [...threeDots];
-        // iterate through each element in the threeDots array
         threeDots.forEach(function (threeDot) {
             threeDot.addEventListener('click', function () {
                 let threeDotIndex = threeDots.indexOf(threeDot);
@@ -115,5 +111,49 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
             })
         })
+    }
+})
+
+/*==================================================================================
+* ===Show a welcome message when user wants to sign up dynamically using setInterval========
+* ================================================================================*/
+document.addEventListener('DOMContentLoaded', function () {
+    
+    const signUpModal = document.getElementById('signupModal');
+    if (signUpModal) {
+        const welcomeElement = document.getElementById('welcomeMessage');
+        const formContainer = document.getElementById('form-container');
+    
+        // the message that will be dynamically inserted into the element
+        const welcomeText = "Welcome to KcaVibes! Let's begin the adventure!";
+        // the string can be accessed like an array so we declare an iterator
+        let counter = 0;
+
+        let intervalId = setInterval(function (){
+            let nextLetter = welcomeText[counter];
+            welcomeElement.innerHTML += nextLetter;
+            counter++;
+    
+            if (counter === welcomeText.length) {
+                setTimeout(function (){
+                    formContainer.style.display = 'block';
+                }, 1000)
+                clearInterval(intervalId);
+            }
+       }, 100)
+
+       // when user enters the email and clicks continue we should show them the password field
+
+       const continueToPassword = document.getElementById('continueToPassword');
+       const passwordContianer = document.getElementById('passwordContainer');
+
+       continueToPassword.addEventListener('click', function () {
+        //get the input details of the email input
+        let email = document.getElementById('email').value;
+        console.log(email)
+        if (email !== '') {
+            passwordContianer.style.display = 'block';
+        }
+       })
     }
 })

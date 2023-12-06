@@ -28,6 +28,7 @@ $color-gray-900: #212529;
 $color-black   : #000;
 $color-green   : rgb(26, 137, 23);
 $color-green-dark: rgb(7, 106, 5);
+$color-primary: #ffc107;
 @mixin dynamic-color-class($color-name, $color-value) {
     .#{$color-name} {
         color: $color-value;
@@ -46,6 +47,7 @@ $color-green-dark: rgb(7, 106, 5);
 @include dynamic-color-class(color-black, $color-black);
 @include dynamic-color-class(color-green, $color-green);
 @include dynamic-color-class(color-green-dark, $color-green-dark);
+@include dynamic-color-class(color-primary, $color-primary);
 
 
 /* ===============================================================================
@@ -143,6 +145,7 @@ $max-width-300: 300px;
 $max-width-400: 400px;
 $max-width-500: 500px;
 $max-width-600: 600px;
+$max-width-650: 650px;
 $max-width-700: 700px;
 $max-width-800: 800px;
 $max-width-900: 900px;
@@ -160,6 +163,7 @@ $max-width-1300: 1300px;
 @include dynamic-max-width(max-width-400, $max-width-400);
 @include dynamic-max-width(max-width-500, $max-width-500);
 @include dynamic-max-width(max-width-600, $max-width-600);
+@include dynamic-max-width(max-width-650, $max-width-650);
 @include dynamic-max-width(max-width-700, $max-width-700);
 @include dynamic-max-width(max-width-800, $max-width-800);
 @include dynamic-max-width(max-width-900, $max-width-900);
@@ -858,6 +862,31 @@ $left-30: 30px;
     border-bottom-color: $black;
 }
 
+.border-style {
+    border-style: solid;
+}
+
+$b-color-black: $black;
+$b-color-gray-100: $gray-100;
+$b-color-green: $green;
+
+@mixin dynamic-border-color ($color-name, $color-value) {
+    .#{$color-name} {
+        border-color: $color-value;
+    }
+}
+@include dynamic-border-color(b-color-black, $b-color-black);
+@include dynamic-border-color(b-color-gray-100, $b-color-gray-100);
+@include dynamic-border-color(b-color-green, $b-color-green);
+
+$b-width-1: 1px;
+@mixin dynamic-border-width($width-name, $width-value) {
+    .#{$width-name} {
+        border-width: $width-value;
+    }
+}
+@include dynamic-border-width(b-width-1, $b-width-1);
+
 /*==================================================================================
 * =================BACKGROUND COLOR MIXIN===========================================
 * ================================================================================*/
@@ -869,6 +898,21 @@ $left-30: 30px;
 }
 .bg-color-white {
     @include bg-color($background-color: $white);
+}
+.bg-color-gray-200 {
+    @include bg-color($background-color: $gray-200);
+}
+.bg-color-gray-400 {
+    @include bg-color($background-color: $gray-400);
+}
+.bg-color-gray-600 {
+    @include bg-color($background-color: $gray-600);
+}
+.bg-color-gray-800 {
+    @include bg-color($background-color: $gray-800);
+}
+.bg-color-green {
+    @include bg-color($background-color: $green);
 }
 
 /*==================================================================================

@@ -68,9 +68,9 @@
                             <div class="popup-dialog-box pos-abs width-px-150 right-neg-30 shadow">
                               <div class="db bg-color-white border-rd-4">
                                 <ul class="p-t-8 p-b-8 p-e-0 p-s-0 margin-0 flex-dir-column-align-stretch">
-                                  <li class="m-b-4"><a href="">share link</a></li>
-                                  <li class="m-b-4"><a href="">view author</a></li>
-                                  <li><a href="">open post</a></li>
+                                  <li class="m-b-4 cp shareData"><a href="">share link</a></li>
+                                  <li class="m-b-4"><a href="{{ url_for('main.user', username=post.author.username) }}">view author</a></li>
+                                  <li><a href="{{ url_for('main.post', post_id=post.uniquePostId) }}">open post</a></li>
                                 </ul>
                               </div>
                             </div>

@@ -21,7 +21,7 @@
 {% block title %}<title>KcaVibes</title>{% endblock %}
 </head>
 
-<body class="bg-primary">
+<body>
 {% block navbar %}
 <div id="homeNavbar" class="home-navbar-section pos-fixed width-100 z-3 border-b">
     <div class="dfc">
@@ -107,6 +107,75 @@
     </div>
 </div>
 <!---------------------MODAL 1 ENDS ------------------------------------------------------------------->
+
+<!---------------------MODAL WELCOME TO KCAVIBES------------------------------------------------------->
+<div id="signupModal" class="db">
+    <header class="db p-t-16 p-b-16">
+        <div class="p-e-24 p-s-24">
+            <div class="width-100">
+                <a href="{{ url_for('main.home') }}" class="fs-24">
+                    Kca<span class="color-primary">Vibes</span>
+                </a>
+                <div class="m-t-16">
+                    <span class="m-e-8 fs-16">Already have an account?</span>
+                    <div class="signIn dib pos-rel">
+                        <a class="color-green-dark" href="">Sign in <i class="bi bi-arrow-right-short"></i></a>
+                        <div class="border-line pos-abs top-20 border-all width-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="inputSection max-width-650 db width-100">
+        <div class="bg-color-gray-200 border-all p-t-24 p-b-24 p-e-24 p-s-24 m-t-24 m-b-24 m-e-24 m-s-24 shadow border-rd-4">
+            <h2 id="welcomeMessage" class="fs-20"></h2>
+            <div id="form-container" class="form-container dn">
+                <form action="">
+                    <div id="email-container" class="m-t-24">
+                        <div class="m-b-4">
+                            <label class="fw-800 fs-16 color-black">
+                                Enter your email
+                                <span>*</span>
+                            </label>
+                        </div>
+                        <div class="width-100 flex-align-center">
+                            <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
+                            <input id="email" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                        </div>
+                        <div id="continueToPassword" class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800">
+                            continue
+                        </div>
+                    </div>
+                    <div id="passwordContainer" class="m-t-24 dn">
+                        <div class="m-b-4">
+                            <label class="fw-800 fs-16 color-black">
+                                Create a password
+                                <span>*</span>
+                            </label>
+                        </div>
+                        <div class="width-100 flex-align-center">
+                            <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
+                            <input id="password" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                        </div>
+                        <div class="m-b-4">
+                            <label class="fw-800 fs-16 color-black">
+                                Confirm password
+                                <span>*</span>
+                            </label>
+                        </div>
+                        <div class="width-100 flex-align-center">
+                            <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
+                            <input id="password" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                        </div>
+                        <div class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800">
+                            continue
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!---------------------MODAL 2 THE SIGN IN MODAL------------------------------------------------------->
 <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
