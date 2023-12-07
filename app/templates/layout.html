@@ -154,7 +154,10 @@
                             <label class="fw-800 fs-16 color-black">Create a password<span>*</span></label>
                         </div>
                         <div class="width-100 flex-align-center">
-                            <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
+                            <div class="check_arrow m-e-8 pos-rel height-px-34 width-px-20">
+                                <i id="passwordArrow" class="bi bi-arrow-right-short pos-abs top-4 fs-20"></i>
+                                <i id="correctPassword" class="bi bi-check pos-abs top-4 fs-20 color-green-dark dn"></i>
+                            </div>
                             <div class="passwordInputContainer">
                                 <input id="password" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="password">
                             </div>
@@ -163,6 +166,7 @@
                                 <i id="hidePassword" class=" bi bi-eye-slash pos-abs fs-20 top-4 cp dn"></i>
                             </div>
                         </div>
+
                         <div class="m-b-4 confirm-password">
                             <label class="fw-800 fs-16 color-black">
                                 Confirm password
@@ -170,11 +174,14 @@
                             </label>
                         </div>
                         <div class="width-100 flex-align-center">
-                            <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
+                            <div class="check_arrow m-e-8 pos-rel height-px-34 width-px-20">
+                                <i id="confirmPasswordArrow" class="bi bi-arrow-right-short pos-abs top-4 fs-20"></i>
+                                <i id="correctConfirmPassword" class="bi bi-check pos-abs top-4 fs-20 color-green-dark dn"></i>
+                            </div>
                             <div class="passwordInputContainer">
                                 <input type="password" id="confirmPassword" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4">
                             </div>
-                            <div class="m-s-8 pos-rel height-px-34 width-px-20">
+                            <div class="see m-s-8 pos-rel height-px-34 width-px-20">
                                 <i id="showConfirmPassword" class="bi bi-eye pos-abs top-4 cp fs-20"></i>
                                 <i id="hideConfirmPassword" class="bi bi-eye-slash pos-abs fs-20 top-4 cp dn"></i>
                             </div>
@@ -198,6 +205,39 @@
     </div>
 </div>
 <!---------------------MODAL 2 ENDS ------------------------------------------------------------------->
+<div id="verifyCodeModal" class="verifyCodeModal pos-fixed top-0 right-0 bottom-0 left-0 overflow-y-auto overflow-x-hidden bg-color-white z-i-5">
+    <div class="db">
+        <header class="db p-t-16 p-b-16">
+            <div class="p-e-24 p-s-24">
+                <div class="width-100">
+                    <div class="width-100 flex-align-center-justify-btn">
+                        <a href="{{ url_for('main.home') }}" class="fs-24">
+                            Kca<span class="color-primary">Vibes</span>
+                        </a>
+                        <div id="closeSignUpButton" class="cp"><i class="bi bi-x-lg color-black"></i></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="p-t-128 width-100 max-width-600">
+            <div class="border bg-color-gray-200 p-t-24 p-e-24 p-b-24 p-s-24 shadow border-rd-4">
+                <p class="margin-0 fs-20">You're almost done!</p>
+                <p class="m-t-0 m-b-12 fs-18">
+                    We sent a launch code to
+                    <span class="db">email here</span>
+                </p>
+                <p class="m-t-16 m-b-16 color-primary fs-18">
+                    <span><i class="bi bi-arrow-right-short fs-18"></i></span>
+                    Enter code*
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------SEND CODE VERIFY EMAIL MODAL---------------------------------------------------->
+
+<!---------------------END OF SEND CODE VERIFY EMAIL--------------------------------------------------->
+
 
 <!---------------------MODAL 2 THE SIGN IN MODAL------------------------------------------------------->
 <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">

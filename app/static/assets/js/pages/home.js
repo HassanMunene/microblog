@@ -2,32 +2,6 @@
 * This js file will be used to work on the home page for unauthenticated users
 * ==================================================================================*/
 
-
-
-/*==================================================================================
-* Here when user clicks the bookmark section the getStartedModal is shown because
-* The user is not yet logged in
-* ================================================================================*/
-/*document.addEventListener("DOMContentLoaded", function () {
-    const getStartedModal = new bootstrap.Modal(document.getElementById('get-started-modal'));
-    
-    // select all elements with class name home-bmk-section. This will return an
-    // html collection which is like an array but not really
-    let bookmarSections = document.getElementsByClassName('home-bmk-section');
-    
-    // convert the html collection to an array to work with ForEach loop
-    bookmarSections = Array.from(bookmarSections);
-
-    // iterate and add an event listener to each element in the array
-    bookmarSections.forEach(function (bookmarSection) {
-        bookmarSection.addEventListener('click', function () {
-            setTimeout(function () {
-                getStartedModal.show();
-            }, 100)
-        })
-    });
-})*/
-
 /*==================================================================================
 * ===This section we are changing background color of getStartedButton  and the navbar============== 
 * ===depending on the height of the scrolly and section=============================
@@ -60,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })     
     }
 })
-
 /*==================================================================================
 * ===When user clicks on the three dots on the posts section a popup shows========
 * ================================================================================*/
@@ -85,8 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 })
-
-
 /*==================================================================================
 * ==When the getStartedButton is clicked show the sign up modal=====================
 * ==============================================================================*/
@@ -147,32 +118,72 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (counter === welcomeText.length) {
                         setTimeout(function (){
                             formContainer.style.display = 'block';
-                        }, 1000)
+                        }, 500)
                         clearInterval(intervalId);
                     }
                }, 100)
-        
-               // when user enters the email and clicks continue we should show them the password field
-        
+
+               //this is an async function postData that will post data to the server
+               async function postData(url='', data = {}) {
+                    const response = await fetch (url , {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+                    let responseData = await response.json();
+                    return responseData;
+                }
+               const emailInput = document.getElementById('email');
                const continueToPasswordButton = document.getElementById('continueToPassword');
-               const submitDataButton = document.getElementById('submitDataButton');
                const passwordContianer = document.getElementById('passwordContainer');
-               let email = document.getElementById('email');
                const passwordInput = document.getElementById('password');
                const showPassword = document.getElementById('showPassword');
                const hidePassword = document.getElementById('hidePassword');
                const confirmPasswordInput = document.getElementById('confirmPassword');
                const showConfirmPassword = document.getElementById('showConfirmPassword')
                const hideConfirmPassword = document.getElementById('hideConfirmPassword');
+               const submitDataButton = document.getElementById('submitDataButton');
         
+               // when you enter email and click continue
                continueToPasswordButton.addEventListener('click', function () {
-                //get the input details of the email input
-                email = document.getElementById('email').value;
-                if (email !== '') {
-                    passwordContianer.style.display = 'block';
-                }
+                    //get the input details of the email input
+                    if (emailInput.value !== '') {
+                        passwordContianer.style.display = 'block';
+                    }
                })
-               
+
+               //show correct btn for password input
+               function showCorrect() {
+                    const correctPassword = document.getElementById('correctPassword');
+                    const passwordArrow = document.getElementById('passwordArrow');
+                    passwordArrow.style.display = 'none';
+                    correctPassword.style.display = 'block';
+                }
+                function hideCorrect() {
+                    const correctConfirmPassword = document.getElementById('correctConfirmPassword');
+                    const confirmPasswordArrow = document.getElementById('confirmPasswordArrow');
+                    confirmPasswordArrow.style.display = 'block';
+                    correctConfirmPassword.style.display = 'none';        
+                }
+                // show correct btn for confirm password input
+                function showConfirmCorrect() {
+                    const correctConfirmPassword = document.getElementById('correctConfirmPassword');
+                    const confirmPasswordArrow = document.getElementById('confirmPasswordArrow');
+                    confirmPasswordArrow.style.display = 'none';
+                    correctConfirmPassword.style.display = 'block';        
+                }
+                function hideConfirmCorrect () {
+                    const correctConfirmPassword = document.getElementById('correctConfirmPassword');
+                    const confirmPasswordArrow = document.getElementById('confirmPasswordArrow');
+                    confirmPasswordArrow.style.display = 'block';
+                    correctConfirmPassword.style.display = 'none';
+                }
+
+               // handle the event when user enters password to show mark icon
+               passwordInput.addEventListener('change', showCorrect);
+
                // when user clicks show password button show the password in text format
                showPassword.addEventListener('click', function () {
                     passwordInput.type = 'text';
@@ -198,9 +209,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     hideConfirmPassword.style.display = 'none';
                     showConfirmPassword.style.display = 'block';
                })
+
                //when submit data button is clicked, send data to the backend using fetch api
                submitDataButton.addEventListener('click', function () {
-                    console.log(email.value, passwordInput.value);
+                    let password = passwordInput.value;
+                    let confirmPassword = confirmPasswordInput.value;
+                    if (password === confirmPassword) {
+                        showConfirmCorrect();
+                        let email = emailInput.value;
+                        postData(url='auth/register_user', data={'email': email, 'password': password})
+                        .then(function (response) {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log('An error occured');
+                        });
+                        emailInput.value = '';
+                        passwordInput.value = '';
+                        confirmPasswordInput.value = '';
+                    } else {
+                        confirmPasswordInput.classList.add('wrongPassword');
+                        hideConfirmCorrect();
+                    }
                })
                closeSignUpButton.addEventListener('click', closeSignUpModal);
             }
@@ -210,7 +240,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 })
-
-/*==================================================================================
-* ===Show a welcome message when user wants to sign up dynamically using setInterval========
-* ================================================================================*/

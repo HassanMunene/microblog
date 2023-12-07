@@ -71,6 +71,19 @@ def callback_from_oauth():
 # END OF GOOGLE OAUTH2.0 PROCESS
 #==========================================================================================
 
+#=========================================================================================
+# ROUTE THAT WILL REGISTER THE USER WHEN THEY SIGNUP WITH EMAIL AND PASSWORD
+#=========================================================================================
+@auth.route('/register_user', methods=['GET', 'POST'])
+def register_user():
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        session['email'] = request.json.get('email')
+        session['password'] = request.json.get('password')
+        return jsonify({'success': True})
+    else:
+        return jsonify({'data not json'})
+
 
 #=========================================================================================
 # ROUTE THAT WILL RECEIVE EMAIL ENTER BY USER DURING NORMAL AUTHENTICATION

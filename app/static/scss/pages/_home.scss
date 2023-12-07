@@ -41,7 +41,10 @@
         }
     }
 }
-
+.wrongPassword {
+    border-color: red !important;
+    border-width: 2px !important;
+}
 
 /*=============================================================================
 * ==========================navbar customisation ==============================
