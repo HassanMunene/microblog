@@ -205,6 +205,8 @@ $width-px-4: 4px;
 $width-px-8: 8px;
 $width-px-20: 20px;
 $width-px-24: 24px;
+$width-px-28: 28px;
+$width-px-32: 32px;
 $width-px-100: 100px;
 $width-px-150: 150px;
 $width-px-200: 200px;
@@ -218,6 +220,8 @@ $width-px-200: 200px;
 @include dynamic-width-in-pixels(width-px-8, $width-px-8);
 @include dynamic-width-in-pixels(width-px-20, $width-px-20);
 @include dynamic-width-in-pixels(width-px-24, $width-px-24);
+@include dynamic-width-in-pixels(width-px-28, $width-px-28);
+@include dynamic-width-in-pixels(width-px-32, $width-px-32);
 @include dynamic-width-in-pixels(width-px-100, $width-px-100);
 @include dynamic-width-in-pixels(width-px-150, $width-px-150);
 @include dynamic-width-in-pixels(width-px-200, $width-px-200);
@@ -1004,3 +1008,40 @@ $z-i-20: 20;
 @include dynamic-z-index(z-i-10, $z-i-10);
 @include dynamic-z-index(z-i-15, $z-i-15);
 @include dynamic-z-index(z-i-20, $z-i-20);
+
+
+/*================================================================================
+* ====THIS SECTION IS FOR THE OUTLINE IN BORDERS ESPECIALLY IN FORMS==============
+* ==============================================================================*/
+$outline-style-ridge: ridge;
+$outline-style-none: none;
+$outline-style-hidden: hidden;
+
+@mixin dynamic-outline-style ($outline-style-name, $outline-style-value) {
+    .#{$outline-style-name} {
+        outline-style: $outline-style-value;
+    }
+}
+@include dynamic-outline-style(outline-style-ridge, $outline-style-ridge);
+@include dynamic-outline-style(outline-style-none, $outline-style-none);
+@include dynamic-outline-style(outline-style-hidden, $outline-style-hidden);
+
+$outline-width-1: 1px;
+
+@mixin dynamic-outline-width ($outline-width-name, $outline-width-value) {
+    .#{$outline-width-name} {
+        outline-width: $outline-width-value;
+    }
+}
+@include dynamic-outline-width(outline-width-1, $outline-width-1);
+
+
+$outline-color-green: $green-dark;
+$outline-color-black: $black;
+
+@mixin dynamic-outline-color ($outline-color-name, $outline-color-value) {
+    .#{$outline-color-name} {
+        outline-color: $outline-color-value;
+    }
+}
+@include dynamic-outline-color(outline-color-green, $outline-color-green);

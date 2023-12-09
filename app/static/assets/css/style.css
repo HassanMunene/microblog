@@ -12185,6 +12185,14 @@ ul {
   width: 24px;
 }
 
+.width-px-28 {
+  width: 28px;
+}
+
+.width-px-32 {
+  width: 32px;
+}
+
 .width-px-100 {
   width: 100px;
 }
@@ -13120,6 +13128,29 @@ ul {
 
 .z-i-20 {
   z-index: 20;
+}
+
+/*================================================================================
+* ====THIS SECTION IS FOR THE OUTLINE IN BORDERS ESPECIALLY IN FORMS==============
+* ==============================================================================*/
+.outline-style-ridge {
+  outline-style: ridge;
+}
+
+.outline-style-none {
+  outline-style: none;
+}
+
+.outline-style-hidden {
+  outline-style: hidden;
+}
+
+.outline-width-1 {
+  outline-width: 1px;
+}
+
+.outline-color-green {
+  outline-color: rgb(7, 106, 5);
 }
 
 body {
