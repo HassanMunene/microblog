@@ -78,12 +78,17 @@ def callback_from_oauth():
 def register_user():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
-        session['email'] = request.json.get('email')
-        session['password'] = request.json.get('password')
-        return jsonify({'success': True})
+        email = request.json.get('email')
+        password = request.json.get('password')
+        session['email'] = email
+        session['password'] = password
+        # after this use the email the user provided to send a veification code
+        signUp_code = random.randint(10000, 99999)
+        signUp_code_str = str(signUp_code)
+        send_email(email, 'sign up to kcavibes', 'authentication/email/signup_code', signUp_code_str=signUp_code_str)
+        return jsonify({'email_sent': True})
     else:
-        return jsonify({'data not json'})
-
+        return jsonify({'email_sent': False})
 
 #=========================================================================================
 # ROUTE THAT WILL RECEIVE EMAIL ENTER BY USER DURING NORMAL AUTHENTICATION

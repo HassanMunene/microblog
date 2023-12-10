@@ -4,6 +4,27 @@
 * ========This is the home page for users that have not yet logged in
 * ================================================================================*/
 
+/*=============================================================================
+* ==========================navbar customisation ==============================
+* ===========================================================================*/
+.home-navbar-section {
+    background-color: $primary;
+    transition: background-color 0.3s ease;
+}
+.home-navbar-section.changeColor {
+    background-color: $white;
+}
+
+.getStartedButton {
+    transition: background-color 0.3s ease;
+}
+.getStartedButton.changeColor {
+    background-color: $green;
+    color: $white;
+    font-weight: 800;
+}
+
+
 
 /* ===============================================================================
 * ===========MODAL 1 CUSTOMISATION==============================================
@@ -46,24 +67,17 @@
     border-width: 2px !important;
 }
 
-/*=============================================================================
-* ==========================navbar customisation ==============================
-* ===========================================================================*/
-.home-navbar-section {
-    background-color: $primary;
-    transition: background-color 0.3s ease;
+/*================================================================================
+* ============verification code modal customisation===============================
+* ==============================================================================*/
+.verificationModal {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-in;
 }
-.home-navbar-section.changeColor {
-    background-color: $white;
-}
-
-.getStartedButton {
-    transition: background-color 0.3s ease;
-}
-.getStartedButton.changeColor {
-    background-color: $green;
-    color: $white;
-    font-weight: 800;
+.verificationModal.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 
