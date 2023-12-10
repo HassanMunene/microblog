@@ -28,19 +28,15 @@ function setupGetStartedButton() {
     const signUpModal = document.getElementById('signupModal');
     const body = document.body;
 
+    getStartedButtons.forEach(function(getStartedButton) {
+        getStartedButton.addEventListener('click', function () {
+            body.classList.add('modal-open');
+            getStartedModal.classList.add('show');
+        });
+    })
 
-    //open the getstarted modal
-    function showGetStartedModal() {
-        body.classList.add('modal-open');
-        getStartedModal.classList.add('show');
-    }
-
-    // close the get started modal
-    function closeGetStartedModal() {
-        body.classList.remove('modal-open');
-        getStartedModal.classList.remove('show');
-    }
     //open signup modal
+    emailSignUpButton.addEventListener('click', showEmailSignUpModal);
     function showEmailSignUpModal () {
         closeGetStartedModal();
         body.classList.add('modal-open');
@@ -51,52 +47,10 @@ function setupGetStartedButton() {
             showWelcomeMessage();
             setupPasswordHandling();
             submitDataFunction();
-
-            function submitDataFunction() {
-                const submitDataButton = document.getElementById('submitDataButton');
-                const confirmPasswordInput = document.getElementById('confirmPassword');
-                const passwordInput = document.getElementById('password');
-
-                async function postData(url='', data={}) {
-                    const response = await fetch (url, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(data),
-                    });
-                    let responseData = await response.json();
-                    return responseData;
-                }
-                submitDataButton.addEventListener('click', function () {
-                    let password = passwordInput.value;
-                    let confirmPassword = confirmPasswordInput.value;
-                    
-                })
-            }
-           
-
-           //when submit data button is clicked, send data to the backend using fetch api
-           submitDataButton.addEventListener('click', function () {
-                if (password === confirmPassword) {
-                    showConfirmCorrect();
-                    let email = emailInput.value;
-                    postData(url='auth/register_user', data={'email': email, 'password': password})
-                    .then(function (response) {
-                        json_response = response.json()
-                    })
-                    .catch(function (error) {
-                        console.log('An error occured');
-                    });
-                    emailInput.value = '';
-                    passwordInput.value = '';
-                    confirmPasswordInput.value = '';
-                } else {
-                    confirmPasswordInput.classList.add('wrongPassword');
-                    hideConfirmCorrect();
-                }
-           })
-           closeSignUpButton.addEventListener('click', closeSignUpModal);
+            closeSignUpButton.addEventListener('click', function () {
+                body.classList.remove('modal-open');
+                signUpModal.classList.remove('show');
+            });
         }
     }
     // show the welcome message when user navigate to signup modal
@@ -128,14 +82,25 @@ function setupGetStartedButton() {
         const passwordInput = document.getElementById('password');
         const showPassword = document.getElementById('showPassword');
         const hidePassword = document.getElementById('hidePassword');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
         const showConfirmPassword = document.getElementById('showConfirmPassword')
         const hideConfirmPassword = document.getElementById('hideConfirmPassword');
+        const correctPassword = document.getElementById('correctPassword');
+        const passwordArrow = document.getElementById('passwordArrow');
+        const correctConfirmPassword = document.getElementById('correctConfirmPassword');
+        const confirmPasswordArrow = document.getElementById('confirmPasswordArrow');
 
         showPasswordButton.addEventListener('click', function () {
             if (emailInput.value != '') {
                 passwordContianer.style.display = 'block';
             }
         })
+
+        // handle the event when user enters password to show check mark icon
+        passwordInput.addEventListener('input', function () {
+            passwordArrow.style.display = 'none';
+            correctPassword.style.display = 'block';
+        });
 
         // when user clicks show password button show the password in text format
         showPassword.addEventListener('click', function () {
@@ -149,6 +114,21 @@ function setupGetStartedButton() {
             hidePassword.style.display = 'none';
             showPassword.style.display = 'block';
         })
+
+        // handle input event whenever user enters password to confirm
+        confirmPasswordInput.addEventListener('input', function () {
+            let password = passwordInput.value;
+            let confirmPassword = confirmPasswordInput.value;
+            if (password === confirmPassword) {
+                confirmPasswordArrow.style.display = 'none';
+                correctConfirmPassword.style.display = 'block';   
+            } else {
+                confirmPasswordInput.classList.add('wrongPassword');
+                confirmPasswordArrow.style.display = 'block';
+                correctConfirmPassword.style.display = 'none';
+            }
+        })
+
         // when user clicks show confirm password button show the password in text format
         showConfirmPassword.addEventListener('click', function () {
             confirmPasswordInput.type = 'text';
@@ -161,36 +141,46 @@ function setupGetStartedButton() {
             hideConfirmPassword.style.display = 'none';
             showConfirmPassword.style.display = 'block';
         })
-    
-        //show check mark when user inputs password for password input
-        function displayCheckMark() {
-            const correctPassword = document.getElementById('correctPassword');
-            const passwordArrow = document.getElementById('passwordArrow');
-            passwordArrow.style.display = 'none';
-            correctPassword.style.display = 'block';
-        }
-        // handle the event when user enters password to show mark icon
-        passwordInput.addEventListener('change', displayCheckMark);
         // show check mark for confirm password input
-        function displayCheckMark2() {
-            const correctConfirmPassword = document.getElementById('correctConfirmPassword');
-            const confirmPasswordArrow = document.getElementById('confirmPasswordArrow');
-            confirmPasswordArrow.style.display = 'none';
-            correctConfirmPassword.style.display = 'block';        
+        function displayCheckMark2() {     
         }
     }
-    //close signup modal
-    function closeSignUpModal () {
-        body.classList.remove('modal-open');
-        signUpModal.classList.remove('show');
-    }
-    
+    // submit email and password to backend
+    function submitDataFunction() {
+        const submitDataButton = document.getElementById('submitDataButton');
+        const passwordInput = document.getElementById('password');
 
-    getStartedButtons.forEach(function(getStartedButton) {
-        getStartedButton.addEventListener('click', showGetStartedModal);
-    })
-    emailSignUpButton.addEventListener('click', showEmailSignUpModal);
-    closeModalButton.addEventListener('click', closeGetStartedModal);
+        async function postData(url='', data={}) {
+            const response = await fetch (url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            let responseData = await response.json();
+            return responseData;
+        }
+        //when submit data button is clicked, send data to the backend using fetch api
+        submitDataButton.addEventListener('click', function () {
+            let email = emailInput.value
+            let password = passwordInput.value;
+            postData(url='auth/register_user', data={'email': email, 'password': password})
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function () {
+                console.log('an error occured');
+            })
+            emailInput.value = '';
+            passwordInput.value = '';
+            confirmPasswordInput.value = '';
+        })
+    }
+    closeModalButton.addEventListener('click', function () {
+        body.classList.remove('modal-open');
+        getStartedModal.classList.remove('show');     
+    });
 }
 
 // this function will change the background color of getStartedButton and the navbar
