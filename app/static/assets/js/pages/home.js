@@ -56,10 +56,37 @@ function setupThreeDotsPopups() {
     })
 }
 
+/*==================================================================================
+* =========OPEN THE GETSTARTED MODAL================================================
+* ================================================================================*/
+function setupGetStartedButton() {
+    let getStartedButtons = document.querySelectorAll('.getStartedButton');
+    getStartedButtons = [...getStartedButtons];
+    const closeModalButton = document.getElementById('closeButton');
+    const getStartedModal = document.getElementById('getStartedModal');
+    const emailSignUpButton  = document.getElementById('email_signup');
+    const body = document.body;
+
+    getStartedButtons.forEach( function(getStartedButton) {
+        getStartedButton.addEventListener('click', function () {
+            body.classList.add('modal-open');
+            getStartedModal.classList.add('show');
+        });
+    })
+    //open signup modal
+    emailSignUpButton.addEventListener('click', showEmailSignUpModal);
+    // close the getStartedModal
+    closeModalButton.addEventListener('click', function () {
+        body.classList.remove('modal-open');
+        getStartedModal.classList.remove('show');     
+    });
+}
+
 /*===============================================================================
 * =========OPEN SIGNUP MODAL=====================================================
 * =============================================================================*/
 function showEmailSignUpModal () {
+    const body = document.body;
     const getStartedModal = document.getElementById('getStartedModal');
     const signUpModal = document.getElementById('signupModal');
     const closeSignUpButton = document.getElementById('closeSignUpButton');
@@ -205,7 +232,7 @@ function submitDataFunction() {
         .then(function (response) {
             console.log(response);
             if (response.email_sent === true) {
-                showValidationModal();
+                showVerificationModal(email);
             }
         })
         .catch(function () {
@@ -217,32 +244,23 @@ function submitDataFunction() {
     })
 }
 
-/*==================================================================================
-* =========OPEN THE GETSTARTED MODAL=====================
-* ==============================================================================*/
-function setupGetStartedButton() {
-    let getStartedButtons = document.querySelectorAll('.getStartedButton');
-    getStartedButtons = [...getStartedButtons];
-    const closeModalButton = document.getElementById('closeButton');
-    const getStartedModal = document.getElementById('getStartedModal');
-    const emailSignUpButton  = document.getElementById('email_signup');
+/*=================================================================================
+* ===THIS FUNCTION WILL HANDLE THE VALIDATION MODAL================================
+* ===============================================================================*/
+function showVerificationModal(veriEmail) {
+    const verificationModal = document.getElementById('verificationModal');
+    const signUpModal = document.getElementById('signupModal');
     const body = document.body;
+    const closeButton = document.getElementById('closeVerificationButton');
+    let email = document.querySelector('.verificationEmail');
+    console.log(veriEmail);
 
-    getStartedButtons.forEach( function(getStartedButton) {
-        getStartedButton.addEventListener('click', function () {
-            body.classList.add('modal-open');
-            getStartedModal.classList.add('show');
-        });
+    verificationModal.classList.add('show');
+    body.classList.add('modal-open');
+    signUpModal.classList.remove('show');
+    email.innerHTML = veriEmail;
+
+    closeButton.addEventListener('click', function () {
+        verificationModal.classList.remove('show');
     })
-    //open signup modal
-    emailSignUpButton.addEventListener('click', showEmailSignUpModal);
-    // close the getStartedModal
-    closeModalButton.addEventListener('click', function () {
-        body.classList.remove('modal-open');
-        getStartedModal.classList.remove('show');     
-    });
-    // show the modal where the validation code is entered
-    function showValidationModal() {
-        console.log('validation modal');
-    }
 }
