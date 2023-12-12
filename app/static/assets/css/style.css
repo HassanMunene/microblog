@@ -13847,6 +13847,11 @@ a {
   border-width: 2px !important;
 }
 
+.rightPassword {
+  border-color: rgb(7, 106, 5) !important;
+  border-width: 2px !important;
+}
+
 /*================================================================================
 * ============verification code modal customisation===============================
 * ==============================================================================*/

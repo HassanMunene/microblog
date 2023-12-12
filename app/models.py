@@ -1,7 +1,7 @@
 from flask import current_app
 from . import db, login_manager
 from datetime import datetime, timedelta
-from pytz import timezone
+#from pytz import timezonegenerate
 from flask_login import UserMixin, AnonymousUserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import login_manager
@@ -48,15 +48,13 @@ class User(UserMixin, db.Model):
     @property
     def password(self):
         return AttributeError('password is not a readable attribute')
-
+    
     @password.setter
     def password(self, password):
-        #the setter method to assign password attribute a value
         self.password_hash = generate_password_hash(password)
-
+    
     def verify_password(self, password):
-        # verify that indeep a password matches a hashed on and return True or False
-        return check_password_hash(self.password_hash, password)
+        return 
 
     def generate_username(self, fullname):
         #generate a random username for each user
