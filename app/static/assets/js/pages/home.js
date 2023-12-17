@@ -147,7 +147,11 @@ function showWelcomeMessage () {
 * ================================================================================*/
 function submitEmail() {
     const emailInput = document.getElementById('email');
+    const fullnameInput = document.getElementById('fullname');
+    const passwordContianer = document.getElementById('passwordContainer');
     const customEmailAlert = document.getElementById('customEmailAlert');
+    const continueToPassword = document.getElementById('continueToPassword');
+
     emailInput.addEventListener('input', function () {
         email = emailInput.value;
         postData(url='/auth/verify_email', data={'email': email})
@@ -155,22 +159,33 @@ function submitEmail() {
             console.log(response);
             if (response.email_available === true) {
                 customEmailAlert.style.display = 'block';
+            } else if (response.email_available === false) {
+                emailInput.style.borderColor = 'green';
+                customEmailAlert.style.display = 'none';
             }
         })
         .catch(function() {
             console.log('An error has occured');
         })
-    }) 
+    })
+    continueToPassword.addEventListener('click', function () {
+        if (emailInput.value != '' && fullnameInput.value != '' && customEmailAlert.style.display == 'none') {
+            passwordContianer.style.display = 'block';
+        } else {
+            if (emailInput.value == '' || customEmailAlert.style.display == 'block') {
+                emailInput.style.borderColor = '#FF0000';
+            } else if (fullname.value == '') {
+                fullname.style.borderColor = '#FF0000';
+            }
+            passwordContianer.style.display = 'none';
+        }
+    })
 }
 
 /*==================================================================================
 * ============HANDLE THE PASSWORD FUNCTIONALITY==============================
 * ================================================================================*/
 function setupPasswordHandling () {
-    const showPasswordButton = document.getElementById('continueToPassword');
-    const emailInput = document.getElementById('email');
-    const fullnameInput = document.getElementById('fullname');
-    const passwordContianer = document.getElementById('passwordContainer');
     const passwordInput = document.getElementById('password');
     const showPassword = document.getElementById('showPassword');
     const hidePassword = document.getElementById('hidePassword');
@@ -181,12 +196,6 @@ function setupPasswordHandling () {
     const passwordArrow = document.getElementById('passwordArrow');
     const correctConfirmPassword = document.getElementById('correctConfirmPassword');
     const confirmPasswordArrow = document.getElementById('confirmPasswordArrow');
-
-    showPasswordButton.addEventListener('click', function () {
-        if (emailInput.value != '' && fullnameInput.value != '') {
-            passwordContianer.style.display = 'block';
-        }
-    })
 
     // handle the event when user enters password to show check mark icon
     passwordInput.addEventListener('input', function () {
