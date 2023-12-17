@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block navbar %}
+<nav class="dn"></nav>
+{% endblock %}
+
+{% block content %}
+<div class="width-vw-100 height-vh-100 flex-dir-column">
+  <div class="flex-grow flex-dir-column width-100">
+    <div class="fs-28">
+      Kca<span class="color-primary">Vibes</span>
+    </div>
+    <div class="progress width-70 height-px-6 m-t-8" role="progressbar" aria-labelledby="logging in">
+      <div id="loading-bar" class="loading-bar progress-bar bg-warning"></div>
+    </div>
+  </div>
+  <div class="flex-grow width-100 flex-center"></div>
+</div>
+{% endblock %}

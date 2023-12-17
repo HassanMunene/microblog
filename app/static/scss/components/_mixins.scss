@@ -334,7 +334,9 @@ $min-height-700: 700px;
 * ==========height in Pixels=======================================
 * ===============================================================================*/
 $height-px-4: 4px;
+$height-px-6: 6px;
 $height-px-8: 8px;
+$height-px-12: 12px;
 $height-px-20: 20px;
 $height-px-24: 24px;
 $height-px-34: 34px;
@@ -346,7 +348,9 @@ $height-px-85: 85px;
     }
 }
 @include dynamic-height-in-pixels(height-px-4, $height-px-4);
+@include dynamic-height-in-pixels(height-px-6, $height-px-6);
 @include dynamic-height-in-pixels(height-px-8, $height-px-8);
+@include dynamic-height-in-pixels(height-px-12, $height-px-12);
 @include dynamic-height-in-pixels(height-px-20, $height-px-20);
 @include dynamic-height-in-pixels(height-px-24, $height-px-24);
 @include dynamic-height-in-pixels(height-px-34, $height-px-34);
@@ -946,6 +950,10 @@ $b-width-1: 1px;
 .bg-color-green {
     @include bg-color($background-color: $green);
 }
+.bg-color-primary {
+    @include bg-color($background-color: $primary);
+}
+
 
 /*==================================================================================
 * =================Border radius dynamic=======================================

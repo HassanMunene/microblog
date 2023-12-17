@@ -85,10 +85,34 @@ def register_user():
         # after this use the email the user provided to send a veification code
         signUp_code = random.randint(10000, 99999)
         signUp_code_str = str(signUp_code)
+        session['verificationCode'] = signUp_code_str
+        print(session.get('verificationCode'))
+
         send_email(email, 'sign up to kcavibes', 'authentication/email/signup_code', signUp_code_str=signUp_code_str)
         return jsonify({'email_sent': True})
     else:
         return jsonify({'email_sent': False})
+
+#=========================================================================================
+# ROUTE THAT WILL REGISTER THE USER WHEN THEY SIGNUP WITH EMAIL AND PASSWORD
+#=========================================================================================
+@auth.route('/verify_code', methods=['POST', 'GET'])
+def verify_code():
+    """
+    verify the verifiction code entered by the user to the one stored in the session earlier
+    """
+    received_code = request.json.get('code')
+    session_code = session.get('verificationCode')
+    if (received_code == session_code):
+        return jsonify({'validity': True})
+    return jsonify({'validity': False})
+
+#=========================================================================================
+# THIS ROUTE WILL BE DISPLAYED TO SIGNIFY THE LOADING EFFECT
+#=========================================================================================
+@auth.route('/loading')
+def loading():
+    return render_template('loading.html')
 
 #=========================================================================================
 # ROUTE THAT WILL RECEIVE EMAIL ENTER BY USER DURING NORMAL AUTHENTICATION

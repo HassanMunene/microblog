@@ -11,6 +11,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 })
 
+// this is my universal fetch api that will send json data to the backend
+async function postData(url='', data={}) {
+    const response = await fetch (url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    let responseData = await response.json();
+    return responseData;
+}
+
 // this function will change the background color of getStartedButton and the navbar
 // depending on the scroll position our page is.
 function setupBackgroundChanges() {
@@ -213,17 +226,6 @@ function submitDataFunction() {
     const confirmPasswordInput = document.getElementById('confirmPassword');
     let emailInput = document.getElementById('email');
 
-    async function postData(url='', data={}) {
-        const response = await fetch (url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        let responseData = await response.json();
-        return responseData;
-    }
     //when submit data button is clicked, send data to the backend using fetch api
     submitDataButton.addEventListener('click', function () {
         let email = emailInput.value
@@ -253,6 +255,7 @@ function showVerificationModal(veriEmail) {
     const body = document.body;
     const closeButton = document.getElementById('closeVerificationButton');
     let email = document.querySelector('.verificationEmail');
+    let codeString = '';
     console.log(veriEmail);
 
     verificationModal.classList.add('show');
@@ -260,7 +263,35 @@ function showVerificationModal(veriEmail) {
     signUpModal.classList.remove('show');
     email.innerHTML = veriEmail;
 
+    let verificationInputs = document.getElementsByClassName('verification-input');
+    verificationInputs = [...verificationInputs];
+    verificationInputs.forEach(function (verificationInput, index) {
+        verificationInput.addEventListener('input', function () {
+            codeString += verificationInput.value
+            if (index < verificationInputs.length - 1) {
+                verificationInputs[index + 1].focus();
+            }
+            console.log(codeString);
+            postData(url='auth/verify_code', data={'code': codeString})
+            .then(function (response) {
+                console.log(response);
+                if (response.validity === true) {
+                    window.location.href = 'auth/loading';
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+        })
+        // this is an event listener that will move the focus backward in the codes inputs
+        verificationInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Backspace' && index > 0) {
+                verificationInputs[index - 1].focus();
+            }
+        })
+    })
     closeButton.addEventListener('click', function () {
+        body.classList.remove('modal-open');
         verificationModal.classList.remove('show');
     })
 }

@@ -1,0 +1,6 @@
+@use'../custom' as *;
+
+.loading-bar {
+    width: 0%;
+    transition: width 4s ease;
+}

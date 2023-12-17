@@ -5,6 +5,7 @@
 @use'components/buttons';
 @use'components/mixins';
 @use'components/typography';
+@use'components/utility';
 
 // imports the sections of the project
 @use'sections/intro_section';
@@ -23,4 +24,4 @@
 @use'pages/posting_page';
 @use'components/custom_modals';
 @use'pages/post_page';
-@use'components/utility';
+@use'pages/loading.scss';
