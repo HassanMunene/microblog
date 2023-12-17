@@ -160,7 +160,6 @@ function submitEmail() {
             if (response.email_available === true) {
                 customEmailAlert.style.display = 'block';
             } else if (response.email_available === false) {
-                emailInput.style.borderColor = 'green';
                 customEmailAlert.style.display = 'none';
             }
         })
@@ -172,11 +171,6 @@ function submitEmail() {
         if (emailInput.value != '' && fullnameInput.value != '' && customEmailAlert.style.display == 'none') {
             passwordContianer.style.display = 'block';
         } else {
-            if (emailInput.value == '' || customEmailAlert.style.display == 'block') {
-                emailInput.style.borderColor = '#FF0000';
-            } else if (fullname.value == '') {
-                fullname.style.borderColor = '#FF0000';
-            }
             passwordContianer.style.display = 'none';
         }
     })
