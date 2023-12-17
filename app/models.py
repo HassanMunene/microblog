@@ -28,6 +28,7 @@ class User(UserMixin, db.Model):
     #username will be automatically generated in the app to make it unique
     username = db.Column(db.String(64), unique=True)
     profile_picture_url = db.Column(db.String(500), index=True)
+    gravatar_picture_url = db.Column(db.String(500), index=True)
     location = db.Column(db.String(64))
     about_me = db.Column(db.Text())
     to_use_gravatar = db.Column(db.Boolean, default=False)
@@ -48,13 +49,26 @@ class User(UserMixin, db.Model):
     @property
     def password(self):
         return AttributeError('password is not a readable attribute')
-    
     @password.setter
     def password(self, password):
         self.password_hash = generate_password_hash(password)
-    
+
     def verify_password(self, password):
-        return 
+        return check_password_hash(self.password_hash, password)
+
+    @property
+    def gravatar(self):
+        return self.gravatar_picture_url
+    @gravatar.setter
+    def gravatar(self, email):
+        """
+        set the gravatar image url for the user using their email.
+        """
+        url = 'https://secure.gravatar.com/avatar'
+        hash = hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()
+        identicon = 'identicon'
+        rating = 'r'
+        self.gravatar_picture_url = f'{url}/{hash}?d={identicon}&r={rating}'
 
     def generate_username(self, fullname):
         #generate a random username for each user

@@ -110,6 +110,7 @@ function showEmailSignUpModal () {
 
     if (signUpModal) {
         showWelcomeMessage();
+        submitEmail();
         setupPasswordHandling();
         submitDataFunction();
         closeSignUpButton.addEventListener('click', function () {
@@ -141,6 +142,22 @@ function showWelcomeMessage () {
         }
     }, 100)
 }
+/*==================================================================================
+* ==SUBMIT EMAIL TO ENSURE THAT EMAIL DOES NOT ALREADY EXIST IN THE APPLICATION=====
+* ================================================================================*/
+function submitEmail() {
+    const emailInput = document.getElementById('email');
+    emailInput.addEventListener('input', function () {
+        email = emailInput.value;
+        postData(url='/auth/verify_email', data={'email': email})
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function() {
+            console.log('An error has occured');
+        })
+    }) 
+}
 
 /*==================================================================================
 * ============HANDLE THE PASSWORD FUNCTIONALITY==============================
@@ -148,6 +165,7 @@ function showWelcomeMessage () {
 function setupPasswordHandling () {
     const showPasswordButton = document.getElementById('continueToPassword');
     const emailInput = document.getElementById('email');
+    const fullnameInput = document.getElementById('fullname');
     const passwordContianer = document.getElementById('passwordContainer');
     const passwordInput = document.getElementById('password');
     const showPassword = document.getElementById('showPassword');
@@ -161,7 +179,7 @@ function setupPasswordHandling () {
     const confirmPasswordArrow = document.getElementById('confirmPasswordArrow');
 
     showPasswordButton.addEventListener('click', function () {
-        if (emailInput.value != '') {
+        if (emailInput.value != '' && fullnameInput.value != '') {
             passwordContianer.style.display = 'block';
         }
     })
@@ -225,12 +243,14 @@ function submitDataFunction() {
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
     let emailInput = document.getElementById('email');
+    let fullnameInput = document.getElementById('fullname');
 
     //when submit data button is clicked, send data to the backend using fetch api
     submitDataButton.addEventListener('click', function () {
-        let email = emailInput.value
+        let email = emailInput.value;
+        let fullname = fullnameInput.value;
         let password = passwordInput.value;
-        postData(url='auth/register_user', data={'email': email, 'password': password})
+        postData(url='auth/register_user', data={'email': email, 'fullname': fullname, 'password': password})
         .then(function (response) {
             console.log(response);
             if (response.email_sent === true) {
@@ -241,6 +261,7 @@ function submitDataFunction() {
             console.log('an error occured');
         })
         emailInput.value = '';
+        fullnameInput.value = '';
         passwordInput.value = '';
         confirmPasswordInput.value = '';
     })

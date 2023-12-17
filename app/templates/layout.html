@@ -135,19 +135,25 @@
             <div id="form-container" class="form-container dn">
                 <form action="">
                     <div id="email-container" class="m-t-24">
-                        <div class="m-b-4">
-                            <label class="fw-800 fs-16 color-black">
-                                Enter your email
-                                <span>*</span>
-                            </label>
+                        <div class="db Email">
+                            <div class="m-b-4">
+                                <label class="fw-800 fs-16 color-black">Enter your email*</label>
+                            </div>
+                            <div class="width-100 flex-align-center">
+                                <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
+                                <input id="email" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                            </div>
                         </div>
-                        <div class="width-100 flex-align-center">
-                            <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
-                            <input id="email" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                        <div class="db Fullname m-t-8">
+                            <div class="m-b-4">
+                                <label class="fw-800 fs-16 color-black">Enter your Fullname*</label>
+                            </div>
+                            <div class="width-100 flex-align-center">
+                                <span class="m-e-8"><i class="bi bi-arrow-right-short fs-20"></i></span>
+                                <input id="fullname" class="db width-100 custom-input border-rd-4 p-t-4 p-b-4" type="text">
+                            </div>
                         </div>
-                        <div id="continueToPassword" class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800 p-t-4 p-b-4">
-                            continue
-                        </div>
+                        <div id="continueToPassword" class="cp border-style b-width-1 b-color-green db m-t-24 width-50 border-rd-8 ta-center bg-color-green color-white fw-800 p-t-4 p-b-4">continue</div>
                     </div>
                     <div id="passwordContainer" class="m-t-24 dn">
                         <div class="m-b-4 create-password">
@@ -191,6 +197,11 @@
                         </div>
                     </div>
                 </form>
+                <div id="customEmailAlert" class="db width-100 m-t-16 m-b-0 bg-color-black color-white ta-center border-rd-4 p-t-8 p-b-8 p-e-8 p-s-8">
+                    <div class="pos-rel flex-center">
+                      <span class="customAlertMessage">Email is invalid or already taken</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -252,6 +263,22 @@
     </div>
 </div>
 <!---------------------END OF SEND CODE VERIFY EMAIL--------------------------------------------------->
+
+<!---------------------ThIS IS THE CUSTOM ALERS I have made to alert user on some events-------------->
+<div id="customAlert" class="customAlert">
+    <div class="customAlertContent">
+      <span class="customAlertMessage">Link copied</span>
+      <button id="customAlertClose" class="padding-0 fs-24 border-none color-white bg-color-transparent"><i class="bi bi-x"></i></button>
+    </div>
+</div>
+<!--------------------END OF CUSTOM ALERTS------------------------------------------------------------>
+
+<!---------------------CUSTOM ALERT FOR EMAIL ALREADY TAKEN ------------------------------------------>
+<!--------------------END OF CUSTOM ALERTS FOR EMAIL ALREADY TAKEN------------------------------------------------------------>
+
+
+
+
 
 
 
@@ -492,15 +519,6 @@
 </div>
 </div>
 <!---------------------THE END OF NOT LOGGED IN OFFCANVAS SECTION------------------------------------->
-
-<!---------------------ThIS IS THE CUSTOM ALERS I have made to alert user on some events-------------->
-<div id="customAlert" class="customAlert">
-    <div class="customAlertContent">
-      <span class="customAlertMessage">Link copied</span>
-      <button id="customAlertClose" class="btn customAlertClose"><i class="bi bi-x"></i></button>
-    </div>
-</div>
-<!--------------------END OF CUSTOM ALERTS------------------------------------------------------------>
 
 <script src="../static/assets/js/bootstrap.bundle.min.js"></script>
 <script src="../static/assets/glightbox/js/glightbox.min.js"></script>

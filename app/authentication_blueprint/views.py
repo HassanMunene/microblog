@@ -79,19 +79,40 @@ def register_user():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         email = request.json.get('email')
+        fullname = request.json.get('fullname')
+        #print(fullname)
         password = request.json.get('password')
-        session['email'] = email
-        session['password'] = password
+        user1 = User(
+            email=email,
+            fullname=fullname,
+            password=password,
+            gravatar=email,
+        )
+        db.session.add(user1)
+        db.session.commit()
         # after this use the email the user provided to send a veification code
         signUp_code = random.randint(10000, 99999)
         signUp_code_str = str(signUp_code)
         session['verificationCode'] = signUp_code_str
-        print(session.get('verificationCode'))
+        #print(session.get('verificationCode'))
 
         send_email(email, 'sign up to kcavibes', 'authentication/email/signup_code', signUp_code_str=signUp_code_str)
         return jsonify({'email_sent': True})
     else:
         return jsonify({'email_sent': False})
+
+#=========================================================================================
+# VERIFY THAT THE EMAIL DOES NOT ALREADY EXIST WHEN THE USER IS REGISTERING
+#=========================================================================================
+@auth.route('/verify_email', methods=['POST', 'GET'])
+def verify_email():
+    received_email = request.json.get('email')
+    print(received_email)
+    user = User.query.filter_by(email=received_email).first()
+    if user:
+        return jsonify({'email_available': True})
+    else:
+        return jsonify({'email_available': False})
 
 #=========================================================================================
 # ROUTE THAT WILL REGISTER THE USER WHEN THEY SIGNUP WITH EMAIL AND PASSWORD

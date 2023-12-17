@@ -55,7 +55,7 @@ $color-primary: #ffc107;
 *  =============================================================================*/
 
 /* ===============================================================================
-*  ======This mixin will generate sizes of font-size in pixes==================
+*  ======This mixin will generate font sizes of font-size in pixes==================
 *  =============================================================================*/
 $fs-8 : 8px;
 $fs-13: 13px;
@@ -469,6 +469,7 @@ $m-t-100: 100px;
 /*=================================================================================
 * =================== Margin left in pixes=======================================
 * ===============================================================================*/
+$m-s-auto: auto;
 $m-s-4: 4px;
 $m-s-8: 8px;
 $m-s-12: 12px;
@@ -484,6 +485,7 @@ $m-s-36: 36px;
         margin-left: $margin-s-value;
     }
 }
+@include dynamic-margin-start(m-s-auto, $m-s-auto);
 @include dynamic-margin-start(m-s-4, $m-s-4);
 @include dynamic-margin-start(m-s-8, $m-s-8);
 @include dynamic-margin-start(m-s-12, $m-s-12);
@@ -497,6 +499,7 @@ $m-s-36: 36px;
 /*=================================================================================
 * =================== Margin right in pixes=======================================
 * ===============================================================================*/
+$m-e-auto: auto;
 $m-e-4: 4px;
 $m-e-8: 8px;
 $m-e-12: 12px;
@@ -512,6 +515,7 @@ $m-e-36: 36px;
         margin-right: $margin-e-value;
     }
 }
+@include dynamic-margin-end(m-e-auto, $m-e-auto);
 @include dynamic-margin-end(m-e-4, $m-e-4);
 @include dynamic-margin-end(m-e-8, $m-e-8);
 @include dynamic-margin-end(m-e-12, $m-e-12);
@@ -734,24 +738,28 @@ $pos-rel: relative;
 /*================================================================================
 * =======TOP, LEFT BOTTOM, RIGHT IN REGARDS TO POSITION===========================
 * ==============================================================================*/
+$top-neg-100: -100px;
 $top-0: 0px;
 $top-10: 10px;
 $top-12: 12px;
 $top-20: 20px;
 $top-30: 30px;
 $top-40: 40px;
+$top-90: 90px;
 
 @mixin dynamic-top-position($top-name, $top-value) {
     .#{$top-name} {
         top: $top-value;
     }
 }
+@include dynamic-top-position(top-neg-100, $top-neg-100);
 @include dynamic-top-position(top-0, $top-0);
 @include dynamic-top-position(top-10, $top-10);
 @include dynamic-top-position(top-12, $top-12);
 @include dynamic-top-position(top-20, $top-20);
 @include dynamic-top-position(top-30, $top-30);
 @include dynamic-top-position(top-40, $top-40);
+@include dynamic-top-position(top-90, $top-90);
 
 $right-neg-60: -60px;
 $right-neg-30: -30px;
@@ -953,6 +961,9 @@ $b-width-1: 1px;
 .bg-color-primary {
     @include bg-color($background-color: $primary);
 }
+.bg-color-transparent {
+    background-color: transparent;
+}
 
 
 /*==================================================================================
@@ -1053,3 +1064,73 @@ $outline-color-black: $black;
     }
 }
 @include dynamic-outline-color(outline-color-green, $outline-color-green);
+
+
+/*=================================================================================
+* ============UTILITIES PART=======================================================
+* ===============================================================================*/
+.a {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.db {
+    display: block;
+}
+.dn {
+    display: none;
+}
+.dib {
+    display: inline-block;
+}
+.dfc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dfb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dfe {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.dfa {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.df {
+    display: flex;
+    align-items: center;
+}
+.flex-item-1 {
+    flex: 1 0 0px;
+}
+.flex-item-0 {
+    flex: 0 0 0px;
+}
+.ls-0 {
+    letter-spacing: 0px;
+}
+.cp {
+    cursor: pointer;
+}
+.font-times {
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/*when the modal is open i want the body within to not scroll*/
+body.modal-open {
+    overflow: hidden;
+}
+.custom-input {
+    width: 100%;
+    outline: none;
+    background-color: $gray-100;
+    border: 1px solid $gray-400;
+}
