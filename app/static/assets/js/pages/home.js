@@ -147,11 +147,15 @@ function showWelcomeMessage () {
 * ================================================================================*/
 function submitEmail() {
     const emailInput = document.getElementById('email');
+    const customEmailAlert = document.getElementById('customEmailAlert');
     emailInput.addEventListener('input', function () {
         email = emailInput.value;
         postData(url='/auth/verify_email', data={'email': email})
         .then(function(response) {
             console.log(response);
+            if (response.email_available === true) {
+                customEmailAlert.style.display = 'block';
+            }
         })
         .catch(function() {
             console.log('An error has occured');
