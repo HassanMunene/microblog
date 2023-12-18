@@ -297,24 +297,29 @@ function showVerificationModal(veriEmail) {
         verificationInput.addEventListener('input', function () {
             codeString += verificationInput.value
             if (index < verificationInputs.length - 1) {
-                verificationInputs[index + 1].focus();
+                postData(url='auth/verify_code', data={'code': codeString})
+                .then(function(response) {
+                    console.log(response);
+                    if (response.validity === true) {
+                        window.location.href = 'auth/loading';
+                    } else {
+                        verificationInputs[index + 1].focus();
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
             }
-            console.log(codeString);
-            postData(url='auth/verify_code', data={'code': codeString})
-            .then(function (response) {
-                console.log(response);
-                if (response.validity === true) {
-                    window.location.href = 'auth/loading';
-                }
-            })
-            .catch(function(error) {
-                console.log(error);
-            })
-        })
+        });
         // this is an event listener that will move the focus backward in the codes inputs
         verificationInput.addEventListener('keydown', function(event) {
-            if (event.key === 'Backspace' && index > 0) {
-                verificationInputs[index - 1].focus();
+            console.log('keydown');
+            if (event.key === 'Backspace') {
+                verificationInput.value = '';
+                if (verificationInput.value === '' && index > 0) {
+                    event.preventDefault();
+                    verificationInputs[index - 1].focus();
+                }
             }
         })
     })

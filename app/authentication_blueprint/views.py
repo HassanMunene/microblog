@@ -123,9 +123,7 @@ def verify_code():
     verify the verifiction code entered by the user to the one stored in the session earlier
     """
     received_code = request.json.get('code')
-    session_code = session.pop('verificationCode', None)
-    session.modified = True
-    print(session_code)
+    session_code = session.get('verificationCode')
     if (received_code == session_code):
         return jsonify({'validity': True})
     return jsonify({'validity': False})
@@ -135,7 +133,14 @@ def verify_code():
 #=========================================================================================
 @auth.route('/loading')
 def loading():
+    session.pop('verificationCode', None)
     return render_template('loading.html')
+
+
+
+
+
+
 
 #=========================================================================================
 # ROUTE THAT WILL RECEIVE EMAIL ENTER BY USER DURING NORMAL AUTHENTICATION
