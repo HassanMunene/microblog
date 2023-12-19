@@ -210,6 +210,8 @@ $width-px-32: 32px;
 $width-px-100: 100px;
 $width-px-150: 150px;
 $width-px-200: 200px;
+$width-px-350: 350px;
+
 
 @mixin dynamic-width-in-pixels($width-name, $width-value) {
     .#{$width-name} {
@@ -225,6 +227,9 @@ $width-px-200: 200px;
 @include dynamic-width-in-pixels(width-px-100, $width-px-100);
 @include dynamic-width-in-pixels(width-px-150, $width-px-150);
 @include dynamic-width-in-pixels(width-px-200, $width-px-200);
+@include dynamic-width-in-pixels(width-px-350, $width-px-350);
+
+
 
 
 /*=================================================================================
@@ -717,6 +722,10 @@ $p-s-56: 56px;
 .padding-8 {
     @include padding($padding: 8px);
 }
+.padding-16 {
+    @include padding($padding: 16px);
+}
+
 /*================================================================================
 * =======THE TYPE OF POSITION TO USE =============================================
 * ==============================================================================*/
@@ -904,6 +913,11 @@ $left-30: 30px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: $white;
+}
+.border-gray-200 {
+    border-style: solid;
+    border-width: 1px;
+    border-color: $gray-200;   
 }
 
 .border-style {

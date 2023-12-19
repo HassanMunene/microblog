@@ -12205,6 +12205,10 @@ ul {
   width: 200px;
 }
 
+.width-px-350 {
+  width: 350px;
+}
+
 /*=================================================================================
 * ==========MINIMUM WIDTH IN Pixels=======================================
 * ===============================================================================*/
@@ -12811,6 +12815,13 @@ ul {
   padding-right: 8px;
 }
 
+.padding-16 {
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+}
+
 /*================================================================================
 * =======THE TYPE OF POSITION TO USE =============================================
 * ==============================================================================*/
@@ -13027,6 +13038,12 @@ ul {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #fff;
+}
+
+.border-gray-200 {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e9ecef;
 }
 
 .border-style {

@@ -79,6 +79,7 @@ def register_user():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         email = request.json.get('email')
+        session['email'] = email
         fullname = request.json.get('fullname')
         #print(fullname)
         password = request.json.get('password')
@@ -124,7 +125,16 @@ def verify_code():
     """
     received_code = request.json.get('code')
     session_code = session.get('verificationCode')
+    print(received_code)
+    print(session_code)
     if (received_code == session_code):
+        email = session.pop('email', None)
+        session.modified = True
+        user = User.query.filter_by(email=email).first()
+        user.is_confirmed = True
+        db.session.add(user)
+        db.session.commit()
+        login_user(user, True)
         return jsonify({'validity': True})
     return jsonify({'validity': False})
 
